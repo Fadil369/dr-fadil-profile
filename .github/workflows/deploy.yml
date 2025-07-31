@@ -1,4 +1,4 @@
-name: 🚀 Deploy & Verify
+name: ✅ Validate & Monitor
 
 on:
   push:
@@ -41,39 +41,29 @@ jobs:
           [ -f sitemap.xml ] && echo "✅ sitemap.xml found" || (echo "❌ sitemap.xml missing" && exit 1)
           echo "🎉 All required files present!"
 
-  deploy:
-    name: 🌐 Deploy to Cloudflare Pages
+  summary:
+    name: 📊 Build Summary
     runs-on: ubuntu-latest
     needs: validate
     if: github.ref == 'refs/heads/main'
     
     steps:
-      - name: 📥 Checkout
-        uses: actions/checkout@v4
-      
-      - name: 🚀 Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: dr-fadil-profile
-          directory: .
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          
       - name: 📊 Deployment Summary
         run: |
-          echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## ✅ Validation Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- **Repository**: dr-fadil-profile" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: Ready for automatic Cloudflare Pages deployment" >> $GITHUB_STEP_SUMMARY
           echo "- **Site**: [thefadil.site](https://thefadil.site)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Status**: ✅ Deployed successfully" >> $GITHUB_STEP_SUMMARY
           echo "- **Commit**: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
           echo "- **Branch**: \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
           echo "- **Timestamp**: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🚀 **Cloudflare Pages** will automatically deploy this commit." >> $GITHUB_STEP_SUMMARY
 
   verify:
-    name: 🔍 Post-Deploy Verification
+    name: 🔍 Site Verification
     runs-on: ubuntu-latest
-    needs: deploy
+    needs: summary
     if: github.ref == 'refs/heads/main'
     
     steps:

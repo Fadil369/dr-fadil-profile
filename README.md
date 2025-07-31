@@ -50,9 +50,11 @@ The repository includes optimized configuration files:
 
 ### 🚦 Deployment Process
 
-1. **Push to main** → Automatic production deployment
+1. **Push to main** → GitHub Actions validation → Cloudflare Pages automatic deployment
 2. **Create PR** → Automatic preview deployment  
 3. **Merge PR** → Updates production automatically
+
+**Note**: Deployment is handled entirely by Cloudflare Pages' GitHub integration. GitHub Actions only validates code quality and monitors the site.
 
 ### 🛠️ Manual Deployment Options
 

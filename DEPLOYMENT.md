@@ -39,21 +39,21 @@ Environment: Production
 ## Deployment Triggers
 
 ### 🚦 Automatic Triggers
-1. **Main Branch Push** → Production deployment
-2. **Pull Request** → Preview deployment
-3. **Manual Trigger** → On-demand deployment
+1. **Main Branch Push** → GitHub Actions validation → Cloudflare Pages deployment
+2. **Pull Request** → Automatic preview deployment
+3. **Manual Trigger** → On-demand deployment via Cloudflare
 
-### 🔍 Validation Pipeline
+### 🔍 Validation Pipeline (GitHub Actions)
 1. **HTML Validation** → HTMLHint checks
 2. **File Structure** → Required files verification
 3. **Mobile-First** → Responsive design validation
-4. **Accessibility** → Basic accessibility checks
+4. **Site Monitoring** → Accessibility checks
+
+**Important**: GitHub Actions handles validation and monitoring. Actual deployment is managed by Cloudflare Pages' native GitHub integration.
 
 ## Environment Variables
 
-Required secrets in GitHub repository:
-- `CLOUDFLARE_API_TOKEN`: API token for deployment
-- `CLOUDFLARE_ACCOUNT_ID`: Account ID for Pages project
+No environment variables or secrets are required for deployment since Cloudflare Pages handles deployment automatically through GitHub integration.
 
 ## Monitoring & Verification
 
