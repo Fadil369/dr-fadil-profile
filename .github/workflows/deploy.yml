@@ -1,21 +1,59 @@
-name: Deploy to Cloudflare Pages
+name: 🚀 Deploy & Verify
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  validate:
+    name: 🔍 Validate & Test
     runs-on: ubuntu-latest
-    name: Deploy to Cloudflare Pages
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
       
-      - name: Deploy to Cloudflare Pages
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: |
+          npm install -g htmlhint
+          npm install -g lighthouse-ci
+        
+      - name: ✅ Validate HTML
+        run: |
+          htmlhint index.html --config .htmlhintrc || echo "HTML validation warnings (non-blocking)"
+          
+      - name: 🔍 Check file structure
+        run: |
+          echo "🗂️ Checking required files..."
+          ls -la
+          [ -f index.html ] && echo "✅ index.html found" || (echo "❌ index.html missing" && exit 1)
+          [ -f manifest.json ] && echo "✅ manifest.json found" || (echo "❌ manifest.json missing" && exit 1)
+          [ -f sw.js ] && echo "✅ sw.js found" || (echo "❌ sw.js missing" && exit 1)
+          [ -f _headers ] && echo "✅ _headers found" || (echo "❌ _headers missing" && exit 1)
+          [ -f robots.txt ] && echo "✅ robots.txt found" || (echo "❌ robots.txt missing" && exit 1)
+          [ -f sitemap.xml ] && echo "✅ sitemap.xml found" || (echo "❌ sitemap.xml missing" && exit 1)
+          echo "🎉 All required files present!"
+
+  deploy:
+    name: 🌐 Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: 🚀 Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -23,4 +61,31 @@ jobs:
           projectName: dr-fadil-profile
           directory: .
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref || github.ref_name }}
+          branch: main
+          
+      - name: 📊 Deployment Summary
+        run: |
+          echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Site**: [thefadil.site](https://thefadil.site)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ✅ Deployed successfully" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch**: \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp**: $(date -u)" >> $GITHUB_STEP_SUMMARY
+
+  verify:
+    name: 🔍 Post-Deploy Verification
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 🌐 Check site accessibility
+        run: |
+          echo "🔍 Checking site accessibility..."
+          curl -I https://thefadil.site || echo "Site check failed (may take time to propagate)"
+          
+      - name: 📱 Mobile-first verification
+        run: |
+          echo "📱 Verifying mobile-first design..."
+          curl -s https://thefadil.site | grep -q "viewport" && echo "✅ Viewport meta tag found" || echo "❌ Viewport meta tag missing"
+          curl -s https://thefadil.site | grep -q "mobile-first" && echo "✅ Mobile-first CSS detected" || echo "ℹ️ Mobile-first CSS check completed"

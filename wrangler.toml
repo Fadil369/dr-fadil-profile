@@ -1,0 +1,71 @@
+name = "dr-fadil-profile"
+compatibility_date = "2024-07-31"
+
+[env.production]
+name = "dr-fadil-profile"
+route = { pattern = "thefadil.site", zone_id = "your-zone-id" }
+
+[env.preview]
+name = "dr-fadil-profile-preview"
+
+# Pages configuration
+pages_build_output_dir = "."
+
+# Custom domains
+[[env.production.routes]]
+pattern = "thefladil.site/*"
+custom_domain = true
+
+[[env.production.routes]]
+pattern = "www.thefladil.site/*"
+custom_domain = true
+
+# Environment variables for build process
+[vars]
+NODE_ENV = "production"
+ENVIRONMENT = "production"
+
+# Build configuration
+[build]
+command = ""
+cwd = "."
+watch_dir = "."
+
+# Asset optimization
+[site]
+bucket = "."
+
+# Redirects and rewrites
+[[redirects]]
+from = "/index.html"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/home"
+to = "/"
+status = 301
+
+# Headers for better caching and security
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+[[headers]]
+for = "/*.js"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.css"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/sw.js"
+[headers.values]
+Cache-Control = "no-cache"
