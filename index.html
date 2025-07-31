@@ -36,7 +36,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -176,6 +176,43 @@
       font-size: clamp(1rem, 3vw, 1.2rem);
       color: var(--secondary-text);
       margin-bottom: 30px;
+    }
+
+    .general-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #FF4500;
+      text-align: center;
+      margin: 8px 0 20px 0;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+      animation: pulsateOrange 2s ease-in-out infinite alternate;
+      position: relative;
+    }
+    
+    .general-title::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #FF4500, transparent);
+      border-radius: 2px;
+    }
+    
+    @keyframes pulsateOrange {
+      0% {
+        text-shadow: 0 0 20px rgba(255, 69, 0, 0.3), 0 0 30px rgba(255, 69, 0, 0.2);
+        color: #FF4500;
+      }
+      100% {
+        text-shadow: 0 0 25px rgba(255, 69, 0, 0.5), 0 0 35px rgba(255, 69, 0, 0.3), 0 0 45px rgba(255, 69, 0, 0.1);
+        color: #FF6B35;
+      }
     }
 
     .header .location {
@@ -413,26 +450,6 @@
       font-size: 0.9rem;
     }
 
-    /* Language Toggle */
-    .lang-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--accent-color);
-      color: var(--primary-bg);
-      border: none;
-      padding: 8px 12px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: var(--transition);
-      z-index: 1000;
-    }
-
-    .lang-toggle:hover {
-      background: #0099cc;
-      transform: scale(1.05);
-    }
 
     /* Mobile-First Responsive Design */
     @media (max-width: 768px) {
@@ -442,6 +459,12 @@
       
       .header h1 {
         font-size: 1.8rem;
+      }
+      
+      .general-title {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        margin: 6px 0 15px 0;
       }
       
       .header .subtitle {
@@ -549,13 +572,6 @@
         justify-content: center;
       }
       
-      /* Language Toggle Mobile */
-      .lang-toggle {
-        top: 15px;
-        right: 15px;
-        padding: 6px 10px;
-        font-size: 0.8rem;
-      }
       
       /* LinkedIn Container Mobile */
       .linkedin-container {
@@ -572,6 +588,12 @@
       
       .header h1 {
         font-size: 1.6rem;
+      }
+      
+      .general-title {
+        font-size: 1.2rem;
+        letter-spacing: 1.5px;
+        margin: 4px 0 12px 0;
       }
       
       .profile-avatar {
@@ -614,8 +636,7 @@
     .tool-card,
     .service-item,
     .dev-tool-card,
-    .social-link,
-    .lang-toggle {
+    .social-link {
       min-height: 44px; /* Apple/Google recommended touch target */
       cursor: pointer;
     }
@@ -624,8 +645,7 @@
     .project-card:focus,
     .tool-card:focus,
     .dev-tool-card:focus,
-    .social-link:focus,
-    .lang-toggle:focus {
+    .social-link:focus {
       outline: 2px solid var(--accent-color);
       outline-offset: 2px;
     }
@@ -915,16 +935,14 @@
 </head>
 
 <body>
-  <button class="lang-toggle" onclick="toggleLanguage()">
-    <i class="fas fa-globe"></i> EN
-  </button>
 
   <header class="header">
     <div class="header-content">
       <div class="profile-avatar brain-icon">
         <i class="fas fa-brain"></i>
       </div>
-      <h1>Dr. Mohamed Al Fadil</h1>
+      <h1>Dr. Mohamed El Fadil</h1>
+      <div class="general-title">GENERAL</div>
       <p class="subtitle">Critical Care Physician | BrainSAIT Founder | Healthcare Tech Innovator</p>
       <p class="subtitle" style="font-size: 0.9rem; margin-top: 10px; color: var(--secondary-text);">
         <strong>10+ Years</strong> Healthcare Systems • <strong>UK Registered</strong> BrainSAIT LTD
@@ -1338,22 +1356,6 @@
   </footer>
 
   <script>
-    // Language toggle functionality (placeholder for future bilingual support)
-    let currentLang = 'en';
-    
-    function toggleLanguage() {
-      const button = document.querySelector('.lang-toggle');
-      if (currentLang === 'en') {
-        currentLang = 'ar';
-        button.innerHTML = '<i class="fas fa-globe"></i> AR';
-        // Future: Load Arabic content
-        console.log('Arabic language support coming soon');
-      } else {
-        currentLang = 'en';
-        button.innerHTML = '<i class="fas fa-globe"></i> EN';
-        // Future: Load English content
-      }
-    }
 
     // Smooth scrolling for any internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
