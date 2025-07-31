@@ -1,0 +1,40 @@
+{
+  "name": "dr-fadil-profile",
+  "version": "1.0.0",
+  "description": "Professional portfolio for Dr. Mohamed Al Fadil - Healthcare Technology Innovator",
+  "main": "index.html",
+  "scripts": {
+    "validate": "htmlhint index.html",
+    "deploy": "echo 'Static site - no build required'",
+    "serve": "npx serve .",
+    "test": "htmlhint index.html --config .htmlhintrc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fadil369/dr-fadil-profile.git"
+  },
+  "keywords": [
+    "healthcare",
+    "technology",
+    "portfolio",
+    "static-site",
+    "cloudflare-pages",
+    "pwa",
+    "mobile-first",
+    "brainsait"
+  ],
+  "author": "Dr. Mohamed Al Fadil <Fadil369@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fadil369/dr-fadil-profile/issues"
+  },
+  "homepage": "https://thefadil.site",
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

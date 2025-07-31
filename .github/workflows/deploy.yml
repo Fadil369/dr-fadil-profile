@@ -23,13 +23,11 @@ jobs:
           cache: 'npm'
       
       - name: 📦 Install dependencies
-        run: |
-          npm install -g htmlhint
-          npm install -g lighthouse-ci
+        run: npm ci
         
       - name: ✅ Validate HTML
         run: |
-          htmlhint index.html --config .htmlhintrc || echo "HTML validation warnings (non-blocking)"
+          npm run test || echo "HTML validation warnings (non-blocking)"
           
       - name: 🔍 Check file structure
         run: |
