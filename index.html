@@ -40,6 +40,9 @@
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -931,6 +934,384 @@
         transform: translateY(0);
       }
     }
+
+    /* Consultation Form Modal Styles */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--accent-color), #0099cc);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      margin: 20px auto;
+      box-shadow: 0 8px 32px rgba(0, 191, 255, 0.3);
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0, 191, 255, 0.4);
+    }
+
+    .cta-button i {
+      font-size: 1.2rem;
+    }
+
+    .cta-centered {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 191, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(50px) scale(0.9);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 20px 80px rgba(0, 191, 255, 0.2);
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: var(--primary-text);
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .modal-header h2 {
+      color: var(--accent-color);
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .modal-header p {
+      color: var(--secondary-text);
+      font-size: 1.1rem;
+    }
+
+    .consultation-form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--accent-color);
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(45, 45, 45, 0.8);
+      border: 1px solid rgba(0, 191, 255, 0.3);
+      border-radius: 8px;
+      color: var(--primary-text);
+      font-size: 1rem;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .submit-button {
+      background: linear-gradient(135deg, var(--accent-color), #0099cc);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .submit-button:hover::before {
+      left: 100%;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 191, 255, 0.4);
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .loading-spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .success-message {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #22c55e;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .error-message {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .modal-content {
+        padding: 30px 20px;
+        margin: 20px;
+        border-radius: 15px;
+      }
+
+      .modal-header h2 {
+        font-size: 1.6rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .cta-button {
+        padding: 14px 28px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .modal-content {
+        padding: 25px 15px;
+        margin: 15px;
+      }
+
+      .modal-header h2 {
+        font-size: 1.4rem;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .cta-button {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Magnetic Button Effect */
+    .magnetic {
+      position: relative;
+      transition: transform 0.2s ease-out;
+    }
+
+    .magnetic:hover {
+      transform: scale(1.05);
+    }
+
+    /* Custom Scrollbar for Modal */
+    .modal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: rgba(45, 45, 45, 0.3);
+      border-radius: 4px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: 4px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: #0099cc;
+    }
   </style>
 </head>
 
@@ -966,6 +1347,13 @@
       <p>
         I specialize in creating <strong>HIPAA-compliant</strong>, multilingual healthcare platforms that integrate seamlessly with existing medical workflows, empowering healthcare professionals through intelligent automation and revenue cycle management.
       </p>
+      
+      <div class="cta-centered">
+        <button class="cta-button magnetic" onclick="openConsultationModal()">
+          <i class="fas fa-user-md"></i>
+          Request Healthcare Consultation
+        </button>
+      </div>
     </section>
 
     <section class="section projects-section">
@@ -1263,6 +1651,13 @@
           <p>Comprehensive RCM integration for billing optimization, claims processing, and financial analytics.</p>
         </div>
       </div>
+      
+      <div class="cta-centered">
+        <button class="cta-button magnetic" onclick="openConsultationModal()">
+          <i class="fas fa-calculator"></i>
+          Get Custom Healthcare Solution Quote
+        </button>
+      </div>
     </section>
 
     <section class="section">
@@ -1280,6 +1675,14 @@
 
     <section class="section">
       <h2><i class="fas fa-share-alt"></i>Connect With Me</h2>
+      
+      <div class="cta-centered">
+        <button class="cta-button magnetic" onclick="openConsultationModal()">
+          <i class="fas fa-calendar-check"></i>
+          Schedule Free Consultation
+        </button>
+      </div>
+      
       <div class="social-links">
         <a href="https://x.com/brainsait369" target="_blank" class="social-link">
           <i class="fab fa-x-twitter"></i>
@@ -1336,6 +1739,128 @@
 
   </main>
 
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Consultation Modal -->
+  <div class="modal-overlay" id="consultationModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeConsultationModal()">&times;</button>
+      
+      <div class="modal-header">
+        <h2>
+          <i class="fas fa-stethoscope"></i>
+          Healthcare Consultation Request
+        </h2>
+        <p>Let's discuss how BrainSAIT can transform your healthcare technology needs</p>
+      </div>
+
+      <form class="consultation-form" id="consultationForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">
+              <i class="fas fa-user"></i> Full Name *
+            </label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">
+              <i class="fas fa-envelope"></i> Email Address *
+            </label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">
+              <i class="fas fa-phone"></i> Phone Number
+            </label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="organization">
+              <i class="fas fa-hospital"></i> Organization/Practice
+            </label>
+            <input type="text" id="organization" name="organization">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="serviceType">
+            <i class="fas fa-cogs"></i> Healthcare Service Type *
+          </label>
+          <select id="serviceType" name="serviceType" required>
+            <option value="">Select a service type...</option>
+            <option value="telemedicine">Telemedicine Platform Development</option>
+            <option value="hipaa-compliance">HIPAA Compliance Solutions</option>
+            <option value="web-platform">Healthcare Web Platform</option>
+            <option value="ai-healthcare">AI Healthcare Solutions</option>
+            <option value="rcm-integration">Revenue Cycle Management</option>
+            <option value="clinical-decision">Clinical Decision Support Systems</option>
+            <option value="mobile-health">Mobile Health Applications</option>
+            <option value="practice-management">Practice Management Systems</option>
+            <option value="health-informatics">Health Informatics Consulting</option>
+            <option value="digital-transformation">Healthcare Digital Transformation</option>
+            <option value="other">Other Healthcare Technology Needs</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="projectDescription">
+            <i class="fas fa-file-alt"></i> Project Description *
+          </label>
+          <textarea id="projectDescription" name="projectDescription" placeholder="Please describe your healthcare technology needs, current challenges, and desired outcomes..." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="timeline">
+              <i class="fas fa-calendar"></i> Project Timeline
+            </label>
+            <select id="timeline" name="timeline">
+              <option value="">Select timeline...</option>
+              <option value="asap">ASAP - Urgent Need</option>
+              <option value="1-month">Within 1 Month</option>
+              <option value="3-months">Within 3 Months</option>
+              <option value="6-months">Within 6 Months</option>
+              <option value="planning">In Planning Phase</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">
+              <i class="fas fa-dollar-sign"></i> Estimated Budget Range
+            </label>
+            <select id="budget" name="budget">
+              <option value="">Select budget range...</option>
+              <option value="under-10k">Under $10,000</option>
+              <option value="10k-25k">$10,000 - $25,000</option>
+              <option value="25k-50k">$25,000 - $50,000</option>
+              <option value="50k-100k">$50,000 - $100,000</option>
+              <option value="100k-plus">$100,000+</option>
+              <option value="discuss">Prefer to Discuss</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button" id="submitBtn">
+          <i class="fas fa-paper-plane"></i>
+          <span>Request Consultation</span>
+        </button>
+
+        <div class="success-message" id="successMessage">
+          <i class="fas fa-check-circle"></i>
+          Thank you! Your consultation request has been submitted successfully. Dr. Fadil will contact you within 24 hours.
+        </div>
+
+        <div class="error-message" id="errorMessage">
+          <i class="fas fa-exclamation-triangle"></i>
+          There was an error submitting your request. Please try again or contact us directly.
+        </div>
+      </form>
+    </div>
+  </div>
+
   <footer class="footer">
     <p>&copy; 2025 Dr. Mohamed El Fadil | BrainSAIT | All Rights Reserved</p>
     <p style="margin-top: 10px; font-size: 0.8rem;">
@@ -1346,6 +1871,10 @@
   </footer>
 
   <script>
+    // Initialize EmailJS
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    })();
 
     // Smooth scrolling for any internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1360,6 +1889,8 @@
     // Add loading animation
     window.addEventListener('load', function() {
       document.body.style.opacity = '1';
+      initializeParticles();
+      initializeMagneticButtons();
     });
 
     // Register Service Worker
@@ -1372,6 +1903,314 @@
         });
       });
     }
+
+    // Floating Particles System
+    function initializeParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+
+      function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        particlesContainer.appendChild(particle);
+
+        // Remove particle after animation
+        setTimeout(() => {
+          if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+          }
+        }, 20000);
+      }
+
+      // Create initial particles
+      for (let i = 0; i < particleCount; i++) {
+        setTimeout(createParticle, i * 200);
+      }
+
+      // Continuously create new particles
+      setInterval(createParticle, 300);
+    }
+
+    // Magnetic Button Effects
+    function initializeMagneticButtons() {
+      const magneticButtons = document.querySelectorAll('.magnetic');
+      
+      magneticButtons.forEach(button => {
+        button.addEventListener('mouseenter', function(e) {
+          const rect = this.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          
+          this.addEventListener('mousemove', magneticMove);
+          this.addEventListener('mouseleave', magneticLeave);
+        });
+      });
+
+      function magneticMove(e) {
+        const rect = this.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = (e.clientX - centerX) * 0.1;
+        const deltaY = (e.clientY - centerY) * 0.1;
+        
+        this.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1.05)`;
+      }
+
+      function magneticLeave() {
+        this.style.transform = 'translate(0, 0) scale(1)';
+        this.removeEventListener('mousemove', magneticMove);
+        this.removeEventListener('mouseleave', magneticLeave);
+      }
+    }
+
+    // Modal Functions
+    function openConsultationModal() {
+      const modal = document.getElementById('consultationModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      // Focus on first input
+      setTimeout(() => {
+        document.getElementById('fullName').focus();
+      }, 300);
+    }
+
+    function closeConsultationModal() {
+      const modal = document.getElementById('consultationModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      // Reset form
+      document.getElementById('consultationForm').reset();
+      document.getElementById('successMessage').style.display = 'none';
+      document.getElementById('errorMessage').style.display = 'none';
+    }
+
+    // Close modal on overlay click
+    document.getElementById('consultationModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeConsultationModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeConsultationModal();
+      }
+    });
+
+    // Form Submission Handler
+    document.getElementById('consultationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<div class="loading-spinner"></div><span>Sending...</span>';
+      
+      // Hide previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+      
+      // Collect form data
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        organization: document.getElementById('organization').value,
+        serviceType: document.getElementById('serviceType').value,
+        projectDescription: document.getElementById('projectDescription').value,
+        timeline: document.getElementById('timeline').value,
+        budget: document.getElementById('budget').value,
+        timestamp: new Date().toLocaleString(),
+        source: 'Dr. Fadil Profile - Healthcare Consultation Form'
+      };
+
+      // EmailJS send (replace with your service ID and template ID)
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          
+          // Show success message
+          successMessage.style.display = 'block';
+          
+          // Reset form after delay
+          setTimeout(() => {
+            closeConsultationModal();
+          }, 3000);
+          
+        }, function(error) {
+          console.log('FAILED...', error);
+          
+          // Show error message
+          errorMessage.style.display = 'block';
+          
+        }).finally(() => {
+          // Reset button
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Request Consultation</span>';
+        });
+    });
+
+    // Form Validation Enhancement
+    const form = document.getElementById('consultationForm');
+    const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+    
+    inputs.forEach(input => {
+      input.addEventListener('blur', validateField);
+      input.addEventListener('input', clearFieldError);
+    });
+
+    function validateField(e) {
+      const field = e.target;
+      const value = field.value.trim();
+      
+      // Remove existing error styling
+      field.style.borderColor = '';
+      
+      if (!value) {
+        field.style.borderColor = '#ef4444';
+        return false;
+      }
+      
+      // Email validation
+      if (field.type === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          field.style.borderColor = '#ef4444';
+          return false;
+        }
+      }
+      
+      field.style.borderColor = '#22c55e';
+      return true;
+    }
+
+    function clearFieldError(e) {
+      const field = e.target;
+      if (field.style.borderColor === 'rgb(239, 68, 68)') {
+        field.style.borderColor = '';
+      }
+    }
+
+    // Analytics tracking (optional)
+    function trackConsultationRequest(eventType) {
+      // Add your analytics tracking here
+      if (typeof gtag !== 'undefined') {
+        gtag('event', eventType, {
+          event_category: 'Healthcare Consultation',
+          event_label: 'Dr. Fadil Profile'
+        });
+      }
+    }
+
+    // Track modal opens
+    function openConsultationModal() {
+      const modal = document.getElementById('consultationModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      // Analytics tracking
+      trackConsultationRequest('modal_opened');
+      
+      // Focus on first input
+      setTimeout(() => {
+        document.getElementById('fullName').focus();
+      }, 300);
+    }
+
+    // Enhanced form submission with tracking
+    document.getElementById('consultationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Track form submission attempt
+      trackConsultationRequest('form_submitted');
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<div class="loading-spinner"></div><span>Sending...</span>';
+      
+      // Hide previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+      
+      // Collect form data
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        organization: document.getElementById('organization').value,
+        serviceType: document.getElementById('serviceType').value,
+        projectDescription: document.getElementById('projectDescription').value,
+        timeline: document.getElementById('timeline').value,
+        budget: document.getElementById('budget').value,
+        timestamp: new Date().toLocaleString(),
+        source: 'Dr. Fadil Profile - Healthcare Consultation Form'
+      };
+
+      // Simulate form submission (replace with actual EmailJS implementation)
+      setTimeout(() => {
+        // Show success message
+        successMessage.style.display = 'block';
+        trackConsultationRequest('form_success');
+        
+        // Reset form after delay
+        setTimeout(() => {
+          closeConsultationModal();
+        }, 3000);
+        
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Request Consultation</span>';
+      }, 2000);
+    });
+
+    // Accessibility improvements
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add ARIA labels to interactive elements
+      const ctaButtons = document.querySelectorAll('.cta-button');
+      ctaButtons.forEach((button, index) => {
+        button.setAttribute('aria-label', `Open consultation form - ${button.textContent.trim()}`);
+      });
+      
+      // Add focus management for modal
+      const modal = document.getElementById('consultationModal');
+      const modalContent = document.querySelector('.modal-content');
+      
+      modal.addEventListener('keydown', function(e) {
+        // Trap focus within modal
+        const focusableElements = modalContent.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement.focus();
+            }
+          }
+        }
+      });
+    });
   </script>
 </body>
 </html>
