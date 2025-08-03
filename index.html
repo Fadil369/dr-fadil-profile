@@ -3,782 +3,584 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
-    <title>BRAINSAIT - Healthcare AI Research & Digital Solutions</title>
-    <meta name="description" content="BRAINSAIT - Healthcare AI Research and Open Source Development by Dr. Mohamed El Fadil. Offering innovative digital solutions and custom projects.">
-    <meta name="keywords" content="BRAINSAIT, healthcare AI, PyHeart, PyBrain, digital solutions, Dr. Mohamed El Fadil">
+    <title>Dr. Mohamed El Fadil | BrainSAIT | Ultimate Healthcare AI Platform</title>
+    <meta name="description" content="Dr. Mohamed El Fadil - Physician entrepreneur, founder of BrainSAIT, and healthcare technology innovator. Experience the future of healthcare AI with our glass morphism interface.">
+    <meta name="keywords" content="Dr. Mohamed El Fadil, BrainSAIT, Healthcare AI, Glass Morphism, Digital Health, Physician Entrepreneur">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dr. Mohamed El Fadil | BrainSAIT | Ultimate Healthcare AI Platform">
+    <meta property="og:description" content="Experience the future of healthcare AI with cutting-edge glass morphism design">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://fadil369.dev">
+    <meta property="og:image" content="https://gravatar.com/avatar/fadil369">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.emailjs.com">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    screens: {
-                        'xs': '375px',
-                        'sm': '640px',
-                        'md': '768px',
-                        'lg': '1024px',
-                        'xl': '1280px',
-                        '2xl': '1536px',
-                    },
-                    colors: {
-                        'brand-blue': '#0066CC',
-                        'brand-green': '#00AA44',
-                        'healthcare-blue': '#0ea5e9',
-                        'healthcare-green': '#10b981'
-                    },
-                    spacing: {
-                        'safe-top': 'env(safe-area-inset-top)',
-                        'safe-bottom': 'env(safe-area-inset-bottom)',
-                        'safe-left': 'env(safe-area-inset-left)',
-                        'safe-right': 'env(safe-area-inset-right)',
-                    }
-                }
-            }
-        }
-    </script>
     
     <!-- EmailJS -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     
-    <!-- Custom Styles -->
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
+            /* Deep Space Dark Theme */
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #141420;
+            --bg-tertiary: #1a1a2e;
+            --bg-glass: rgba(20, 20, 32, 0.8);
+            --bg-glass-light: rgba(20, 20, 32, 0.4);
+            
+            /* Neon Accent Colors */
+            --accent-cyan: #00d4ff;
+            --accent-purple: #9333ea;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            
+            /* Healthcare Theme */
             --healthcare-blue: #0ea5e9;
             --healthcare-green: #10b981;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --background: #ffffff;
-            --background-alt: #f8fafc;
-            --border-color: #e5e7eb;
-            --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-healthcare: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
-            --brand-blue: #0066CC;
-            --brand-green: #00AA44;
-            --brand-gray: #F8F9FA;
-            --brand-dark: #1a202c;
             
-            /* Mobile-first touch targets */
-            --touch-target: 48px;
-            --touch-padding: 12px;
-        }
-
-        [data-theme="dark"] {
-            --text-primary: #f3f4f6;
-            --text-secondary: #d1d5db;
-            --background: #0f172a;
-            --background-alt: #1e293b;
-            --border-color: #334155;
+            /* Text Colors */
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            
+            /* Glass Effects */
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --glass-shadow-hover: 0 16px 64px rgba(0, 212, 255, 0.2);
+            
+            /* Animations */
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         * {
-            scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Mobile-first base styles */
         body {
             font-family: 'Inter', sans-serif;
-            font-size: 16px; /* Prevent zoom on iOS */
-            line-height: 1.6;
+            background: var(--bg-primary);
             color: var(--text-primary);
-            background: var(--background);
+            line-height: 1.6;
             overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            padding-top: env(safe-area-inset-top);
-            padding-bottom: env(safe-area-inset-bottom);
-            padding-left: env(safe-area-inset-left);
-            padding-right: env(safe-area-inset-right);
         }
 
         body[dir="rtl"] {
             font-family: 'Tajawal', 'Inter', sans-serif;
         }
 
-        .font-arabic {
+        body.arabic {
             font-family: 'Tajawal', Arial, sans-serif;
         }
 
-        .font-english {
-            font-family: 'Inter', Arial, sans-serif;
-        }
-
-        /* Mobile-first container */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 2rem;
-            }
-        }
-
-        /* Mobile-first theme toggle */
-        .theme-toggle {
+        /* Animated Background */
+        .animated-bg {
             position: fixed;
-            top: calc(50% - 25px);
-            right: 10px;
-            z-index: 1001;
-            background: var(--background);
-            border: 2px solid var(--border-color);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: backgroundPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-cyan);
             border-radius: 50%;
-            width: var(--touch-target);
-            height: var(--touch-target);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Glass Morphism Components */
+        .glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition-smooth);
+        }
+
+        .glass-light {
+            background: var(--bg-glass-light);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .glass:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glass-shadow-hover);
+            border-color: var(--accent-cyan);
+        }
+
+        /* Language & Theme Toggles */
+        .control-panel {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-medium);
-            touch-action: manipulation;
-        }
-
-        @media (min-width: 768px) {
-            .theme-toggle {
-                right: 20px;
-                top: calc(50% - 25px);
-            }
-        }
-
-        .theme-toggle:hover,
-        .theme-toggle:focus {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-large);
-        }
-
-        .theme-toggle i {
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
             font-size: 1.2rem;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
         }
 
-        /* Mobile-first language toggle */
-        .language-toggle {
-            position: fixed;
-            top: calc(50% + 35px);
-            right: 10px;
-            z-index: 1001;
-            background: var(--background);
-            border: 2px solid var(--border-color);
-            border-radius: 25px;
+        .control-btn:hover {
+            transform: scale(1.1);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .lang-toggle {
             padding: 3px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-medium);
+            width: 60px;
+            height: 35px;
+            border-radius: 17px;
+            background: var(--bg-glass);
             display: flex;
             align-items: center;
             gap: 3px;
         }
 
-        @media (min-width: 768px) {
-            .language-toggle {
-                right: 20px;
-                top: calc(50% + 65px);
-                padding: 5px;
-                gap: 5px;
-            }
-        }
-
-        .language-option {
-            padding: 6px 8px;
-            border-radius: 18px;
-            font-size: 0.75rem;
+        .lang-option {
+            flex: 1;
+            height: 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            color: var(--text-secondary);
             cursor: pointer;
-            min-width: 32px;
-            text-align: center;
-            touch-action: manipulation;
+            transition: var(--transition-smooth);
+            color: var(--text-muted);
         }
 
-        @media (min-width: 768px) {
-            .language-option {
-                padding: 8px 12px;
-                font-size: 0.9rem;
-                min-width: auto;
-            }
-        }
-
-        .language-option.active {
-            background: var(--gradient-healthcare);
+        .lang-option.active {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             color: white;
         }
 
-        /* Mobile-first navigation */
-        nav {
+        /* Navigation */
+        .nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            padding-top: env(safe-area-inset-top);
-        }
-
-        [data-theme="dark"] nav {
-            background: rgba(15, 23, 42, 0.95);
+            z-index: 999;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition-smooth);
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .nav-container {
-                padding: 1rem 2rem;
-            }
+            height: 70px;
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            background: var(--gradient-healthcare);
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        @media (min-width: 768px) {
-            .logo {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Mobile navigation menu */
         .nav-links {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: var(--background);
-            border-top: 1px solid var(--border-color);
-            box-shadow: var(--shadow-medium);
-            padding: 1rem;
-            flex-direction: column;
-            gap: 1rem;
-            list-style: none;
-            margin: 0;
-        }
-
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-                position: static;
-                background: transparent;
-                border: none;
-                box-shadow: none;
-                padding: 0;
-                flex-direction: row;
-                gap: 2rem;
-            }
-        }
-
-        .nav-links.active {
             display: flex;
+            list-style: none;
+            gap: 2rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-primary);
+            color: var(--text-secondary);
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: var(--transition-smooth);
             position: relative;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            touch-action: manipulation;
-        }
-
-        @media (min-width: 768px) {
-            .nav-links a {
-                padding: 0;
-                border-radius: 0;
-            }
-        }
-
-        .nav-links a:hover,
-        .nav-links a:focus {
-            color: var(--primary-color);
-            background-color: var(--background-alt);
-        }
-
-        @media (min-width: 768px) {
-            .nav-links a:hover,
-            .nav-links a:focus {
-                background-color: transparent;
-            }
+            padding: 0.5rem 0;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 0;
             width: 0;
             height: 2px;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient-healthcare);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             transition: width 0.3s ease;
-            display: none;
         }
 
-        @media (min-width: 768px) {
-            .nav-links a::after {
-                display: block;
-            }
+        .nav-links a:hover {
+            color: var(--text-primary);
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        /* Mobile menu toggle */
-        .mobile-menu-toggle {
-            display: block;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            touch-action: manipulation;
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-glass);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
         }
 
-        @media (min-width: 768px) {
-            .mobile-menu-toggle {
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
                 display: none;
             }
         }
 
-        /* Mobile-first hero section */
+        /* Hero Section with Floating Business Card */
         .hero {
-            padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, var(--background-alt) 0%, var(--background) 100%);
-            position: relative;
-            overflow: hidden;
-            margin-top: 60px; /* Account for fixed nav */
-        }
-
-        @media (min-width: 768px) {
-            .hero {
-                padding: 8rem 0 6rem;
-                margin-top: 80px;
-            }
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
+            min-height: 100vh;
+            display: flex;
             align-items: center;
+            padding: 100px 20px 50px;
             position: relative;
-            z-index: 1;
-            text-align: center;
         }
 
-        @media (min-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
-                text-align: left;
-            }
-        }
-
-        .hero-text {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-visual {
-            position: relative;
-            order: -1;
-        }
-
-        @media (min-width: 768px) {
-            .hero-visual {
-                order: 0;
-            }
-        }
-
-        .hero-cards {
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            gap: 0.75rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        @media (min-width: 640px) {
-            .hero-cards {
-                gap: 1rem;
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
             }
         }
 
-        .hero-card {
-            background: var(--background);
-            padding: 1rem;
-            border-radius: 0.75rem;
-            box-shadow: var(--shadow-medium);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
-        }
-
-        @media (min-width: 640px) {
-            .hero-card {
-                padding: 1.5rem;
-                border-radius: 1rem;
-            }
-        }
-
-        .hero-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-large);
-            border-color: var(--healthcare-blue);
-        }
-
-        .brand-title {
-            font-size: 2rem;
+        .hero-content h1 {
+            font-size: 3.5rem;
             font-weight: 900;
-            margin-bottom: 0.5rem;
-            background: var(--gradient-healthcare);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1.1;
         }
 
-        @media (min-width: 640px) {
-            .brand-title {
-                font-size: 3rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .brand-title {
-                font-size: 4rem;
-            }
-        }
-
-        .brand-arabic {
-            font-family: 'Amiri', serif;
-            font-size: 1.5rem;
-            margin-left: 0.5rem;
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        @media (min-width: 640px) {
-            .brand-arabic {
-                font-size: 2rem;
-                display: inline;
-                margin-top: 0;
-                margin-left: 1rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .brand-arabic {
+        @media (max-width: 768px) {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
         }
 
-        .doctor-name {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .doctor-name {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .doctor-name {
-                font-size: 2rem;
-            }
-        }
-
-        .hero-text .subtitle {
-            font-size: 1rem;
+        .hero-subtitle {
+            font-size: 1.3rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-weight: 500;
         }
 
-        @media (min-width: 640px) {
-            .hero-text .subtitle {
-                font-size: 1.25rem;
-                margin-bottom: 2rem;
-            }
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
-        @media (min-width: 1024px) {
-            .hero-text .subtitle {
-                font-size: 1.5rem;
-            }
+        /* Floating Business Card */
+        .business-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: var(--glass-shadow);
+            animation: float-card 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-text p {
-            font-size: 0.9rem;
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes float-card {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .card-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            border: 3px solid var(--glass-border);
+        }
+
+        .card-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            color: var(--accent-cyan);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
-        @media (min-width: 640px) {
-            .hero-text p {
-                font-size: 1rem;
-                margin-bottom: 2rem;
-                line-height: 1.7;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .hero-text p {
-                font-size: 1.125rem;
-            }
-        }
-
-        /* Mobile-first buttons */
+        /* CTA Buttons */
         .cta-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
-        @media (min-width: 640px) {
+        @media (max-width: 480px) {
             .cta-buttons {
-                flex-direction: row;
-                gap: 1rem;
-                margin-top: 2rem;
+                flex-direction: column;
             }
         }
 
         .btn {
-            padding: 0.875rem 1.5rem;
-            border-radius: 0.75rem;
+            padding: 14px 30px;
+            border-radius: 50px;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
             font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
-            min-height: var(--touch-target);
-            touch-action: manipulation;
-            width: 100%;
-        }
-
-        @media (min-width: 640px) {
-            .btn {
-                width: auto;
-                padding: 0.75rem 2rem;
-                border-radius: 0.5rem;
-            }
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: var(--gradient-healthcare);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             color: white;
-            box-shadow: var(--shadow-medium);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
         }
 
-        .btn-primary:hover,
-        .btn-primary:focus {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-large);
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
         }
 
         .btn-secondary {
-            background: var(--background);
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
         }
 
-        .btn-secondary:hover,
-        .btn-secondary:focus {
-            background: var(--primary-color);
-            color: white;
+        .btn-secondary:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
         }
 
-        .btn-success {
-            background: linear-gradient(135deg, var(--brand-green), #008833);
-            color: white;
+        /* Magnetic Effect */
+        .magnetic {
+            transition: transform 0.2s ease-out;
         }
 
-        .btn-success:hover,
-        .btn-success:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 170, 68, 0.3);
+        /* Projects Section */
+        .projects {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
         }
 
-        /* Mobile-first sections */
-        .section {
-            padding: 3rem 0;
-            position: relative;
-        }
-
-        @media (min-width: 768px) {
-            .section {
-                padding: 4rem 0;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .section {
-                padding: 6rem 0;
-            }
-        }
-
-        .section:nth-child(even) {
-            background: var(--background-alt);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .section-header {
-                margin-bottom: 3rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .section-header {
-                margin-bottom: 4rem;
-            }
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
-            font-size: 1.75rem;
-            font-weight: 800;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
             margin-bottom: 1rem;
-            background: var(--gradient-healthcare);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .section-title {
-                font-size: 3rem;
-            }
-        }
-
         .section-subtitle {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        @media (min-width: 768px) {
-            .section-subtitle {
-                font-size: 1.125rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .section-subtitle {
-                font-size: 1.25rem;
-            }
-        }
-
-        /* Mobile-first projects grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
-        @media (min-width: 640px) {
+        @media (max-width: 400px) {
             .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                margin-top: 3rem;
+                grid-template-columns: 1fr;
             }
         }
 
         .project-card {
-            background: var(--background);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
-        }
-
-        @media (min-width: 768px) {
-            .project-card {
-                padding: 2rem;
-            }
+            text-decoration: none;
+            color: var(--text-primary);
         }
 
         .project-card::before {
@@ -786,364 +588,269 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-healthcare);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover::before {
-            transform: translateX(0);
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .project-card:hover {
-            box-shadow: var(--shadow-large);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
         }
 
         .project-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: var(--gradient-healthcare);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        @media (min-width: 768px) {
-            .project-icon {
-                font-size: 3rem;
-            }
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .project-title {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        @media (min-width: 768px) {
-            .project-title {
-                font-size: 1.5rem;
-            }
+            position: relative;
+            z-index: 1;
         }
 
         .project-description {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        @media (min-width: 768px) {
-            .project-description {
-                font-size: 1rem;
-            }
-        }
-
-        .project-link {
-            color: var(--healthcare-blue);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        @media (min-width: 768px) {
-            .project-link {
-                font-size: 1rem;
-            }
-        }
-
-        .project-link:hover {
-            gap: 1rem;
-        }
-
-        /* Mobile-first form section */
-        .form-section {
-            padding: 3rem 0;
-            background: var(--background-alt);
-        }
-
-        @media (min-width: 768px) {
-            .form-section {
-                padding: 4rem 0;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .form-section {
-                padding: 6rem 0;
-            }
-        }
-
-        .form-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 0 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .glass-card {
-                padding: 2rem;
-                border-radius: 1.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .glass-card {
-                padding: 3rem;
-                border-radius: 2rem;
-            }
-        }
-
-        [data-theme="dark"] .glass-card {
-            background: rgba(30, 41, 59, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Mobile-first progress bar */
-        .progress-container {
-            position: sticky;
-            top: 60px;
-            z-index: 40;
-            background: var(--background);
-            box-shadow: var(--shadow-light);
-            border-bottom: 1px solid var(--border-color);
-            padding-top: env(safe-area-inset-top);
-        }
-
-        @media (min-width: 768px) {
-            .progress-container {
-                top: 80px;
-            }
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, var(--brand-blue), var(--brand-green));
-            transition: width 0.6s ease-in-out;
-        }
-
-        /* Mobile-first form steps */
-        .form-step {
-            display: none;
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        .form-step.active {
-            display: block;
-        }
-
-        /* Mobile-first service cards */
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateY(0);
-            cursor: pointer;
-            touch-action: manipulation;
-            padding: 1.5rem;
-            border: 2px solid var(--border-color);
-            border-radius: 1rem;
-            text-align: center;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        @media (min-width: 768px) {
-            .service-card {
-                padding: 2rem;
-                border-radius: 2rem;
-            }
-        }
-
-        .service-card:hover,
-        .service-card:focus {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .service-card.selected {
-            background: linear-gradient(135deg, var(--brand-blue), #0052a3);
-            color: white;
-            transform: translateY(-4px);
-            border-color: var(--brand-blue);
-        }
-
-        .service-card.selected h4,
-        .service-card.selected p {
-            color: white;
-        }
-
-        /* Mobile-first feature checkboxes */
-        .feature-checkbox {
             position: relative;
-            margin-bottom: 0.75rem;
+            z-index: 1;
         }
 
-        .feature-checkbox input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
+        /* Tools Section */
+        .tools {
+            padding: 100px 20px;
+            background: var(--bg-primary);
         }
 
-        .feature-checkbox .feature-label {
-            padding: 1rem;
-            border: 2px solid var(--border-color);
-            border-radius: 0.75rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            min-height: var(--touch-target);
-            touch-action: manipulation;
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
-        .feature-checkbox input[type="checkbox"]:checked + .feature-label {
-            background-color: var(--brand-blue);
-            color: white;
-            border-color: var(--brand-blue);
+        .tool-card {
+            background: var(--bg-glass-light);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            color: var(--text-primary);
         }
 
-        /* Mobile-first step indicators */
-        .step-indicator {
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-green);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Consultation Form Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
             transition: all 0.3s ease;
-            background: var(--background-alt);
-            border: 2px solid var(--border-color);
-            color: var(--text-secondary);
-            font-weight: 600;
-            font-size: 0.875rem;
         }
 
-        @media (min-width: 768px) {
-            .step-indicator {
-                width: 3rem;
-                height: 3rem;
-                font-size: 1rem;
-            }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .step-indicator.active {
-            background: var(--brand-blue);
-            color: white;
-            transform: scale(1.1);
-            border-color: var(--brand-blue);
-        }
-
-        .step-indicator.completed {
-            background: var(--brand-green);
-            color: white;
-            border-color: var(--brand-green);
-        }
-
-        /* Mobile-first input fields */
-        .input-field {
+        .modal-content {
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
             transition: all 0.3s ease;
-            border: 2px solid var(--border-color);
-            background: var(--background);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
             color: var(--text-primary);
-            font-size: 16px; /* Prevent zoom on iOS */
-            padding: 0.75rem;
-            border-radius: 0.5rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
         }
 
-        @media (min-width: 768px) {
-            .input-field {
-                padding: 1rem;
-                border-radius: 0.75rem;
-            }
-        }
-
-        .input-field:focus {
-            border-color: var(--brand-blue);
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
-            transform: translateY(-1px);
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
         }
 
-        .input-field.error {
-            border-color: #ef4444;
-            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-        }
-
-        /* Mobile-first grid layouts */
-        .grid-cols-1 {
+        .form-row {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
 
-        @media (min-width: 640px) {
-            .grid-cols-1.sm\\:grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (min-width: 768px) {
-            .grid-cols-1.md\\:grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .grid-cols-1.md\\:grid-cols-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .grid-cols-1.md\\:grid-cols-4 {
-                grid-template-columns: repeat(4, 1fr);
-            }
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
         }
 
-        @media (min-width: 1024px) {
-            .grid-cols-1.lg\\:grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-            
-            .grid-cols-1.lg\\:grid-cols-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
         }
 
-        /* Success message */
-        #successMessage {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.75);
+        .social-link {
+            background: var(--bg-glass-light);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            padding: 1rem;
+            gap: 1rem;
+            transition: var(--transition-smooth);
         }
 
-        /* Loading spinner */
+        .social-link:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .social-link i {
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .control-panel {
+                right: 10px;
+                gap: 10px;
+            }
+            
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .lang-toggle {
+                width: 50px;
+                height: 30px;
+            }
+            
+            .lang-option {
+                font-size: 0.6rem;
+            }
+        }
+
+        /* Hidden class for language switching */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading Animation */
         .loading-spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid var(--brand-blue);
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
             animation: spin 1s linear infinite;
         }
 
@@ -1152,1698 +859,743 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Mobile-first contact section */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
 
-        .contact-info {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @media (min-width: 640px) {
-            .contact-info {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 2rem;
-                margin-top: 3rem;
-            }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .contact-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--background);
-            border-radius: 1rem;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
         }
 
-        @media (min-width: 768px) {
-            .contact-item {
-                padding: 2rem;
-            }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-cyan);
+            border-radius: 4px;
         }
 
-        .contact-item:hover {
-            box-shadow: var(--shadow-medium);
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: var(--healthcare-blue);
-            margin-bottom: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .contact-icon {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Mobile-first footer */
-        footer {
-            background: var(--background-alt);
-            padding: 2rem 0 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        @media (min-width: 768px) {
-            footer {
-                padding: 3rem 0 2rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            footer {
-                padding: 4rem 0 2rem;
-            }
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 640px) {
-            .footer-content {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .footer-content {
-                gap: 3rem;
-                margin-bottom: 3rem;
-            }
-        }
-
-        .footer-section h3 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        @media (min-width: 768px) {
-            .footer-section h3 {
-                font-size: 1.25rem;
-            }
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 0.25rem 0;
-            display: block;
-        }
-
-        .footer-links a:hover,
-        .footer-links a:focus {
-            color: var(--healthcare-blue);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer-bottom {
-                padding-top: 2rem;
-                font-size: 1rem;
-            }
-        }
-
-        /* Language-specific styles */
-        .arabic-content {
-            display: none;
-        }
-
-        .english-content {
-            display: block;
-        }
-
-        body[dir="rtl"] .arabic-content {
-            display: block;
-        }
-
-        body[dir="rtl"] .english-content {
-            display: none;
-        }
-
-        /* RTL-specific adjustments */
-        body[dir="rtl"] .nav-links {
-            flex-direction: column;
-        }
-
-        @media (min-width: 768px) {
-            body[dir="rtl"] .nav-links {
-                flex-direction: row-reverse;
-            }
-        }
-
-        body[dir="rtl"] .cta-buttons {
-            flex-direction: column;
-        }
-
-        @media (min-width: 640px) {
-            body[dir="rtl"] .cta-buttons {
-                flex-direction: row-reverse;
-            }
-        }
-
-        body[dir="rtl"] .brand-arabic {
-            margin-left: 0;
-            margin-right: 0.5rem;
-        }
-
-        @media (min-width: 640px) {
-            body[dir="rtl"] .brand-arabic {
-                margin-right: 1rem;
-            }
-        }
-
-        /* Hide elements */
-        .hidden {
-            display: none !important;
-        }
-
-        /* Accessibility improvements */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .shake {
-            animation: shake 0.5s ease-in-out;
-        }
-
-        @keyframes shake {
-            0%, 20%, 40%, 60%, 80%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        }
-
-        /* Touch improvements */
-        @media (hover: none) and (pointer: coarse) {
-            .hero-card:hover,
-            .project-card:hover,
-            .service-card:hover,
-            .contact-item:hover {
-                transform: none;
-            }
-            
-            .hero-card:active,
-            .project-card:active,
-            .service-card:active,
-            .contact-item:active {
-                transform: scale(0.98);
-            }
-        }
-
-        /* Prevent horizontal scroll */
-        html, body {
-            overflow-x: hidden;
-        }
-
-        /* Improve scrolling on iOS */
-        * {
-            -webkit-overflow-scrolling: touch;
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-purple);
         }
     </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" role="button" tabindex="0">
-        <i class="fas fa-moon" id="theme-icon"></i>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="control-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+        <div class="lang-toggle">
+            <div class="lang-option active" onclick="setLanguage('en')">EN</div>
+            <div class="lang-option" onclick="setLanguage('ar')">AR</div>
+        </div>
     </div>
-
-    <!-- Language Toggle -->
-    <div class="language-toggle" aria-label="Language toggle" role="group">
-        <div class="language-option active" onclick="setLanguage('en')" id="lang-en" role="button" tabindex="0" aria-label="Switch to English">EN</div>
-        <div class="language-option" onclick="setLanguage('ar')" id="lang-ar" role="button" tabindex="0" aria-label="Switch to Arabic">عر</div>
-    </div>
-
+    
     <!-- Navigation -->
-    <nav id="navbar" role="navigation">
+    <nav class="nav">
         <div class="nav-container">
-            <div class="logo">BRAINSAIT <span class="brand-arabic">برينسايت</span></div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <div class="logo">
+                <span class="en-content">BRAINSAIT</span>
+                <span class="ar-content hidden">برينسايت</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">
+                    <span class="en-content">Home</span>
+                    <span class="ar-content hidden">الرئيسية</span>
+                </a></li>
+                <li><a href="#projects">
+                    <span class="en-content">Projects</span>
+                    <span class="ar-content hidden">المشاريع</span>
+                </a></li>
+                <li><a href="#tools">
+                    <span class="en-content">Tools</span>
+                    <span class="ar-content hidden">الأدوات</span>
+                </a></li>
+                <li><a href="#contact">
+                    <span class="en-content">Contact</span>
+                    <span class="ar-content hidden">اتصل</span>
+                </a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
-                <li><a href="#solutions" data-en="Solutions" data-ar="الحلول">Solutions</a></li>
-                <li><a href="#pre-order" data-en="Pre-Order" data-ar="طلب مسبق">Pre-Order</a></li>
-                <li><a href="#resources" data-en="Resources" data-ar="الموارد">Resources</a></li>
-                <li><a href="#contact" data-en="Contact" data-ar="اتصل">Contact</a></li>
-            </ul>
         </div>
     </nav>
-
+    
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
+        <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <div class="brand-title">
-                        BRAINSAIT<span class="brand-arabic">برينسايت</span>
-                    </div>
-                    <div class="doctor-name">
-                        <span class="english-content">Dr. Mohamed El Fadil</span>
-                        <span class="arabic-content">د. محمد الفاضل</span>
-                    </div>
-                    <p class="subtitle">
-                        <span class="english-content">Healthcare AI Researcher & Open Source Developer</span>
-                        <span class="arabic-content">باحث الذكاء الاصطناعي الطبي ومطور المصادر المفتوحة</span>
-                    </p>
-                    <p>
-                        <span class="english-content">Revolutionizing healthcare through innovative AI solutions and open-source technologies. Building the future of medical intelligence.</span>
-                        <span class="arabic-content">نحدث ثورة في الرعاية الصحية من خلال حلول الذكاء الاصطناعي المبتكرة والتقنيات مفتوحة المصدر. نبني مستقبل الذكاء الطبي.</span>
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <span class="english-content">Explore Projects</span>
-                            <span class="arabic-content">استكشف المشاريع</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#pre-order" class="btn btn-secondary">
-                            <span class="english-content">Start a Project</span>
-                            <span class="arabic-content">ابدأ مشروعاً</span>
-                        </a>
-                    </div>
+                <h1>
+                    <span class="en-content">Dr. Mohamed El Fadil</span>
+                    <span class="ar-content hidden">د. محمد الفاضل</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span class="en-content">Healthcare AI Innovator & BrainSAIT Founder</span>
+                    <span class="ar-content hidden">مبتكر الذكاء الاصطناعي الطبي ومؤسس برينسايت</span>
+                </p>
+                <p class="hero-description">
+                    <span class="en-content">
+                        Transforming healthcare through cutting-edge AI solutions, with over 10 years of clinical experience 
+                        and a passion for digital innovation. Leading the future of medical technology with BrainSAIT.
+                    </span>
+                    <span class="ar-content hidden">
+                        تحويل الرعاية الصحية من خلال حلول الذكاء الاصطناعي المتطورة، مع أكثر من 10 سنوات من الخبرة السريرية 
+                        وشغف بالابتكار الرقمي. قيادة مستقبل التكنولوجيا الطبية مع برينسايت.
+                    </span>
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary magnetic" onclick="openConsultationModal()">
+                        <i class="fas fa-stethoscope"></i>
+                        <span class="en-content">Request Consultation</span>
+                        <span class="ar-content hidden">طلب استشارة</span>
+                    </button>
+                    <a href="#projects" class="btn btn-secondary magnetic">
+                        <i class="fas fa-rocket"></i>
+                        <span class="en-content">Explore Projects</span>
+                        <span class="ar-content hidden">استكشف المشاريع</span>
+                    </a>
                 </div>
-                <div class="hero-visual">
-                    <div class="hero-cards">
-                        <div class="hero-card">
-                            <i class="fas fa-heartbeat text-2xl text-red-500 mb-2"></i>
-                            <h3 class="font-bold mb-1 text-sm">
-                                <span class="english-content">PyHeart</span>
-                                <span class="arabic-content">PyHeart</span>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span class="english-content">Healthcare Interoperability</span>
-                                <span class="arabic-content">التشغيل البيني الصحي</span>
-                            </p>
+            </div>
+            
+            <!-- Floating Business Card -->
+            <div class="business-card">
+                <div class="card-avatar">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="card-name">
+                    <span class="en-content">Dr. Mohamed El Fadil</span>
+                    <span class="ar-content hidden">د. محمد الفاضل</span>
+                </div>
+                <div class="card-title">
+                    <span class="en-content">Critical Care Physician | BrainSAIT Founder</span>
+                    <span class="ar-content hidden">طبيب عناية مركزة | مؤسس برينسايت</span>
+                </div>
+                <div class="card-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="en-content">Riyadh, Saudi Arabia</span>
+                    <span class="ar-content hidden">الرياض، المملكة العربية السعودية</span>
+                </div>
+                <div class="card-stats">
+                    <div style="display: flex; justify-content: space-between; text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent-cyan);">10+</div>
+                            <div style="color: var(--text-muted);">
+                                <span class="en-content">Years</span>
+                                <span class="ar-content hidden">سنوات</span>
+                            </div>
                         </div>
-                        <div class="hero-card">
-                            <i class="fas fa-brain text-2xl text-purple-500 mb-2"></i>
-                            <h3 class="font-bold mb-1 text-sm">
-                                <span class="english-content">PyBrain</span>
-                                <span class="arabic-content">PyBrain</span>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span class="english-content">AI Healthcare Intelligence</span>
-                                <span class="arabic-content">ذكاء الرعاية الصحية</span>
-                            </p>
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent-green);">50+</div>
+                            <div style="color: var(--text-muted);">
+                                <span class="en-content">Projects</span>
+                                <span class="ar-content hidden">مشروع</span>
+                            </div>
                         </div>
-                        <div class="hero-card">
-                            <i class="fas fa-link text-2xl text-blue-500 mb-2"></i>
-                            <h3 class="font-bold mb-1 text-sm">
-                                <span class="english-content">Integrated Solutions</span>
-                                <span class="arabic-content">الحلول المتكاملة</span>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span class="english-content">Unified Healthcare</span>
-                                <span class="arabic-content">رعاية صحية موحدة</span>
-                            </p>
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent-purple);">1000+</div>
+                            <div style="color: var(--text-muted);">
+                                <span class="en-content">Patients</span>
+                                <span class="ar-content hidden">مريض</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="english-content">Our Projects</span>
-                    <span class="arabic-content">مشاريعنا</span>
-                </h2>
-                <p class="section-subtitle">
-                    <span class="english-content">Innovative healthcare AI solutions designed to improve patient outcomes</span>
-                    <span class="arabic-content">حلول ذكاء اصطناعي صحية مبتكرة لتحسين نتائج المرضى</span>
-                </p>
-            </div>
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">Featured Projects</span>
+                <span class="ar-content hidden">المشاريع المميزة</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Innovative healthcare AI solutions transforming medical practice</span>
+                <span class="ar-content hidden">حلول الذكاء الاصطناعي الطبية المبتكرة التي تحول الممارسة الطبية</span>
+            </p>
+            
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3 class="project-title">PyHeart</h3>
-                    <p class="project-description">
-                        <span class="english-content">Universal integration platform for healthcare systems with seamless connectivity and secure data exchange.</span>
-                        <span class="arabic-content">منصة تكامل عالمية لأنظمة الرعاية الصحية مع اتصال سلس وتبادل آمن للبيانات.</span>
-                    </p>
-                    <a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" rel="noopener" class="project-link">
-                        <span class="english-content">Learn More</span>
-                        <span class="arabic-content">اعرف المزيد</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="project-title">PyBrain</h3>
-                    <p class="project-description">
-                        <span class="english-content">AI-powered healthcare data harmonization and decision support system with advanced clinical capabilities.</span>
-                        <span class="arabic-content">نظام توحيد بيانات الرعاية الصحية ودعم القرار بالذكاء الاصطناعي مع قدرات سريرية متقدمة.</span>
-                    </p>
-                    <a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" rel="noopener" class="project-link">
-                        <span class="english-content">Learn More</span>
-                        <span class="arabic-content">اعرف المزيد</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <h3 class="project-title">Integrated Solutions</h3>
-                    <p class="project-description">
-                        <span class="english-content">Comprehensive solution combining interoperability and AI intelligence for unified healthcare systems.</span>
-                        <span class="arabic-content">حل شامل يجمع التشغيل البيني والذكاء الاصطناعي لأنظمة رعاية صحية موحدة.</span>
-                    </p>
-                    <a href="https://pypi.org/user/Fadil369/" target="_blank" rel="noopener" class="project-link">
-                        <span class="english-content">Learn More</span>
-                        <span class="arabic-content">اعرف المزيد</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions Section -->
-    <section id="solutions" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="english-content">Our Solutions</span>
-                    <span class="arabic-content">حلولنا</span>
-                </h2>
-                <p class="section-subtitle">
-                    <span class="english-content">Comprehensive healthcare solutions powered by cutting-edge AI technology</span>
-                    <span class="arabic-content">حلول رعاية صحية شاملة مدعومة بأحدث تقنيات الذكاء الاصطناعي</span>
-                </p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3 class="project-title">
-                        <span class="english-content">Early Disease Detection</span>
-                        <span class="arabic-content">الكشف المبكر عن الأمراض</span>
-                    </h3>
-                    <p class="project-description">
-                        <span class="english-content">Advanced AI algorithms for early detection and prediction of diseases through timely intervention.</span>
-                        <span class="arabic-content">خوارزميات ذكاء اصطناعي متقدمة للكشف المبكر والتنبؤ بالأمراض من خلال التدخل المبكر.</span>
-                    </p>
-                </div>
-                <div class="project-card">
+                <a href="https://gp.thefadil.site" target="_blank" class="project-card fade-in-up">
                     <div class="project-icon">
                         <i class="fas fa-user-md"></i>
                     </div>
                     <h3 class="project-title">
-                        <span class="english-content">Personalized Treatment</span>
-                        <span class="arabic-content">العلاج الشخصي</span>
+                        <span class="en-content">GP Portal</span>
+                        <span class="ar-content hidden">بوابة الطب العام</span>
                     </h3>
                     <p class="project-description">
-                        <span class="english-content">AI-driven personalized treatment recommendations based on patient data and latest research.</span>
-                        <span class="arabic-content">توصيات علاج شخصية مدفوعة بالذكاء الاصطناعي بناءً على بيانات المريض وأحدث الأبحاث.</span>
+                        <span class="en-content">Advanced general practice management platform with AI-driven patient care workflows and intelligent decision support systems.</span>
+                        <span class="ar-content hidden">منصة إدارة متقدمة للطب العام مع سير عمل رعاية المرضى المدعوم بالذكاء الاصطناعي وأنظمة دعم القرار الذكية.</span>
                     </p>
-                </div>
-                <div class="project-card">
+                </a>
+                
+                <a href="https://givc.brainsait.io" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">GIVC Platform</span>
+                        <span class="ar-content hidden">منصة GIVC</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Global Intelligent Virtual Care - Next-generation telemedicine with AI-powered diagnostics and remote patient monitoring.</span>
+                        <span class="ar-content hidden">الرعاية الافتراضية الذكية العالمية - طب بُعد من الجيل التالي مع التشخيص المدعوم بالذكاء الاصطناعي ومراقبة المرضى عن بُعد.</span>
+                    </p>
+                </a>
+                
+                <a href="https://brainsait.io" target="_blank" class="project-card fade-in-up">
                     <div class="project-icon">
                         <i class="fas fa-hospital"></i>
                     </div>
                     <h3 class="project-title">
-                        <span class="english-content">Healthcare Optimization</span>
-                        <span class="arabic-content">تحسين الرعاية الصحية</span>
+                        <span class="en-content">BrainSAIT Core</span>
+                        <span class="ar-content hidden">برينسايت الأساسي</span>
                     </h3>
                     <p class="project-description">
-                        <span class="english-content">Streamline operations, reduce costs, and improve efficiency through intelligent automation.</span>
-                        <span class="arabic-content">تبسيط العمليات وخفض التكاليف وتحسين الكفاءة من خلال الأتمتة الذكية.</span>
+                        <span class="en-content">Comprehensive healthcare technology platform offering AI-driven medical solutions and business intelligence for modern healthcare.</span>
+                        <span class="ar-content hidden">منصة تكنولوجيا رعاية صحية شاملة تقدم حلول طبية مدعومة بالذكاء الاصطناعي وذكاء الأعمال للرعاية الصحية الحديثة.</span>
                     </p>
-                </div>
+                </a>
+                
+                <a href="https://care.brainsait.io" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">BrainSAIT Care</span>
+                        <span class="ar-content hidden">رعاية برينسايت</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Specialized patient care management system with AI-powered clinical decision support and personalized treatment planning.</span>
+                        <span class="ar-content hidden">نظام إدارة رعاية المرضى المتخصص مع دعم القرار السريري المدعوم بالذكاء الاصطناعي وتخطيط العلاج الشخصي.</span>
+                    </p>
+                </a>
+                
+                <a href="https://read.thefadil.site/" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">OI vs AI Book</span>
+                        <span class="ar-content hidden">كتاب الذكاء الأصلي مقابل الاصطناعي</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Published book exploring the relationship between Original Intelligence (human brain) and Artificial Intelligence in healthcare.</span>
+                        <span class="ar-content hidden">كتاب منشور يستكشف العلاقة بين الذكاء الأصلي (الدماغ البشري) والذكاء الاصطناعي في الرعاية الصحية.</span>
+                    </p>
+                </a>
+                
+                <a href="https://givc-academy.brainsait.io" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">GIVC Academy</span>
+                        <span class="ar-content hidden">أكاديمية GIVC</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Educational platform for healthcare professionals with bilingual content and interactive AI-powered learning modules.</span>
+                        <span class="ar-content hidden">منصة تعليمية للمهنيين الصحيين مع محتوى ثنائي اللغة ووحدات تعلم تفاعلية مدعومة بالذكاء الاصطناعي.</span>
+                    </p>
+                </a>
             </div>
         </div>
     </section>
-
-    <!-- Pre-Order Form Section -->
-    <section id="pre-order" class="form-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="english-content">Start Your Digital Project</span>
-                    <span class="arabic-content">ابدأ مشروعك الرقمي</span>
-                </h2>
-                <p class="section-subtitle">
-                    <span class="english-content">Transform your ideas into reality with our expert team</span>
-                    <span class="arabic-content">حول أفكارك إلى واقع مع فريقنا الخبير</span>
-                </p>
+    
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">AI Tools & Utilities</span>
+                <span class="ar-content hidden">أدوات ومرافق الذكاء الاصطناعي</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Powerful tools designed to streamline healthcare workflows</span>
+                <span class="ar-content hidden">أدوات قوية مصممة لتبسيط سير عمل الرعاية الصحية</span>
+            </p>
+            
+            <div class="tools-grid">
+                <a href="https://context.thefadil.site/" target="_blank" class="tool-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">AI Context Generator</span>
+                        <span class="ar-content hidden">مولد السياق بالذكاء الاصطناعي</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Intelligent prompt engineering platform for creating contextually-aware AI instructions.</span>
+                        <span class="ar-content hidden">منصة هندسة التوجيهات الذكية لإنشاء تعليمات الذكاء الاصطناعي المدركة للسياق.</span>
+                    </p>
+                </a>
+                
+                <a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" class="tool-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">Excel Consolidator</span>
+                        <span class="ar-content hidden">موحد إكسل</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Advanced data consolidation tool for merging complex Excel datasets with AI assistance.</span>
+                        <span class="ar-content hidden">أداة توحيد البيانات المتقدمة لدمج مجموعات بيانات إكسل المعقدة بمساعدة الذكاء الاصطناعي.</span>
+                    </p>
+                </a>
+                
+                <a href="https://healthcare-insurance-analysis.fadil.workers.dev/" target="_blank" class="tool-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">Insurance Analyzer</span>
+                        <span class="ar-content hidden">محلل التأمين</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">AI-driven insurance claims analysis with predictive modeling and fraud detection.</span>
+                        <span class="ar-content hidden">تحليل مطالبات التأمين المدعوم بالذكاء الاصطناعي مع النمذجة التنبؤية وكشف الاحتيال.</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">Connect With Me</span>
+                <span class="ar-content hidden">تواصل معي</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Let's collaborate on the future of healthcare technology</span>
+                <span class="ar-content hidden">دعنا نتعاون في مستقبل تكنولوجيا الرعاية الصحية</span>
+            </p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <button class="btn btn-primary magnetic" onclick="openConsultationModal()">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="en-content">Schedule Free Consultation</span>
+                    <span class="ar-content hidden">جدولة استشارة مجانية</span>
+                </button>
             </div>
             
-            <!-- Progress Bar -->
-            <div class="progress-container">
-                <div class="container mx-auto px-4 py-3">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-xs font-semibold text-gray-600">
-                            <span class="english-content">Step <span id="currentStepEn">1</span> of 6</span>
-                            <span class="arabic-content">الخطوة <span id="currentStep">1</span> من 6</span>
-                        </span>
-                        <span class="text-xs font-semibold text-blue-600">
-                            <span id="progressPercent">17%</span>
-                        </span>
+            <div class="social-links">
+                <a href="https://x.com/brainsait369" target="_blank" class="social-link">
+                    <i class="fab fa-x-twitter"></i>
+                    <div>
+                        <div style="font-weight: 600;">X (Twitter)</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">@brainsait369</div>
                     </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="progressBar" class="progress-bar h-2 rounded-full" style="width: 16.67%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step Indicators -->
-            <div class="flex justify-center items-center space-x-2 rtl:space-x-reverse mt-6 mb-6" id="stepIndicators">
-                <div class="step-indicator active" id="stepIndicator1">1</div>
-                <div class="w-4 h-0.5 bg-gray-300"></div>
-                <div class="step-indicator" id="stepIndicator2">2</div>
-                <div class="w-4 h-0.5 bg-gray-300"></div>
-                <div class="step-indicator" id="stepIndicator3">3</div>
-                <div class="w-4 h-0.5 bg-gray-300"></div>
-                <div class="step-indicator" id="stepIndicator4">4</div>
-                <div class="w-4 h-0.5 bg-gray-300"></div>
-                <div class="step-indicator" id="stepIndicator5">5</div>
-                <div class="w-4 h-0.5 bg-gray-300"></div>
-                <div class="step-indicator" id="stepIndicator6">6</div>
-            </div>
-
-            <form id="preOrderForm" class="glass-card max-w-4xl mx-auto">
+                </a>
                 
-                <!-- Step 1: Basic Information -->
-                <div class="form-step active" id="step1">
-                    <div class="text-center mb-8">
-                        <div class="text-4xl mb-3">👋</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            <span class="english-content">Welcome! Let's get to know you</span>
-                            <span class="arabic-content">مرحباً! لنتعرف عليك</span>
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            <span class="english-content">Start your digital journey with us</span>
-                            <span class="arabic-content">ابدأ رحلتك الرقمية معنا</span>
-                        </p>
+                <a href="https://www.linkedin.com/in/fadil369" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <div style="font-weight: 600;">LinkedIn</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">Professional Network</div>
                     </div>
-                    
-                    <div class="grid-cols-1 lg:grid-cols-2">
-                        <div class="space-y-2">
-                            <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-user mr-2 text-blue-500"></i>
-                                <span class="english-content">Full Name *</span>
-                                <span class="arabic-content">الاسم الكامل *</span>
-                            </label>
-                            <input type="text" id="fullName" name="fullName" required class="input-field" placeholder="John Doe" aria-label="Full Name">
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-envelope mr-2 text-blue-500"></i>
-                                <span class="english-content">Email Address *</span>
-                                <span class="arabic-content">البريد الإلكتروني *</span>
-                            </label>
-                            <input type="email" id="email" name="email" required class="input-field" placeholder="email@example.com" aria-label="Email Address">
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-phone mr-2 text-blue-500"></i>
-                                <span class="english-content">Phone Number *</span>
-                                <span class="arabic-content">رقم الهاتف *</span>
-                            </label>
-                            <input type="tel" id="phone" name="phone" required class="input-field" placeholder="+1234567890" aria-label="Phone Number">
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label for="location" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
-                                <span class="english-content">City/Country</span>
-                                <span class="arabic-content">المدينة/البلد</span>
-                            </label>
-                            <input type="text" id="location" name="location" class="input-field" placeholder="City, Country" aria-label="City/Country">
-                        </div>
-                        
-                        <div class="space-y-2 lg:col-span-2">
-                            <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-building mr-2 text-blue-500"></i>
-                                <span class="english-content">Company/Organization</span>
-                                <span class="arabic-content">الشركة/المؤسسة</span>
-                            </label>
-                            <input type="text" id="company" name="company" class="input-field" placeholder="Company Name" aria-label="Company Name">
-                        </div>
+                </a>
+                
+                <a href="https://github.com/fadil369" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <div style="font-weight: 600;">GitHub</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">Open Source Projects</div>
                     </div>
-                </div>
+                </a>
+                
+                <a href="mailto:Fadil369@hotmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <div style="font-weight: 600;">Email</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">Fadil369@hotmail.com</div>
+                    </div>
+                </a>
+                
+                <a href="tel:+966510010991" class="social-link">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div style="font-weight: 600;">Phone</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">+966-5100-10-991</div>
+                    </div>
+                </a>
+                
+                <a href="https://calendly.com/fadil369" target="_blank" class="social-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <div style="font-weight: 600;">Schedule Meeting</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">Calendly</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultationModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeConsultationModal()">&times;</button>
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent-cyan);">
+                    <i class="fas fa-stethoscope" style="margin-right: 0.5rem;"></i>
+                    <span class="en-content">Healthcare Consultation</span>
+                    <span class="ar-content hidden">استشارة طبية</span>
+                </h2>
+                <p style="color: var(--text-secondary);">
+                    <span class="en-content">Let's discuss how BrainSAIT can transform your healthcare needs</span>
+                    <span class="ar-content hidden">دعنا نناقش كيف يمكن لبرينسايت تحويل احتياجاتك الصحية</span>
+                </p>
+            </div>
 
-                <!-- Step 2: Service Selection -->
-                <div class="form-step" id="step2">
-                    <div class="text-center mb-8">
-                        <div class="text-4xl mb-3">🎯</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            <span class="english-content">What service do you need?</span>
-                            <span class="arabic-content">ما نوع الخدمة المطلوبة؟</span>
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            <span class="english-content">Choose from our digital solutions</span>
-                            <span class="arabic-content">اختر من حلولنا الرقمية</span>
-                        </p>
-                    </div>
-                    
-                    <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
-                        <div class="service-card" data-service="website">
-                            <div class="text-3xl mb-2">🌐</div>
-                            <h4 class="font-bold text-base text-gray-800 mb-2">
-                                <span class="english-content">Website</span>
-                                <span class="arabic-content">موقع إلكتروني</span>
-                            </h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                <span class="english-content">Responsive websites optimized for search engines</span>
-                                <span class="arabic-content">مواقع متجاوبة محسنة لمحركات البحث</span>
-                            </p>
-                        </div>
-                        
-                        <div class="service-card" data-service="mobile-app">
-                            <div class="text-3xl mb-2">📱</div>
-                            <h4 class="font-bold text-base text-gray-800 mb-2">
-                                <span class="english-content">Mobile App</span>
-                                <span class="arabic-content">تطبيق جوال</span>
-                            </h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                <span class="english-content">High-performance iOS & Android apps</span>
-                                <span class="arabic-content">تطبيقات iOS و Android عالية الأداء</span>
-                            </p>
-                        </div>
-                        
-                        <div class="service-card" data-service="chatbot">
-                            <div class="text-3xl mb-2">🤖</div>
-                            <h4 class="font-bold text-base text-gray-800 mb-2">
-                                <span class="english-content">Smart Chatbot</span>
-                                <span class="arabic-content">روبوت ذكي</span>
-                            </h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                <span class="english-content">AI-powered digital assistant</span>
-                                <span class="arabic-content">مساعد رقمي بالذكاء الاصطناعي</span>
-                            </p>
-                        </div>
-                        
-                        <div class="service-card" data-service="automation">
-                            <div class="text-3xl mb-2">⚡</div>
-                            <h4 class="font-bold text-base text-gray-800 mb-2">
-                                <span class="english-content">Automation</span>
-                                <span class="arabic-content">أتمتة العمليات</span>
-                            </h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                <span class="english-content">Improve efficiency and productivity</span>
-                                <span class="arabic-content">تحسين الكفاءة والإنتاجية</span>
-                            </p>
-                        </div>
-                        
-                        <div class="service-card" data-service="ai-solution">
-                            <div class="text-3xl mb-2">🧠</div>
-                            <h4 class="font-bold text-base text-gray-800 mb-2">
-                                <span class="english-content">AI Solutions</span>
-                                <span class="arabic-content">حلول الذكاء الاصطناعي</span>
-                            </h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                <span class="english-content">Data analysis and prediction</span>
-                                <span class="arabic-content">تحليل البيانات والتنبؤ</span>
-                            </p>
-                        </div>
-                        
-                        <div class="service-card" data-service="other">
-                            <div class="text-3xl mb-2">💡</div>
-                            <h4 class="font-bold text-base text-gray-800 mb-2">
-                                <span class="english-content">Custom Service</span>
-                                <span class="arabic-content">خدمة مخصصة</span>
-                            </h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                <span class="english-content">Solutions for your specific needs</span>
-                                <span class="arabic-content">حلول لاحتياجاتك الخاصة</span>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <input type="hidden" name="serviceType" id="serviceType">
-                    
-                    <div class="mt-6 hidden" id="otherServiceInput">
-                        <label for="otherService" class="block text-sm font-semibold text-gray-700 mb-2">
-                            <span class="english-content">Please specify the service type</span>
-                            <span class="arabic-content">يرجى تحديد نوع الخدمة</span>
+            <form id="consultationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-user"></i>
+                            <span class="en-content">Full Name *</span>
+                            <span class="ar-content hidden">الاسم الكامل *</span>
                         </label>
-                        <input type="text" id="otherService" name="otherService" class="input-field" placeholder="Describe your custom service">
+                        <input type="text" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-envelope"></i>
+                            <span class="en-content">Email Address *</span>
+                            <span class="ar-content hidden">البريد الإلكتروني *</span>
+                        </label>
+                        <input type="email" name="email" required>
                     </div>
                 </div>
 
-                <!-- Step 3: Project Details -->
-                <div class="form-step" id="step3">
-                    <div class="text-center mb-8">
-                        <div class="text-4xl mb-3">📋</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            <span class="english-content">Tell us about your project</span>
-                            <span class="arabic-content">أخبرنا عن مشروعك</span>
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            <span class="english-content">More details help us provide better solutions</span>
-                            <span class="arabic-content">التفاصيل تساعدنا في تقديم حلول أفضل</span>
-                        </p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-phone"></i>
+                            <span class="en-content">Phone Number</span>
+                            <span class="ar-content hidden">رقم الهاتف</span>
+                        </label>
+                        <input type="tel" name="phone">
                     </div>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <label for="projectDescription" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-file-alt mr-2 text-blue-500"></i>
-                                <span class="english-content">Project Description *</span>
-                                <span class="arabic-content">وصف المشروع *</span>
-                            </label>
-                            <textarea id="projectDescription" name="projectDescription" rows="4" required class="input-field resize-none" placeholder="Describe your project in detail..."></textarea>
-                        </div>
-                        
-                        <div class="grid-cols-1 lg:grid-cols-2">
-                            <div>
-                                <label for="projectGoal" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-bullseye mr-2 text-blue-500"></i>
-                                    <span class="english-content">Project Goal</span>
-                                    <span class="arabic-content">هدف المشروع</span>
-                                </label>
-                                <select id="projectGoal" name="projectGoal" class="input-field">
-                                    <option value="">Select Goal</option>
-                                    <option value="business">Business - Increase sales</option>
-                                    <option value="personal">Personal - Website/Blog</option>
-                                    <option value="education">Educational - Learning platform</option>
-                                    <option value="healthcare">Healthcare - Medical services</option>
-                                    <option value="nonprofit">Non-profit - Social organization</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label for="targetAudience" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-users mr-2 text-blue-500"></i>
-                                    <span class="english-content">Target Audience</span>
-                                    <span class="arabic-content">الجمهور المستهدف</span>
-                                </label>
-                                <input type="text" id="targetAudience" name="targetAudience" class="input-field" placeholder="Who is your target audience?">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="budget" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-money-bill-wave mr-2 text-green-500"></i>
-                                <span class="english-content">Expected Budget (SAR)</span>
-                                <span class="arabic-content">الميزانية المتوقعة (ريال)</span>
-                            </label>
-                            <select id="budget" name="budget" class="input-field">
-                                <option value="">Select budget range</option>
-                                <option value="5000-15000">5,000 - 15,000 SAR</option>
-                                <option value="15000-30000">15,000 - 30,000 SAR</option>
-                                <option value="30000-50000">30,000 - 50,000 SAR</option>
-                                <option value="50000+">50,000+ SAR</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-hospital"></i>
+                            <span class="en-content">Organization</span>
+                            <span class="ar-content hidden">المؤسسة</span>
+                        </label>
+                        <input type="text" name="organization">
                     </div>
                 </div>
 
-                <!-- Step 4: Features -->
-                <div class="form-step" id="step4">
-                    <div class="text-center mb-8">
-                        <div class="text-4xl mb-3">⚙️</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            <span class="english-content">Features & Requirements</span>
-                            <span class="arabic-content">المميزات والمتطلبات</span>
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            <span class="english-content">Choose features for your project</span>
-                            <span class="arabic-content">اختر مميزات لمشروعك</span>
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-puzzle-piece mr-2 text-blue-500"></i>
-                                <span class="english-content">Required Features</span>
-                                <span class="arabic-content">المميزات المطلوبة</span>
-                            </h4>
-                            <div class="grid-cols-1 md:grid-cols-2">
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="user-authentication">
-                                    <div class="feature-label">
-                                        <i class="fas fa-user-shield text-blue-500"></i>
-                                        <span class="english-content">User Authentication</span>
-                                        <span class="arabic-content">نظام المستخدمين</span>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="payment-integration">
-                                    <div class="feature-label">
-                                        <i class="fas fa-credit-card text-green-500"></i>
-                                        <span class="english-content">Payment Integration</span>
-                                        <span class="arabic-content">المدفوعات الإلكترونية</span>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="cms">
-                                    <div class="feature-label">
-                                        <i class="fas fa-edit text-purple-500"></i>
-                                        <span class="english-content">Content Management</span>
-                                        <span class="arabic-content">إدارة المحتوى</span>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="multilingual">
-                                    <div class="feature-label">
-                                        <i class="fas fa-globe text-indigo-500"></i>
-                                        <span class="english-content">Multilingual Support</span>
-                                        <span class="arabic-content">دعم متعدد اللغات</span>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="analytics">
-                                    <div class="feature-label">
-                                        <i class="fas fa-chart-bar text-orange-500"></i>
-                                        <span class="english-content">Analytics & Reports</span>
-                                        <span class="arabic-content">التحليلات والتقارير</span>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="admin-panel">
-                                    <div class="feature-label">
-                                        <i class="fas fa-cogs text-gray-600"></i>
-                                        <span class="english-content">Admin Dashboard</span>
-                                        <span class="arabic-content">لوحة تحكم إدارية</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="additionalFeatures" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-plus-circle mr-2 text-blue-500"></i>
-                                <span class="english-content">Additional Features</span>
-                                <span class="arabic-content">مميزات إضافية</span>
-                            </label>
-                            <textarea id="additionalFeatures" name="additionalFeatures" rows="3" class="input-field resize-none" placeholder="Any additional features..."></textarea>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-cogs"></i>
+                        <span class="en-content">Service Type *</span>
+                        <span class="ar-content hidden">نوع الخدمة *</span>
+                    </label>
+                    <select name="serviceType" required>
+                        <option value="" class="en-content">Select a service...</option>
+                        <option value="" class="ar-content hidden">اختر خدمة...</option>
+                        <option value="telemedicine" class="en-content">Telemedicine Platform</option>
+                        <option value="telemedicine" class="ar-content hidden">منصة الطب عن بُعد</option>
+                        <option value="ai-healthcare" class="en-content">AI Healthcare Solutions</option>
+                        <option value="ai-healthcare" class="ar-content hidden">حلول الذكاء الاصطناعي الطبية</option>
+                        <option value="consultation" class="en-content">Healthcare Consulting</option>
+                        <option value="consultation" class="ar-content hidden">استشارات الرعاية الصحية</option>
+                    </select>
                 </div>
 
-                <!-- Step 5: Design Preferences -->
-                <div class="form-step" id="step5">
-                    <div class="text-center mb-8">
-                        <div class="text-4xl mb-3">🎨</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            <span class="english-content">Design Preferences</span>
-                            <span class="arabic-content">تفضيلات التصميم</span>
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            <span class="english-content">Help us create the perfect design</span>
-                            <span class="arabic-content">ساعدنا في إنشاء التصميم المثالي</span>
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <label for="designStyle" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-palette mr-2 text-pink-500"></i>
-                                <span class="english-content">Design Style</span>
-                                <span class="arabic-content">نمط التصميم</span>
-                            </label>
-                            <select id="designStyle" name="designStyle" class="input-field">
-                                <option value="">Select design style</option>
-                                <option value="modern">Modern & Minimal</option>
-                                <option value="classic">Classic & Elegant</option>
-                                <option value="creative">Creative & Bold</option>
-                                <option value="professional">Professional & Clean</option>
-                            </select>
-                        </div>
-                        
-                        <div class="grid-cols-1 lg:grid-cols-2">
-                            <div>
-                                <label for="preferredColors" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-paint-brush mr-2 text-blue-500"></i>
-                                    <span class="english-content">Preferred Colors</span>
-                                    <span class="arabic-content">الألوان المفضلة</span>
-                                </label>
-                                <input type="text" id="preferredColors" name="preferredColors" class="input-field" placeholder="Blue, White, Gold">
-                            </div>
-                            
-                            <div>
-                                <label for="referenceWebsites" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-link mr-2 text-blue-500"></i>
-                                    <span class="english-content">Reference Websites</span>
-                                    <span class="arabic-content">مواقع مرجعية</span>
-                                </label>
-                                <input type="url" id="referenceWebsites" name="referenceWebsites" class="input-field" placeholder="https://example.com">
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-base font-bold text-gray-800 mb-3 flex items-center">
-                                <i class="fas fa-question-circle mr-2 text-blue-500"></i>
-                                <span class="english-content">Existing Brand?</span>
-                                <span class="arabic-content">هوية بصرية موجودة؟</span>
-                            </h4>
-                            <div class="flex flex-col space-y-2">
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="existingBrand" value="yes" class="text-blue-600 focus:ring-blue-500 mr-2">
-                                    <span class="text-sm">
-                                        <span class="english-content">Yes, I have logo/colors</span>
-                                        <span class="arabic-content">نعم، لدي شعار/ألوان</span>
-                                    </span>
-                                </label>
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="existingBrand" value="no" class="text-blue-600 focus:ring-blue-500 mr-2">
-                                    <span class="text-sm">
-                                        <span class="english-content">No, need new design</span>
-                                        <span class="arabic-content">لا، أحتاج تصميم جديد</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-file-alt"></i>
+                        <span class="en-content">Project Description *</span>
+                        <span class="ar-content hidden">وصف المشروع *</span>
+                    </label>
+                    <textarea name="projectDescription" rows="4" required placeholder="Please describe your healthcare technology needs..."></textarea>
                 </div>
 
-                <!-- Step 6: Final Details -->
-                <div class="form-step" id="step6">
-                    <div class="text-center mb-8">
-                        <div class="text-4xl mb-3">🎯</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            <span class="english-content">Timeline & Communication</span>
-                            <span class="arabic-content">الجدول الزمني والتواصل</span>
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            <span class="english-content">Final step! Let us know your preferences</span>
-                            <span class="arabic-content">آخر خطوة! أخبرنا عن تفضيلاتك</span>
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="grid-cols-1 lg:grid-cols-2">
-                            <div>
-                                <label for="deliveryDate" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-calendar-alt mr-2 text-blue-500"></i>
-                                    <span class="english-content">Delivery Date</span>
-                                    <span class="arabic-content">موعد التسليم</span>
-                                </label>
-                                <input type="date" id="deliveryDate" name="deliveryDate" class="input-field">
-                            </div>
-                            
-                            <div>
-                                <label for="timelineFlexibility" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-clock mr-2 text-green-500"></i>
-                                    <span class="english-content">Timeline Flexibility</span>
-                                    <span class="arabic-content">مرونة الموعد</span>
-                                </label>
-                                <select id="timelineFlexibility" name="timelineFlexibility" class="input-field">
-                                    <option value="">Select flexibility</option>
-                                    <option value="strict">Strict - No delays</option>
-                                    <option value="moderate">Moderate - 2 weeks extra</option>
-                                    <option value="flexible">Flexible - 1 month extra</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-base font-bold text-gray-800 mb-3 flex items-center">
-                                <i class="fas fa-comments mr-2 text-blue-500"></i>
-                                <span class="english-content">Communication Methods</span>
-                                <span class="arabic-content">طرق التواصل</span>
-                            </h4>
-                            <div class="grid-cols-2 md:grid-cols-4">
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="communication[]" value="email">
-                                    <div class="feature-label text-center flex-col">
-                                        <i class="fas fa-envelope text-xl mb-1 text-blue-500"></i>
-                                        <div class="text-xs">
-                                            <span class="english-content">Email</span>
-                                            <span class="arabic-content">إيميل</span>
-                                        </div>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="communication[]" value="whatsapp">
-                                    <div class="feature-label text-center flex-col">
-                                        <i class="fab fa-whatsapp text-xl mb-1 text-green-500"></i>
-                                        <div class="text-xs">WhatsApp</div>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="communication[]" value="phone">
-                                    <div class="feature-label text-center flex-col">
-                                        <i class="fas fa-phone text-xl mb-1 text-purple-500"></i>
-                                        <div class="text-xs">
-                                            <span class="english-content">Phone</span>
-                                            <span class="arabic-content">هاتف</span>
-                                        </div>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="communication[]" value="teams">
-                                    <div class="feature-label text-center flex-col">
-                                        <i class="fas fa-video text-xl mb-1 text-orange-500"></i>
-                                        <div class="text-xs">Video Call</div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="additionalNotes" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <i class="fas fa-comment-dots mr-2 text-blue-500"></i>
-                                <span class="english-content">Additional Notes</span>
-                                <span class="arabic-content">ملاحظات إضافية</span>
-                            </label>
-                            <textarea id="additionalNotes" name="additionalNotes" rows="3" class="input-field resize-none" placeholder="Any additional notes..."></textarea>
-                        </div>
-                        
-                        <div class="bg-gradient-to-r from-blue-50 to-green-50 p-4 rounded-lg border border-blue-200">
-                            <h4 class="font-bold text-base text-blue-800 mb-3 flex items-center">
-                                <i class="fas fa-route mr-2"></i>
-                                <span class="english-content">Next Steps</span>
-                                <span class="arabic-content">الخطوات التالية</span>
-                            </h4>
-                            <div class="space-y-2 text-gray-700 text-sm">
-                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                    <span>
-                                        <span class="english-content">Review within 24 hours</span>
-                                        <span class="arabic-content">مراجعة خلال 24 ساعة</span>
-                                    </span>
-                                </div>
-                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                                    <i class="fas fa-file-invoice-dollar text-blue-500"></i>
-                                    <span>
-                                        <span class="english-content">Detailed quote & timeline</span>
-                                        <span class="arabic-content">عرض سعر مفصل وجدول زمني</span>
-                                    </span>
-                                </div>
-                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                                    <i class="fas fa-rocket text-orange-500"></i>
-                                    <span>
-                                        <span class="english-content">Start work after approval</span>
-                                        <span class="arabic-content">بداية العمل بعد الموافقة</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="en-content">Request Consultation</span>
+                    <span class="ar-content hidden">طلب استشارة</span>
+                </button>
+
+                <div id="successMessage" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--accent-green); color: var(--accent-green); padding: 1rem; border-radius: 10px; text-align: center; margin-top: 1rem;">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="en-content">Thank you! Your consultation request has been submitted successfully.</span>
+                    <span class="ar-content hidden">شكراً لك! تم إرسال طلب الاستشارة بنجاح.</span>
                 </div>
 
-                <!-- Navigation Buttons -->
-                <div class="flex justify-between items-center mt-8 pt-6 border-t-2 border-gray-100">
-                    <button type="button" id="prevBtn" class="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-all duration-300 hidden flex items-center space-x-2 rtl:space-x-reverse">
-                        <i class="fas fa-arrow-left rtl:rotate-180"></i>
-                        <span class="english-content">Previous</span>
-                        <span class="arabic-content">السابق</span>
-                    </button>
-                    
-                    <button type="button" id="nextBtn" class="btn-primary px-6 py-3 text-white rounded-lg transition-all duration-300 flex items-center space-x-2 rtl:space-x-reverse ml-auto">
-                        <span class="english-content">Next</span>
-                        <span class="arabic-content">التالي</span>
-                        <i class="fas fa-arrow-right rtl:rotate-180"></i>
-                    </button>
-                    
-                    <button type="submit" id="submitBtn" class="btn-success px-8 py-3 text-white rounded-lg transition-all duration-300 hidden flex items-center space-x-2 rtl:space-x-reverse ml-auto">
-                        <i class="fas fa-paper-plane"></i>
-                        <span class="english-content">Submit</span>
-                        <span class="arabic-content">إرسال</span>
-                        <div id="submitSpinner" class="loading-spinner hidden ml-2 rtl:mr-2 rtl:ml-0"></div>
-                    </button>
+                <div id="errorMessage" style="display: none; background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; padding: 1rem; border-radius: 10px; text-align: center; margin-top: 1rem;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span class="en-content">There was an error submitting your request. Please try again.</span>
+                    <span class="ar-content hidden">حدث خطأ أثناء إرسال طلبك. يرجى المحاولة مرة أخرى.</span>
                 </div>
             </form>
         </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="english-content">Resources & Tools</span>
-                    <span class="arabic-content">الموارد والأدوات</span>
-                </h2>
-                <p class="section-subtitle">
-                    <span class="english-content">Explore additional resources and tools</span>
-                    <span class="arabic-content">استكشف الموارد والأدوات الإضافية</span>
-                </p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3 class="project-title">AI Docs Platform</h3>
-                    <p class="project-description">
-                        <span class="english-content">PDF uploads, AI analysis, and automated deployment with Cloudflare Containers.</span>
-                        <span class="arabic-content">رفع ملفات PDF وتحليل الذكاء الاصطناعي والنشر الآلي مع حاويات Cloudflare.</span>
-                    </p>
-                    <a href="https://ai-docs-cod-containers.fadil.workers.dev/" target="_blank" rel="noopener" class="project-link">
-                        <span class="english-content">Visit Platform</span>
-                        <span class="arabic-content">زيارة المنصة</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h3 class="project-title">Excel Consolidator</h3>
-                    <p class="project-description">
-                        <span class="english-content">Professional tool for consolidating Excel files with no size limits.</span>
-                        <span class="arabic-content">أداة احترافية لدمج ملفات Excel بدون حدود للحجم.</span>
-                    </p>
-                    <a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" rel="noopener" class="project-link">
-                        <span class="english-content">Try Tool</span>
-                        <span class="arabic-content">جرب الأداة</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3 class="project-title">OI vs AI Book</h3>
-                    <p class="project-description">
-                        <span class="english-content">Exploring human and artificial intelligence, future-proofing careers.</span>
-                        <span class="arabic-content">استكشاف الذكاء البشري والاصطناعي وحماية المهن من المستقبل.</span>
-                    </p>
-                    <a href="https://read.thefadil.site/" target="_blank" rel="noopener" class="project-link">
-                        <span class="english-content">Read Book</span>
-                        <span class="arabic-content">اقرأ الكتاب</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="english-content">Get in Touch</span>
-                    <span class="arabic-content">تواصل معنا</span>
-                </h2>
-                <p class="section-subtitle">
-                    <span class="english-content">Have a question? Send us a message</span>
-                    <span class="arabic-content">لديك سؤال؟ أرسل لنا رسالة</span>
-                </p>
-            </div>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="space-y-4">
-                        <div>
-                            <label for="contactName" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <span class="english-content">Name</span>
-                                <span class="arabic-content">الاسم</span>
-                            </label>
-                            <input type="text" id="contactName" name="contactName" required class="input-field" placeholder="Your Name" aria-label="Contact Name">
-                        </div>
-                        <div>
-                            <label for="contactEmail" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <span class="english-content">Email</span>
-                                <span class="arabic-content">البريد الإلكتروني</span>
-                            </label>
-                            <input type="email" id="contactEmail" name="contactEmail" required class="input-field" placeholder="your@email.com" aria-label="Contact Email">
-                        </div>
-                        <div>
-                            <label for="contactMessage" class="block text-sm font-semibold text-gray-700 mb-2">
-                                <span class="english-content">Message</span>
-                                <span class="arabic-content">الرسالة</span>
-                            </label>
-                            <textarea id="contactMessage" name="contactMessage" rows="4" required class="input-field resize-none" placeholder="Your message..." aria-label="Contact Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full">
-                            <span class="english-content">Send Message</span>
-                            <span class="arabic-content">إرسال الرسالة</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <h3 class="font-bold mb-2">
-                        <span class="english-content">Email</span>
-                        <span class="arabic-content">البريد الإلكتروني</span>
-                    </h3>
-                    <p>brainsait@hotmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe contact-icon"></i>
-                    <h3 class="font-bold mb-2">
-                        <span class="english-content">Website</span>
-                        <span class="arabic-content">الموقع</span>
-                    </h3>
-                    <p>www.brainsait.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt contact-icon"></i>
-                    <h3 class="font-bold mb-2">
-                        <span class="english-content">Location</span>
-                        <span class="arabic-content">الموقع</span>
-                    </h3>
-                    <p>Global</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>BRAINSAIT <span class="brand-arabic">برينسايت</span></h3>
-                    <p class="text-gray-600 mt-2">
-                        <span class="english-content">Healthcare AI Research & Open Source Development</span>
-                        <span class="arabic-content">أبحاث الذكاء الاصطناعي الصحي وتطوير المصادر المفتوحة</span>
-                    </p>
-                </div>
-                <div class="footer-section">
-                    <h3>
-                        <span class="english-content">Quick Links</span>
-                        <span class="arabic-content">روابط سريعة</span>
-                    </h3>
-                    <ul class="footer-links">
-                        <li><a href="#projects">
-                            <span class="english-content">Projects</span>
-                            <span class="arabic-content">المشاريع</span>
-                        </a></li>
-                        <li><a href="#solutions">
-                            <span class="english-content">Solutions</span>
-                            <span class="arabic-content">الحلول</span>
-                        </a></li>
-                        <li><a href="#pre-order">
-                            <span class="english-content">Start Project</span>
-                            <span class="arabic-content">ابدأ مشروعاً</span>
-                        </a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>
-                        <span class="english-content">Resources</span>
-                        <span class="arabic-content">الموارد</span>
-                    </h3>
-                    <ul class="footer-links">
-                        <li><a href="https://pypi.org/user/Fadil369/" target="_blank" rel="noopener">PyPI</a></li>
-                        <li><a href="https://github.com/brainsait" target="_blank" rel="noopener">GitHub</a></li>
-                        <li><a href="https://read.thefadil.site/" target="_blank" rel="noopener">Book</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 BRAINSAIT. All rights reserved. Dr. Mohamed El Fadil</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Success Message Modal -->
-    <div id="successMessage" class="hidden">
-        <div class="bg-white p-8 rounded-lg max-w-sm mx-4 text-center shadow-xl">
-            <div class="text-6xl mb-4">🎉</div>
-            <h3 class="text-xl font-bold text-green-600 mb-3">
-                <span class="english-content">Success!</span>
-                <span class="arabic-content">تم بنجاح!</span>
-            </h3>
-            <p class="text-gray-600 mb-6 text-sm">
-                <span class="english-content">We'll contact you within 24 hours</span>
-                <span class="arabic-content">سنتواصل معك خلال 24 ساعة</span>
-            </p>
-            <button type="button" onclick="closeSuccessMessage()" class="btn-primary px-6 py-2 text-white rounded-lg w-full">
-                <span class="english-content">Close</span>
-                <span class="arabic-content">إغلاق</span>
-            </button>
-        </div>
     </div>
 
-    <!-- Scripts -->
     <script>
-        // Global variables
-        let currentStep = 1;
-        const totalSteps = 6;
-        let currentLang = 'en';
-        let mobileMenuOpen = false;
+        // Initialize EmailJS (replace with your actual keys)
+        (function() {
+            emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+        })();
 
-        // Utility Functions
-        function showNotification(message, type = 'info', duration = 3000) {
-            const notification = document.createElement('div');
-            notification.className = `fixed top-4 right-4 z-50 px-4 py-2 rounded-lg shadow-lg transition-all duration-300 text-sm ${
-                type === 'error' ? 'bg-red-500 text-white' : 
-                type === 'success' ? 'bg-green-500 text-white' : 
-                'bg-blue-500 text-white'
-            }`;
-            notification.textContent = message;
-            document.body.appendChild(notification);
+        let isArabic = false;
+        let currentTheme = 'dark';
 
-            setTimeout(() => {
-                notification.style.opacity = '0';
-                setTimeout(() => notification.remove(), 300);
-            }, duration);
+        // Initialize particles
+        function initParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particlesContainer.appendChild(particle);
+
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 20000);
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                setTimeout(createParticle, i * 200);
+            }
+
+            setInterval(createParticle, 500);
         }
 
-        // Theme Toggle
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            const icon = document.getElementById('theme-icon');
-            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        }
-
-        // Language Toggle
+        // Language switching
         function setLanguage(lang) {
-            currentLang = lang;
-            document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-            document.documentElement.setAttribute('lang', lang);
-            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            isArabic = lang === 'ar';
+            const enElements = document.querySelectorAll('.en-content');
+            const arElements = document.querySelectorAll('.ar-content');
+            const langOptions = document.querySelectorAll('.lang-option');
             
-            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-            document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
-            
-            document.querySelectorAll('[data-en], [data-ar]').forEach(el => {
-                if (el.getAttribute(`data-${lang}`)) {
-                    el.textContent = el.getAttribute(`data-${lang}`);
-                }
-            });
-            
-            localStorage.setItem('language', lang);
-        }
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            mobileMenuOpen = !mobileMenuOpen;
-            const navLinks = document.getElementById('navLinks');
-            const menuToggle = document.getElementById('mobileMenuToggle');
-            
-            navLinks.classList.toggle('active', mobileMenuOpen);
-            menuToggle.innerHTML = mobileMenuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        }
-
-        // Form Step Management
-        function showStep(step) {
-            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-            
-            const currentStepEl = document.getElementById(`step${step}`);
-            if (currentStepEl) currentStepEl.classList.add('active');
-            
-            // Update step indicators
-            for (let i = 1; i <= totalSteps; i++) {
-                const indicator = document.getElementById(`stepIndicator${i}`);
-                if (indicator) {
-                    if (i < step) {
-                        indicator.classList.add('completed');
-                        indicator.classList.remove('active');
-                        indicator.innerHTML = '<i class="fas fa-check text-xs"></i>';
-                    } else if (i === step) {
-                        indicator.classList.add('active');
-                        indicator.classList.remove('completed');
-                        indicator.textContent = i;
-                    } else {
-                        indicator.classList.remove('active', 'completed');
-                        indicator.textContent = i;
-                    }
-                }
+            if (isArabic) {
+                enElements.forEach(el => el.classList.add('hidden'));
+                arElements.forEach(el => el.classList.remove('hidden'));
+                document.body.classList.add('arabic');
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                enElements.forEach(el => el.classList.remove('hidden'));
+                arElements.forEach(el => el.classList.add('hidden'));
+                document.body.classList.remove('arabic');
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', 'en');
             }
             
-            // Update progress bar
-            const progress = (step / totalSteps) * 100;
-            const progressBar = document.getElementById('progressBar');
-            if (progressBar) progressBar.style.width = `${progress}%`;
-            
-            const progressPercent = document.getElementById('progressPercent');
-            if (progressPercent) progressPercent.textContent = `${Math.round(progress)}%`;
-            
-            const currentStepSpan = document.getElementById('currentStep');
-            if (currentStepSpan) currentStepSpan.textContent = step;
-            
-            const currentStepEnSpan = document.getElementById('currentStepEn');
-            if (currentStepEnSpan) currentStepEnSpan.textContent = step;
-            
-            // Show/hide navigation buttons  
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            if (prevBtn) prevBtn.classList.toggle('hidden', step === 1);
-            if (nextBtn) nextBtn.classList.toggle('hidden', step === totalSteps);
-            if (submitBtn) submitBtn.classList.toggle('hidden', step !== totalSteps);
-        }
-
-        // Form validation
-        function validateStep(step) {
-            const currentStepElement = document.getElementById(`step${step}`);
-            if (!currentStepElement) return false;
-            
-            const requiredFields = currentStepElement.querySelectorAll('[required]');
-            let isValid = true;
-
-            document.querySelectorAll('.input-field').forEach(field => {
-                field.classList.remove('error', 'shake');
-            });
-
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    field.classList.add('error', 'shake');
-                    isValid = false;
-                    setTimeout(() => field.classList.remove('shake'), 500);
-                }
-            });
-
-            if (step === 2) {
-                const serviceType = document.getElementById('serviceType');
-                if (!serviceType || !serviceType.value) {
-                    showNotification(
-                        currentLang === 'ar' ? 'يرجى اختيار نوع الخدمة' : 'Please select a service type',
-                        'error'
-                    );
-                    isValid = false;
-                }
-            }
-
-            if (!isValid) {
-                showNotification(
-                    currentLang === 'ar' ? 'يرجى تعبئة الحقول المطلوبة' : 'Please fill required fields',
-                    'error'
-                );
-            }
-
-            return isValid;
-        }
-
-        // Service card selection
-        function initializeServiceCards() {
-            document.querySelectorAll('.service-card').forEach(card => {
-                card.addEventListener('click', function() {
-                    document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
-                    this.classList.add('selected');
-                    
-                    const service = this.getAttribute('data-service');
-                    const serviceTypeInput = document.getElementById('serviceType');
-                    if (serviceTypeInput) serviceTypeInput.value = service;
-                    
-                    const otherInput = document.getElementById('otherServiceInput');
-                    if (otherInput) {
-                        otherInput.classList.toggle('hidden', service !== 'other');
-                    }
-                });
-            });
-        }
-
-        // Auto-save form data
-        function autoSave() {
-            const form = document.getElementById('preOrderForm');
-            if (!form) return;
-            
-            const formData = new FormData(form);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            localStorage.setItem('brainsait_form_data', JSON.stringify(data));
-        }
-
-        // Load saved form data
-        function loadSavedData() {
-            const savedData = localStorage.getItem('brainsait_form_data');
-            if (savedData) {
-                try {
-                    const data = JSON.parse(savedData);
-                    Object.keys(data).forEach(key => {
-                        const field = document.querySelector(`[name="${key}"]`);
-                        if (field) field.value = data[key];
-                    });
-                } catch (e) {
-                    console.error('Error loading saved data:', e);
-                }
-            }
-        }
-
-        // Form submission handler
-        function handleFormSubmission(e) {
-            e.preventDefault();
-            
-            if (!validateStep(currentStep)) return;
-
-            const submitBtn = document.getElementById('submitBtn');
-            const spinner = document.getElementById('submitSpinner');
-            if (submitBtn && spinner) {
-                submitBtn.disabled = true;
-                spinner.classList.remove('hidden');
-            }
-
-            const form = document.getElementById('preOrderForm');
-            const formData = new FormData(form);
-            const data = {};
-            
-            for (let [key, value] of formData.entries()) {
-                if (data[key]) {
-                    if (Array.isArray(data[key])) {
-                        data[key].push(value);
-                    } else {
-                        data[key] = [data[key], value];
-                    }
+            // Update active language button
+            langOptions.forEach((option, index) => {
+                if ((index === 0 && !isArabic) || (index === 1 && isArabic)) {
+                    option.classList.add('active');
                 } else {
-                    data[key] = value;
+                    option.classList.remove('active');
                 }
-            }
-            
-            const checkboxGroups = ['features[]', 'communication[]'];
-            checkboxGroups.forEach(group => {
-                const cleanKey = group.replace('[]', '');
-                data[cleanKey] = formData.getAll(group);
             });
-
-            // Simulate form submission
-            setTimeout(() => {
-                if (submitBtn && spinner) {
-                    submitBtn.disabled = false;
-                    spinner.classList.add('hidden');
-                }
-                
-                const successMessage = document.getElementById('successMessage');
-                if (successMessage) successMessage.classList.remove('hidden');
-                
-                form.reset();
-                currentStep = 1;
-                showStep(1);
-                localStorage.removeItem('brainsait_form_data');
-                
-                showNotification(
-                    currentLang === 'ar' ? 'تم إرسال طلبك بنجاح!' : 'Request submitted successfully!',
-                    'success'
-                );
-            }, 2000);
         }
 
-        // Contact form submission
-        function handleContactSubmission(e) {
+        // Theme toggle (placeholder - already dark theme)
+        function toggleTheme() {
+            // Theme is already optimized for dark mode
+            const icon = document.getElementById('theme-icon');
+            if (currentTheme === 'dark') {
+                icon.className = 'fas fa-sun';
+                currentTheme = 'light';
+            } else {
+                icon.className = 'fas fa-moon';
+                currentTheme = 'dark';
+            }
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Magnetic effect for buttons
+        function initMagneticEffect() {
+            const magneticElements = document.querySelectorAll('.magnetic');
+            
+            magneticElements.forEach(el => {
+                el.addEventListener('mouseenter', function(e) {
+                    this.addEventListener('mousemove', magneticMove);
+                    this.addEventListener('mouseleave', magneticLeave);
+                });
+            });
+
+            function magneticMove(e) {
+                const rect = this.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const deltaX = (e.clientX - centerX) * 0.1;
+                const deltaY = (e.clientY - centerY) * 0.1;
+                
+                this.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+            }
+
+            function magneticLeave() {
+                this.style.transform = 'translate(0, 0)';
+                this.removeEventListener('mousemove', magneticMove);
+                this.removeEventListener('mouseleave', magneticLeave);
+            }
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Modal functions
+        function openConsultationModal() {
+            document.getElementById('consultationModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConsultationModal() {
+            document.getElementById('consultationModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Reset form
+            document.getElementById('consultationForm').reset();
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            showNotification(
-                currentLang === 'ar' ? 'شكراً لتواصلك معنا!' : 'Thank you for contacting us!',
-                'success'
-            );
-            
-            e.target.reset();
-        }
-
-        // Close success message
-        function closeSuccessMessage() {
+            const submitBtn = document.getElementById('submitBtn');
             const successMessage = document.getElementById('successMessage');
-            if (successMessage) successMessage.classList.add('hidden');
-        }
-
-        // Keyboard event handlers
-        function handleKeyboardEvents() {
-            document.getElementById('lang-en')?.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setLanguage('en');
-                }
-            });
-
-            document.getElementById('lang-ar')?.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setLanguage('ar');
-                }
-            });
-
-            document.querySelector('.theme-toggle')?.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleTheme();
-                }
-            });
-        }
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set theme from localStorage
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            const icon = document.getElementById('theme-icon');
-            if (icon) icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            const errorMessage = document.getElementById('errorMessage');
             
-            // Set language from localStorage
-            const savedLang = localStorage.getItem('language') || 'en';
-            setLanguage(savedLang);
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="loading-spinner"></div><span>Sending...</span>';
             
-            // Initialize form
-            showStep(1);
-            initializeServiceCards();
-            loadSavedData();
-            handleKeyboardEvents();
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
             
-            // Mobile menu toggle
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-            }
-            
-            // Navigation buttons
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
-            
-            if (nextBtn) {
-                nextBtn.addEventListener('click', function() {
-                    if (validateStep(currentStep) && currentStep < totalSteps) {
-                        currentStep++;
-                        showStep(currentStep);
-                    }
-                });
-            }
+            // Collect form data
+            const formData = {
+                fullName: this.fullName.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                organization: this.organization.value,
+                serviceType: this.serviceType.value,
+                projectDescription: this.projectDescription.value,
+                timestamp: new Date().toLocaleString(),
+                language: isArabic ? 'Arabic' : 'English'
+            };
 
-            if (prevBtn) {
-                prevBtn.addEventListener('click', function() {
-                    if (currentStep > 1) {
-                        currentStep--;
-                        showStep(currentStep);
-                    }
-                });
-            }
-
-            // Form submissions
-            const preOrderForm = document.getElementById('preOrderForm');
-            if (preOrderForm) {
-                preOrderForm.addEventListener('submit', handleFormSubmission);
-                preOrderForm.addEventListener('input', autoSave);
-            }
-
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', handleContactSubmission);
-            }
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    // Close mobile menu if open
-                    if (mobileMenuOpen) {
-                        toggleMobileMenu();
-                    }
-                    
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Navbar scroll effect
-            window.addEventListener('scroll', function() {
-                const navbar = document.getElementById('navbar');
-                if (navbar) {
-                    navbar.style.boxShadow = window.scrollY > 50 ? '0 2px 10px rgba(0,0,0,0.1)' : 'none';
-                }
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(e) {
-                const navLinks = document.getElementById('navLinks');
-                const menuToggle = document.getElementById('mobileMenuToggle');
+            // Simulate email sending (replace with actual EmailJS implementation)
+            setTimeout(() => {
+                // Show success message
+                successMessage.style.display = 'block';
                 
-                if (mobileMenuOpen && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-                    toggleMobileMenu();
-                }
-            });
-
-            // Handle resize events
-            window.addEventListener('resize', function() {
-                if (window.innerWidth >= 768 && mobileMenuOpen) {
-                    toggleMobileMenu();
-                }
-            });
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                
+                // Auto-close modal after 3 seconds
+                setTimeout(() => {
+                    closeConsultationModal();
+                }, 3000);
+                
+            }, 2000);
         });
 
-        // Error handling
-        window.addEventListener('error', function(e) {
-            console.error('Global error:', e.error);
-            showNotification('An error occurred. Please try again.', 'error');
-        });
-
-        // Prevent zoom on iOS double tap
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function (event) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
+        // Close modal on outside click
+        document.getElementById('consultationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeConsultationModal();
             }
-            lastTouchEnd = now;
-        }, false);
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeConsultationModal();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initParticles();
+            initMagneticEffect();
+            initScrollAnimations();
+            
+            // Set initial language
+            setLanguage('en');
+        });
+
+        // Performance optimization
+        window.addEventListener('load', function() {
+            // Remove loading states, add any final optimizations
+            document.body.style.opacity = '1';
+        });
     </script>
 </body>
 </html>
