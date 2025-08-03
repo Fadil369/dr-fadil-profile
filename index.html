@@ -1,2216 +1,1350 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Mohamed El Fadil | Physician & Tech Innovator | BrainSAIT Founder</title>
-  <meta name="description" content="Dr. Mohamed El Fadil - Physician entrepreneur, founder of BrainSAIT, and healthcare technology innovator in Riyadh, Saudi Arabia. Specializing in AI-driven healthcare solutions and digital transformation.">
-  <meta name="keywords" content="Dr. Mohamed El Fadil, BrainSAIT, Healthcare Technology, Digital Health, AI Healthcare, Physician Entrepreneur, Riyadh, Saudi Arabia">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Dr. Mohamed El Fadil | Physician & Tech Innovator">
-  <meta property="og:description" content="Physician entrepreneur and founder of BrainSAIT, creating AI-driven healthcare solutions.">
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://fadil369.dev">
-  <meta property="og:image" content="https://gravatar.com/avatar/fadil369">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@brainsait369">
-  <meta name="twitter:creator" content="@brainsait369">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://gravatar.com/avatar/fadil369">
-  
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#00bfff">
-  
-  <!-- DNS Prefetch and Preconnect for Performance -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://platform.linkedin.com">
-  <link rel="dns-prefetch" href="https://gravatar.com">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- EmailJS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dr. Mohamed El Fadil",
-    "jobTitle": "Physician & Healthcare Technology Innovator",
-    "description": "Physician entrepreneur and founder of BrainSAIT, creating AI-driven healthcare solutions",
-    "url": "https://fadil369.dev",
-    "image": "https://gravatar.com/avatar/fadil369",
-    "sameAs": [
-      "https://x.com/brainsait369",
-      "https://www.linkedin.com/in/fadil369",
-      "https://github.com/fadil369"
-    ],
-    "email": "Fadil369@hotmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Riyadh",
-      "addressCountry": "Saudi Arabia"
-    },
-    "worksFor": {
-      "@type": "Organization",
-      "name": "BrainSAIT",
-      "url": "https://brainsait.io"
-    },
-    "alumniOf": {
-      "@type": "Organization",
-      "name": "Medical School"
-    },
-    "knowsAbout": ["Healthcare Technology", "AI Healthcare", "Digital Health", "Telemedicine", "Clinical Medicine", "Software Development"]
-  }
-  </script>
-
-  <style>
-    :root {
-      --primary-bg: #0f0f0f;
-      --secondary-bg: #1a1a1a;
-      --accent-bg: #2d2d2d;
-      --primary-text: #f2f2f2;
-      --secondary-text: #aaa;
-      --accent-color: #00bfff;
-      --gradient-start: #222;
-      --gradient-end: #333;
-      --border-radius: 12px;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--primary-bg);
-      color: var(--primary-text);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-tap-highlight-color: rgba(0, 191, 255, 0.1);
-      touch-action: manipulation;
-    }
-
-    /* Header Styles */
-    .header {
-      position: relative;
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-      overflow: hidden;
-    }
-
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .profile-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      border: 4px solid var(--accent-color);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .brain-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--accent-color), #0099cc);
-      color: var(--primary-bg);
-    }
-
-    .brain-icon i {
-      font-size: 3.5rem;
-    }
-
-    .profile-avatar:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 32px rgba(0, 191, 255, 0.3);
-    }
-
-    .header h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, var(--primary-text), var(--accent-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .header .subtitle {
-      font-size: clamp(1rem, 3vw, 1.2rem);
-      color: var(--secondary-text);
-      margin-bottom: 30px;
-    }
-
-    .general-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #FF4500;
-      text-align: center;
-      margin: 8px 0 20px 0;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      text-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
-      animation: pulsateOrange 2s ease-in-out infinite alternate;
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mohamed Elfadil - Healthcare AI Researcher & Open Source Developer</title>
+    <meta name="description" content="Healthcare AI researcher, medical informaticist, and creator of open-source healthcare interoperability solutions including PyHeart and PyBrain platforms.">
+    <meta name="keywords" content="healthcare AI, medical informatics, FHIR, healthcare interoperability, clinical NLP, PyPI packages">
     
-    .general-title::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #FF4500, transparent);
-      border-radius: 2px;
-    }
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    @keyframes pulsateOrange {
-      0% {
-        text-shadow: 0 0 20px rgba(255, 69, 0, 0.3), 0 0 30px rgba(255, 69, 0, 0.2);
-        color: #FF4500;
-      }
-      100% {
-        text-shadow: 0 0 25px rgba(255, 69, 0, 0.5), 0 0 35px rgba(255, 69, 0, 0.3), 0 0 45px rgba(255, 69, 0, 0.1);
-        color: #FF6B35;
-      }
-    }
-
-    .header .location {
-      font-size: 1rem;
-      color: var(--accent-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    /* Main Content */
-    .main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    .section {
-      margin-bottom: 60px;
-      padding: 40px;
-      background: var(--secondary-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .section:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    }
-
-    .section h2 {
-      color: var(--accent-color);
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .section h2 i {
-      font-size: 1.5rem;
-    }
-
-    .section p {
-      margin-bottom: 16px;
-      color: var(--primary-text);
-      font-size: 1.1rem;
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .skill-item {
-      background: var(--accent-bg);
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 4px solid var(--accent-color);
-      transition: var(--transition);
-    }
-
-    .skill-item:hover {
-      background: rgba(0, 191, 255, 0.1);
-      transform: translateX(4px);
-    }
-
-    .skill-item h3 {
-      color: var(--accent-color);
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-
-    .skill-item p {
-      font-size: 0.95rem;
-      color: var(--secondary-text);
-      margin: 0;
-    }
-
-    /* Projects Section */
-    .projects-section {
-      background: linear-gradient(135deg, var(--secondary-bg), rgba(0, 191, 255, 0.05));
-      border: 1px solid rgba(0, 191, 255, 0.2);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .project-card {
-      position: relative;
-      display: block;
-      padding: 30px;
-      background: var(--accent-bg);
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      color: var(--primary-text);
-      transition: var(--transition);
-      border: 2px solid transparent;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), transparent);
-      opacity: 0;
-      transition: var(--transition);
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent-color);
-      box-shadow: 0 12px 40px rgba(0, 191, 255, 0.3);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .project-card:hover .project-arrow {
-      transform: translateX(5px);
-    }
-
-    .project-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--accent-color), #0099cc);
-      border-radius: 12px;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-icon i {
-      font-size: 1.8rem;
-      color: var(--primary-bg);
-    }
-
-    .project-card h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--accent-color);
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-card p {
-      font-size: 1rem;
-      color: var(--secondary-text);
-      line-height: 1.6;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-arrow {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      color: var(--accent-color);
-      font-size: 1.2rem;
-      transition: var(--transition);
-      z-index: 1;
-    }
-
-    /* Social Links */
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 40px 0;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 20px;
-      background: var(--accent-bg);
-      border-radius: 50px;
-      color: var(--primary-text);
-      text-decoration: none;
-      transition: var(--transition);
-      font-weight: 500;
-    }
-
-    .social-link:hover {
-      background: var(--accent-color);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0, 191, 255, 0.3);
-    }
-
-    .social-link i {
-      font-size: 1.2rem;
-    }
-
-    /* LinkedIn Badge Container */
-    .linkedin-container {
-      text-align: center;
-      margin: 40px 0;
-      padding: 30px;
-      background: var(--secondary-bg);
-      border-radius: var(--border-radius);
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: var(--secondary-bg);
-      border-top: 1px solid var(--accent-bg);
-    }
-
-    .footer p {
-      color: var(--secondary-text);
-      font-size: 0.9rem;
-    }
-
-
-    /* Mobile-First Responsive Design */
-    @media (max-width: 768px) {
-      .header {
-        padding: 40px 15px;
-      }
-      
-      .header h1 {
-        font-size: 1.8rem;
-      }
-      
-      .general-title {
-        font-size: 1.4rem;
-        letter-spacing: 2px;
-        margin: 6px 0 15px 0;
-      }
-      
-      .header .subtitle {
-        font-size: 0.9rem;
-      }
-      
-      .profile-avatar {
-        width: 100px;
-        height: 100px;
-      }
-      
-      .main {
-        padding: 30px 15px;
-      }
-      
-      .section {
-        padding: 20px;
-        margin-bottom: 30px;
-      }
-      
-      .section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-      }
-      
-      .section p {
-        font-size: 1rem;
-      }
-      
-      /* Experience Timeline Mobile */
-      .experience-item {
-        flex-direction: column;
-        margin-bottom: 25px;
-      }
-      
-      .experience-year {
-        flex: none;
-        text-align: left;
-        padding-right: 0;
-        margin-bottom: 8px;
-        font-size: 1rem;
-      }
-      
-      .experience-content {
-        padding-left: 15px;
-        border-left: 2px solid var(--accent-color);
-      }
-      
-      .experience-content h3 {
-        font-size: 1.1rem;
-      }
-      
-      /* Grids Mobile */
-      .skills-grid,
-      .projects-grid,
-      .tools-grid,
-      .services-grid,
-      .dev-tools-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-      
-      /* Cards Mobile */
-      .project-card,
-      .tool-card,
-      .service-item,
-      .dev-tool-card {
-        padding: 20px;
-      }
-      
-      .project-card h3,
-      .tool-card h3,
-      .service-item h3,
-      .dev-tool-card h3 {
-        font-size: 1.1rem;
-      }
-      
-      .project-card p,
-      .tool-card p,
-      .service-item p,
-      .dev-tool-card p {
-        font-size: 0.9rem;
-      }
-      
-      /* Tool Status Mobile */
-      .tool-status {
-        position: static;
-        display: inline-block;
-        margin-top: 10px;
-        font-size: 0.7rem;
-        padding: 3px 8px;
-      }
-      
-      /* Social Links Mobile */
-      .social-links {
-        gap: 10px;
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .social-link {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-        width: 200px;
-        justify-content: center;
-      }
-      
-      
-      /* LinkedIn Container Mobile */
-      .linkedin-container {
-        padding: 20px;
-        margin: 30px 0;
-      }
-    }
-    
-    /* Small Mobile Phones */
-    @media (max-width: 480px) {
-      .header {
-        padding: 30px 10px;
-      }
-      
-      .header h1 {
-        font-size: 1.6rem;
-      }
-      
-      .general-title {
-        font-size: 1.2rem;
-        letter-spacing: 1.5px;
-        margin: 4px 0 12px 0;
-      }
-      
-      .profile-avatar {
-        width: 80px;
-        height: 80px;
-      }
-      
-      .main {
-        padding: 20px 10px;
-      }
-      
-      .section {
-        padding: 15px;
-        margin-bottom: 25px;
-      }
-      
-      .section h2 {
-        font-size: 1.3rem;
-      }
-      
-      .project-card,
-      .tool-card,
-      .service-item,
-      .dev-tool-card {
-        padding: 15px;
-      }
-      
-      .social-link {
-        width: 180px;
-        padding: 10px 15px;
-      }
-      
-      .experience-content {
-        padding-left: 12px;
-      }
-    }
-    
-    /* Touch-Friendly Design */
-    .project-card,
-    .tool-card,
-    .service-item,
-    .dev-tool-card,
-    .social-link {
-      min-height: 44px; /* Apple/Google recommended touch target */
-      cursor: pointer;
-    }
-    
-    /* Improved focus states for accessibility */
-    .project-card:focus,
-    .tool-card:focus,
-    .dev-tool-card:focus,
-    .social-link:focus {
-      outline: 2px solid var(--accent-color);
-      outline-offset: 2px;
-    }
-    
-    /* Large Screens Optimization */
-    @media (min-width: 1200px) {
-      .main {
-        max-width: 1100px;
-      }
-      
-      .projects-grid,
-      .tools-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .dev-tools-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* Experience Timeline */
-    .experience-timeline {
-      position: relative;
-      margin: 30px 0;
-    }
-
-    .experience-item {
-      display: flex;
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    .experience-year {
-      flex: 0 0 120px;
-      font-weight: 600;
-      color: var(--accent-color);
-      font-size: 1.1rem;
-      padding-right: 20px;
-      text-align: right;
-    }
-
-    .experience-content {
-      flex: 1;
-      padding-left: 20px;
-      border-left: 2px solid var(--accent-color);
-      position: relative;
-    }
-
-    .experience-content::before {
-      content: '';
-      position: absolute;
-      left: -6px;
-      top: 5px;
-      width: 10px;
-      height: 10px;
-      background: var(--accent-color);
-      border-radius: 50%;
-    }
-
-    .experience-content h3 {
-      color: var(--primary-text);
-      font-size: 1.3rem;
-      margin-bottom: 5px;
-    }
-
-    .experience-company {
-      color: var(--accent-color);
-      font-weight: 500;
-      margin-bottom: 10px !important;
-      font-size: 1rem;
-    }
-
-    /* Services Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .service-item {
-      background: var(--accent-bg);
-      padding: 30px;
-      border-radius: var(--border-radius);
-      text-align: center;
-      transition: var(--transition);
-      border: 2px solid transparent;
-    }
-
-    .service-item:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
-    }
-
-    .service-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--accent-color), #0099cc);
-      border-radius: 50%;
-      margin: 0 auto 20px;
-    }
-
-    .service-icon i {
-      font-size: 2rem;
-      color: var(--primary-bg);
-    }
-
-    .service-item h3 {
-      color: var(--accent-color);
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-    }
-
-    .service-item p {
-      color: var(--secondary-text);
-      line-height: 1.6;
-    }
-
-    /* Tools Grid */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .tool-card {
-      position: relative;
-      display: block;
-      padding: 25px;
-      background: var(--accent-bg);
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      color: var(--primary-text);
-      transition: var(--transition);
-      border: 2px solid transparent;
-      overflow: hidden;
-    }
-
-    .tool-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
-    }
-
-    .tool-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--accent-color), #0099cc);
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    .tool-icon i {
-      font-size: 1.5rem;
-      color: var(--primary-bg);
-    }
-
-    .tool-card h3 {
-      color: var(--accent-color);
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .tool-card p {
-      color: var(--secondary-text);
-      line-height: 1.5;
-      margin-bottom: 15px;
-      font-size: 0.95rem;
-    }
-
-    .tool-status {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .tool-status.live {
-      background: rgba(34, 197, 94, 0.2);
-      color: #22c55e;
-      border: 1px solid rgba(34, 197, 94, 0.3);
-    }
-
-    .tool-status.active {
-      background: rgba(59, 130, 246, 0.2);
-      color: #3b82f6;
-      border: 1px solid rgba(59, 130, 246, 0.3);
-    }
-
-    .tool-status.registered {
-      background: rgba(168, 85, 247, 0.2);
-      color: #a855f7;
-      border: 1px solid rgba(168, 85, 247, 0.3);
-    }
-
-    /* Developer Tools Grid */
-    .dev-tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .dev-tool-card {
-      position: relative;
-      display: block;
-      padding: 20px;
-      background: var(--secondary-bg);
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      color: var(--primary-text);
-      transition: var(--transition);
-      border: 1px solid var(--accent-bg);
-    }
-
-    .dev-tool-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 191, 255, 0.15);
-    }
-
-    .dev-tool-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      background: var(--accent-bg);
-      border-radius: 8px;
-      margin-bottom: 12px;
-    }
-
-    .dev-tool-icon i {
-      font-size: 1.3rem;
-      color: var(--accent-color);
-    }
-
-    .dev-tool-card h3 {
-      color: var(--primary-text);
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .dev-tool-card p {
-      color: var(--secondary-text);
-      line-height: 1.4;
-      margin-bottom: 0;
-      font-size: 0.9rem;
-    }
-
-    /* Scroll Animation */
-    .section {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s ease forwards;
-    }
-
-    .section:nth-child(1) { animation-delay: 0.1s; }
-    .section:nth-child(2) { animation-delay: 0.2s; }
-    .section:nth-child(3) { animation-delay: 0.3s; }
-    .section:nth-child(4) { animation-delay: 0.4s; }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Consultation Form Modal Styles */
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
-      background: linear-gradient(135deg, var(--accent-color), #0099cc);
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      margin: 20px auto;
-      box-shadow: 0 8px 32px rgba(0, 191, 255, 0.3);
-    }
-
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .cta-button:hover::before {
-      left: 100%;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0, 191, 255, 0.4);
-    }
-
-    .cta-button i {
-      font-size: 1.2rem;
-    }
-
-    .cta-centered {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    /* Floating Particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: var(--accent-color);
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: float 15s infinite linear;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.6;
-      }
-      90% {
-        opacity: 0.6;
-      }
-      100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    /* Modal Styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-content {
-      background: rgba(26, 26, 26, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 191, 255, 0.2);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 600px;
-      width: 90%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      transform: translateY(50px) scale(0.9);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 20px 80px rgba(0, 191, 255, 0.2);
-    }
-
-    .modal-overlay.active .modal-content {
-      transform: translateY(0) scale(1);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: var(--primary-text);
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .modal-close:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: rotate(90deg);
-    }
-
-    .modal-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .modal-header h2 {
-      color: var(--accent-color);
-      font-size: 2rem;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .modal-header p {
-      color: var(--secondary-text);
-      font-size: 1.1rem;
-    }
-
-    .consultation-form {
-      display: grid;
-      gap: 20px;
-    }
-
-    .form-group {
-      position: relative;
-    }
-
-    .form-group label {
-      display: block;
-      color: var(--accent-color);
-      font-weight: 500;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      background: rgba(45, 45, 45, 0.8);
-      border: 1px solid rgba(0, 191, 255, 0.3);
-      border-radius: 8px;
-      color: var(--primary-text);
-      font-size: 1rem;
-      transition: var(--transition);
-      backdrop-filter: blur(10px);
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
-      transform: translateY(-1px);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .submit-button {
-      background: linear-gradient(135deg, var(--accent-color), #0099cc);
-      color: white;
-      border: none;
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .submit-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .submit-button:hover::before {
-      left: 100%;
-    }
-
-    .submit-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(0, 191, 255, 0.4);
-    }
-
-    .submit-button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .loading-spinner {
-      width: 20px;
-      height: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-top: 2px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .success-message {
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      color: #22c55e;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 20px;
-      display: none;
-    }
-
-    .error-message {
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      color: #ef4444;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 20px;
-      display: none;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .modal-content {
-        padding: 30px 20px;
-        margin: 20px;
-        border-radius: 15px;
-      }
-
-      .modal-header h2 {
-        font-size: 1.6rem;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .cta-button {
-        padding: 14px 28px;
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .modal-content {
-        padding: 25px 15px;
-        margin: 15px;
-      }
-
-      .modal-header h2 {
-        font-size: 1.4rem;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .cta-button {
-        padding: 12px 24px;
-        font-size: 0.95rem;
-      }
-    }
-
-    /* Magnetic Button Effect */
-    .magnetic {
-      position: relative;
-      transition: transform 0.2s ease-out;
-    }
-
-    .magnetic:hover {
-      transform: scale(1.05);
-    }
-
-    /* Custom Scrollbar for Modal */
-    .modal-content::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .modal-content::-webkit-scrollbar-track {
-      background: rgba(45, 45, 45, 0.3);
-      border-radius: 4px;
-    }
-
-    .modal-content::-webkit-scrollbar-thumb {
-      background: var(--accent-color);
-      border-radius: 4px;
-    }
-
-    .modal-content::-webkit-scrollbar-thumb:hover {
-      background: #0099cc;
-    }
-  </style>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --healthcare-blue: #0ea5e9;
+            --healthcare-green: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --background: #ffffff;
+            --background-alt: #f8fafc;
+            --border-color: #e5e7eb;
+            --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-healthcare: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-healthcare);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient-healthcare);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 6rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-healthcare);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+            text-align: center;
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-healthcare);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-healthcare);
+            color: white;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-healthcare);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-healthcare);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 1rem;
+            background: var(--gradient-healthcare);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .project-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-version {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-pypi {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-new {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .project-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .project-features li::before {
+            content: '✓';
+            color: var(--healthcare-green);
+            font-weight: bold;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .install-command {
+            background: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            margin: 1rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: var(--background-alt);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-healthcare);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 0.5rem;
+            background: var(--gradient-healthcare);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.125rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--background-alt);
+            border-radius: 0.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 0.5rem;
+            background: var(--gradient-healthcare);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-healthcare);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background-alt);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-healthcare);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Integration showcase */
+        .integration-showcase {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .integration-showcase h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .integration-showcase p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Success message */
+        .success-message {
+            background: #dcfce7;
+            color: #166534;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #bbf7d0;
+            display: none;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #fecaca;
+            display: none;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Dr. Mohamed Elfadil</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <header class="header">
-    <div class="header-content">
-      <div class="profile-avatar brain-icon">
-        <i class="fas fa-brain"></i>
-      </div>
-      <h1>Dr. Mohamed El Fadil</h1>
-      <div class="general-title">GENERAL</div>
-      <p class="subtitle">Critical Care Physician | BrainSAIT Founder | Healthcare Tech Innovator</p>
-      <p class="subtitle" style="font-size: 0.9rem; margin-top: 10px; color: var(--secondary-text);">
-        <strong>10+ Years</strong> Healthcare Systems • <strong>UK Registered</strong> BrainSAIT LTD
-      </p>
-      <div class="location">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Riyadh, Saudi Arabia</span>
-      </div>
-    </div>
-  </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Healthcare AI Researcher & Open Source Developer</h1>
+                    <p class="subtitle">Transforming Healthcare Through AI & Interoperability</p>
+                    <p>Pioneering the future of healthcare technology with cutting-edge AI solutions, healthcare interoperability platforms, and clinical NLP systems. Creator of PyHeart and PyBrain - comprehensive healthcare intelligence platforms published on PyPI.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">PyPI Packages</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Research</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Healthcare Systems</div>
+                        </div>
+                    </div>
 
-  <main class="main">
-    <section class="section">
-      <h2><i class="fas fa-user-md"></i>About Me</h2>
-      <p>
-        As a <strong>Critical Care & ICU Physician</strong> with over 10 years of healthcare systems experience, I've dedicated my career to transforming healthcare through the intersection of medical expertise, business innovation, and cutting-edge technology.
-      </p>
-      <p>
-        Founded <strong>BrainSAIT LTD (UK)</strong> in 2019, I lead the development of AI-driven healthcare solutions that bridge traditional medical practice with digital transformation. My clinical background includes critical care at <strong>Anfas Medical Care Hospital</strong> and neurosurgery expertise at <strong>Aster Sanad Hospital</strong>.
-      </p>
-      <p>
-        I specialize in creating <strong>HIPAA-compliant</strong>, multilingual healthcare platforms that integrate seamlessly with existing medical workflows, empowering healthcare professionals through intelligent automation and revenue cycle management.
-      </p>
-      
-      <div class="cta-centered">
-        <button class="cta-button magnetic" onclick="openConsultationModal()">
-          <i class="fas fa-user-md"></i>
-          Request Healthcare Consultation
-        </button>
-      </div>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Explore Projects
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Dr. Mohamed Elfadil</h3>
+                        <p>Healthcare AI Researcher</p>
+                        <p>Medical Informaticist</p>
+                        <p>Open Source Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section projects-section">
-      <h2><i class="fas fa-rocket"></i>Featured Projects</h2>
-      <p>Explore my latest healthcare technology innovations and educational platforms designed to transform digital health delivery.</p>
-      <div class="projects-grid">
-        <a href="https://gp.thefadil.site" target="_blank" class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-user-md"></i>
-          </div>
-          <h3>GP Portal</h3>
-          <p>Advanced general practice management platform with AI-driven patient care workflows</p>
-          <div class="project-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </a>
-        
-        <a href="https://givc.brainsait.io" target="_blank" class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>GIVC Platform</h3>
-          <p>Global Intelligent Virtual Care - Next-generation telemedicine and remote healthcare solutions</p>
-          <div class="project-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </a>
-        
-        <a href="https://givc-academy.brainsait.io" target="_blank" class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h3>GIVC Academy</h3>
-          <p>Comprehensive healthcare education platform with bilingual content and interactive learning modules</p>
-          <div class="project-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </a>
-        
-        <a href="https://brainsait.io" target="_blank" class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>BrainSAIT Main Platform</h3>
-          <p>Core healthcare technology platform offering AI-driven medical solutions and business intelligence</p>
-          <div class="project-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </a>
-        
-        <a href="https://care.brainsait.io" target="_blank" class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-heart"></i>
-          </div>
-          <h3>BrainSAIT Care</h3>
-          <p>Specialized patient care management system with AI-powered clinical decision support</p>
-          <div class="project-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </a>
-        
-        <a href="https://read.thefadil.site/" target="_blank" class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <h3>OI vs AI - Published Book</h3>
-          <p>Our recent published book "OI vs AI" stands for Original Intelligence "human brain" vs Artificial Intelligence "AI"</p>
-          <div class="project-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </a>
-        
-      </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Open Source Projects</h2>
+                <p class="section-subtitle">Cutting-edge healthcare AI and interoperability solutions published on PyPI, transforming how healthcare systems communicate and process data.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- PyHeart Project -->
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="project-badges">
+                            <span class="badge badge-version">v0.1.0</span>
+                            <span class="badge badge-pypi">PyPI</span>
+                            <span class="badge badge-new">New</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="project-title">brainsait-pyheart</h3>
+                    <p class="project-description">
+                        Healthcare Interoperability & Workflow Engine - Universal integration platform for healthcare systems providing seamless connectivity and workflow orchestration.
+                    </p>
+
+                    <ul class="project-features">
+                        <li>Universal API Gateway for healthcare integrations</li>
+                        <li>Event-Driven Architecture with real-time processing</li>
+                        <li>Microservices Framework for scalable solutions</li>
+                        <li>HIPAA, GDPR, and compliance automation</li>
+                        <li>Complex healthcare workflow orchestration</li>
+                        <li>FHIR and HL7 standard support</li>
+                    </ul>
+
+                    <div class="install-command">
+                        pip install brainsait-pyheart
+                        <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pyheart')">Copy</button>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-python"></i> View on PyPI
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PyBrain Project -->
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="project-badges">
+                            <span class="badge badge-version">v0.1.0</span>
+                            <span class="badge badge-pypi">PyPI</span>
+                            <span class="badge badge-new">New</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="project-title">brainsait-pybrain</h3>
+                    <p class="project-description">
+                        Unified Healthcare Intelligence Platform - AI-powered healthcare data harmonization and decision support system with advanced clinical NLP capabilities.
+                    </p>
+
+                    <ul class="project-features">
+                        <li>AI-Powered Data Harmonization across standards</li>
+                        <li>Clinical NLP Engine with medical understanding</li>
+                        <li>Federated Learning Framework for privacy</li>
+                        <li>Real-time Decision Support with evidence-based recommendations</li>
+                        <li>Predictive Analytics for patient outcomes</li>
+                        <li>Population health insights and analytics</li>
+                    </ul>
+
+                    <div class="install-command">
+                        pip install brainsait-pybrain
+                        <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pybrain')">Copy</button>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-python"></i> View on PyPI
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integration Showcase -->
+            <div class="integration-showcase">
+                <h3>PyHeart + PyBrain Integration</h3>
+                <p>These packages work seamlessly together to provide complete healthcare system unification - PyHeart handles interoperability and workflows while PyBrain provides AI intelligence and analytics.</p>
+                
+                <div class="install-command">
+                    pip install brainsait-pyheart brainsait-pybrain
+                    <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pyheart brainsait-pybrain')">Copy</button>
+                </div>
+                
+                <a href="https://pypi.org/user/Fadil369/" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                    <i class="fab fa-python"></i> View Full PyPI Profile
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section class="section">
-      <h2><i class="fas fa-tools"></i>AI Tools & Utilities</h2>
-      <p>Innovative AI-powered tools and utilities designed to streamline workflows and enhance productivity across healthcare and business domains:</p>
-      <div class="tools-grid">
-        <a href="https://context.thefadil.site/" target="_blank" class="tool-card">
-          <div class="tool-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>AI Context Generator</h3>
-          <p>Intelligent prompt engineering platform for creating contextually-aware AI instructions and healthcare-specific prompts.</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://read.thefadil.site/" target="_blank" class="tool-card">
-          <div class="tool-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <h3>OI vs AI - Published Book</h3>
-          <p>Our recent published book "OI vs AI" stands for Original Intelligence "human brain" vs Artificial Intelligence "AI".</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" class="tool-card">
-          <div class="tool-icon">
-            <i class="fas fa-table"></i>
-          </div>
-          <h3>Excel Advanced Consolidator</h3>
-          <p>Sophisticated data consolidation tool for merging and analyzing complex Excel datasets with AI assistance.</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://ai-docs-cod-containers.fadil.workers.dev/" target="_blank" class="tool-card">
-          <div class="tool-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h3>AI Docs Container</h3>
-          <p>Intelligent document processing system with containerized deployment for scalable document analysis.</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://healthcare-insurance-analysis.fadil.workers.dev/" target="_blank" class="tool-card">
-          <div class="tool-icon">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <h3>Healthcare Insurance Analyzer</h3>
-          <p>AI-driven insurance claims analysis tool with predictive modeling and fraud detection capabilities.</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://chatgpt.com/g/g-675e783e5464819187886b7cf9d1b082-ai-powered-claim-resubmission-assistant" target="_blank" class="tool-card">
-          <div class="tool-icon">
-            <i class="fas fa-comments"></i>
-          </div>
-          <h3>Claims Chat Agent</h3>
-          <p>AI-Powered Claim Resubmission Assistant - Intelligent conversational AI for healthcare claims processing and customer support automation.</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://fadil369.fadil.workers.dev/" target="_blank" class="tool-card">
-          <div class="tool-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>BrainSAIT MultiTool</h3>
-          <p>Comprehensive healthcare AI toolkit with multiple integrated modules for clinical workflow optimization.</p>
-          <div class="tool-status live">Live</div>
-        </a>
-      </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Dr. Mohamed Elfadil</h2>
+                    <p>
+                        As a dedicated healthcare AI researcher and medical informaticist, I specialize in developing cutting-edge solutions that bridge the gap between advanced artificial intelligence and practical healthcare applications.
+                    </p>
+                    <p>
+                        My work focuses on healthcare interoperability, clinical natural language processing, and AI-powered decision support systems. Through my open-source contributions published on PyPI, I'm building the infrastructure for next-generation healthcare systems.
+                    </p>
+                    <p>
+                        With expertise spanning from FHIR standards to federated learning frameworks, I'm committed to creating technology that improves patient outcomes while ensuring privacy and compliance with healthcare regulations.
+                    </p>
+                </div>
+                
+                <div class="skills-section">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Core Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Healthcare AI</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Machine Learning & NLP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Interoperability</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">FHIR, HL7, Integration</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Compliance</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">HIPAA, GDPR, Security</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Development</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Python, FastAPI, ML Ops</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Analytics</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Population Health, Predictive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Clinical Domain</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Medical Informatics, EHR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section">
-      <h2><i class="fas fa-code"></i>Developer Tools & Resources</h2>
-      <p>Professional development tools and resources for healthcare technology innovation and rapid prototyping:</p>
-      <div class="dev-tools-grid">
-        <a href="https://next-starter-template.fadil.workers.dev/" target="_blank" class="dev-tool-card">
-          <div class="dev-tool-icon">
-            <i class="fab fa-react"></i>
-          </div>
-          <h3>Next.js Starter Template</h3>
-          <p>Production-ready Next.js template with healthcare-focused components and AI integrations</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://remote-mcp-server.fadil.workers.dev/" target="_blank" class="dev-tool-card">
-          <div class="dev-tool-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3>Remote MCP Server</h3>
-          <p>Model Context Protocol server for distributed AI model management and deployment</p>
-          <div class="tool-status live">Live</div>
-        </a>
-        
-        <a href="https://github.com/Fadil369" target="_blank" class="dev-tool-card">
-          <div class="dev-tool-icon">
-            <i class="fab fa-github"></i>
-          </div>
-          <h3>GitHub Portfolio</h3>
-          <p>Open-source healthcare technology projects and contributions to the developer community</p>
-          <div class="tool-status active">Active</div>
-        </a>
-        
-        <a href="https://www.notion.com/@brainsait" target="_blank" class="dev-tool-card">
-          <div class="dev-tool-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h3>Notion Creator Profile</h3>
-          <p>Access built-in powerful Notion templates for healthcare AI and technology implementation</p>
-          <div class="tool-status active">Active</div>
-        </a>
-        
-        <a href="https://launchpad.net/~fadil369" target="_blank" class="dev-tool-card">
-          <div class="dev-tool-icon">
-            <i class="fab fa-ubuntu"></i>
-          </div>
-          <h3>Ubuntu Launchpad</h3>
-          <p>Linux packaging and open-source healthcare software distribution platform</p>
-          <div class="tool-status active">Active</div>
-        </a>
-        
-        <a href="https://oid-base.com/get/1.3.6.1.4.1.61026" target="_blank" class="dev-tool-card">
-          <div class="dev-tool-icon">
-            <i class="fas fa-id-card"></i>
-          </div>
-          <h3>IANA OID Registry</h3>
-          <p>Official healthcare technology standards registration and unique identifier management</p>
-          <div class="tool-status registered">Registered</div>
-        </a>
-      </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Collaborate</h2>
+                <p class="section-subtitle">Interested in healthcare AI research, open source collaboration, or consulting opportunities? I'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Thank you for your message! I'll get back to you soon.
+                    </div>
+                    <div class="error-message" id="errorMessage">
+                        <i class="fas fa-exclamation-triangle"></i> Please fill in all required fields.
+                    </div>
+                    
+                    <form id="contactForm" method="POST" action="#">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization/Company</label>
+                            <input type="text" id="organization" name="organization">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="research">Research Collaboration</option>
+                                <option value="consulting">Consulting Inquiry</option>
+                                <option value="open-source">Open Source Project</option>
+                                <option value="speaking">Speaking Engagement</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="pypi-packages">PyPI Packages Inquiry</option>
+                                <option value="healthcare-ai">Healthcare AI Discussion</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project, research interest, healthcare AI needs, or how we might collaborate..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Project Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="immediate">Immediate (1-2 weeks)</option>
+                                <option value="short">Short term (1-3 months)</option>
+                                <option value="medium">Medium term (3-6 months)</option>
+                                <option value="long">Long term (6+ months)</option>
+                                <option value="ongoing">Ongoing collaboration</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Email</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">research@drfadil.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">LinkedIn</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">Connect for professional networking</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">GitHub</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">Explore open source projects</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">PyPI</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">Published packages and tools</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://pypi.org/user/Fadil369/" target="_blank" class="social-link" title="PyPI">
+                            <i class="fab fa-python"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="ResearchGate">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section">
-      <h2><i class="fas fa-hospital"></i>Clinical Experience</h2>
-      <div class="experience-timeline">
-        <div class="experience-item">
-          <div class="experience-year">2021-2024</div>
-          <div class="experience-content">
-            <h3>Critical Care Physician</h3>
-            <p class="experience-company">Anfas Medical Care Hospital, Riyadh</p>
-            <p>Led critical care initiatives and ICU management, implementing technology-driven patient care protocols.</p>
-          </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2025 Dr. Mohamed Elfadil. All rights reserved.</p>
+                </div>
+                <div>
+                    <p>Building the future of healthcare technology</p>
+                </div>
+                <div>
+                    <p>PyHeart ❤️ + PyBrain 🧠 = Healthcare Innovation</p>
+                </div>
+            </div>
         </div>
-        <div class="experience-item">
-          <div class="experience-year">2018-2021</div>
-          <div class="experience-content">
-            <h3>Neurosurgery Physician</h3>
-            <p class="experience-company">Aster Sanad Hospital, Riyadh</p>
-            <p>Specialized in neurosurgical procedures while developing digital health solutions for surgical workflow optimization.</p>
-          </div>
-        </div>
-        <div class="experience-item">
-          <div class="experience-year">2019-Present</div>
-          <div class="experience-content">
-            <h3>Founder & Chief Innovator</h3>
-            <p class="experience-company">BrainSAIT LTD, United Kingdom</p>
-            <p>Founded UK-registered healthcare technology company specializing in AI-powered medical systems and revenue cycle management.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <section class="section">
-      <h2><i class="fas fa-cogs"></i>Core Expertise</h2>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <h3>Clinical Expertise</h3>
-          <p>Critical Care & ICU Medicine, Neurosurgery, Healthcare Systems Management with 10+ years experience</p>
-        </div>
-        <div class="skill-item">
-          <h3>Healthcare Platforms</h3>
-          <p>Custom web platforms, mobile health apps, AI-powered patient management, HIPAA-compliant solutions</p>
-        </div>
-        <div class="skill-item">
-          <h3>Revenue Cycle Management</h3>
-          <p>RCM integration, healthcare billing optimization, financial workflow automation</p>
-        </div>
-        <div class="skill-item">
-          <h3>AI & Healthcare Informatics</h3>
-          <p>AI/ML healthcare applications, clinical decision support systems, medical data analytics</p>
-        </div>
-        <div class="skill-item">
-          <h3>Business Innovation</h3>
-          <p>Healthcare entrepreneurship, UK company registration, international business development</p>
-        </div>
-        <div class="skill-item">
-          <h3>Professional Certifications</h3>
-          <p>Healthcare Improvement Certified, AI in Healthcare, Health Informatics Society Member</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2><i class="fas fa-stethoscope"></i>Healthcare Solutions</h2>
-      <p>Comprehensive healthcare technology services designed to transform medical practice and improve patient outcomes:</p>
-      <div class="services-grid">
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="fas fa-desktop"></i>
-          </div>
-          <h3>Healthcare Web Platforms</h3>
-          <p>Custom-built, HIPAA-compliant web platforms tailored for medical practices and healthcare organizations.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Mobile Health Applications</h3>
-          <p>Patient-focused mobile apps with telemedicine capabilities, appointment scheduling, and health monitoring.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>AI-Powered Patient Management</h3>
-          <p>Intelligent systems for patient care coordination, clinical decision support, and workflow optimization.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Revenue Cycle Management</h3>
-          <p>Comprehensive RCM integration for billing optimization, claims processing, and financial analytics.</p>
-        </div>
-      </div>
-      
-      <div class="cta-centered">
-        <button class="cta-button magnetic" onclick="openConsultationModal()">
-          <i class="fas fa-calculator"></i>
-          Get Custom Healthcare Solution Quote
-        </button>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2><i class="fas fa-lightbulb"></i>Vision & Mission</h2>
-      <p>
-        My mission is to create seamless, intelligent healthcare ecosystems that empower medical professionals and improve patient outcomes. Through BrainSAIT, I'm building the next generation of healthcare technology that combines:
-      </p>
-      <ul style="margin: 20px 0; padding-left: 20px; color: var(--primary-text);">
-        <li><strong>Clinical Excellence:</strong> Evidence-based medical practice enhanced by technology</li>
-        <li><strong>AI Innovation:</strong> Intelligent agents that understand healthcare workflows</li>
-        <li><strong>Cultural Accessibility:</strong> Bilingual solutions for diverse global communities</li>
-        <li><strong>Scalable Infrastructure:</strong> Self-hosted, secure, and sustainable technology stacks</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2><i class="fas fa-share-alt"></i>Connect With Me</h2>
-      
-      <div class="cta-centered">
-        <button class="cta-button magnetic" onclick="openConsultationModal()">
-          <i class="fas fa-calendar-check"></i>
-          Schedule Free Consultation
-        </button>
-      </div>
-      
-      <div class="social-links">
-        <a href="https://x.com/brainsait369" target="_blank" class="social-link">
-          <i class="fab fa-x-twitter"></i>
-          <span>X (Twitter)</span>
-        </a>
-        <a href="https://t.me/brainsait" target="_blank" class="social-link">
-          <i class="fab fa-telegram"></i>
-          <span>Telegram</span>
-        </a>
-        <a href="https://www.linkedin.com/in/fadil369" target="_blank" class="social-link">
-          <i class="fab fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/fadil369" target="_blank" class="social-link">
-          <i class="fab fa-github"></i>
-          <span>GitHub</span>
-        </a>
-        <a href="tel:+966510010991" class="social-link">
-          <i class="fas fa-phone"></i>
-          <span>+966-5100-10-991</span>
-        </a>
-        <a href="mailto:Fadil369@hotmail.com" class="social-link">
-          <i class="fas fa-envelope"></i>
-          <span>Email</span>
-        </a>
-        <a href="https://calendly.com/fadil369" target="_blank" class="social-link">
-          <i class="fas fa-calendar-alt"></i>
-          <span>Schedule Meeting</span>
-        </a>
-        <a href="https://gravatar.com/fadil369" target="_blank" class="social-link">
-          <i class="fas fa-user-circle"></i>
-          <span>Gravatar</span>
-        </a>
-      </div>
-    </section>
-
-    <div class="linkedin-container">
-      <h3 style="color: var(--accent-color); margin-bottom: 20px;">
-        <i class="fab fa-linkedin"></i> Professional Profile
-      </h3>
-      <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript" loading="lazy"></script>
-      <div class="badge-base LI-profile-badge" 
-           data-locale="en_US" 
-           data-size="large" 
-           data-theme="dark" 
-           data-type="HORIZONTAL" 
-           data-vanity="fadil369" 
-           data-version="v1">
-        <a class="badge-base__link LI-simple-link" href="https://sa.linkedin.com/in/fadil369?trk=profile-badge">
-          Dr. Mohamed El Fadil
-        </a>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Floating Particles -->
-  <div class="particles" id="particles"></div>
-
-  <!-- Consultation Modal -->
-  <div class="modal-overlay" id="consultationModal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeConsultationModal()">&times;</button>
-      
-      <div class="modal-header">
-        <h2>
-          <i class="fas fa-stethoscope"></i>
-          Healthcare Consultation Request
-        </h2>
-        <p>Let's discuss how BrainSAIT can transform your healthcare technology needs</p>
-      </div>
-
-      <form class="consultation-form" id="consultationForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fullName">
-              <i class="fas fa-user"></i> Full Name *
-            </label>
-            <input type="text" id="fullName" name="fullName" required>
-          </div>
-          <div class="form-group">
-            <label for="email">
-              <i class="fas fa-envelope"></i> Email Address *
-            </label>
-            <input type="email" id="email" name="email" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="phone">
-              <i class="fas fa-phone"></i> Phone Number
-            </label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-          <div class="form-group">
-            <label for="organization">
-              <i class="fas fa-hospital"></i> Organization/Practice
-            </label>
-            <input type="text" id="organization" name="organization">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="serviceType">
-            <i class="fas fa-cogs"></i> Healthcare Service Type *
-          </label>
-          <select id="serviceType" name="serviceType" required>
-            <option value="">Select a service type...</option>
-            <option value="telemedicine">Telemedicine Platform Development</option>
-            <option value="hipaa-compliance">HIPAA Compliance Solutions</option>
-            <option value="web-platform">Healthcare Web Platform</option>
-            <option value="ai-healthcare">AI Healthcare Solutions</option>
-            <option value="rcm-integration">Revenue Cycle Management</option>
-            <option value="clinical-decision">Clinical Decision Support Systems</option>
-            <option value="mobile-health">Mobile Health Applications</option>
-            <option value="practice-management">Practice Management Systems</option>
-            <option value="health-informatics">Health Informatics Consulting</option>
-            <option value="digital-transformation">Healthcare Digital Transformation</option>
-            <option value="other">Other Healthcare Technology Needs</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="projectDescription">
-            <i class="fas fa-file-alt"></i> Project Description *
-          </label>
-          <textarea id="projectDescription" name="projectDescription" placeholder="Please describe your healthcare technology needs, current challenges, and desired outcomes..." required></textarea>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="timeline">
-              <i class="fas fa-calendar"></i> Project Timeline
-            </label>
-            <select id="timeline" name="timeline">
-              <option value="">Select timeline...</option>
-              <option value="asap">ASAP - Urgent Need</option>
-              <option value="1-month">Within 1 Month</option>
-              <option value="3-months">Within 3 Months</option>
-              <option value="6-months">Within 6 Months</option>
-              <option value="planning">In Planning Phase</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="budget">
-              <i class="fas fa-dollar-sign"></i> Estimated Budget Range
-            </label>
-            <select id="budget" name="budget">
-              <option value="">Select budget range...</option>
-              <option value="under-10k">Under $10,000</option>
-              <option value="10k-25k">$10,000 - $25,000</option>
-              <option value="25k-50k">$25,000 - $50,000</option>
-              <option value="50k-100k">$50,000 - $100,000</option>
-              <option value="100k-plus">$100,000+</option>
-              <option value="discuss">Prefer to Discuss</option>
-            </select>
-          </div>
-        </div>
-
-        <button type="submit" class="submit-button" id="submitBtn">
-          <i class="fas fa-paper-plane"></i>
-          <span>Request Consultation</span>
-        </button>
-
-        <div class="success-message" id="successMessage">
-          <i class="fas fa-check-circle"></i>
-          Thank you! Your consultation request has been submitted successfully. Dr. Fadil will contact you within 24 hours.
-        </div>
-
-        <div class="error-message" id="errorMessage">
-          <i class="fas fa-exclamation-triangle"></i>
-          There was an error submitting your request. Please try again or contact us directly.
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <p>&copy; 2025 Dr. Mohamed El Fadil | BrainSAIT | All Rights Reserved</p>
-    <p style="margin-top: 10px; font-size: 0.8rem;">
-      Built with passion for healthcare innovation | 
-      <a href="mailto:Fadil369@hotmail.com" style="color: var(--accent-color);">Fadil369@hotmail.com</a> | 
-      <a href="tel:+966510010991" style="color: var(--accent-color);">+966-5100-10-991</a>
-    </p>
-  </footer>
-
-  <script>
-    // Initialize EmailJS
-    (function() {
-      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
-    })();
-
-    // Smooth scrolling for any internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-      });
-    });
 
-    // Add loading animation
-    window.addEventListener('load', function() {
-      document.body.style.opacity = '1';
-      initializeParticles();
-      initializeMagneticButtons();
-    });
-
-    // Register Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          console.log('ServiceWorker registration successful');
-        }, function(err) {
-          console.log('ServiceWorker registration failed: ', err);
-        });
-      });
-    }
-
-    // Floating Particles System
-    function initializeParticles() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = 50;
-
-      function createParticle() {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-        particle.style.animationDelay = Math.random() * 5 + 's';
-        particlesContainer.appendChild(particle);
-
-        // Remove particle after animation
-        setTimeout(() => {
-          if (particle.parentNode) {
-            particle.parentNode.removeChild(particle);
-          }
-        }, 20000);
-      }
-
-      // Create initial particles
-      for (let i = 0; i < particleCount; i++) {
-        setTimeout(createParticle, i * 200);
-      }
-
-      // Continuously create new particles
-      setInterval(createParticle, 300);
-    }
-
-    // Magnetic Button Effects
-    function initializeMagneticButtons() {
-      const magneticButtons = document.querySelectorAll('.magnetic');
-      
-      magneticButtons.forEach(button => {
-        button.addEventListener('mouseenter', function(e) {
-          const rect = this.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;
-          const centerY = rect.top + rect.height / 2;
-          
-          this.addEventListener('mousemove', magneticMove);
-          this.addEventListener('mouseleave', magneticLeave);
-        });
-      });
-
-      function magneticMove(e) {
-        const rect = this.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const deltaX = (e.clientX - centerX) * 0.1;
-        const deltaY = (e.clientY - centerY) * 0.1;
-        
-        this.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1.05)`;
-      }
-
-      function magneticLeave() {
-        this.style.transform = 'translate(0, 0) scale(1)';
-        this.removeEventListener('mousemove', magneticMove);
-        this.removeEventListener('mouseleave', magneticLeave);
-      }
-    }
-
-    // Modal Functions
-    function openConsultationModal() {
-      const modal = document.getElementById('consultationModal');
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      
-      // Focus on first input
-      setTimeout(() => {
-        document.getElementById('fullName').focus();
-      }, 300);
-    }
-
-    function closeConsultationModal() {
-      const modal = document.getElementById('consultationModal');
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-      
-      // Reset form
-      document.getElementById('consultationForm').reset();
-      document.getElementById('successMessage').style.display = 'none';
-      document.getElementById('errorMessage').style.display = 'none';
-    }
-
-    // Close modal on overlay click
-    document.getElementById('consultationModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeConsultationModal();
-      }
-    });
-
-    // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeConsultationModal();
-      }
-    });
-
-    // Form Submission Handler
-    document.getElementById('consultationForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitBtn = document.getElementById('submitBtn');
-      const successMessage = document.getElementById('successMessage');
-      const errorMessage = document.getElementById('errorMessage');
-      
-      // Show loading state
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<div class="loading-spinner"></div><span>Sending...</span>';
-      
-      // Hide previous messages
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-      
-      // Collect form data
-      const formData = {
-        fullName: document.getElementById('fullName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        organization: document.getElementById('organization').value,
-        serviceType: document.getElementById('serviceType').value,
-        projectDescription: document.getElementById('projectDescription').value,
-        timeline: document.getElementById('timeline').value,
-        budget: document.getElementById('budget').value,
-        timestamp: new Date().toLocaleString(),
-        source: 'Dr. Fadil Profile - Healthcare Consultation Form'
-      };
-
-      // EmailJS send (replace with your service ID and template ID)
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          
-          // Show success message
-          successMessage.style.display = 'block';
-          
-          // Reset form after delay
-          setTimeout(() => {
-            closeConsultationModal();
-          }, 3000);
-          
-        }, function(error) {
-          console.log('FAILED...', error);
-          
-          // Show error message
-          errorMessage.style.display = 'block';
-          
-        }).finally(() => {
-          // Reset button
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Request Consultation</span>';
-        });
-    });
-
-    // Form Validation Enhancement
-    const form = document.getElementById('consultationForm');
-    const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-    
-    inputs.forEach(input => {
-      input.addEventListener('blur', validateField);
-      input.addEventListener('input', clearFieldError);
-    });
-
-    function validateField(e) {
-      const field = e.target;
-      const value = field.value.trim();
-      
-      // Remove existing error styling
-      field.style.borderColor = '';
-      
-      if (!value) {
-        field.style.borderColor = '#ef4444';
-        return false;
-      }
-      
-      // Email validation
-      if (field.type === 'email') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-          field.style.borderColor = '#ef4444';
-          return false;
-        }
-      }
-      
-      field.style.borderColor = '#22c55e';
-      return true;
-    }
-
-    function clearFieldError(e) {
-      const field = e.target;
-      if (field.style.borderColor === 'rgb(239, 68, 68)') {
-        field.style.borderColor = '';
-      }
-    }
-
-    // Analytics tracking (optional)
-    function trackConsultationRequest(eventType) {
-      // Add your analytics tracking here
-      if (typeof gtag !== 'undefined') {
-        gtag('event', eventType, {
-          event_category: 'Healthcare Consultation',
-          event_label: 'Dr. Fadil Profile'
-        });
-      }
-    }
-
-    // Track modal opens
-    function openConsultationModal() {
-      const modal = document.getElementById('consultationModal');
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      
-      // Analytics tracking
-      trackConsultationRequest('modal_opened');
-      
-      // Focus on first input
-      setTimeout(() => {
-        document.getElementById('fullName').focus();
-      }, 300);
-    }
-
-    // Enhanced form submission with tracking
-    document.getElementById('consultationForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Track form submission attempt
-      trackConsultationRequest('form_submitted');
-      
-      const submitBtn = document.getElementById('submitBtn');
-      const successMessage = document.getElementById('successMessage');
-      const errorMessage = document.getElementById('errorMessage');
-      
-      // Show loading state
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<div class="loading-spinner"></div><span>Sending...</span>';
-      
-      // Hide previous messages
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-      
-      // Collect form data
-      const formData = {
-        fullName: document.getElementById('fullName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        organization: document.getElementById('organization').value,
-        serviceType: document.getElementById('serviceType').value,
-        projectDescription: document.getElementById('projectDescription').value,
-        timeline: document.getElementById('timeline').value,
-        budget: document.getElementById('budget').value,
-        timestamp: new Date().toLocaleString(),
-        source: 'Dr. Fadil Profile - Healthcare Consultation Form'
-      };
-
-      // Simulate form submission (replace with actual EmailJS implementation)
-      setTimeout(() => {
-        // Show success message
-        successMessage.style.display = 'block';
-        trackConsultationRequest('form_success');
-        
-        // Reset form after delay
-        setTimeout(() => {
-          closeConsultationModal();
-        }, 3000);
-        
-        // Reset button
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Request Consultation</span>';
-      }, 2000);
-    });
-
-    // Accessibility improvements
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add ARIA labels to interactive elements
-      const ctaButtons = document.querySelectorAll('.cta-button');
-      ctaButtons.forEach((button, index) => {
-        button.setAttribute('aria-label', `Open consultation form - ${button.textContent.trim()}`);
-      });
-      
-      // Add focus management for modal
-      const modal = document.getElementById('consultationModal');
-      const modalContent = document.querySelector('.modal-content');
-      
-      modal.addEventListener('keydown', function(e) {
-        // Trap focus within modal
-        const focusableElements = modalContent.querySelectorAll(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-        
-        if (e.key === 'Tab') {
-          if (e.shiftKey) {
-            if (document.activeElement === firstElement) {
-              e.preventDefault();
-              lastElement.focus();
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
             }
-          } else {
-            if (document.activeElement === lastElement) {
-              e.preventDefault();
-              firstElement.focus();
-            }
-          }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show temporary feedback
+                const event = new CustomEvent('copied', { detail: text });
+                document.dispatchEvent(event);
+                
+                // Simple feedback - you could enhance this with a toast notification
+                const allCopyButtons = document.querySelectorAll('.copy-btn');
+                allCopyButtons.forEach(btn => {
+                    if (btn.onclick.toString().includes(text)) {
+                        const originalText = btn.textContent;
+                        btn.textContent = 'Copied!';
+                        btn.style.background = '#10b981';
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.style.background = '';
+                        }, 2000);
+                    }
+                });
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
         }
-      });
-    });
-  </script>
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (!firstName || !lastName || !email || !subject || !message) {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                return;
+            }
+
+            // Hide error message
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Add some dynamic stats animation
+        function animateNumbers() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent.replace('+', ''));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+                }, 30);
+            });
+        }
+
+        // Trigger stats animation when hero section is visible
+        const heroObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        heroObserver.observe(document.querySelector('.hero-stats'));
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in class to elements that should animate
+            const animateElements = document.querySelectorAll('.project-card');
+            animateElements.forEach(el => {
+                el.classList.add('fade-in');
+            });
+        });
+    </script>
 </body>
 </html>
