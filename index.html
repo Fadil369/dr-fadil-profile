@@ -32,8 +32,8 @@
             --bg-primary: #0a0a0f;
             --bg-secondary: #141420;
             --bg-tertiary: #1a1a2e;
-            --bg-glass: rgba(20, 20, 32, 0.8);
-            --bg-glass-light: rgba(20, 20, 32, 0.4);
+            --bg-glass: rgba(20, 20, 32, 0.85);
+            --bg-glass-light: rgba(20, 20, 32, 0.6);
             
             /* Neon Accent Colors */
             --accent-cyan: #00d4ff;
@@ -47,18 +47,37 @@
             --healthcare-green: #10b981;
             
             /* Text Colors */
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #cbd5e1;
             
             /* Glass Effects */
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --glass-shadow-hover: 0 16px 64px rgba(0, 212, 255, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --glass-shadow-hover: 0 16px 64px rgba(0, 212, 255, 0.3);
             
             /* Animations */
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        :root[data-theme="light"] {
+            /* Light Theme Variables */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f1f5f9;
+            --bg-tertiary: #e2e8f0;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --bg-glass-light: rgba(255, 255, 255, 0.6);
+            
+            /* Text Colors for Light Theme */
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            
+            /* Glass Effects for Light Theme */
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            --glass-shadow-hover: 0 16px 64px rgba(0, 212, 255, 0.2);
         }
 
         * {
@@ -68,7 +87,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
@@ -76,14 +95,32 @@
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: 'kern' 1;
+            font-variant-ligatures: common-ligatures;
         }
 
         body[dir="rtl"] {
-            font-family: 'Tajawal', 'Inter', sans-serif;
+            font-family: 'Tajawal', 'Inter', 'Arial Unicode MS', Tahoma, sans-serif;
         }
 
         body.arabic {
-            font-family: 'Tajawal', Arial, sans-serif;
+            font-family: 'Tajawal', 'Arial Unicode MS', Tahoma, Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Enhanced Arabic typography */
+        .arabic .section-title,
+        .arabic .project-title,
+        .arabic .hero-content h1 {
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+        
+        .arabic .project-description,
+        .arabic .hero-description {
+            font-weight: 400;
+            line-height: 1.8;
         }
 
         /* Animated Background */
@@ -562,18 +599,13 @@
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
-
-        @media (max-width: 400px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        
+        /* Enhanced visibility for project cards */
         .project-card {
             background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid var(--glass-border);
             border-radius: 20px;
             padding: 2rem;
             transition: var(--transition-smooth);
@@ -581,7 +613,15 @@
             overflow: hidden;
             text-decoration: none;
             color: var(--text-primary);
+            box-shadow: var(--glass-shadow);
         }
+
+        @media (max-width: 400px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
         .project-card::before {
             content: '';
@@ -626,13 +666,17 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
+            color: var(--text-primary);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .project-description {
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.7;
             position: relative;
             z-index: 1;
+            font-size: 1rem;
+            font-weight: 400;
         }
 
         /* Tools Section */
@@ -643,21 +687,37 @@
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .tool-card {
-            background: var(--bg-glass-light);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 1.5rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
             transition: var(--transition-smooth);
             text-decoration: none;
             color: var(--text-primary);
+            box-shadow: var(--glass-shadow);
+        }
+        
+        .tool-card .project-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tool-card .project-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         .tool-card:hover {
@@ -887,6 +947,52 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent-purple);
+        }
+        
+        /* Enhanced accessibility and focus states */
+        .control-btn:focus,
+        .btn:focus,
+        .social-link:focus {
+            outline: 2px solid var(--accent-cyan);
+            outline-offset: 2px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-width: 2px;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+        
+        /* Improved text contrast for better readability */
+        .project-description,
+        .hero-description {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Loading states */
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        /* Better mobile typography */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+            
+            .project-title {
+                font-size: 1.2rem;
+            }
+            
+            .project-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
         }
     </style>
 </head>
@@ -1225,11 +1331,11 @@
                     </div>
                 </a>
                 
-                <a href="mailto:Fadil369@hotmail.com" class="social-link">
+                <a href="mailto:brainsait@hotmail.com" class="social-link">
                     <i class="fas fa-envelope"></i>
                     <div>
                         <div style="font-weight: 600;">Email</div>
-                        <div style="font-size: 0.9rem; color: var(--text-muted);">Fadil369@hotmail.com</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">brainsait@hotmail.com</div>
                     </div>
                 </a>
                 
@@ -1332,7 +1438,10 @@
                         <span class="en-content">Project Description *</span>
                         <span class="ar-content hidden">وصف المشروع *</span>
                     </label>
-                    <textarea name="projectDescription" rows="4" required placeholder="Please describe your healthcare technology needs..."></textarea>
+                    <textarea name="projectDescription" rows="4" required>
+                        <span class="en-content" style="display: none;">Please describe your healthcare technology needs...</span>
+                        <span class="ar-content hidden" style="display: none;">يرجى وصف احتياجاتك التقنية في مجال الرعاية الصحية...</span>
+                    </textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="submitBtn">
@@ -1357,9 +1466,10 @@
     </div>
 
     <script>
-        // Initialize EmailJS (replace with your actual keys)
+        // Initialize EmailJS with proper configuration
         (function() {
-            emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+            // EmailJS configuration for brainsait@hotmail.com
+            emailjs.init("user_BrainSAIT2024"); // Replace with actual EmailJS public key
         })();
 
         let isArabic = false;
@@ -1376,6 +1486,11 @@
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
                 particle.style.animationDelay = Math.random() * 5 + 's';
+                
+                // Set particle color based on current theme
+                const color = currentTheme === 'light' ? '#0ea5e9' : '#00d4ff';
+                particle.style.background = color;
+                
                 particlesContainer.appendChild(particle);
 
                 setTimeout(() => {
@@ -1392,25 +1507,49 @@
             setInterval(createParticle, 500);
         }
 
-        // Language switching
+        // Enhanced Language switching with proper RTL/LTR support
         function setLanguage(lang) {
             isArabic = lang === 'ar';
             const enElements = document.querySelectorAll('.en-content');
             const arElements = document.querySelectorAll('.ar-content');
             const langOptions = document.querySelectorAll('.lang-option');
+            const html = document.documentElement;
+            const body = document.body;
             
             if (isArabic) {
+                // Switch to Arabic
                 enElements.forEach(el => el.classList.add('hidden'));
                 arElements.forEach(el => el.classList.remove('hidden'));
-                document.body.classList.add('arabic');
-                document.documentElement.setAttribute('dir', 'rtl');
-                document.documentElement.setAttribute('lang', 'ar');
+                body.classList.add('arabic');
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+                
+                // Update select options for Arabic
+                const selectOptions = document.querySelectorAll('select option');
+                selectOptions.forEach(option => {
+                    if (option.classList.contains('en-content')) {
+                        option.style.display = 'none';
+                    } else if (option.classList.contains('ar-content')) {
+                        option.style.display = 'block';
+                    }
+                });
             } else {
+                // Switch to English
                 enElements.forEach(el => el.classList.remove('hidden'));
                 arElements.forEach(el => el.classList.add('hidden'));
-                document.body.classList.remove('arabic');
-                document.documentElement.setAttribute('dir', 'ltr');
-                document.documentElement.setAttribute('lang', 'en');
+                body.classList.remove('arabic');
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                
+                // Update select options for English
+                const selectOptions = document.querySelectorAll('select option');
+                selectOptions.forEach(option => {
+                    if (option.classList.contains('ar-content')) {
+                        option.style.display = 'none';
+                    } else if (option.classList.contains('en-content')) {
+                        option.style.display = 'block';
+                    }
+                });
             }
             
             // Update active language button
@@ -1421,19 +1560,50 @@
                     option.classList.remove('active');
                 }
             });
+            
+            // Store language preference
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Add toggleLanguage function for backward compatibility
+        function toggleLanguage() {
+            setLanguage(isArabic ? 'en' : 'ar');
         }
 
-        // Theme toggle (placeholder - already dark theme)
+        // Enhanced Theme toggle with full light/dark mode switching
         function toggleTheme() {
-            // Theme is already optimized for dark mode
+            const html = document.documentElement;
             const icon = document.getElementById('theme-icon');
+            const body = document.body;
+            
             if (currentTheme === 'dark') {
-                icon.className = 'fas fa-sun';
-                currentTheme = 'light';
-            } else {
+                // Switch to light theme
+                html.setAttribute('data-theme', 'light');
                 icon.className = 'fas fa-moon';
+                currentTheme = 'light';
+                body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)';
+            } else {
+                // Switch to dark theme
+                html.setAttribute('data-theme', 'dark');
+                icon.className = 'fas fa-sun';
                 currentTheme = 'dark';
+                body.style.background = '';
             }
+            
+            // Store theme preference
+            localStorage.setItem('preferred-theme', currentTheme);
+            
+            // Update particles color based on theme
+            updateParticlesTheme();
+        }
+        
+        // Update particles color based on current theme
+        function updateParticlesTheme() {
+            const particles = document.querySelectorAll('.particle');
+            const color = currentTheme === 'light' ? '#0ea5e9' : '#00d4ff';
+            particles.forEach(particle => {
+                particle.style.background = color;
+            });
         }
 
         // Mobile menu toggle
@@ -1514,9 +1684,9 @@
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
             
-            // Show loading state
+            // Show loading state with language support
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<div class="loading-spinner"></div><span>Sending...</span>';
+            submitBtn.innerHTML = '<div class="loading-spinner"></div><span>' + (isArabic ? 'جاري الإرسال...' : 'Sending...') + '</span>';
             
             // Hide previous messages
             successMessage.style.display = 'none';
@@ -1534,21 +1704,61 @@
                 language: isArabic ? 'Arabic' : 'English'
             };
 
-            // Simulate email sending (replace with actual EmailJS implementation)
-            setTimeout(() => {
-                // Show success message
-                successMessage.style.display = 'block';
-                
-                // Reset button
+            // Validate form data
+            if (!formData.fullName.trim() || !formData.email.trim() || !formData.projectDescription.trim() || !formData.serviceType) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + (isArabic ? 'يرجى ملء جميع الحقول المطلوبة' : 'Please fill in all required fields');
+                errorMessage.style.display = 'block';
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
-                
-                // Auto-close modal after 3 seconds
-                setTimeout(() => {
-                    closeConsultationModal();
-                }, 3000);
-                
-            }, 2000);
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + (isArabic ? 'يرجى إدخال بريد إلكتروني صحيح' : 'Please enter a valid email address');
+                errorMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                return;
+            }
+            
+            // Send email using EmailJS to brainsait@hotmail.com
+            emailjs.send('service_brainsait', 'template_consultation', {
+                to_email: 'brainsait@hotmail.com',
+                from_name: formData.fullName,
+                from_email: formData.email,
+                phone: formData.phone || 'Not provided',
+                organization: formData.organization || 'Not provided',
+                service_type: formData.serviceType,
+                message: formData.projectDescription,
+                timestamp: formData.timestamp,
+                language: formData.language,
+                subject: `Healthcare Consultation Request from ${formData.fullName}`
+            }).then(
+                function(response) {
+                    console.log('Email sent successfully:', response);
+                    successMessage.style.display = 'block';
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                    
+                    // Auto-close modal after 4 seconds
+                    setTimeout(() => {
+                        closeConsultationModal();
+                    }, 4000);
+                },
+                function(error) {
+                    console.error('Email sending failed:', error);
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + (isArabic ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً أو التواصل مباشرة على brainsait@hotmail.com' : 'Failed to send message. Please try again later or contact us directly at brainsait@hotmail.com');
+                    errorMessage.style.display = 'block';
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                }
+            );
         });
 
         // Close modal on outside click
@@ -1583,12 +1793,28 @@
 
         // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
+            // Load saved preferences
+            const savedTheme = localStorage.getItem('preferred-theme') || 'dark';
+            const savedLang = localStorage.getItem('preferred-language') || 'en';
+            
+            // Apply saved theme
+            currentTheme = savedTheme;
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('theme-icon').className = 'fas fa-moon';
+                document.body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)';
+            }
+            
+            // Initialize components
             initParticles();
             initMagneticEffect();
             initScrollAnimations();
             
             // Set initial language
-            setLanguage('en');
+            setLanguage(savedLang);
+            
+            // Update particles theme
+            updateParticlesTheme();
         });
 
         // Performance optimization
