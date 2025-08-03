@@ -1509,6 +1509,7 @@
 
         // Enhanced Language switching with proper RTL/LTR support
         function setLanguage(lang) {
+            console.log('Setting language to:', lang);
             isArabic = lang === 'ar';
             const enElements = document.querySelectorAll('.en-content');
             const arElements = document.querySelectorAll('.ar-content');
@@ -1567,25 +1568,31 @@
         
         // Add toggleLanguage function for backward compatibility
         function toggleLanguage() {
-            setLanguage(isArabic ? 'en' : 'ar');
+            console.log('Toggle language clicked');
+            const currentLang = document.documentElement.lang || 'en';
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            setLanguage(newLang);
         }
 
         // Enhanced Theme toggle with full light/dark mode switching
         function toggleTheme() {
+            console.log('Toggle theme clicked');
             const html = document.documentElement;
             const icon = document.getElementById('theme-icon');
             const body = document.body;
             
-            if (currentTheme === 'dark') {
+            const currentThemeAttr = html.getAttribute('data-theme') || 'dark';
+            
+            if (currentThemeAttr === 'dark') {
                 // Switch to light theme
                 html.setAttribute('data-theme', 'light');
-                icon.className = 'fas fa-moon';
+                if (icon) icon.className = 'fas fa-moon';
                 currentTheme = 'light';
                 body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)';
             } else {
                 // Switch to dark theme
                 html.setAttribute('data-theme', 'dark');
-                icon.className = 'fas fa-sun';
+                if (icon) icon.className = 'fas fa-sun';
                 currentTheme = 'dark';
                 body.style.background = '';
             }
@@ -1793,6 +1800,7 @@
 
         // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing...');
             // Load saved preferences
             const savedTheme = localStorage.getItem('preferred-theme') || 'dark';
             const savedLang = localStorage.getItem('preferred-language') || 'en';
@@ -1801,17 +1809,18 @@
             currentTheme = savedTheme;
             if (savedTheme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'light');
-                document.getElementById('theme-icon').className = 'fas fa-moon';
+                const themeIcon = document.getElementById('theme-icon');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
                 document.body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)';
             }
+            
+            // Apply saved language
+            setLanguage(savedLang);
             
             // Initialize components
             initParticles();
             initMagneticEffect();
             initScrollAnimations();
-            
-            // Set initial language
-            setLanguage(savedLang);
             
             // Update particles theme
             updateParticlesTheme();
