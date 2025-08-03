@@ -2,10 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRAINSAIT برينسايت - Healthcare AI Research & Digital Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <title>BRAINSAIT - Healthcare AI Research & Digital Solutions</title>
     <meta name="description" content="BRAINSAIT - Healthcare AI Research and Open Source Development by Dr. Mohamed El Fadil. Offering innovative digital solutions and custom projects.">
     <meta name="keywords" content="BRAINSAIT, healthcare AI, PyHeart, PyBrain, digital solutions, Dr. Mohamed El Fadil">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -13,6 +17,34 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'xs': '375px',
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
+                    },
+                    colors: {
+                        'brand-blue': '#0066CC',
+                        'brand-green': '#00AA44',
+                        'healthcare-blue': '#0ea5e9',
+                        'healthcare-green': '#10b981'
+                    },
+                    spacing: {
+                        'safe-top': 'env(safe-area-inset-top)',
+                        'safe-bottom': 'env(safe-area-inset-bottom)',
+                        'safe-left': 'env(safe-area-inset-left)',
+                        'safe-right': 'env(safe-area-inset-right)',
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- EmailJS -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -39,6 +71,10 @@
             --brand-green: #00AA44;
             --brand-gray: #F8F9FA;
             --brand-dark: #1a202c;
+            
+            /* Mobile-first touch targets */
+            --touch-target: 48px;
+            --touch-padding: 12px;
         }
 
         [data-theme="dark"] {
@@ -49,18 +85,30 @@
             --border-color: #334155;
         }
 
+        * {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Mobile-first base styles */
         body {
             font-family: 'Inter', sans-serif;
+            font-size: 16px; /* Prevent zoom on iOS */
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--background);
             overflow-x: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
         }
 
-        body[lang="ar"] {
+        body[dir="rtl"] {
             font-family: 'Tajawal', 'Inter', sans-serif;
-            direction: rtl;
         }
 
         .font-arabic {
@@ -71,30 +119,57 @@
             font-family: 'Inter', Arial, sans-serif;
         }
 
+        /* Mobile-first container */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
-        /* Theme Toggle */
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Mobile-first theme toggle */
         .theme-toggle {
             position: fixed;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
+            top: calc(50% - 25px);
+            right: 10px;
             z-index: 1001;
             background: var(--background);
             border: 2px solid var(--border-color);
-            border-radius: 50px;
-            padding: 10px;
+            border-radius: 50%;
+            width: var(--touch-target);
+            height: var(--touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-medium);
+            touch-action: manipulation;
         }
 
-        .theme-toggle:hover {
-            transform: translateY(-50%) scale(1.1);
+        @media (min-width: 768px) {
+            .theme-toggle {
+                right: 20px;
+                top: calc(50% - 25px);
+            }
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-large);
         }
 
         .theme-toggle i {
@@ -103,31 +178,52 @@
             transition: all 0.3s ease;
         }
 
-        /* Language Toggle */
+        /* Mobile-first language toggle */
         .language-toggle {
             position: fixed;
-            top: calc(50% + 80px);
-            right: 20px;
+            top: calc(50% + 35px);
+            right: 10px;
             z-index: 1001;
             background: var(--background);
             border: 2px solid var(--border-color);
             border-radius: 25px;
-            padding: 5px;
+            padding: 3px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-medium);
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 3px;
+        }
+
+        @media (min-width: 768px) {
+            .language-toggle {
+                right: 20px;
+                top: calc(50% + 65px);
+                padding: 5px;
+                gap: 5px;
+            }
         }
 
         .language-option {
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 6px 8px;
+            border-radius: 18px;
+            font-size: 0.75rem;
             font-weight: 600;
             transition: all 0.3s ease;
             color: var(--text-secondary);
+            cursor: pointer;
+            min-width: 32px;
+            text-align: center;
+            touch-action: manipulation;
+        }
+
+        @media (min-width: 768px) {
+            .language-option {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+                min-width: auto;
+            }
         }
 
         .language-option.active {
@@ -135,16 +231,18 @@
             color: white;
         }
 
-        /* Navigation */
+        /* Mobile-first navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
             transition: all 0.3s ease;
+            padding-top: env(safe-area-inset-top);
         }
 
         [data-theme="dark"] nav {
@@ -155,13 +253,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.75rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        @media (min-width: 768px) {
+            .nav-container {
+                padding: 1rem 2rem;
+            }
+        }
+
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
             background: var(--gradient-healthcare);
             -webkit-background-clip: text;
@@ -169,12 +273,44 @@
             background-clip: text;
         }
 
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Mobile navigation menu */
         .nav-links {
-            display: flex;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--background);
+            border-top: 1px solid var(--border-color);
+            box-shadow: var(--shadow-medium);
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
             list-style: none;
-            gap: 2rem;
             margin: 0;
-            padding: 0;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                position: static;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+
+        .nav-links.active {
+            display: flex;
         }
 
         .nav-links a {
@@ -183,10 +319,30 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            touch-action: manipulation;
         }
 
-        .nav-links a:hover {
+        @media (min-width: 768px) {
+            .nav-links a {
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
             color: var(--primary-color);
+            background-color: var(--background-alt);
+        }
+
+        @media (min-width: 768px) {
+            .nav-links a:hover,
+            .nav-links a:focus {
+                background-color: transparent;
+            }
         }
 
         .nav-links a::after {
@@ -195,36 +351,72 @@
             width: 0;
             height: 2px;
             bottom: -5px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             background: var(--gradient-healthcare);
             transition: width 0.3s ease;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links a::after {
+                display: block;
+            }
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            touch-action: manipulation;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        /* Mobile-first hero section */
         .hero {
-            padding: 8rem 0 6rem;
+            padding: 6rem 0 4rem;
             background: linear-gradient(135deg, var(--background-alt) 0%, var(--background) 100%);
             position: relative;
             overflow: hidden;
+            margin-top: 60px; /* Account for fixed nav */
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 8rem 0 6rem;
+                margin-top: 80px;
+            }
         }
 
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
             align-items: center;
             position: relative;
             z-index: 1;
+            text-align: center;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                text-align: left;
             }
         }
 
@@ -245,20 +437,40 @@
 
         .hero-visual {
             position: relative;
+            order: -1;
+        }
+
+        @media (min-width: 768px) {
+            .hero-visual {
+                order: 0;
+            }
         }
 
         .hero-cards {
             display: grid;
-            gap: 1rem;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-cards {
+                gap: 1rem;
+            }
         }
 
         .hero-card {
             background: var(--background);
-            padding: 1.5rem;
-            border-radius: 1rem;
+            padding: 1rem;
+            border-radius: 0.75rem;
             box-shadow: var(--shadow-medium);
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
+        }
+
+        @media (min-width: 640px) {
+            .hero-card {
+                padding: 1.5rem;
+                border-radius: 1rem;
+            }
         }
 
         .hero-card:hover {
@@ -268,7 +480,7 @@
         }
 
         .brand-title {
-            font-size: 4rem;
+            font-size: 2rem;
             font-weight: 900;
             margin-bottom: 0.5rem;
             background: var(--gradient-healthcare);
@@ -278,42 +490,120 @@
             line-height: 1.1;
         }
 
+        @media (min-width: 640px) {
+            .brand-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .brand-title {
+                font-size: 4rem;
+            }
+        }
+
         .brand-arabic {
             font-family: 'Amiri', serif;
-            font-size: 2.5rem;
-            margin-left: 1rem;
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .brand-arabic {
+                font-size: 2rem;
+                display: inline;
+                margin-top: 0;
+                margin-left: 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .brand-arabic {
+                font-size: 2.5rem;
+            }
         }
 
         .doctor-name {
-            font-size: 2rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
+        @media (min-width: 640px) {
+            .doctor-name {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .doctor-name {
+                font-size: 2rem;
+            }
+        }
+
         .hero-text .subtitle {
-            font-size: 1.5rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 500;
         }
 
-        .hero-text p {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
+        @media (min-width: 640px) {
+            .hero-text .subtitle {
+                font-size: 1.25rem;
+                margin-bottom: 2rem;
+            }
         }
 
+        @media (min-width: 1024px) {
+            .hero-text .subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        .hero-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 640px) {
+            .hero-text p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                line-height: 1.7;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-text p {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Mobile-first buttons */
         .cta-buttons {
             display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
         }
 
         .btn {
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.75rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -322,7 +612,19 @@
             font-size: 1rem;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            min-height: var(--touch-target);
+            touch-action: manipulation;
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .btn {
+                width: auto;
+                padding: 0.75rem 2rem;
+                border-radius: 0.5rem;
+            }
         }
 
         .btn-primary {
@@ -331,7 +633,8 @@
             box-shadow: var(--shadow-medium);
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover,
+        .btn-primary:focus {
             transform: translateY(-2px);
             box-shadow: var(--shadow-large);
         }
@@ -342,15 +645,39 @@
             border: 2px solid var(--primary-color);
         }
 
-        .btn-secondary:hover {
+        .btn-secondary:hover,
+        .btn-secondary:focus {
             background: var(--primary-color);
             color: white;
         }
 
-        /* Section Styles */
+        .btn-success {
+            background: linear-gradient(135deg, var(--brand-green), #008833);
+            color: white;
+        }
+
+        .btn-success:hover,
+        .btn-success:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 170, 68, 0.3);
+        }
+
+        /* Mobile-first sections */
         .section {
-            padding: 6rem 0;
+            padding: 3rem 0;
             position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section {
+                padding: 6rem 0;
+            }
         }
 
         .section:nth-child(even) {
@@ -359,11 +686,23 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-header {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-header {
+                margin-bottom: 4rem;
+            }
         }
 
         .section-title {
-            font-size: 3rem;
+            font-size: 1.75rem;
             font-weight: 800;
             margin-bottom: 1rem;
             background: var(--gradient-healthcare);
@@ -372,30 +711,74 @@
             background-clip: text;
         }
 
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
         .section-subtitle {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
-        /* Projects Grid */
+        @media (min-width: 768px) {
+            .section-subtitle {
+                font-size: 1.125rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Mobile-first projects grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                margin-top: 3rem;
+            }
         }
 
         .project-card {
             background: var(--background);
             border: 1px solid var(--border-color);
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .project-card {
+                padding: 2rem;
+            }
         }
 
         .project-card::before {
@@ -420,7 +803,7 @@
         }
 
         .project-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             background: var(--gradient-healthcare);
             -webkit-background-clip: text;
@@ -428,17 +811,36 @@
             background-clip: text;
         }
 
+        @media (min-width: 768px) {
+            .project-icon {
+                font-size: 3rem;
+            }
+        }
+
         .project-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-primary);
+        }
+
+        @media (min-width: 768px) {
+            .project-title {
+                font-size: 1.5rem;
+            }
         }
 
         .project-description {
             color: var(--text-secondary);
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .project-description {
+                font-size: 1rem;
+            }
         }
 
         .project-link {
@@ -449,16 +851,35 @@
             align-items: center;
             gap: 0.5rem;
             transition: gap 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .project-link {
+                font-size: 1rem;
+            }
         }
 
         .project-link:hover {
             gap: 1rem;
         }
 
-        /* Form Section Styles */
+        /* Mobile-first form section */
         .form-section {
-            padding: 6rem 0;
+            padding: 3rem 0;
             background: var(--background-alt);
+        }
+
+        @media (min-width: 768px) {
+            .form-section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .form-section {
+                padding: 6rem 0;
+            }
         }
 
         .form-container {
@@ -468,8 +889,26 @@
 
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .glass-card {
+                padding: 2rem;
+                border-radius: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .glass-card {
+                padding: 3rem;
+                border-radius: 2rem;
+            }
         }
 
         [data-theme="dark"] .glass-card {
@@ -477,14 +916,21 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Progress Bar */
+        /* Mobile-first progress bar */
         .progress-container {
             position: sticky;
-            top: 80px;
+            top: 60px;
             z-index: 40;
             background: var(--background);
             box-shadow: var(--shadow-light);
             border-bottom: 1px solid var(--border-color);
+            padding-top: env(safe-area-inset-top);
+        }
+
+        @media (min-width: 768px) {
+            .progress-container {
+                top: 80px;
+            }
         }
 
         .progress-bar {
@@ -492,7 +938,7 @@
             transition: width 0.6s ease-in-out;
         }
 
-        /* Form Steps */
+        /* Mobile-first form steps */
         .form-step {
             display: none;
             animation: fadeInUp 0.5s ease-out;
@@ -502,14 +948,31 @@
             display: block;
         }
 
-        /* Service Cards */
+        /* Mobile-first service cards */
         .service-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateY(0);
             cursor: pointer;
+            touch-action: manipulation;
+            padding: 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 1rem;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .service-card:hover {
+        @media (min-width: 768px) {
+            .service-card {
+                padding: 2rem;
+                border-radius: 2rem;
+            }
+        }
+
+        .service-card:hover,
+        .service-card:focus {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
@@ -518,11 +981,18 @@
             background: linear-gradient(135deg, var(--brand-blue), #0052a3);
             color: white;
             transform: translateY(-4px);
+            border-color: var(--brand-blue);
         }
 
-        /* Feature Checkboxes */
+        .service-card.selected h4,
+        .service-card.selected p {
+            color: white;
+        }
+
+        /* Mobile-first feature checkboxes */
         .feature-checkbox {
             position: relative;
+            margin-bottom: 0.75rem;
         }
 
         .feature-checkbox input[type="checkbox"] {
@@ -539,6 +1009,8 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            min-height: var(--touch-target);
+            touch-action: manipulation;
         }
 
         .feature-checkbox input[type="checkbox"]:checked + .feature-label {
@@ -547,10 +1019,10 @@
             border-color: var(--brand-blue);
         }
 
-        /* Step Indicators */
+        /* Mobile-first step indicators */
         .step-indicator {
-            width: 3rem;
-            height: 3rem;
+            width: 2rem;
+            height: 2rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -560,6 +1032,15 @@
             border: 2px solid var(--border-color);
             color: var(--text-secondary);
             font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+            .step-indicator {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1rem;
+            }
         }
 
         .step-indicator.active {
@@ -575,21 +1056,76 @@
             border-color: var(--brand-green);
         }
 
-        /* Input Fields */
+        /* Mobile-first input fields */
         .input-field {
             transition: all 0.3s ease;
             border: 2px solid var(--border-color);
             background: var(--background);
             color: var(--text-primary);
+            font-size: 16px; /* Prevent zoom on iOS */
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .input-field {
+                padding: 1rem;
+                border-radius: 0.75rem;
+            }
         }
 
         .input-field:focus {
             border-color: var(--brand-blue);
             box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
             transform: translateY(-1px);
+            outline: none;
         }
 
-        /* Success Message */
+        .input-field.error {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+
+        /* Mobile-first grid layouts */
+        .grid-cols-1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-cols-1.sm\\:grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid-cols-1.md\\:grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-cols-1.md\\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .grid-cols-1.md\\:grid-cols-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-cols-1.lg\\:grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .grid-cols-1.lg\\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Success message */
         #successMessage {
             position: fixed;
             inset: 0;
@@ -598,15 +1134,16 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
+            padding: 1rem;
         }
 
-        /* Loading Spinner */
+        /* Loading spinner */
         .loading-spinner {
             border: 3px solid #f3f3f3;
             border-top: 3px solid var(--brand-blue);
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 24px;
+            height: 24px;
             animation: spin 1s linear infinite;
         }
 
@@ -615,7 +1152,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Contact Section */
+        /* Mobile-first contact section */
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -623,18 +1160,32 @@
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .contact-info {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
         }
 
         .contact-item {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background: var(--background);
             border-radius: 1rem;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .contact-item {
+                padding: 2rem;
+            }
         }
 
         .contact-item:hover {
@@ -643,30 +1194,67 @@
         }
 
         .contact-icon {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--healthcare-blue);
             margin-bottom: 1rem;
         }
 
-        /* Footer */
+        @media (min-width: 768px) {
+            .contact-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Mobile-first footer */
         footer {
             background: var(--background-alt);
-            padding: 4rem 0 2rem;
+            padding: 2rem 0 1rem;
             border-top: 1px solid var(--border-color);
+        }
+
+        @media (min-width: 768px) {
+            footer {
+                padding: 3rem 0 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            footer {
+                padding: 4rem 0 2rem;
+            }
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .footer-content {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-content {
+                gap: 3rem;
+                margin-bottom: 3rem;
+            }
         }
 
         .footer-section h3 {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-primary);
+        }
+
+        @media (min-width: 768px) {
+            .footer-section h3 {
+                font-size: 1.25rem;
+            }
         }
 
         .footer-links {
@@ -682,17 +1270,28 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
+            padding: 0.25rem 0;
+            display: block;
         }
 
-        .footer-links a:hover {
+        .footer-links a:hover,
+        .footer-links a:focus {
             color: var(--healthcare-blue);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
             color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                padding-top: 2rem;
+                font-size: 1rem;
+            }
         }
 
         /* Language-specific styles */
@@ -704,46 +1303,43 @@
             display: block;
         }
 
-        body[lang="ar"] .arabic-content {
+        body[dir="rtl"] .arabic-content {
             display: block;
         }
 
-        body[lang="ar"] .english-content {
+        body[dir="rtl"] .english-content {
             display: none;
         }
 
-        body[lang="ar"] .nav-links {
-            flex-direction: row-reverse;
+        /* RTL-specific adjustments */
+        body[dir="rtl"] .nav-links {
+            flex-direction: column;
         }
 
-        body[lang="ar"] .cta-buttons {
-            flex-direction: row-reverse;
+        @media (min-width: 768px) {
+            body[dir="rtl"] .nav-links {
+                flex-direction: row-reverse;
+            }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        body[dir="rtl"] .cta-buttons {
+            flex-direction: column;
+        }
+
+        @media (min-width: 640px) {
+            body[dir="rtl"] .cta-buttons {
+                flex-direction: row-reverse;
             }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .brand-title {
-                font-size: 3rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
+        }
+
+        body[dir="rtl"] .brand-arabic {
+            margin-left: 0;
+            margin-right: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            body[dir="rtl"] .brand-arabic {
+                margin-right: 1rem;
             }
         }
 
@@ -751,25 +1347,77 @@
         .hidden {
             display: none !important;
         }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 20%, 40%, 60%, 80%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        }
+
+        /* Touch improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .hero-card:hover,
+            .project-card:hover,
+            .service-card:hover,
+            .contact-item:hover {
+                transform: none;
+            }
+            
+            .hero-card:active,
+            .project-card:active,
+            .service-card:active,
+            .contact-item:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Prevent horizontal scroll */
+        html, body {
+            overflow-x: hidden;
+        }
+
+        /* Improve scrolling on iOS */
+        * {
+            -webkit-overflow-scrolling: touch;
+        }
     </style>
 </head>
 <body>
     <!-- Theme Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <div class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" role="button" tabindex="0">
         <i class="fas fa-moon" id="theme-icon"></i>
     </div>
 
     <!-- Language Toggle -->
-    <div class="language-toggle" aria-label="Language toggle">
-        <div class="language-option active" onclick="setLanguage('en')" id="lang-en">EN</div>
-        <div class="language-option" onclick="setLanguage('ar')" id="lang-ar">العربية</div>
+    <div class="language-toggle" aria-label="Language toggle" role="group">
+        <div class="language-option active" onclick="setLanguage('en')" id="lang-en" role="button" tabindex="0" aria-label="Switch to English">EN</div>
+        <div class="language-option" onclick="setLanguage('ar')" id="lang-ar" role="button" tabindex="0" aria-label="Switch to Arabic">عر</div>
     </div>
 
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="navbar" role="navigation">
         <div class="nav-container">
-            <div class="logo">BRAINSAIT برينسايت</div>
-            <ul class="nav-links">
+            <div class="logo">BRAINSAIT <span class="brand-arabic">برينسايت</span></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
                 <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
                 <li><a href="#solutions" data-en="Solutions" data-ar="الحلول">Solutions</a></li>
@@ -815,36 +1463,36 @@
                 <div class="hero-visual">
                     <div class="hero-cards">
                         <div class="hero-card">
-                            <i class="fas fa-heartbeat text-3xl text-red-500 mb-2"></i>
-                            <h3 class="font-bold mb-1">
+                            <i class="fas fa-heartbeat text-2xl text-red-500 mb-2"></i>
+                            <h3 class="font-bold mb-1 text-sm">
                                 <span class="english-content">PyHeart</span>
                                 <span class="arabic-content">PyHeart</span>
                             </h3>
-                            <p class="text-sm text-gray-600">
-                                <span class="english-content">Healthcare Interoperability Engine</span>
-                                <span class="arabic-content">محرك التشغيل البيني للرعاية الصحية</span>
+                            <p class="text-xs text-gray-600">
+                                <span class="english-content">Healthcare Interoperability</span>
+                                <span class="arabic-content">التشغيل البيني الصحي</span>
                             </p>
                         </div>
                         <div class="hero-card">
-                            <i class="fas fa-brain text-3xl text-purple-500 mb-2"></i>
-                            <h3 class="font-bold mb-1">
+                            <i class="fas fa-brain text-2xl text-purple-500 mb-2"></i>
+                            <h3 class="font-bold mb-1 text-sm">
                                 <span class="english-content">PyBrain</span>
                                 <span class="arabic-content">PyBrain</span>
                             </h3>
-                            <p class="text-sm text-gray-600">
-                                <span class="english-content">AI-Powered Healthcare Intelligence</span>
-                                <span class="arabic-content">ذكاء الرعاية الصحية بالذكاء الاصطناعي</span>
+                            <p class="text-xs text-gray-600">
+                                <span class="english-content">AI Healthcare Intelligence</span>
+                                <span class="arabic-content">ذكاء الرعاية الصحية</span>
                             </p>
                         </div>
                         <div class="hero-card">
-                            <i class="fas fa-link text-3xl text-blue-500 mb-2"></i>
-                            <h3 class="font-bold mb-1">
+                            <i class="fas fa-link text-2xl text-blue-500 mb-2"></i>
+                            <h3 class="font-bold mb-1 text-sm">
                                 <span class="english-content">Integrated Solutions</span>
                                 <span class="arabic-content">الحلول المتكاملة</span>
                             </h3>
-                            <p class="text-sm text-gray-600">
-                                <span class="english-content">Unified Healthcare Systems</span>
-                                <span class="arabic-content">أنظمة رعاية صحية موحدة</span>
+                            <p class="text-xs text-gray-600">
+                                <span class="english-content">Unified Healthcare</span>
+                                <span class="arabic-content">رعاية صحية موحدة</span>
                             </p>
                         </div>
                     </div>
@@ -862,8 +1510,8 @@
                     <span class="arabic-content">مشاريعنا</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="english-content">Innovative healthcare AI solutions designed to improve patient outcomes and streamline medical processes</span>
-                    <span class="arabic-content">حلول ذكاء اصطناعي صحية مبتكرة مصممة لتحسين نتائج المرضى وتبسيط العمليات الطبية</span>
+                    <span class="english-content">Innovative healthcare AI solutions designed to improve patient outcomes</span>
+                    <span class="arabic-content">حلول ذكاء اصطناعي صحية مبتكرة لتحسين نتائج المرضى</span>
                 </p>
             </div>
             <div class="projects-grid">
@@ -873,10 +1521,10 @@
                     </div>
                     <h3 class="project-title">PyHeart</h3>
                     <p class="project-description">
-                        <span class="english-content">A universal integration platform for healthcare systems, providing seamless connectivity, workflow orchestration, and secure data exchange.</span>
-                        <span class="arabic-content">منصة تكامل عالمية لأنظمة الرعاية الصحية، توفر اتصالاً سلساً وتنسيق سير العمل وتبادل البيانات الآمن.</span>
+                        <span class="english-content">Universal integration platform for healthcare systems with seamless connectivity and secure data exchange.</span>
+                        <span class="arabic-content">منصة تكامل عالمية لأنظمة الرعاية الصحية مع اتصال سلس وتبادل آمن للبيانات.</span>
                     </p>
-                    <a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" class="project-link">
+                    <a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" rel="noopener" class="project-link">
                         <span class="english-content">Learn More</span>
                         <span class="arabic-content">اعرف المزيد</span>
                         <i class="fas fa-arrow-right"></i>
@@ -888,10 +1536,10 @@
                     </div>
                     <h3 class="project-title">PyBrain</h3>
                     <p class="project-description">
-                        <span class="english-content">AI-powered healthcare data harmonization and decision support system with advanced clinical NLP capabilities.</span>
-                        <span class="arabic-content">نظام توحيد بيانات الرعاية الصحية ودعم القرار المدعوم بالذكاء الاصطناعي مع قدرات متقدمة لمعالجة اللغة الطبيعية السريرية.</span>
+                        <span class="english-content">AI-powered healthcare data harmonization and decision support system with advanced clinical capabilities.</span>
+                        <span class="arabic-content">نظام توحيد بيانات الرعاية الصحية ودعم القرار بالذكاء الاصطناعي مع قدرات سريرية متقدمة.</span>
                     </p>
-                    <a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" class="project-link">
+                    <a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" rel="noopener" class="project-link">
                         <span class="english-content">Learn More</span>
                         <span class="arabic-content">اعرف المزيد</span>
                         <i class="fas fa-arrow-right"></i>
@@ -901,12 +1549,12 @@
                     <div class="project-icon">
                         <i class="fas fa-link"></i>
                     </div>
-                    <h3 class="project-title">PyHeart + PyBrain</h3>
+                    <h3 class="project-title">Integrated Solutions</h3>
                     <p class="project-description">
-                        <span class="english-content">A comprehensive solution combining interoperability and AI intelligence for unified healthcare systems.</span>
-                        <span class="arabic-content">حل شامل يجمع بين التشغيل البيني والذكاء الاصطناعي لأنظمة رعاية صحية موحدة.</span>
+                        <span class="english-content">Comprehensive solution combining interoperability and AI intelligence for unified healthcare systems.</span>
+                        <span class="arabic-content">حل شامل يجمع التشغيل البيني والذكاء الاصطناعي لأنظمة رعاية صحية موحدة.</span>
                     </p>
-                    <a href="https://pypi.org/user/Fadil369/" target="_blank" class="project-link">
+                    <a href="https://pypi.org/user/Fadil369/" target="_blank" rel="noopener" class="project-link">
                         <span class="english-content">Learn More</span>
                         <span class="arabic-content">اعرف المزيد</span>
                         <i class="fas fa-arrow-right"></i>
@@ -939,8 +1587,8 @@
                         <span class="arabic-content">الكشف المبكر عن الأمراض</span>
                     </h3>
                     <p class="project-description">
-                        <span class="english-content">Advanced AI algorithms for early detection and prediction of diseases, improving patient outcomes through timely intervention.</span>
-                        <span class="arabic-content">خوارزميات ذكاء اصطناعي متقدمة للكشف المبكر والتنبؤ بالأمراض، وتحسين نتائج المرضى من خلال التدخل في الوقت المناسب.</span>
+                        <span class="english-content">Advanced AI algorithms for early detection and prediction of diseases through timely intervention.</span>
+                        <span class="arabic-content">خوارزميات ذكاء اصطناعي متقدمة للكشف المبكر والتنبؤ بالأمراض من خلال التدخل المبكر.</span>
                     </p>
                 </div>
                 <div class="project-card">
@@ -948,12 +1596,12 @@
                         <i class="fas fa-user-md"></i>
                     </div>
                     <h3 class="project-title">
-                        <span class="english-content">Personalized Treatment Plans</span>
-                        <span class="arabic-content">خطط العلاج الشخصية</span>
+                        <span class="english-content">Personalized Treatment</span>
+                        <span class="arabic-content">العلاج الشخصي</span>
                     </h3>
                     <p class="project-description">
-                        <span class="english-content">AI-driven personalized treatment recommendations based on patient data, medical history, and latest research.</span>
-                        <span class="arabic-content">توصيات علاج شخصية مدفوعة بالذكاء الاصطناعي بناءً على بيانات المريض والتاريخ الطبي وأحدث الأبحاث.</span>
+                        <span class="english-content">AI-driven personalized treatment recommendations based on patient data and latest research.</span>
+                        <span class="arabic-content">توصيات علاج شخصية مدفوعة بالذكاء الاصطناعي بناءً على بيانات المريض وأحدث الأبحاث.</span>
                     </p>
                 </div>
                 <div class="project-card">
@@ -965,8 +1613,8 @@
                         <span class="arabic-content">تحسين الرعاية الصحية</span>
                     </h3>
                     <p class="project-description">
-                        <span class="english-content">Streamline healthcare operations, reduce costs, and improve efficiency through intelligent automation and analytics.</span>
-                        <span class="arabic-content">تبسيط عمليات الرعاية الصحية وخفض التكاليف وتحسين الكفاءة من خلال الأتمتة الذكية والتحليلات.</span>
+                        <span class="english-content">Streamline operations, reduce costs, and improve efficiency through intelligent automation.</span>
+                        <span class="arabic-content">تبسيط العمليات وخفض التكاليف وتحسين الكفاءة من خلال الأتمتة الذكية.</span>
                     </p>
                 </div>
             </div>
@@ -982,336 +1630,303 @@
                     <span class="arabic-content">ابدأ مشروعك الرقمي</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="english-content">Transform your ideas into reality with our expert development team</span>
-                    <span class="arabic-content">حول أفكارك إلى واقع مع فريق التطوير الخبير لدينا</span>
+                    <span class="english-content">Transform your ideas into reality with our expert team</span>
+                    <span class="arabic-content">حول أفكارك إلى واقع مع فريقنا الخبير</span>
                 </p>
             </div>
             
             <!-- Progress Bar -->
             <div class="progress-container">
-                <div class="container mx-auto px-4 py-4">
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-sm font-semibold text-gray-600">
+                <div class="container mx-auto px-4 py-3">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-semibold text-gray-600">
                             <span class="english-content">Step <span id="currentStepEn">1</span> of 6</span>
                             <span class="arabic-content">الخطوة <span id="currentStep">1</span> من 6</span>
                         </span>
-                        <span class="text-sm font-semibold text-blue-600">
+                        <span class="text-xs font-semibold text-blue-600">
                             <span id="progressPercent">17%</span>
                         </span>
                     </div>
-                    <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                        <div id="progressBar" class="progress-bar h-3 rounded-full" style="width: 16.67%;"></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="progressBar" class="progress-bar h-2 rounded-full" style="width: 16.67%;"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Step Indicators -->
-            <div class="flex justify-center items-center space-x-4 mt-8 mb-8" id="stepIndicators">
+            <div class="flex justify-center items-center space-x-2 rtl:space-x-reverse mt-6 mb-6" id="stepIndicators">
                 <div class="step-indicator active" id="stepIndicator1">1</div>
-                <div class="w-8 h-0.5 bg-gray-300"></div>
+                <div class="w-4 h-0.5 bg-gray-300"></div>
                 <div class="step-indicator" id="stepIndicator2">2</div>
-                <div class="w-8 h-0.5 bg-gray-300"></div>
+                <div class="w-4 h-0.5 bg-gray-300"></div>
                 <div class="step-indicator" id="stepIndicator3">3</div>
-                <div class="w-8 h-0.5 bg-gray-300"></div>
+                <div class="w-4 h-0.5 bg-gray-300"></div>
                 <div class="step-indicator" id="stepIndicator4">4</div>
-                <div class="w-8 h-0.5 bg-gray-300"></div>
+                <div class="w-4 h-0.5 bg-gray-300"></div>
                 <div class="step-indicator" id="stepIndicator5">5</div>
-                <div class="w-8 h-0.5 bg-gray-300"></div>
+                <div class="w-4 h-0.5 bg-gray-300"></div>
                 <div class="step-indicator" id="stepIndicator6">6</div>
             </div>
 
-            <form id="preOrderForm" class="glass-card rounded-2xl shadow-2xl p-8 lg:p-12 max-w-5xl mx-auto">
+            <form id="preOrderForm" class="glass-card max-w-4xl mx-auto">
                 
                 <!-- Step 1: Basic Information -->
                 <div class="form-step active" id="step1">
-                    <div class="text-center mb-12">
-                        <div class="text-6xl mb-4">👋</div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    <div class="text-center mb-8">
+                        <div class="text-4xl mb-3">👋</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
                             <span class="english-content">Welcome! Let's get to know you</span>
-                            <span class="arabic-content">مرحباً بك! لنتعرف عليك</span>
-                        </h2>
-                        <p class="text-gray-600 text-lg">
-                            <span class="english-content">Start your digital journey with us by filling your basic information</span>
-                            <span class="arabic-content">ابدأ رحلتك الرقمية معنا بتعبئة معلوماتك الأساسية</span>
+                            <span class="arabic-content">مرحباً! لنتعرف عليك</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            <span class="english-content">Start your digital journey with us</span>
+                            <span class="arabic-content">ابدأ رحلتك الرقمية معنا</span>
                         </p>
                     </div>
                     
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="grid-cols-1 lg:grid-cols-2">
                         <div class="space-y-2">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">
+                            <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-user mr-2 text-blue-500"></i>
                                 <span class="english-content">Full Name *</span>
                                 <span class="arabic-content">الاسم الكامل *</span>
                             </label>
-                            <input type="text" name="fullName" required class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                            <input type="text" id="fullName" name="fullName" required class="input-field" placeholder="John Doe" aria-label="Full Name">
                         </div>
                         
                         <div class="space-y-2">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-envelope mr-2 text-blue-500"></i>
                                 <span class="english-content">Email Address *</span>
                                 <span class="arabic-content">البريد الإلكتروني *</span>
                             </label>
-                            <input type="email" name="email" required class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                            <input type="email" id="email" name="email" required class="input-field" placeholder="email@example.com" aria-label="Email Address">
                         </div>
                         
                         <div class="space-y-2">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-phone mr-2 text-blue-500"></i>
                                 <span class="english-content">Phone Number *</span>
                                 <span class="arabic-content">رقم الهاتف *</span>
                             </label>
-                            <input type="tel" name="phone" required class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                            <input type="tel" id="phone" name="phone" required class="input-field" placeholder="+1234567890" aria-label="Phone Number">
                         </div>
                         
                         <div class="space-y-2">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">
+                            <label for="location" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
                                 <span class="english-content">City/Country</span>
                                 <span class="arabic-content">المدينة/البلد</span>
                             </label>
-                            <input type="text" name="location" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                            <input type="text" id="location" name="location" class="input-field" placeholder="City, Country" aria-label="City/Country">
                         </div>
                         
-                        <div class="lg:col-span-2 space-y-2">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">
+                        <div class="space-y-2 lg:col-span-2">
+                            <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-building mr-2 text-blue-500"></i>
-                                <span class="english-content">Company/Organization Name</span>
-                                <span class="arabic-content">اسم الشركة/المؤسسة</span>
+                                <span class="english-content">Company/Organization</span>
+                                <span class="arabic-content">الشركة/المؤسسة</span>
                             </label>
-                            <input type="text" name="company" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                            <input type="text" id="company" name="company" class="input-field" placeholder="Company Name" aria-label="Company Name">
                         </div>
                     </div>
                 </div>
 
                 <!-- Step 2: Service Selection -->
                 <div class="form-step" id="step2">
-                    <div class="text-center mb-12">
-                        <div class="text-6xl mb-4">🎯</div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-                            <span class="english-content">What type of service do you need?</span>
-                            <span class="arabic-content">ما نوع الخدمة التي تحتاجها؟</span>
-                        </h2>
-                        <p class="text-gray-600 text-lg">
-                            <span class="english-content">Choose the service that fits your needs from our digital solutions</span>
-                            <span class="arabic-content">اختر الخدمة التي تناسب احتياجاتك من مجموعة حلولنا الرقمية</span>
+                    <div class="text-center mb-8">
+                        <div class="text-4xl mb-3">🎯</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
+                            <span class="english-content">What service do you need?</span>
+                            <span class="arabic-content">ما نوع الخدمة المطلوبة؟</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            <span class="english-content">Choose from our digital solutions</span>
+                            <span class="arabic-content">اختر من حلولنا الرقمية</span>
                         </p>
                     </div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                        <div class="service-card p-8 border-2 border-gray-200 rounded-2xl text-center" data-service="website">
-                            <div class="text-5xl mb-4">🌐</div>
-                            <h3 class="font-bold text-xl text-gray-800 mb-3">
+                    <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
+                        <div class="service-card" data-service="website">
+                            <div class="text-3xl mb-2">🌐</div>
+                            <h4 class="font-bold text-base text-gray-800 mb-2">
                                 <span class="english-content">Website</span>
                                 <span class="arabic-content">موقع إلكتروني</span>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                <span class="english-content">Responsive business and personal websites optimized for search engines</span>
-                                <span class="arabic-content">مواقع تجارية وشخصية متجاوبة ومحسنة لمحركات البحث</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                <span class="english-content">Responsive websites optimized for search engines</span>
+                                <span class="arabic-content">مواقع متجاوبة محسنة لمحركات البحث</span>
                             </p>
                         </div>
                         
-                        <div class="service-card p-8 border-2 border-gray-200 rounded-2xl text-center" data-service="mobile-app">
-                            <div class="text-5xl mb-4">📱</div>
-                            <h3 class="font-bold text-xl text-gray-800 mb-3">
+                        <div class="service-card" data-service="mobile-app">
+                            <div class="text-3xl mb-2">📱</div>
+                            <h4 class="font-bold text-base text-gray-800 mb-2">
                                 <span class="english-content">Mobile App</span>
                                 <span class="arabic-content">تطبيق جوال</span>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                <span class="english-content">Custom high-performance iOS & Android applications</span>
-                                <span class="arabic-content">تطبيقات iOS و Android مخصصة وعالية الأداء</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                <span class="english-content">High-performance iOS & Android apps</span>
+                                <span class="arabic-content">تطبيقات iOS و Android عالية الأداء</span>
                             </p>
                         </div>
                         
-                        <div class="service-card p-8 border-2 border-gray-200 rounded-2xl text-center" data-service="chatbot">
-                            <div class="text-5xl mb-4">🤖</div>
-                            <h3 class="font-bold text-xl text-gray-800 mb-3">
+                        <div class="service-card" data-service="chatbot">
+                            <div class="text-3xl mb-2">🤖</div>
+                            <h4 class="font-bold text-base text-gray-800 mb-2">
                                 <span class="english-content">Smart Chatbot</span>
-                                <span class="arabic-content">روبوت محادثة ذكي</span>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                <span class="english-content">AI-powered multilingual digital assistant</span>
-                                <span class="arabic-content">مساعد رقمي مدعوم بالذكاء الاصطناعي ومتعدد اللغات</span>
+                                <span class="arabic-content">روبوت ذكي</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                <span class="english-content">AI-powered digital assistant</span>
+                                <span class="arabic-content">مساعد رقمي بالذكاء الاصطناعي</span>
                             </p>
                         </div>
                         
-                        <div class="service-card p-8 border-2 border-gray-200 rounded-2xl text-center" data-service="automation">
-                            <div class="text-5xl mb-4">⚡</div>
-                            <h3 class="font-bold text-xl text-gray-800 mb-3">
-                                <span class="english-content">Process Automation</span>
+                        <div class="service-card" data-service="automation">
+                            <div class="text-3xl mb-2">⚡</div>
+                            <h4 class="font-bold text-base text-gray-800 mb-2">
+                                <span class="english-content">Automation</span>
                                 <span class="arabic-content">أتمتة العمليات</span>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                <span class="english-content">Custom automation solutions to improve efficiency and productivity</span>
-                                <span class="arabic-content">حلول أتمتة مخصصة لتحسين الكفاءة والإنتاجية</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                <span class="english-content">Improve efficiency and productivity</span>
+                                <span class="arabic-content">تحسين الكفاءة والإنتاجية</span>
                             </p>
                         </div>
                         
-                        <div class="service-card p-8 border-2 border-gray-200 rounded-2xl text-center" data-service="ai-solution">
-                            <div class="text-5xl mb-4">🧠</div>
-                            <h3 class="font-bold text-xl text-gray-800 mb-3">
+                        <div class="service-card" data-service="ai-solution">
+                            <div class="text-3xl mb-2">🧠</div>
+                            <h4 class="font-bold text-base text-gray-800 mb-2">
                                 <span class="english-content">AI Solutions</span>
                                 <span class="arabic-content">حلول الذكاء الاصطناعي</span>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                <span class="english-content">Custom intelligent applications for data analysis and prediction</span>
-                                <span class="arabic-content">تطبيقات ذكية مخصصة لتحليل البيانات والتنبؤ</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                <span class="english-content">Data analysis and prediction</span>
+                                <span class="arabic-content">تحليل البيانات والتنبؤ</span>
                             </p>
                         </div>
                         
-                        <div class="service-card p-8 border-2 border-gray-200 rounded-2xl text-center" data-service="other">
-                            <div class="text-5xl mb-4">💡</div>
-                            <h3 class="font-bold text-xl text-gray-800 mb-3">
-                                <span class="english-content">Custom Services</span>
-                                <span class="arabic-content">خدمات مخصصة</span>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                <span class="english-content">Innovative digital solutions designed specifically for your needs</span>
-                                <span class="arabic-content">حلول رقمية مبتكرة مصممة خصيصاً لاحتياجاتك</span>
+                        <div class="service-card" data-service="other">
+                            <div class="text-3xl mb-2">💡</div>
+                            <h4 class="font-bold text-base text-gray-800 mb-2">
+                                <span class="english-content">Custom Service</span>
+                                <span class="arabic-content">خدمة مخصصة</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                <span class="english-content">Solutions for your specific needs</span>
+                                <span class="arabic-content">حلول لاحتياجاتك الخاصة</span>
                             </p>
                         </div>
                     </div>
                     
                     <input type="hidden" name="serviceType" id="serviceType">
                     
-                    <div class="mt-8 hidden" id="otherServiceInput">
-                        <label class="block text-sm font-semibold text-gray-700 mb-3">
-                            <span class="english-content">Please specify the required service type</span>
-                            <span class="arabic-content">يرجى تحديد نوع الخدمة المطلوبة</span>
+                    <div class="mt-6 hidden" id="otherServiceInput">
+                        <label for="otherService" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <span class="english-content">Please specify the service type</span>
+                            <span class="arabic-content">يرجى تحديد نوع الخدمة</span>
                         </label>
-                        <input type="text" name="otherService" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                        <input type="text" id="otherService" name="otherService" class="input-field" placeholder="Describe your custom service">
                     </div>
                 </div>
 
                 <!-- Step 3: Project Details -->
                 <div class="form-step" id="step3">
-                    <div class="text-center mb-12">
-                        <div class="text-6xl mb-4">📋</div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    <div class="text-center mb-8">
+                        <div class="text-4xl mb-3">📋</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
                             <span class="english-content">Tell us about your project</span>
                             <span class="arabic-content">أخبرنا عن مشروعك</span>
-                        </h2>
-                        <p class="text-gray-600 text-lg">
-                            <span class="english-content">The more details you provide, the better solution we can offer</span>
-                            <span class="arabic-content">كلما كانت التفاصيل أكثر، كان بإمكاننا تقديم حل أفضل لك</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            <span class="english-content">More details help us provide better solutions</span>
+                            <span class="arabic-content">التفاصيل تساعدنا في تقديم حلول أفضل</span>
                         </p>
                     </div>
                     
-                    <div class="space-y-8">
+                    <div class="space-y-6">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-4">
+                            <label for="projectDescription" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-file-alt mr-2 text-blue-500"></i>
-                                <span class="english-content">Detailed Project Description *</span>
-                                <span class="arabic-content">وصف المشروع بالتفصيل *</span>
+                                <span class="english-content">Project Description *</span>
+                                <span class="arabic-content">وصف المشروع *</span>
                             </label>
-                            <textarea name="projectDescription" rows="6" required class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none resize-none"></textarea>
+                            <textarea id="projectDescription" name="projectDescription" rows="4" required class="input-field resize-none" placeholder="Describe your project in detail..."></textarea>
                         </div>
                         
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="grid-cols-1 lg:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-4">
+                                <label for="projectGoal" class="block text-sm font-semibold text-gray-700 mb-2">
                                     <i class="fas fa-bullseye mr-2 text-blue-500"></i>
                                     <span class="english-content">Project Goal</span>
-                                    <span class="arabic-content">الهدف من المشروع</span>
+                                    <span class="arabic-content">هدف المشروع</span>
                                 </label>
-                                <select name="projectGoal" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
-                                    <option value="">
-                                        <span class="english-content">Select Goal</span>
-                                        <span class="arabic-content">اختر الهدف</span>
-                                    </option>
-                                    <option value="business">
-                                        <span class="english-content">Business - Increase sales and profits</span>
-                                        <span class="arabic-content">تجاري - زيادة المبيعات والأرباح</span>
-                                    </option>
-                                    <option value="personal">
-                                        <span class="english-content">Personal - Personal website or blog</span>
-                                        <span class="arabic-content">شخصي - موقع أو مدونة شخصية</span>
-                                    </option>
-                                    <option value="education">
-                                        <span class="english-content">Educational - Learning or training platform</span>
-                                        <span class="arabic-content">تعليمي - منصة تعليمية أو تدريبية</span>
-                                    </option>
-                                    <option value="healthcare">
-                                        <span class="english-content">Healthcare - Medical or health services</span>
-                                        <span class="arabic-content">صحي - خدمات طبية أو صحية</span>
-                                    </option>
-                                    <option value="nonprofit">
-                                        <span class="english-content">Non-profit - Charity or social organization</span>
-                                        <span class="arabic-content">غير ربحي - مؤسسة خيرية أو اجتماعية</span>
-                                    </option>
+                                <select id="projectGoal" name="projectGoal" class="input-field">
+                                    <option value="">Select Goal</option>
+                                    <option value="business">Business - Increase sales</option>
+                                    <option value="personal">Personal - Website/Blog</option>
+                                    <option value="education">Educational - Learning platform</option>
+                                    <option value="healthcare">Healthcare - Medical services</option>
+                                    <option value="nonprofit">Non-profit - Social organization</option>
                                 </select>
                             </div>
                             
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-4">
+                                <label for="targetAudience" class="block text-sm font-semibold text-gray-700 mb-2">
                                     <i class="fas fa-users mr-2 text-blue-500"></i>
                                     <span class="english-content">Target Audience</span>
                                     <span class="arabic-content">الجمهور المستهدف</span>
                                 </label>
-                                <input type="text" name="targetAudience" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                                <input type="text" id="targetAudience" name="targetAudience" class="input-field" placeholder="Who is your target audience?">
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-4">
+                            <label for="budget" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-money-bill-wave mr-2 text-green-500"></i>
                                 <span class="english-content">Expected Budget (SAR)</span>
-                                <span class="arabic-content">الميزانية المتوقعة (ريال سعودي)</span>
+                                <span class="arabic-content">الميزانية المتوقعة (ريال)</span>
                             </label>
-                            <select name="budget" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
-                                <option value="">
-                                    <span class="english-content">Select appropriate budget</span>
-                                    <span class="arabic-content">حدد الميزانية المناسبة</span>
-                                </option>
-                                <option value="5000-15000">
-                                    <span class="english-content">5,000 - 15,000 SAR (Small projects)</span>
-                                    <span class="arabic-content">5,000 - 15,000 ريال (مشاريع صغيرة)</span>
-                                </option>
-                                <option value="15000-30000">
-                                    <span class="english-content">15,000 - 30,000 SAR (Medium projects)</span>
-                                    <span class="arabic-content">15,000 - 30,000 ريال (مشاريع متوسطة)</span>
-                                </option>
-                                <option value="30000-50000">
-                                    <span class="english-content">30,000 - 50,000 SAR (Large projects)</span>
-                                    <span class="arabic-content">30,000 - 50,000 ريال (مشاريع كبيرة)</span>
-                                </option>
-                                <option value="50000+">
-                                    <span class="english-content">50,000+ SAR (Advanced projects)</span>
-                                    <span class="arabic-content">أكثر من 50,000 ريال (مشاريع متقدمة)</span>
-                                </option>
+                            <select id="budget" name="budget" class="input-field">
+                                <option value="">Select budget range</option>
+                                <option value="5000-15000">5,000 - 15,000 SAR</option>
+                                <option value="15000-30000">15,000 - 30,000 SAR</option>
+                                <option value="30000-50000">30,000 - 50,000 SAR</option>
+                                <option value="50000+">50,000+ SAR</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 4: Features & Requirements -->
+                <!-- Step 4: Features -->
                 <div class="form-step" id="step4">
-                    <div class="text-center mb-12">
-                        <div class="text-6xl mb-4">⚙️</div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-                            <span class="english-content">Features & Technical Requirements</span>
-                            <span class="arabic-content">المميزات والمتطلبات التقنية</span>
-                        </h2>
-                        <p class="text-gray-600 text-lg">
-                            <span class="english-content">Choose the features you need to make your project unique and effective</span>
-                            <span class="arabic-content">اختر المميزات التي تحتاجها لجعل مشروعك مميزاً وفعالاً</span>
+                    <div class="text-center mb-8">
+                        <div class="text-4xl mb-3">⚙️</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
+                            <span class="english-content">Features & Requirements</span>
+                            <span class="arabic-content">المميزات والمتطلبات</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            <span class="english-content">Choose features for your project</span>
+                            <span class="arabic-content">اختر مميزات لمشروعك</span>
                         </p>
                     </div>
                     
-                    <div class="space-y-10">
+                    <div class="space-y-8">
                         <div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                                <i class="fas fa-puzzle-piece mr-3 text-blue-500"></i>
-                                <span class="english-content">Required Features (Multiple Selection)</span>
-                                <span class="arabic-content">المميزات المطلوبة (يمكن اختيار أكثر من واحد)</span>
-                            </h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-puzzle-piece mr-2 text-blue-500"></i>
+                                <span class="english-content">Required Features</span>
+                                <span class="arabic-content">المميزات المطلوبة</span>
+                            </h4>
+                            <div class="grid-cols-1 md:grid-cols-2">
                                 <label class="feature-checkbox">
                                     <input type="checkbox" name="features[]" value="user-authentication">
                                     <div class="feature-label">
                                         <i class="fas fa-user-shield text-blue-500"></i>
-                                        <span class="english-content">User Authentication System</span>
-                                        <span class="arabic-content">نظام المستخدمين والمصادقة</span>
+                                        <span class="english-content">User Authentication</span>
+                                        <span class="arabic-content">نظام المستخدمين</span>
                                     </div>
                                 </label>
                                 
@@ -1319,8 +1934,8 @@
                                     <input type="checkbox" name="features[]" value="payment-integration">
                                     <div class="feature-label">
                                         <i class="fas fa-credit-card text-green-500"></i>
-                                        <span class="english-content">Electronic Payment Integration</span>
-                                        <span class="arabic-content">تكامل المدفوعات الإلكترونية</span>
+                                        <span class="english-content">Payment Integration</span>
+                                        <span class="arabic-content">المدفوعات الإلكترونية</span>
                                     </div>
                                 </label>
                                 
@@ -1328,8 +1943,8 @@
                                     <input type="checkbox" name="features[]" value="cms">
                                     <div class="feature-label">
                                         <i class="fas fa-edit text-purple-500"></i>
-                                        <span class="english-content">Content Management System</span>
-                                        <span class="arabic-content">نظام إدارة المحتوى</span>
+                                        <span class="english-content">Content Management</span>
+                                        <span class="arabic-content">إدارة المحتوى</span>
                                     </div>
                                 </label>
                                 
@@ -1337,8 +1952,8 @@
                                     <input type="checkbox" name="features[]" value="multilingual">
                                     <div class="feature-label">
                                         <i class="fas fa-globe text-indigo-500"></i>
-                                        <span class="english-content">Multilingual Support (Arabic/English)</span>
-                                        <span class="arabic-content">دعم متعدد اللغات (عربي/إنجليزي)</span>
+                                        <span class="english-content">Multilingual Support</span>
+                                        <span class="arabic-content">دعم متعدد اللغات</span>
                                     </div>
                                 </label>
                                 
@@ -1346,26 +1961,8 @@
                                     <input type="checkbox" name="features[]" value="analytics">
                                     <div class="feature-label">
                                         <i class="fas fa-chart-bar text-orange-500"></i>
-                                        <span class="english-content">Detailed Analytics & Reports</span>
-                                        <span class="arabic-content">تحليلات وتقارير مفصلة</span>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="api-integration">
-                                    <div class="feature-label">
-                                        <i class="fas fa-plug text-red-500"></i>
-                                        <span class="english-content">External API Integration</span>
-                                        <span class="arabic-content">تكامل APIs خارجية</span>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="features[]" value="notification-system">
-                                    <div class="feature-label">
-                                        <i class="fas fa-bell text-yellow-500"></i>
-                                        <span class="english-content">Advanced Notification System</span>
-                                        <span class="arabic-content">نظام الإشعارات المتقدم</span>
+                                        <span class="english-content">Analytics & Reports</span>
+                                        <span class="arabic-content">التحليلات والتقارير</span>
                                     </div>
                                 </label>
                                 
@@ -1373,312 +1970,222 @@
                                     <input type="checkbox" name="features[]" value="admin-panel">
                                     <div class="feature-label">
                                         <i class="fas fa-cogs text-gray-600"></i>
-                                        <span class="english-content">Comprehensive Admin Dashboard</span>
-                                        <span class="arabic-content">لوحة تحكم إدارية شاملة</span>
+                                        <span class="english-content">Admin Dashboard</span>
+                                        <span class="arabic-content">لوحة تحكم إدارية</span>
                                     </div>
                                 </label>
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-4">
+                            <label for="additionalFeatures" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-plus-circle mr-2 text-blue-500"></i>
-                                <span class="english-content">Additional Features or Special Requirements</span>
-                                <span class="arabic-content">مميزات إضافية أو متطلبات خاصة</span>
+                                <span class="english-content">Additional Features</span>
+                                <span class="arabic-content">مميزات إضافية</span>
                             </label>
-                            <textarea name="additionalFeatures" rows="4" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none resize-none"></textarea>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-laptop-mobile mr-3 text-blue-500"></i>
-                                <span class="english-content">Required Platforms</span>
-                                <span class="arabic-content">المنصات المطلوبة</span>
-                            </h3>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="platforms[]" value="web">
-                                    <div class="feature-label text-center">
-                                        <i class="fas fa-globe text-2xl mb-2 text-blue-500"></i>
-                                        <div>
-                                            <span class="english-content">Web</span>
-                                            <span class="arabic-content">ويب</span>
-                                        </div>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="platforms[]" value="ios">
-                                    <div class="feature-label text-center">
-                                        <i class="fab fa-apple text-2xl mb-2 text-gray-600"></i>
-                                        <div>iOS</div>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="platforms[]" value="android">
-                                    <div class="feature-label text-center">
-                                        <i class="fab fa-android text-2xl mb-2 text-green-500"></i>
-                                        <div>Android</div>
-                                    </div>
-                                </label>
-                                
-                                <label class="feature-checkbox">
-                                    <input type="checkbox" name="platforms[]" value="desktop">
-                                    <div class="feature-label text-center">
-                                        <i class="fas fa-desktop text-2xl mb-2 text-purple-500"></i>
-                                        <div>
-                                            <span class="english-content">Desktop</span>
-                                            <span class="arabic-content">سطح المكتب</span>
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
+                            <textarea id="additionalFeatures" name="additionalFeatures" rows="3" class="input-field resize-none" placeholder="Any additional features..."></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Step 5: Design Preferences -->
                 <div class="form-step" id="step5">
-                    <div class="text-center mb-12">
-                        <div class="text-6xl mb-4">🎨</div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-                            <span class="english-content">Design Preferences & Visual Identity</span>
-                            <span class="arabic-content">تفضيلات التصميم والهوية البصرية</span>
-                        </h2>
-                        <p class="text-gray-600 text-lg">
-                            <span class="english-content">Help us create a design that reflects your project's personality and attracts your audience</span>
-                            <span class="arabic-content">ساعدنا في إنشاء تصميم يعكس شخصية مشروعك ويجذب جمهورك</span>
+                    <div class="text-center mb-8">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
+                            <span class="english-content">Design Preferences</span>
+                            <span class="arabic-content">تفضيلات التصميم</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            <span class="english-content">Help us create the perfect design</span>
+                            <span class="arabic-content">ساعدنا في إنشاء التصميم المثالي</span>
                         </p>
                     </div>
                     
-                    <div class="space-y-10">
+                    <div class="space-y-6">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-4">
+                            <label for="designStyle" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-palette mr-2 text-pink-500"></i>
-                                <span class="english-content">Preferred Design Style</span>
-                                <span class="arabic-content">نمط التصميم المفضل</span>
+                                <span class="english-content">Design Style</span>
+                                <span class="arabic-content">نمط التصميم</span>
                             </label>
-                            <select name="designStyle" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
-                                <option value="">
-                                    <span class="english-content">Select your preferred style</span>
-                                    <span class="arabic-content">اختر النمط الذي يعجبك</span>
-                                </option>
-                                <option value="modern">
-                                    <span class="english-content">Modern & Minimal - Clean and simple design</span>
-                                    <span class="arabic-content">عصري ومينيمال - تصميم نظيف وبسيط</span>
-                                </option>
-                                <option value="classic">
-                                    <span class="english-content">Classic & Elegant - Traditional sophisticated design</span>
-                                    <span class="arabic-content">كلاسيكي وأنيق - تصميم تقليدي راقي</span>
-                                </option>
-                                <option value="creative">
-                                    <span class="english-content">Creative & Bold - Innovative and eye-catching design</span>
-                                    <span class="arabic-content">إبداعي وجريء - تصميم مبتكر وملفت</span>
-                                </option>
-                                <option value="professional">
-                                    <span class="english-content">Professional & Clean - Practical and trustworthy design</span>
-                                    <span class="arabic-content">مهني ونظيف - تصميم عملي وموثوق</span>
-                                </option>
+                            <select id="designStyle" name="designStyle" class="input-field">
+                                <option value="">Select design style</option>
+                                <option value="modern">Modern & Minimal</option>
+                                <option value="classic">Classic & Elegant</option>
+                                <option value="creative">Creative & Bold</option>
+                                <option value="professional">Professional & Clean</option>
                             </select>
                         </div>
                         
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="grid-cols-1 lg:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-4">
+                                <label for="preferredColors" class="block text-sm font-semibold text-gray-700 mb-2">
                                     <i class="fas fa-paint-brush mr-2 text-blue-500"></i>
                                     <span class="english-content">Preferred Colors</span>
                                     <span class="arabic-content">الألوان المفضلة</span>
                                 </label>
-                                <input type="text" name="preferredColors" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                                <input type="text" id="preferredColors" name="preferredColors" class="input-field" placeholder="Blue, White, Gold">
                             </div>
                             
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-4">
+                                <label for="referenceWebsites" class="block text-sm font-semibold text-gray-700 mb-2">
                                     <i class="fas fa-link mr-2 text-blue-500"></i>
-                                    <span class="english-content">Reference Websites for Inspiration</span>
-                                    <span class="arabic-content">مواقع مرجعية للاستلهام</span>
+                                    <span class="english-content">Reference Websites</span>
+                                    <span class="arabic-content">مواقع مرجعية</span>
                                 </label>
-                                <input type="url" name="referenceWebsites" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none" placeholder="https://example.com">
+                                <input type="url" id="referenceWebsites" name="referenceWebsites" class="input-field" placeholder="https://example.com">
                             </div>
                         </div>
                         
-                        <div class="bg-gray-50 p-6 rounded-xl">
-                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-question-circle mr-3 text-blue-500"></i>
-                                <span class="english-content">Do you have existing brand identity?</span>
-                                <span class="arabic-content">هل لديك هوية بصرية موجودة؟</span>
-                            </h3>
-                            <div class="flex space-x-6" style="direction: ltr;">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-base font-bold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-question-circle mr-2 text-blue-500"></i>
+                                <span class="english-content">Existing Brand?</span>
+                                <span class="arabic-content">هوية بصرية موجودة؟</span>
+                            </h4>
+                            <div class="flex flex-col space-y-2">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="radio" name="existingBrand" value="yes" class="text-blue-600 focus:ring-blue-500 mr-2">
-                                    <span class="text-lg">
-                                        <span class="english-content">Yes, I have logo and specific colors</span>
-                                        <span class="arabic-content">نعم، لدي شعار وألوان محددة</span>
+                                    <span class="text-sm">
+                                        <span class="english-content">Yes, I have logo/colors</span>
+                                        <span class="arabic-content">نعم، لدي شعار/ألوان</span>
                                     </span>
                                 </label>
                                 <label class="flex items-center cursor-pointer">
                                     <input type="radio" name="existingBrand" value="no" class="text-blue-600 focus:ring-blue-500 mr-2">
-                                    <span class="text-lg">
-                                        <span class="english-content">No, I need new brand identity design</span>
-                                        <span class="arabic-content">لا، أحتاج تصميم هوية جديدة</span>
+                                    <span class="text-sm">
+                                        <span class="english-content">No, need new design</span>
+                                        <span class="arabic-content">لا، أحتاج تصميم جديد</span>
                                     </span>
                                 </label>
                             </div>
                         </div>
-                        
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-4">
-                                <i class="fas fa-sticky-note mr-2 text-yellow-500"></i>
-                                <span class="english-content">Additional Design Notes</span>
-                                <span class="arabic-content">ملاحظات إضافية على التصميم</span>
-                            </label>
-                            <textarea name="designNotes" rows="4" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none resize-none"></textarea>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Step 6: Timeline & Final Details -->
+                <!-- Step 6: Final Details -->
                 <div class="form-step" id="step6">
-                    <div class="text-center mb-12">
-                        <div class="text-6xl mb-4">🎯</div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-                            <span class="english-content">Timeline & Final Details</span>
-                            <span class="arabic-content">الجدول الزمني وآخر التفاصيل</span>
-                        </h2>
-                        <p class="text-gray-600 text-lg">
-                            <span class="english-content">Final step! Tell us about the required timing and preferred communication method</span>
-                            <span class="arabic-content">آخر خطوة! أخبرنا عن التوقيت المطلوب وطريقة التواصل المفضلة</span>
+                    <div class="text-center mb-8">
+                        <div class="text-4xl mb-3">🎯</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
+                            <span class="english-content">Timeline & Communication</span>
+                            <span class="arabic-content">الجدول الزمني والتواصل</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            <span class="english-content">Final step! Let us know your preferences</span>
+                            <span class="arabic-content">آخر خطوة! أخبرنا عن تفضيلاتك</span>
                         </p>
                     </div>
                     
-                    <div class="space-y-10">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="grid-cols-1 lg:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-4">
+                                <label for="deliveryDate" class="block text-sm font-semibold text-gray-700 mb-2">
                                     <i class="fas fa-calendar-alt mr-2 text-blue-500"></i>
-                                    <span class="english-content">Required Delivery Date</span>
-                                    <span class="arabic-content">الموعد المطلوب للتسليم</span>
+                                    <span class="english-content">Delivery Date</span>
+                                    <span class="arabic-content">موعد التسليم</span>
                                 </label>
-                                <input type="date" name="deliveryDate" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
+                                <input type="date" id="deliveryDate" name="deliveryDate" class="input-field">
                             </div>
                             
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-4">
+                                <label for="timelineFlexibility" class="block text-sm font-semibold text-gray-700 mb-2">
                                     <i class="fas fa-clock mr-2 text-green-500"></i>
                                     <span class="english-content">Timeline Flexibility</span>
-                                    <span class="arabic-content">مدى المرونة في الموعد</span>
+                                    <span class="arabic-content">مرونة الموعد</span>
                                 </label>
-                                <select name="timelineFlexibility" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none">
-                                    <option value="">
-                                        <span class="english-content">Select flexibility level</span>
-                                        <span class="arabic-content">اختر مستوى المرونة</span>
-                                    </option>
-                                    <option value="strict">
-                                        <span class="english-content">Strict - No delays whatsoever</span>
-                                        <span class="arabic-content">صارم - لا تأخير مطلقاً</span>
-                                    </option>
-                                    <option value="moderate">
-                                        <span class="english-content">Moderate - 2 weeks extra acceptable</span>
-                                        <span class="arabic-content">متوسط - أسبوعين إضافيين مقبول</span>
-                                    </option>
-                                    <option value="flexible">
-                                        <span class="english-content">Flexible - 1 month extra acceptable</span>
-                                        <span class="arabic-content">مرن - شهر إضافي مقبول</span>
-                                    </option>
+                                <select id="timelineFlexibility" name="timelineFlexibility" class="input-field">
+                                    <option value="">Select flexibility</option>
+                                    <option value="strict">Strict - No delays</option>
+                                    <option value="moderate">Moderate - 2 weeks extra</option>
+                                    <option value="flexible">Flexible - 1 month extra</option>
                                 </select>
                             </div>
                         </div>
                         
                         <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-6 flex items-center">
-                                <i class="fas fa-comments mr-3 text-blue-500"></i>
-                                <span class="english-content">Preferred Communication Methods</span>
-                                <span class="arabic-content">طرق التواصل المفضلة</span>
-                            </h3>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <h4 class="text-base font-bold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-comments mr-2 text-blue-500"></i>
+                                <span class="english-content">Communication Methods</span>
+                                <span class="arabic-content">طرق التواصل</span>
+                            </h4>
+                            <div class="grid-cols-2 md:grid-cols-4">
                                 <label class="feature-checkbox">
                                     <input type="checkbox" name="communication[]" value="email">
-                                    <div class="feature-label text-center">
-                                        <i class="fas fa-envelope text-2xl mb-2 text-blue-500"></i>
-                                        <div>
+                                    <div class="feature-label text-center flex-col">
+                                        <i class="fas fa-envelope text-xl mb-1 text-blue-500"></i>
+                                        <div class="text-xs">
                                             <span class="english-content">Email</span>
-                                            <span class="arabic-content">البريد الإلكتروني</span>
+                                            <span class="arabic-content">إيميل</span>
                                         </div>
                                     </div>
                                 </label>
                                 
                                 <label class="feature-checkbox">
                                     <input type="checkbox" name="communication[]" value="whatsapp">
-                                    <div class="feature-label text-center">
-                                        <i class="fab fa-whatsapp text-2xl mb-2 text-green-500"></i>
-                                        <div>WhatsApp</div>
+                                    <div class="feature-label text-center flex-col">
+                                        <i class="fab fa-whatsapp text-xl mb-1 text-green-500"></i>
+                                        <div class="text-xs">WhatsApp</div>
                                     </div>
                                 </label>
                                 
                                 <label class="feature-checkbox">
                                     <input type="checkbox" name="communication[]" value="phone">
-                                    <div class="feature-label text-center">
-                                        <i class="fas fa-phone text-2xl mb-2 text-purple-500"></i>
-                                        <div>
-                                            <span class="english-content">Phone Calls</span>
-                                            <span class="arabic-content">المكالمات الهاتفية</span>
+                                    <div class="feature-label text-center flex-col">
+                                        <i class="fas fa-phone text-xl mb-1 text-purple-500"></i>
+                                        <div class="text-xs">
+                                            <span class="english-content">Phone</span>
+                                            <span class="arabic-content">هاتف</span>
                                         </div>
                                     </div>
                                 </label>
                                 
                                 <label class="feature-checkbox">
                                     <input type="checkbox" name="communication[]" value="teams">
-                                    <div class="feature-label text-center">
-                                        <i class="fas fa-video text-2xl mb-2 text-orange-500"></i>
-                                        <div>Teams/Zoom</div>
+                                    <div class="feature-label text-center flex-col">
+                                        <i class="fas fa-video text-xl mb-1 text-orange-500"></i>
+                                        <div class="text-xs">Video Call</div>
                                     </div>
                                 </label>
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-4">
+                            <label for="additionalNotes" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <i class="fas fa-comment-dots mr-2 text-blue-500"></i>
-                                <span class="english-content">Additional Notes or Requirements</span>
-                                <span class="arabic-content">ملاحظات أو متطلبات إضافية</span>
+                                <span class="english-content">Additional Notes</span>
+                                <span class="arabic-content">ملاحظات إضافية</span>
                             </label>
-                            <textarea name="additionalNotes" rows="4" class="input-field w-full px-6 py-4 rounded-xl text-lg focus:outline-none resize-none"></textarea>
+                            <textarea id="additionalNotes" name="additionalNotes" rows="3" class="input-field resize-none" placeholder="Any additional notes..."></textarea>
                         </div>
                         
-                        <div class="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-2xl border border-blue-200">
-                            <h3 class="font-bold text-xl text-blue-800 mb-4 flex items-center">
-                                <i class="fas fa-route mr-3"></i>
+                        <div class="bg-gradient-to-r from-blue-50 to-green-50 p-4 rounded-lg border border-blue-200">
+                            <h4 class="font-bold text-base text-blue-800 mb-3 flex items-center">
+                                <i class="fas fa-route mr-2"></i>
                                 <span class="english-content">Next Steps</span>
                                 <span class="arabic-content">الخطوات التالية</span>
-                            </h3>
-                            <div class="space-y-3 text-gray-700">
-                                <div class="flex items-center space-x-3">
+                            </h4>
+                            <div class="space-y-2 text-gray-700 text-sm">
+                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                     <i class="fas fa-check-circle text-green-500"></i>
                                     <span>
-                                        <span class="english-content">We will review your request within 24 hours maximum</span>
-                                        <span class="arabic-content">سنقوم بمراجعة طلبك خلال 24 ساعة كحد أقصى</span>
+                                        <span class="english-content">Review within 24 hours</span>
+                                        <span class="arabic-content">مراجعة خلال 24 ساعة</span>
                                     </span>
                                 </div>
-                                <div class="flex items-center space-x-3">
+                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                     <i class="fas fa-file-invoice-dollar text-blue-500"></i>
                                     <span>
-                                        <span class="english-content">We will send you a detailed quote and precise timeline</span>
-                                        <span class="arabic-content">سنرسل لك عرض سعر مفصل ومخطط زمني دقيق</span>
+                                        <span class="english-content">Detailed quote & timeline</span>
+                                        <span class="arabic-content">عرض سعر مفصل وجدول زمني</span>
                                     </span>
                                 </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-calendar-check text-purple-500"></i>
-                                    <span>
-                                        <span class="english-content">We will schedule a meeting to discuss all details with you</span>
-                                        <span class="arabic-content">سنحدد موعد لمناقشة كافة التفاصيل معك</span>
-                                    </span>
-                                </div>
-                                <div class="flex items-center space-x-3">
+                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                     <i class="fas fa-rocket text-orange-500"></i>
                                     <span>
-                                        <span class="english-content">Work begins immediately after quote approval</span>
-                                        <span class="arabic-content">بداية العمل فوراً بعد الموافقة على العرض</span>
+                                        <span class="english-content">Start work after approval</span>
+                                        <span class="arabic-content">بداية العمل بعد الموافقة</span>
                                     </span>
                                 </div>
                             </div>
@@ -1687,24 +2194,24 @@
                 </div>
 
                 <!-- Navigation Buttons -->
-                <div class="flex justify-between items-center mt-12 pt-8 border-t-2 border-gray-100">
-                    <button type="button" id="prevBtn" class="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-all duration-300 hidden flex items-center space-x-2">
-                        <i class="fas fa-arrow-left mr-2"></i>
+                <div class="flex justify-between items-center mt-8 pt-6 border-t-2 border-gray-100">
+                    <button type="button" id="prevBtn" class="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-all duration-300 hidden flex items-center space-x-2 rtl:space-x-reverse">
+                        <i class="fas fa-arrow-left rtl:rotate-180"></i>
                         <span class="english-content">Previous</span>
                         <span class="arabic-content">السابق</span>
                     </button>
                     
-                    <button type="button" id="nextBtn" class="btn-primary px-8 py-4 text-white rounded-xl transition-all duration-300 flex items-center space-x-2">
+                    <button type="button" id="nextBtn" class="btn-primary px-6 py-3 text-white rounded-lg transition-all duration-300 flex items-center space-x-2 rtl:space-x-reverse ml-auto">
                         <span class="english-content">Next</span>
                         <span class="arabic-content">التالي</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
+                        <i class="fas fa-arrow-right rtl:rotate-180"></i>
                     </button>
                     
-                    <button type="submit" id="submitBtn" class="btn-success px-10 py-4 text-white rounded-xl transition-all duration-300 hidden flex items-center space-x-3">
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        <span class="english-content">Submit Request</span>
-                        <span class="arabic-content">إرسال الطلب</span>
-                        <div id="submitSpinner" class="loading-spinner hidden ml-3"></div>
+                    <button type="submit" id="submitBtn" class="btn-success px-8 py-3 text-white rounded-lg transition-all duration-300 hidden flex items-center space-x-2 rtl:space-x-reverse ml-auto">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="english-content">Submit</span>
+                        <span class="arabic-content">إرسال</span>
+                        <div id="submitSpinner" class="loading-spinner hidden ml-2 rtl:mr-2 rtl:ml-0"></div>
                     </button>
                 </div>
             </form>
@@ -1720,8 +2227,8 @@
                     <span class="arabic-content">الموارد والأدوات</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="english-content">Explore additional resources and tools available on our platform</span>
-                    <span class="arabic-content">استكشف الموارد والأدوات الإضافية المتاحة على منصتنا</span>
+                    <span class="english-content">Explore additional resources and tools</span>
+                    <span class="arabic-content">استكشف الموارد والأدوات الإضافية</span>
                 </p>
             </div>
             <div class="projects-grid">
@@ -1731,10 +2238,10 @@
                     </div>
                     <h3 class="project-title">AI Docs Platform</h3>
                     <p class="project-description">
-                        <span class="english-content">Features Cloudflare Containers Beta with PDF uploads, AI analysis, and automated deployment.</span>
-                        <span class="arabic-content">يتضمن حاويات Cloudflare Beta مع رفع ملفات PDF، وتحليل الذكاء الاصطناعي، والنشر الآلي.</span>
+                        <span class="english-content">PDF uploads, AI analysis, and automated deployment with Cloudflare Containers.</span>
+                        <span class="arabic-content">رفع ملفات PDF وتحليل الذكاء الاصطناعي والنشر الآلي مع حاويات Cloudflare.</span>
                     </p>
-                    <a href="https://ai-docs-cod-containers.fadil.workers.dev/" target="_blank" class="project-link">
+                    <a href="https://ai-docs-cod-containers.fadil.workers.dev/" target="_blank" rel="noopener" class="project-link">
                         <span class="english-content">Visit Platform</span>
                         <span class="arabic-content">زيارة المنصة</span>
                         <i class="fas fa-arrow-right"></i>
@@ -1744,12 +2251,12 @@
                     <div class="project-icon">
                         <i class="fas fa-file-excel"></i>
                     </div>
-                    <h3 class="project-title">Excel Advanced Consolidator</h3>
+                    <h3 class="project-title">Excel Consolidator</h3>
                     <p class="project-description">
-                        <span class="english-content">Professional tool for consolidating Excel files, optimized for large files with no size limits.</span>
-                        <span class="arabic-content">أداة احترافية لدمج ملفات Excel، محسنة للملفات الكبيرة بدون حدود للحجم.</span>
+                        <span class="english-content">Professional tool for consolidating Excel files with no size limits.</span>
+                        <span class="arabic-content">أداة احترافية لدمج ملفات Excel بدون حدود للحجم.</span>
                     </p>
-                    <a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" class="project-link">
+                    <a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" rel="noopener" class="project-link">
                         <span class="english-content">Try Tool</span>
                         <span class="arabic-content">جرب الأداة</span>
                         <i class="fas fa-arrow-right"></i>
@@ -1761,10 +2268,10 @@
                     </div>
                     <h3 class="project-title">OI vs AI Book</h3>
                     <p class="project-description">
-                        <span class="english-content">A book by Dr. Mohamed El Fadil exploring human and artificial intelligence, future-proofing careers.</span>
-                        <span class="arabic-content">كتاب من تأليف د. محمد الفاضل يستكشف الذكاء البشري والاصطناعي وحماية المهن من المستقبل.</span>
+                        <span class="english-content">Exploring human and artificial intelligence, future-proofing careers.</span>
+                        <span class="arabic-content">استكشاف الذكاء البشري والاصطناعي وحماية المهن من المستقبل.</span>
                     </p>
-                    <a href="https://read.thefadil.site/" target="_blank" class="project-link">
+                    <a href="https://read.thefadil.site/" target="_blank" rel="noopener" class="project-link">
                         <span class="english-content">Read Book</span>
                         <span class="arabic-content">اقرأ الكتاب</span>
                         <i class="fas fa-arrow-right"></i>
@@ -1774,7 +2281,7 @@
         </div>
     </section>
 
-    <!-- Simple Contact Section -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
@@ -1783,33 +2290,33 @@
                     <span class="arabic-content">تواصل معنا</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="english-content">Have a quick question? Send us a message</span>
-                    <span class="arabic-content">لديك سؤال سريع؟ أرسل لنا رسالة</span>
+                    <span class="english-content">Have a question? Send us a message</span>
+                    <span class="arabic-content">لديك سؤال؟ أرسل لنا رسالة</span>
                 </p>
             </div>
             <div class="contact-form">
                 <form id="contactForm">
-                    <div class="space-y-6">
+                    <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label for="contactName" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <span class="english-content">Name</span>
                                 <span class="arabic-content">الاسم</span>
                             </label>
-                            <input type="text" name="contactName" required class="input-field w-full px-4 py-3 rounded-lg">
+                            <input type="text" id="contactName" name="contactName" required class="input-field" placeholder="Your Name" aria-label="Contact Name">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label for="contactEmail" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <span class="english-content">Email</span>
                                 <span class="arabic-content">البريد الإلكتروني</span>
                             </label>
-                            <input type="email" name="contactEmail" required class="input-field w-full px-4 py-3 rounded-lg">
+                            <input type="email" id="contactEmail" name="contactEmail" required class="input-field" placeholder="your@email.com" aria-label="Contact Email">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label for="contactMessage" class="block text-sm font-semibold text-gray-700 mb-2">
                                 <span class="english-content">Message</span>
                                 <span class="arabic-content">الرسالة</span>
                             </label>
-                            <textarea name="contactMessage" rows="4" required class="input-field w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                            <textarea id="contactMessage" name="contactMessage" rows="4" required class="input-field resize-none" placeholder="Your message..." aria-label="Contact Message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-full">
                             <span class="english-content">Send Message</span>
@@ -1852,7 +2359,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>BRAINSAIT برينسايت</h3>
+                    <h3>BRAINSAIT <span class="brand-arabic">برينسايت</span></h3>
                     <p class="text-gray-600 mt-2">
                         <span class="english-content">Healthcare AI Research & Open Source Development</span>
                         <span class="arabic-content">أبحاث الذكاء الاصطناعي الصحي وتطوير المصادر المفتوحة</span>
@@ -1873,7 +2380,7 @@
                             <span class="arabic-content">الحلول</span>
                         </a></li>
                         <li><a href="#pre-order">
-                            <span class="english-content">Start a Project</span>
+                            <span class="english-content">Start Project</span>
                             <span class="arabic-content">ابدأ مشروعاً</span>
                         </a></li>
                     </ul>
@@ -1884,31 +2391,31 @@
                         <span class="arabic-content">الموارد</span>
                     </h3>
                     <ul class="footer-links">
-                        <li><a href="https://pypi.org/user/Fadil369/" target="_blank">PyPI</a></li>
-                        <li><a href="https://github.com/brainsait" target="_blank">GitHub</a></li>
-                        <li><a href="https://read.thefadil.site/" target="_blank">OI vs AI Book</a></li>
+                        <li><a href="https://pypi.org/user/Fadil369/" target="_blank" rel="noopener">PyPI</a></li>
+                        <li><a href="https://github.com/brainsait" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://read.thefadil.site/" target="_blank" rel="noopener">Book</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 BRAINSAIT. All rights reserved. Created by Dr. Mohamed El Fadil</p>
+                <p>&copy; 2024 BRAINSAIT. All rights reserved. Dr. Mohamed El Fadil</p>
             </div>
         </div>
     </footer>
 
     <!-- Success Message Modal -->
     <div id="successMessage" class="hidden">
-        <div class="bg-white p-12 rounded-2xl max-w-lg mx-4 text-center shadow-2xl">
-            <div class="text-8xl mb-6">🎉</div>
-            <h3 class="text-3xl font-bold text-green-600 mb-4">
-                <span class="english-content">Request Submitted Successfully!</span>
-                <span class="arabic-content">تم إرسال طلبك بنجاح!</span>
+        <div class="bg-white p-8 rounded-lg max-w-sm mx-4 text-center shadow-xl">
+            <div class="text-6xl mb-4">🎉</div>
+            <h3 class="text-xl font-bold text-green-600 mb-3">
+                <span class="english-content">Success!</span>
+                <span class="arabic-content">تم بنجاح!</span>
             </h3>
-            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                <span class="english-content">Thank you! We'll contact you within 24 hours to start your digital project with us</span>
-                <span class="arabic-content">شكراً لك! سنتواصل معك خلال 24 ساعة لبدء مشروعك الرقمي معنا</span>
+            <p class="text-gray-600 mb-6 text-sm">
+                <span class="english-content">We'll contact you within 24 hours</span>
+                <span class="arabic-content">سنتواصل معك خلال 24 ساعة</span>
             </p>
-            <button onclick="closeSuccessMessage()" class="btn-primary px-8 py-3 text-white rounded-xl transition-all duration-300 w-full">
+            <button type="button" onclick="closeSuccessMessage()" class="btn-primary px-6 py-2 text-white rounded-lg w-full">
                 <span class="english-content">Close</span>
                 <span class="arabic-content">إغلاق</span>
             </button>
@@ -1917,13 +2424,28 @@
 
     <!-- Scripts -->
     <script>
-        // Initialize EmailJS
-        emailjs.init("YOUR_EMAILJS_USER_ID"); // Replace with your actual EmailJS User ID
-
         // Global variables
         let currentStep = 1;
         const totalSteps = 6;
         let currentLang = 'en';
+        let mobileMenuOpen = false;
+
+        // Utility Functions
+        function showNotification(message, type = 'info', duration = 3000) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-4 py-2 rounded-lg shadow-lg transition-all duration-300 text-sm ${
+                type === 'error' ? 'bg-red-500 text-white' : 
+                type === 'success' ? 'bg-green-500 text-white' : 
+                'bg-blue-500 text-white'
+            }`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, duration);
+        }
 
         // Theme Toggle
         function toggleTheme() {
@@ -1932,7 +2454,6 @@
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             
-            // Update theme icon
             const icon = document.getElementById('theme-icon');
             icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
@@ -1940,180 +2461,188 @@
         // Language Toggle
         function setLanguage(lang) {
             currentLang = lang;
-            document.body.setAttribute('lang', lang);
+            document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             document.documentElement.setAttribute('lang', lang);
             document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             
-            // Update language toggles
             document.getElementById('lang-en').classList.toggle('active', lang === 'en');
             document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
             
-            // Update navigation links
             document.querySelectorAll('[data-en], [data-ar]').forEach(el => {
                 if (el.getAttribute(`data-${lang}`)) {
                     el.textContent = el.getAttribute(`data-${lang}`);
                 }
             });
             
-            // Store preference
             localStorage.setItem('language', lang);
         }
 
-        // Initialize theme and language from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set theme
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            const icon = document.getElementById('theme-icon');
-            icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            mobileMenuOpen = !mobileMenuOpen;
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('mobileMenuToggle');
             
-            // Set language
-            const savedLang = localStorage.getItem('language') || 'en';
-            setLanguage(savedLang);
-            
-            // Initialize form
-            showStep(1);
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        });
+            navLinks.classList.toggle('active', mobileMenuOpen);
+            menuToggle.innerHTML = mobileMenuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        }
 
         // Form Step Management
         function showStep(step) {
-            // Hide all steps
-            document.querySelectorAll('.form-step').forEach(s => {
-                s.classList.remove('active');
-            });
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
             
-            // Show current step
-            document.getElementById(`step${step}`).classList.add('active');
+            const currentStepEl = document.getElementById(`step${step}`);
+            if (currentStepEl) currentStepEl.classList.add('active');
             
             // Update step indicators
             for (let i = 1; i <= totalSteps; i++) {
                 const indicator = document.getElementById(`stepIndicator${i}`);
-                if (i < step) {
-                    indicator.classList.add('completed');
-                    indicator.classList.remove('active');
-                } else if (i === step) {
-                    indicator.classList.add('active');
-                    indicator.classList.remove('completed');
-                } else {
-                    indicator.classList.remove('active', 'completed');
+                if (indicator) {
+                    if (i < step) {
+                        indicator.classList.add('completed');
+                        indicator.classList.remove('active');
+                        indicator.innerHTML = '<i class="fas fa-check text-xs"></i>';
+                    } else if (i === step) {
+                        indicator.classList.add('active');
+                        indicator.classList.remove('completed');
+                        indicator.textContent = i;
+                    } else {
+                        indicator.classList.remove('active', 'completed');
+                        indicator.textContent = i;
+                    }
                 }
             }
             
             // Update progress bar
             const progress = (step / totalSteps) * 100;
-            document.getElementById('progressBar').style.width = `${progress}%`;
-            document.getElementById('progressPercent').textContent = `${Math.round(progress)}%`;
-            document.getElementById('currentStep').textContent = step;
-            document.getElementById('currentStepEn').textContent = step;
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar) progressBar.style.width = `${progress}%`;
             
-            // Show/hide navigation buttons
-            document.getElementById('prevBtn').classList.toggle('hidden', step === 1);
-            document.getElementById('nextBtn').classList.toggle('hidden', step === totalSteps);
-            document.getElementById('submitBtn').classList.toggle('hidden', step !== totalSteps);
+            const progressPercent = document.getElementById('progressPercent');
+            if (progressPercent) progressPercent.textContent = `${Math.round(progress)}%`;
+            
+            const currentStepSpan = document.getElementById('currentStep');
+            if (currentStepSpan) currentStepSpan.textContent = step;
+            
+            const currentStepEnSpan = document.getElementById('currentStepEn');
+            if (currentStepEnSpan) currentStepEnSpan.textContent = step;
+            
+            // Show/hide navigation buttons  
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (prevBtn) prevBtn.classList.toggle('hidden', step === 1);
+            if (nextBtn) nextBtn.classList.toggle('hidden', step === totalSteps);
+            if (submitBtn) submitBtn.classList.toggle('hidden', step !== totalSteps);
         }
-
-        // Navigation buttons
-        document.getElementById('nextBtn').addEventListener('click', function() {
-            if (validateStep(currentStep)) {
-                if (currentStep < totalSteps) {
-                    currentStep++;
-                    showStep(currentStep);
-                }
-            }
-        });
-
-        document.getElementById('prevBtn').addEventListener('click', function() {
-            if (currentStep > 1) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        });
-
-        // Service card selection
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // Remove selected class from all cards
-                document.querySelectorAll('.service-card').forEach(c => {
-                    c.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked card
-                this.classList.add('selected');
-                
-                // Update hidden input
-                const service = this.getAttribute('data-service');
-                document.getElementById('serviceType').value = service;
-                
-                // Show/hide other service input
-                const otherInput = document.getElementById('otherServiceInput');
-                if (service === 'other') {
-                    otherInput.classList.remove('hidden');
-                } else {
-                    otherInput.classList.add('hidden');
-                }
-            });
-        });
 
         // Form validation
         function validateStep(step) {
             const currentStepElement = document.getElementById(`step${step}`);
+            if (!currentStepElement) return false;
+            
             const requiredFields = currentStepElement.querySelectorAll('[required]');
             let isValid = true;
 
+            document.querySelectorAll('.input-field').forEach(field => {
+                field.classList.remove('error', 'shake');
+            });
+
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
-                    field.classList.add('border-red-500');
+                    field.classList.add('error', 'shake');
                     isValid = false;
-                } else {
-                    field.classList.remove('border-red-500');
+                    setTimeout(() => field.classList.remove('shake'), 500);
                 }
             });
 
-            // Special validation for step 2 (service selection)
             if (step === 2) {
-                const serviceType = document.getElementById('serviceType').value;
-                if (!serviceType) {
-                    alert(currentLang === 'ar' ? 'يرجى اختيار نوع الخدمة' : 'Please select a service type');
+                const serviceType = document.getElementById('serviceType');
+                if (!serviceType || !serviceType.value) {
+                    showNotification(
+                        currentLang === 'ar' ? 'يرجى اختيار نوع الخدمة' : 'Please select a service type',
+                        'error'
+                    );
                     isValid = false;
                 }
+            }
+
+            if (!isValid) {
+                showNotification(
+                    currentLang === 'ar' ? 'يرجى تعبئة الحقول المطلوبة' : 'Please fill required fields',
+                    'error'
+                );
             }
 
             return isValid;
         }
 
-        // Form submission
-        document.getElementById('preOrderForm').addEventListener('submit', function(e) {
+        // Service card selection
+        function initializeServiceCards() {
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    const service = this.getAttribute('data-service');
+                    const serviceTypeInput = document.getElementById('serviceType');
+                    if (serviceTypeInput) serviceTypeInput.value = service;
+                    
+                    const otherInput = document.getElementById('otherServiceInput');
+                    if (otherInput) {
+                        otherInput.classList.toggle('hidden', service !== 'other');
+                    }
+                });
+            });
+        }
+
+        // Auto-save form data
+        function autoSave() {
+            const form = document.getElementById('preOrderForm');
+            if (!form) return;
+            
+            const formData = new FormData(form);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            localStorage.setItem('brainsait_form_data', JSON.stringify(data));
+        }
+
+        // Load saved form data
+        function loadSavedData() {
+            const savedData = localStorage.getItem('brainsait_form_data');
+            if (savedData) {
+                try {
+                    const data = JSON.parse(savedData);
+                    Object.keys(data).forEach(key => {
+                        const field = document.querySelector(`[name="${key}"]`);
+                        if (field) field.value = data[key];
+                    });
+                } catch (e) {
+                    console.error('Error loading saved data:', e);
+                }
+            }
+        }
+
+        // Form submission handler
+        function handleFormSubmission(e) {
             e.preventDefault();
             
-            if (!validateStep(currentStep)) {
-                return;
-            }
+            if (!validateStep(currentStep)) return;
 
-            // Show loading spinner
             const submitBtn = document.getElementById('submitBtn');
             const spinner = document.getElementById('submitSpinner');
-            submitBtn.disabled = true;
-            spinner.classList.remove('hidden');
+            if (submitBtn && spinner) {
+                submitBtn.disabled = true;
+                spinner.classList.remove('hidden');
+            }
 
-            // Collect form data
-            const formData = new FormData(this);
+            const form = document.getElementById('preOrderForm');
+            const formData = new FormData(form);
             const data = {};
             
-            // Process regular fields
             for (let [key, value] of formData.entries()) {
                 if (data[key]) {
                     if (Array.isArray(data[key])) {
@@ -2126,159 +2655,195 @@
                 }
             }
             
-            // Process checkboxes
-            const checkboxGroups = ['features[]', 'platforms[]', 'communication[]'];
+            const checkboxGroups = ['features[]', 'communication[]'];
             checkboxGroups.forEach(group => {
                 const cleanKey = group.replace('[]', '');
                 data[cleanKey] = formData.getAll(group);
             });
 
-            // Prepare email data
-            const emailData = {
-                to_email: 'brainsait@hotmail.com',
-                from_name: data.fullName || 'Unknown',
-                from_email: data.email || 'No email provided',
-                phone: data.phone || 'No phone provided',
-                company: data.company || 'No company provided',
-                location: data.location || 'No location provided',
-                service_type: data.serviceType || 'Not specified',
-                other_service: data.otherService || '',
-                project_description: data.projectDescription || 'No description provided',
-                project_goal: data.projectGoal || 'Not specified',
-                target_audience: data.targetAudience || 'Not specified',
-                budget: data.budget || 'Not specified',
-                features: Array.isArray(data.features) ? data.features.join(', ') : 'None selected',
-                additional_features: data.additionalFeatures || 'None',
-                platforms: Array.isArray(data.platforms) ? data.platforms.join(', ') : 'None selected',
-                design_style: data.designStyle || 'Not specified',
-                preferred_colors: data.preferredColors || 'Not specified',
-                reference_websites: data.referenceWebsites || 'None provided',
-                existing_brand: data.existingBrand || 'Not specified',
-                design_notes: data.designNotes || 'None',
-                delivery_date: data.deliveryDate || 'Not specified',
-                timeline_flexibility: data.timelineFlexibility || 'Not specified',
-                communication: Array.isArray(data.communication) ? data.communication.join(', ') : 'None selected',
-                additional_notes: data.additionalNotes || 'None',
-                submission_date: new Date().toLocaleString(),
-                language: currentLang === 'ar' ? 'Arabic' : 'English'
-            };
-
-            // Send email using EmailJS
-            emailjs.send(
-                'YOUR_SERVICE_ID',     // Replace with your EmailJS Service ID
-                'YOUR_TEMPLATE_ID',    // Replace with your EmailJS Template ID
-                emailData
-            ).then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
+            // Simulate form submission
+            setTimeout(() => {
+                if (submitBtn && spinner) {
+                    submitBtn.disabled = false;
+                    spinner.classList.add('hidden');
+                }
                 
-                // Hide loading spinner
-                submitBtn.disabled = false;
-                spinner.classList.add('hidden');
+                const successMessage = document.getElementById('successMessage');
+                if (successMessage) successMessage.classList.remove('hidden');
                 
-                // Show success message
-                document.getElementById('successMessage').classList.remove('hidden');
-                
-                // Reset form
-                document.getElementById('preOrderForm').reset();
+                form.reset();
                 currentStep = 1;
                 showStep(1);
-                
-                // Clear localStorage
                 localStorage.removeItem('brainsait_form_data');
                 
-            }, function(error) {
-                console.log('FAILED...', error);
-                
-                // Hide loading spinner
-                submitBtn.disabled = false;
-                spinner.classList.add('hidden');
-                
-                // Show error message
-                alert(currentLang === 'ar' ? 
-                    'حدث خطأ في الإرسال. يرجى المحاولة مرة أخرى.' : 
-                    'An error occurred while sending. Please try again.');
-                
-                // Fallback: Open email client
-                const subject = encodeURIComponent('BrainSAIT Pre-Order Request - ' + (data.fullName || 'New Client'));
-                const body = encodeURIComponent(`
-Name: ${data.fullName || 'Not provided'}
-Email: ${data.email || 'Not provided'}
-Phone: ${data.phone || 'Not provided'}
-Company: ${data.company || 'Not provided'}
-Service Type: ${data.serviceType || 'Not provided'}
-Project Description: ${data.projectDescription || 'Not provided'}
-Budget: ${data.budget || 'Not provided'}
-
-Additional details available in the submitted form.
-                `);
-                window.open(`mailto:brainsait@hotmail.com?subject=${subject}&body=${body}`);
-            });
-        });
+                showNotification(
+                    currentLang === 'ar' ? 'تم إرسال طلبك بنجاح!' : 'Request submitted successfully!',
+                    'success'
+                );
+            }, 2000);
+        }
 
         // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        function handleContactSubmission(e) {
             e.preventDefault();
             
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('contactName'),
-                email: formData.get('contactEmail'),
-                message: formData.get('contactMessage')
-            };
+            showNotification(
+                currentLang === 'ar' ? 'شكراً لتواصلك معنا!' : 'Thank you for contacting us!',
+                'success'
+            );
             
-            // Send email or handle contact form submission
-            alert(currentLang === 'ar' ? 
-                'شكراً لتواصلك معنا! سنرد عليك قريباً.' : 
-                'Thank you for contacting us! We will get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
+            e.target.reset();
+        }
 
         // Close success message
         function closeSuccessMessage() {
-            document.getElementById('successMessage').classList.add('hidden');
+            const successMessage = document.getElementById('successMessage');
+            if (successMessage) successMessage.classList.add('hidden');
         }
 
-        // Auto-save form data
-        function autoSave() {
-            const formData = new FormData(document.getElementById('preOrderForm'));
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
+        // Keyboard event handlers
+        function handleKeyboardEvents() {
+            document.getElementById('lang-en')?.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setLanguage('en');
+                }
+            });
+
+            document.getElementById('lang-ar')?.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setLanguage('ar');
+                }
+            });
+
+            document.querySelector('.theme-toggle')?.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleTheme();
+                }
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set theme from localStorage
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            const icon = document.getElementById('theme-icon');
+            if (icon) icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            
+            // Set language from localStorage
+            const savedLang = localStorage.getItem('language') || 'en';
+            setLanguage(savedLang);
+            
+            // Initialize form
+            showStep(1);
+            initializeServiceCards();
+            loadSavedData();
+            handleKeyboardEvents();
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', toggleMobileMenu);
             }
-            localStorage.setItem('brainsait_form_data', JSON.stringify(data));
-        }
-
-        // Load saved form data
-        function loadSavedData() {
-            const savedData = localStorage.getItem('brainsait_form_data');
-            if (savedData) {
-                const data = JSON.parse(savedData);
-                Object.keys(data).forEach(key => {
-                    const field = document.querySelector(`[name="${key}"]`);
-                    if (field) {
-                        field.value = data[key];
+            
+            // Navigation buttons
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    if (validateStep(currentStep) && currentStep < totalSteps) {
+                        currentStep++;
+                        showStep(currentStep);
                     }
                 });
             }
-        }
 
-        // Auto-save on input change
-        document.getElementById('preOrderForm').addEventListener('input', autoSave);
-
-        // Load saved data on page load
-        loadSavedData();
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.boxShadow = 'none';
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    if (currentStep > 1) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                });
             }
+
+            // Form submissions
+            const preOrderForm = document.getElementById('preOrderForm');
+            if (preOrderForm) {
+                preOrderForm.addEventListener('submit', handleFormSubmission);
+                preOrderForm.addEventListener('input', autoSave);
+            }
+
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleContactSubmission);
+            }
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (mobileMenuOpen) {
+                        toggleMobileMenu();
+                    }
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (navbar) {
+                    navbar.style.boxShadow = window.scrollY > 50 ? '0 2px 10px rgba(0,0,0,0.1)' : 'none';
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const navLinks = document.getElementById('navLinks');
+                const menuToggle = document.getElementById('mobileMenuToggle');
+                
+                if (mobileMenuOpen && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                    toggleMobileMenu();
+                }
+            });
+
+            // Handle resize events
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768 && mobileMenuOpen) {
+                    toggleMobileMenu();
+                }
+            });
         });
+
+        // Error handling
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+            showNotification('An error occurred. Please try again.', 'error');
+        });
+
+        // Prevent zoom on iOS double tap
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
