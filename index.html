@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mohamed Elfadil - Healthcare AI Researcher & Open Source Developer</title>
-    <meta name="description" content="Healthcare AI researcher, medical informaticist, and creator of open-source healthcare interoperability solutions including PyHeart and PyBrain platforms.">
-    <meta name="keywords" content="healthcare AI, medical informatics, FHIR, healthcare interoperability, clinical NLP, PyPI packages">
-    
+    <title>BRAINSAIT برينسايت - Unified Page</title>
+    <meta name="description" content="Unified page combining the main website and pre-order form for BrainSAIT.">
+    <meta name="keywords" content="BRAINSAIT, healthcare AI, pre-order form, unified page">
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
+
+    <!-- Styles -->
     <style>
+        /* Consolidated styles from both files */
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
@@ -30,24 +32,77 @@
             --gradient-healthcare: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--background);
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1001;
+            background: var(--background);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .theme-toggle i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: calc(50% + 80px);
+            right: 20px;
+            z-index: 1001;
+            background: var(--background);
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            padding: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .language-option {
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .language-option.active {
+            background: var(--gradient-healthcare);
+            color: white;
         }
 
         /* Navigation */
@@ -60,6 +115,10 @@
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
             transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(0, 0, 0, 0.95);
         }
 
         .nav-container {
@@ -116,20 +175,9 @@
         /* Hero Section */
         .hero {
             padding: 8rem 0 6rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: linear-gradient(135deg, var(--background-alt) 0%, var(--background) 100%);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-            opacity: 0.5;
         }
 
         .hero-content {
@@ -141,15 +189,30 @@
             z-index: 1;
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+        .brand-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
             background: var(--gradient-healthcare);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.2;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .brand-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-left: 1rem;
+        }
+
+        .doctor-name {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         .hero-text .subtitle {
@@ -164,80 +227,6 @@
             color: var(--text-secondary);
             margin-bottom: 2rem;
             line-height: 1.7;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-card {
-            background: white;
-            border-radius: 2rem;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-            text-align: center;
-            transform: perspective(1000px) rotateY(-5deg);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-card:hover {
-            transform: perspective(1000px) rotateY(0deg);
-        }
-
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            background: var(--gradient-healthcare);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
         }
 
         .cta-buttons {
@@ -264,6 +253,8 @@
             background: var(--gradient-healthcare);
             color: white;
             box-shadow: var(--shadow-medium);
+            margin-top: 1rem;
+            width: 100%;
         }
 
         .btn-primary:hover {
@@ -272,7 +263,7 @@
         }
 
         .btn-secondary {
-            background: white;
+            background: var(--background);
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
         }
@@ -282,263 +273,19 @@
             color: white;
         }
 
-        /* Projects Section */
-        .projects {
+        /* Form Section */
+        .form-section {
             padding: 6rem 0;
             background: var(--background);
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: var(--gradient-healthcare);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            max-width: 600px;
+        .form-container {
+            max-width: 800px;
             margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: var(--shadow-medium);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-healthcare);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-large);
-        }
-
-        .project-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 1rem;
-            background: var(--gradient-healthcare);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .project-badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 2rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .badge-version {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .badge-pypi {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .badge-new {
-            background: #dcfce7;
-            color: #166534;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .project-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .project-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .project-features li::before {
-            content: '✓';
-            color: var(--healthcare-green);
-            font-weight: bold;
-        }
-
-        .project-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .install-command {
-            background: #f1f5f9;
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            padding: 0.75rem;
-            font-family: 'Monaco', 'Consolas', monospace;
-            font-size: 0.875rem;
-            color: var(--text-primary);
-            margin: 1rem 0;
-            position: relative;
-            overflow-x: auto;
-        }
-
-        .copy-btn {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.25rem 0.5rem;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .copy-btn:hover {
-            background: var(--secondary-color);
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 0;
             background: var(--background-alt);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: var(--gradient-healthcare);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: var(--shadow-light);
-        }
-
-        .skill-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 0.5rem;
-            background: var(--gradient-healthcare);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.125rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 0;
-            background: var(--background);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-form {
-            background: white;
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: var(--shadow-medium);
-            border: 1px solid var(--border-color);
         }
 
         .form-group {
@@ -562,6 +309,8 @@
             font-size: 1rem;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             font-family: inherit;
+            background: var(--background);
+            color: var(--text-primary);
         }
 
         .form-group input:focus,
@@ -583,210 +332,71 @@
             gap: 1rem;
         }
 
-        .contact-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--background-alt);
-            border-radius: 0.5rem;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 0.5rem;
-            background: var(--gradient-healthcare);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient-healthcare);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.25rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-primary);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
+        .form-actions {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            margin-top: 2rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+        .form-actions button {
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--background-alt);
-        }
-
-        ::-webkit-scrollbar-thumb {
+        .form-actions .btn-primary {
             background: var(--gradient-healthcare);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Integration showcase */
-        .integration-showcase {
-            margin-top: 4rem;
-            text-align: center;
-            padding: 3rem;
-            background: white;
-            border-radius: 1rem;
+            color: white;
             box-shadow: var(--shadow-medium);
         }
 
-        .integration-showcase h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+        .form-actions .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-large);
         }
 
-        .integration-showcase p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+        .form-actions .btn-secondary {
+            background: var(--background);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
         }
 
-        /* Success message */
-        .success-message {
-            background: #dcfce7;
-            color: #166534;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #bbf7d0;
-            display: none;
-        }
-
-        .error-message {
-            background: #fef2f2;
-            color: #dc2626;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #fecaca;
-            display: none;
+        .form-actions .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
         }
     </style>
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle" aria-label="Language toggle">
+        <div class="language-option active" onclick="setLanguage('en')" aria-label="Switch to English">EN</div>
+        <div class="language-option" onclick="setLanguage('ar')" aria-label="Switch to Arabic">العربية</div>
+    </div>
+
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Dr. Mohamed Elfadil</div>
+            <div class="logo">BRAINSAIT برينسايت</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+                <li><a href="#form" data-en="Form" data-ar="النموذج">Form</a></li>
+                <li><a href="#contact" data-en="Contact" data-ar="اتصل">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -796,555 +406,111 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Healthcare AI Researcher & Open Source Developer</h1>
-                    <p class="subtitle">Transforming Healthcare Through AI & Interoperability</p>
-                    <p>Pioneering the future of healthcare technology with cutting-edge AI solutions, healthcare interoperability platforms, and clinical NLP systems. Creator of PyHeart and PyBrain - comprehensive healthcare intelligence platforms published on PyPI.</p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">2</div>
-                            <div class="stat-label">PyPI Packages</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Years Research</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label">Healthcare Systems</div>
-                        </div>
+                    <div class="brand-title">
+                        BRAINSAIT<span class="brand-arabic">برينسايت</span>
                     </div>
-
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-rocket"></i>
-                            Explore Projects
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i>
-                            Get in Touch
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-image">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <h3>Dr. Mohamed Elfadil</h3>
-                        <p>Healthcare AI Researcher</p>
-                        <p>Medical Informaticist</p>
-                        <p>Open Source Developer</p>
-                    </div>
+                    <div class="doctor-name" data-en="Dr. Mohamed El Fadil" data-ar="د. محمد الفاضل">Dr. Mohamed El Fadil</div>
+                    <p class="subtitle" data-en="Healthcare AI Researcher & Open Source Developer" data-ar="باحث الذكاء الاصطناعي الطبي ومطور المصادر المفتوحة">Healthcare AI Researcher & Open Source Developer</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Open Source Projects</h2>
-                <p class="section-subtitle">Cutting-edge healthcare AI and interoperability solutions published on PyPI, transforming how healthcare systems communicate and process data.</p>
-            </div>
+            <h2>Our Projects</h2>
+            <p>Explore our innovative healthcare AI projects designed to improve patient outcomes and streamline medical processes.</p>
+            <ul>
+                <li><a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" rel="noopener">PyHeart: Healthcare Interoperability & Workflow Engine</a> - A universal integration platform for healthcare systems, providing seamless connectivity, workflow orchestration, and secure data exchange.</li>
+                <li><a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" rel="noopener">PyBrain: Unified Healthcare Intelligence Platform</a> - AI-powered healthcare data harmonization and decision support system with advanced clinical NLP capabilities.</li>
+                <li><a href="https://pypi.org/user/Fadil369/" target="_blank" rel="noopener">PyHeart + PyBrain Integration</a> - A comprehensive solution combining interoperability and AI intelligence for unified healthcare systems.</li>
+            </ul>
+        </div>
+    </section>
 
-            <div class="projects-grid">
-                <!-- PyHeart Project -->
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="project-badges">
-                            <span class="badge badge-version">v0.1.0</span>
-                            <span class="badge badge-pypi">PyPI</span>
-                            <span class="badge badge-new">New</span>
-                        </div>
+    <!-- Tools Section -->
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <h2>Our Tools</h2>
+            <p>Discover the cutting-edge tools we use to develop our healthcare AI solutions.</p>
+            <ul>
+                <li><a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" rel="noopener">PyHeart</a> - Features include a universal API gateway, event-driven architecture, and compliance automation for healthcare systems.</li>
+                <li><a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" rel="noopener">PyBrain</a> - Offers AI-powered analytics, clinical NLP, and real-time decision support for healthcare applications.</li>
+                <li><a href="https://pypi.org/user/Fadil369/" target="_blank" rel="noopener">PyHeart + PyBrain</a> - Tools for seamless integration and advanced analytics in healthcare systems.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions-section">
+        <div class="container">
+            <h2>Our Solutions</h2>
+            <p>Learn about the impactful solutions we provide to address critical challenges in healthcare.</p>
+            <ul>
+                <li><a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" rel="noopener">Early Disease Detection</a> - Powered by PyHeart's workflow orchestration and secure data exchange capabilities.</li>
+                <li><a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" rel="noopener">Personalized Treatment Plans</a> - Enabled by PyBrain's AI-powered decision support and predictive analytics.</li>
+                <li><a href="https://pypi.org/user/Fadil369/" target="_blank" rel="noopener">Operational Efficiency in Clinics</a> - Achieved through the combined power of PyHeart and PyBrain for unified healthcare intelligence.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form" class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <form id="preOrderForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
                     </div>
-                    
-                    <h3 class="project-title">brainsait-pyheart</h3>
-                    <p class="project-description">
-                        Healthcare Interoperability & Workflow Engine - Universal integration platform for healthcare systems providing seamless connectivity and workflow orchestration.
-                    </p>
-
-                    <ul class="project-features">
-                        <li>Universal API Gateway for healthcare integrations</li>
-                        <li>Event-Driven Architecture with real-time processing</li>
-                        <li>Microservices Framework for scalable solutions</li>
-                        <li>HIPAA, GDPR, and compliance automation</li>
-                        <li>Complex healthcare workflow orchestration</li>
-                        <li>FHIR and HL7 standard support</li>
-                    </ul>
-
-                    <div class="install-command">
-                        pip install brainsait-pyheart
-                        <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pyheart')">Copy</button>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-
-                    <div class="project-actions">
-                        <a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" class="btn btn-primary">
-                            <i class="fab fa-python"></i> View on PyPI
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
                     </div>
-                </div>
-
-                <!-- PyBrain Project -->
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="project-badges">
-                            <span class="badge badge-version">v0.1.0</span>
-                            <span class="badge badge-pypi">PyPI</span>
-                            <span class="badge badge-new">New</span>
-                        </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Submit</button>
+                        <button type="reset" class="btn-secondary">Reset</button>
                     </div>
-                    
-                    <h3 class="project-title">brainsait-pybrain</h3>
-                    <p class="project-description">
-                        Unified Healthcare Intelligence Platform - AI-powered healthcare data harmonization and decision support system with advanced clinical NLP capabilities.
-                    </p>
-
-                    <ul class="project-features">
-                        <li>AI-Powered Data Harmonization across standards</li>
-                        <li>Clinical NLP Engine with medical understanding</li>
-                        <li>Federated Learning Framework for privacy</li>
-                        <li>Real-time Decision Support with evidence-based recommendations</li>
-                        <li>Predictive Analytics for patient outcomes</li>
-                        <li>Population health insights and analytics</li>
-                    </ul>
-
-                    <div class="install-command">
-                        pip install brainsait-pybrain
-                        <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pybrain')">Copy</button>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" class="btn btn-primary">
-                            <i class="fab fa-python"></i> View on PyPI
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Integration Showcase -->
-            <div class="integration-showcase">
-                <h3>PyHeart + PyBrain Integration</h3>
-                <p>These packages work seamlessly together to provide complete healthcare system unification - PyHeart handles interoperability and workflows while PyBrain provides AI intelligence and analytics.</p>
-                
-                <div class="install-command">
-                    pip install brainsait-pyheart brainsait-pybrain
-                    <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pyheart brainsait-pybrain')">Copy</button>
-                </div>
-                
-                <a href="https://pypi.org/user/Fadil369/" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
-                    <i class="fab fa-python"></i> View Full PyPI Profile
-                </a>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- External Links Section -->
+    <section id="external-links" class="external-links-section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Dr. Mohamed Elfadil</h2>
-                    <p>
-                        As a dedicated healthcare AI researcher and medical informaticist, I specialize in developing cutting-edge solutions that bridge the gap between advanced artificial intelligence and practical healthcare applications.
-                    </p>
-                    <p>
-                        My work focuses on healthcare interoperability, clinical natural language processing, and AI-powered decision support systems. Through my open-source contributions published on PyPI, I'm building the infrastructure for next-generation healthcare systems.
-                    </p>
-                    <p>
-                        With expertise spanning from FHIR standards to federated learning frameworks, I'm committed to creating technology that improves patient outcomes while ensuring privacy and compliance with healthcare regulations.
-                    </p>
-                </div>
-                
-                <div class="skills-section">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Core Expertise</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Healthcare AI</h4>
-                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Machine Learning & NLP</p>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Interoperability</h4>
-                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">FHIR, HL7, Integration</p>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Compliance</h4>
-                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">HIPAA, GDPR, Security</p>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Development</h4>
-                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Python, FastAPI, ML Ops</p>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Analytics</h4>
-                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Population Health, Predictive</p>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-stethoscope"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Clinical Domain</h4>
-                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Medical Informatics, EHR</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2>External Links</h2>
+            <p>Explore additional resources and tools available on our platform:</p>
+            <ul>
+                <li><a href="https://ai-docs-cod-containers.fadil.workers.dev/" target="_blank" rel="noopener">AI Docs Platform</a> - Features Cloudflare Containers Beta with functionalities like PDF uploads, AI analysis, and automated deployment.</li>
+                <li><a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" rel="noopener">Excel Advanced Consolidator</a> - A professional tool for consolidating Excel files, optimized for large files with no size limits.</li>
+                <li><a href="https://context.thefadil.site/" target="_blank" rel="noopener">Context</a> - Explore contextual insights and resources.</li>
+                <li><a href="https://read.thefadil.site/" target="_blank" rel="noopener">OI vs AI</a> - A book by Dr. Mohamed El Fadil exploring human and artificial intelligence, covering topics like human uniqueness, AI decisions, and future-proofing careers.</li>
+                <li><a href="https://care.brainsait.io/login" target="_blank" rel="noopener">Care</a> - Focuses on cookie settings and personalized advertising.</li>
+                <li><a href="https://givc-academy.brainsait.io/" target="_blank" rel="noopener">GIVC Academy</a> - Offers insights into cookie settings and advertising strategies.</li>
+            </ul>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Collaborate</h2>
-                <p class="section-subtitle">Interested in healthcare AI research, open source collaboration, or consulting opportunities? I'd love to hear from you.</p>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-form">
-                    <div class="success-message" id="successMessage">
-                        <i class="fas fa-check-circle"></i> Thank you for your message! I'll get back to you soon.
-                    </div>
-                    <div class="error-message" id="errorMessage">
-                        <i class="fas fa-exclamation-triangle"></i> Please fill in all required fields.
-                    </div>
-                    
-                    <form id="contactForm" method="POST" action="#">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="organization">Organization/Company</label>
-                            <input type="text" id="organization" name="organization">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a topic</option>
-                                <option value="research">Research Collaboration</option>
-                                <option value="consulting">Consulting Inquiry</option>
-                                <option value="open-source">Open Source Project</option>
-                                <option value="speaking">Speaking Engagement</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                                <option value="pypi-packages">PyPI Packages Inquiry</option>
-                                <option value="healthcare-ai">Healthcare AI Discussion</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project, research interest, healthcare AI needs, or how we might collaborate..." required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="timeline">Project Timeline</label>
-                            <select id="timeline" name="timeline">
-                                <option value="">Select timeline</option>
-                                <option value="immediate">Immediate (1-2 weeks)</option>
-                                <option value="short">Short term (1-3 months)</option>
-                                <option value="medium">Medium term (3-6 months)</option>
-                                <option value="long">Long term (6+ months)</option>
-                                <option value="ongoing">Ongoing collaboration</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Email</h4>
-                            <p style="color: var(--text-secondary); margin: 0;">research@drfadil.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">LinkedIn</h4>
-                            <p style="color: var(--text-secondary); margin: 0;">Connect for professional networking</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">GitHub</h4>
-                            <p style="color: var(--text-secondary); margin: 0;">Explore open source projects</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 0.25rem;">PyPI</h4>
-                            <p style="color: var(--text-secondary); margin: 0;">Published packages and tools</p>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://pypi.org/user/Fadil369/" target="_blank" class="social-link" title="PyPI">
-                            <i class="fab fa-python"></i>
-                        </a>
-                        <a href="#" class="social-link" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" title="ResearchGate">
-                            <i class="fab fa-researchgate"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <p>&copy; 2025 Dr. Mohamed Elfadil. All rights reserved.</p>
-                </div>
-                <div>
-                    <p>Building the future of healthcare technology</p>
-                </div>
-                <div>
-                    <p>PyHeart ❤️ + PyBrain 🧠 = Healthcare Innovation</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = 'none';
-            }
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                // Show temporary feedback
-                const event = new CustomEvent('copied', { detail: text });
-                document.dispatchEvent(event);
-                
-                // Simple feedback - you could enhance this with a toast notification
-                const allCopyButtons = document.querySelectorAll('.copy-btn');
-                allCopyButtons.forEach(btn => {
-                    if (btn.onclick.toString().includes(text)) {
-                        const originalText = btn.textContent;
-                        btn.textContent = 'Copied!';
-                        btn.style.background = '#10b981';
-                        setTimeout(() => {
-                            btn.textContent = originalText;
-                            btn.style.background = '';
-                        }, 2000);
-                    }
-                });
-            }).catch(function(err) {
-                console.error('Failed to copy text: ', err);
-            });
+        // JavaScript for theme and language toggling
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
         }
 
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            if (!firstName || !lastName || !email || !subject || !message) {
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('successMessage').style.display = 'none';
-                return;
-            }
-
-            // Hide error message
-            document.getElementById('errorMessage').style.display = 'none';
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would typically send the data to your server
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
-        });
-
-        // Add some dynamic stats animation
-        function animateNumbers() {
-            const stats = document.querySelectorAll('.stat-number');
-            stats.forEach(stat => {
-                const target = parseInt(stat.textContent.replace('+', ''));
-                let current = 0;
-                const increment = target / 50;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
-                }, 30);
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-en], [data-ar]');
+            elements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
             });
         }
-
-        // Trigger stats animation when hero section is visible
-        const heroObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateNumbers();
-                    heroObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        heroObserver.observe(document.querySelector('.hero-stats'));
-
-        // Initialize animations on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add fade-in class to elements that should animate
-            const animateElements = document.querySelectorAll('.project-card');
-            animateElements.forEach(el => {
-                el.classList.add('fade-in');
-            });
-        });
     </script>
 </body>
 </html>
