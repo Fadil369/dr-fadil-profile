@@ -1,4 +1,6 @@
 name: ✅ Validate & Monitor
+permissions:
+  contents: read
 
 on:
   push:
