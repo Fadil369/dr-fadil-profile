@@ -1,0 +1,37 @@
+{
+  "name": "dr-fadil-profile-tests",
+  "version": "1.0.0",
+  "description": "Comprehensive testing suite for Dr. Fadil's professional profile page",
+  "main": "automated-test.js",
+  "scripts": {
+    "test": "node automated-test.js",
+    "test:browser": "open test-suite.html",
+    "test:headless": "node automated-test.js",
+    "install-deps": "npm install puppeteer --save-dev"
+  },
+  "keywords": [
+    "testing",
+    "puppeteer",
+    "browser-automation",
+    "healthcare",
+    "medical-profile",
+    "responsive-design",
+    "accessibility"
+  ],
+  "author": "Dr. Mohamed El Fadil",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^21.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brainsait/dr-fadil-profile"
+  },
+  "bugs": {
+    "url": "https://github.com/brainsait/dr-fadil-profile/issues"
+  },
+  "homepage": "https://fadil369.dev"
+}

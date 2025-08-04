@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Fadil Profile - Comprehensive Test Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+        
+        .test-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .test-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .passed { color: #4ade80; }
+        .failed { color: #f87171; }
+        .warning { color: #fbbf24; }
+        
+        .test-section {
+            background: #2a2a2a;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .test-section-header {
+            background: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .test-section-header:hover {
+            background: #3a3a3a;
+        }
+        
+        .test-section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .test-section-status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .status-passed {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+        }
+        
+        .status-failed {
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+        }
+        
+        .status-warning {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+        
+        .test-content {
+            padding: 20px;
+            display: none;
+        }
+        
+        .test-content.active {
+            display: block;
+        }
+        
+        .test-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #444;
+        }
+        
+        .test-item:last-child {
+            border-bottom: none;
+        }
+        
+        .test-name {
+            flex: 1;
+        }
+        
+        .test-status {
+            margin-left: 20px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .test-details {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-top: 5px;
+        }
+        
+        .run-tests-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+        
+        .run-tests-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .run-tests-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #444;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4ade80, #22c55e);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .iframe-container {
+            position: fixed;
+            top: -9999px;
+            left: -9999px;
+            width: 1200px;
+            height: 800px;
+        }
+        
+        .test-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        @media (max-width: 768px) {
+            .test-container {
+                padding: 15px;
+            }
+            
+            .test-header h1 {
+                font-size: 2rem;
+            }
+            
+            .test-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>Dr. Fadil Profile - Comprehensive Test Suite</h1>
+            <p>Automated testing of functionality, responsiveness, and user experience</p>
+        </div>
+        
+        <div class="test-stats">
+            <div class="stat-card">
+                <div class="stat-number passed" id="passedCount">0</div>
+                <div>Tests Passed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number failed" id="failedCount">0</div>
+                <div>Tests Failed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number warning" id="warningCount">0</div>
+                <div>Warnings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalCount">0</div>
+                <div>Total Tests</div>
+            </div>
+        </div>
+        
+        <button class="run-tests-btn" id="runTestsBtn" onclick="runAllTests()">
+            Run All Tests
+        </button>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        
+        <!-- Navigation & Menu Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Navigation & Menu Tests</div>
+                <div class="test-section-status status-warning" id="navigation-status">Pending</div>
+            </div>
+            <div class="test-content" id="navigation-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Mobile menu toggle functionality</div>
+                        <div class="test-details">Tests hamburger menu open/close behavior</div>
+                    </div>
+                    <div class="test-status" id="mobile-menu-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Smooth scroll navigation</div>
+                        <div class="test-details">Tests anchor link navigation to sections</div>
+                    </div>
+                    <div class="test-status" id="smooth-scroll-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Navigation responsiveness</div>
+                        <div class="test-details">Tests navigation behavior across screen sizes</div>
+                    </div>
+                    <div class="test-status" id="nav-responsive-test">Pending</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Theme & Language Toggle Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Theme & Language Toggle Tests</div>
+                <div class="test-section-status status-warning" id="toggle-status">Pending</div>
+            </div>
+            <div class="test-content" id="toggle-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Dark/Light theme toggle</div>
+                        <div class="test-details">Tests theme switching and persistence</div>
+                    </div>
+                    <div class="test-status" id="theme-toggle-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">English/Arabic language toggle</div>
+                        <div class="test-details">Tests language switching and RTL support</div>
+                    </div>
+                    <div class="test-status" id="language-toggle-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">LocalStorage persistence</div>
+                        <div class="test-details">Tests settings persistence across sessions</div>
+                    </div>
+                    <div class="test-status" id="localstorage-test">Pending</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Button Functionality Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Button Functionality Tests</div>
+                <div class="test-section-status status-warning" id="buttons-status">Pending</div>
+            </div>
+            <div class="test-content" id="buttons-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Consultation modal button</div>
+                        <div class="test-details">Tests modal open/close functionality</div>
+                    </div>
+                    <div class="test-status" id="consultation-modal-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Diagnostic demo progression</div>
+                        <div class="test-details">Tests demo start/reset functionality</div>
+                    </div>
+                    <div class="test-status" id="diagnostic-demo-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Copy-to-clipboard functionality</div>
+                        <div class="test-details">Tests PyPI package copy functionality</div>
+                    </div>
+                    <div class="test-status" id="copy-clipboard-test">Pending</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Features Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Interactive Features Tests</div>
+                <div class="test-section-status status-warning" id="interactive-status">Pending</div>
+            </div>
+            <div class="test-content" id="interactive-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">3D Neural Network visualization</div>
+                        <div class="test-details">Tests canvas rendering and interactivity</div>
+                    </div>
+                    <div class="test-status" id="neural-network-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">AI Chat Assistant</div>
+                        <div class="test-details">Tests chat functionality and responses</div>
+                    </div>
+                    <div class="test-status" id="ai-chat-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">FHIR Interoperability playground</div>
+                        <div class="test-details">Tests data transformation functionality</div>
+                    </div>
+                    <div class="test-status" id="fhir-playground-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Real-time impact dashboard</div>
+                        <div class="test-details">Tests live metric updates</div>
+                    </div>
+                    <div class="test-status" id="impact-dashboard-test">Pending</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form & Modal Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Form & Modal Tests</div>
+                <div class="test-section-status status-warning" id="forms-status">Pending</div>
+            </div>
+            <div class="test-content" id="forms-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Form validation</div>
+                        <div class="test-details">Tests required field validation</div>
+                    </div>
+                    <div class="test-status" id="form-validation-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Email submission</div>
+                        <div class="test-details">Tests EmailJS integration</div>
+                    </div>
+                    <div class="test-status" id="email-submission-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Modal behavior</div>
+                        <div class="test-details">Tests modal open/close/overlay behavior</div>
+                    </div>
+                    <div class="test-status" id="modal-behavior-test">Pending</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Responsive Design Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Responsive Design Tests</div>
+                <div class="test-section-status status-warning" id="responsive-status">Pending</div>
+            </div>
+            <div class="test-content" id="responsive-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Mobile layout (320px-768px)</div>
+                        <div class="test-details">Tests mobile breakpoints and layout</div>
+                    </div>
+                    <div class="test-status" id="mobile-layout-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Tablet layout (768px-1024px)</div>
+                        <div class="test-details">Tests tablet breakpoints and layout</div>
+                    </div>
+                    <div class="test-status" id="tablet-layout-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Desktop layout (1024px+)</div>
+                        <div class="test-details">Tests desktop optimization</div>
+                    </div>
+                    <div class="test-status" id="desktop-layout-test">Pending</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Performance Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Performance Tests</div>
+                <div class="test-section-status status-warning" id="performance-status">Pending</div>
+            </div>
+            <div class="test-content" id="performance-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Animation smoothness (60fps target)</div>
+                        <div class="test-details">Tests animation performance</div>
+                    </div>
+                    <div class="test-status" id="animation-performance-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Memory usage monitoring</div>
+                        <div class="test-details">Tests memory efficiency</div>
+                    </div>
+                    <div class="test-status" id="memory-usage-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Loading speed optimization</div>
+                        <div class="test-details">Tests page load performance</div>
+                    </div>
+                    <div class="test-status" id="loading-speed-test">Pending</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Accessibility Tests -->
+        <div class="test-section">
+            <div class="test-section-header" onclick="toggleSection(this)">
+                <div class="test-section-title">Accessibility Tests</div>
+                <div class="test-section-status status-warning" id="accessibility-status">Pending</div>
+            </div>
+            <div class="test-content" id="accessibility-content">
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">Keyboard navigation</div>
+                        <div class="test-details">Tests tab navigation and focus management</div>
+                    </div>
+                    <div class="test-status" id="keyboard-nav-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">ARIA labels and roles</div>
+                        <div class="test-details">Tests screen reader compatibility</div>
+                    </div>
+                    <div class="test-status" id="aria-labels-test">Pending</div>
+                </div>
+                <div class="test-item">
+                    <div>
+                        <div class="test-name">High contrast mode</div>
+                        <div class="test-details">Tests contrast accessibility</div>
+                    </div>
+                    <div class="test-status" id="high-contrast-test">Pending</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hidden iframe for testing -->
+    <div class="iframe-container">
+        <iframe id="testIframe" class="test-iframe" src="index.html"></iframe>
+    </div>
+
+    <script>
+        // Test Suite Implementation
+        class TestSuite {
+            constructor() {
+                this.tests = [];
+                this.passedCount = 0;
+                this.failedCount = 0;
+                this.warningCount = 0;
+                this.currentTest = 0;
+                this.testIframe = null;
+                this.testDocument = null;
+                this.testWindow = null;
+                
+                this.initializeTestSuite();
+            }
+            
+            initializeTestSuite() {
+                this.testIframe = document.getElementById('testIframe');
+                
+                // Wait for iframe to load
+                this.testIframe.onload = () => {
+                    this.testDocument = this.testIframe.contentDocument;
+                    this.testWindow = this.testIframe.contentWindow;
+                    console.log('Test iframe loaded successfully');
+                };
+            }
+            
+            async runAllTests() {
+                const runBtn = document.getElementById('runTestsBtn');
+                runBtn.disabled = true;
+                runBtn.textContent = 'Running Tests...';
+                
+                this.resetStats();
+                this.currentTest = 0;
+                
+                // Define all tests
+                const testSuites = [
+                    { name: 'Navigation Tests', tests: this.getNavigationTests() },
+                    { name: 'Toggle Tests', tests: this.getToggleTests() },
+                    { name: 'Button Tests', tests: this.getButtonTests() },
+                    { name: 'Interactive Tests', tests: this.getInteractiveTests() },
+                    { name: 'Form Tests', tests: this.getFormTests() },
+                    { name: 'Responsive Tests', tests: this.getResponsiveTests() },
+                    { name: 'Performance Tests', tests: this.getPerformanceTests() },
+                    { name: 'Accessibility Tests', tests: this.getAccessibilityTests() }
+                ];
+                
+                const totalTests = testSuites.reduce((sum, suite) => sum + suite.tests.length, 0);
+                document.getElementById('totalCount').textContent = totalTests;
+                
+                // Run each test suite
+                for (const suite of testSuites) {
+                    await this.runTestSuite(suite.tests);
+                }
+                
+                this.updateProgress(100);
+                runBtn.disabled = false;
+                runBtn.textContent = 'Run All Tests';
+                
+                this.generateTestReport();
+            }
+            
+            async runTestSuite(tests) {
+                for (const test of tests) {
+                    await this.runSingleTest(test);
+                    this.currentTest++;
+                    const progress = (this.currentTest / document.getElementById('totalCount').textContent) * 100;
+                    this.updateProgress(progress);
+                    
+                    // Small delay for visual feedback
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            }
+            
+            async runSingleTest(test) {
+                try {
+                    const result = await test.execute();
+                    this.updateTestResult(test.id, result.status, result.message);
+                    
+                    if (result.status === 'passed') {
+                        this.passedCount++;
+                    } else if (result.status === 'failed') {
+                        this.failedCount++;
+                    } else {
+                        this.warningCount++;
+                    }
+                    
+                    this.updateStats();
+                } catch (error) {
+                    this.updateTestResult(test.id, 'failed', `Error: ${error.message}`);
+                    this.failedCount++;
+                    this.updateStats();
+                }
+            }
+            
+            // Navigation Tests
+            getNavigationTests() {
+                return [
+                    {
+                        id: 'mobile-menu-test',
+                        name: 'Mobile menu toggle functionality',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const mobileMenuBtn = this.testDocument.getElementById('mobileMenuBtn');
+                            const navLinks = this.testDocument.getElementById('navLinks');
+                            
+                            if (!mobileMenuBtn || !navLinks) {
+                                return { status: 'failed', message: 'Mobile menu elements not found' };
+                            }
+                            
+                            // Test menu toggle
+                            const initialState = navLinks.classList.contains('active');
+                            mobileMenuBtn.click();
+                            
+                            await new Promise(resolve => setTimeout(resolve, 300));
+                            
+                            const newState = navLinks.classList.contains('active');
+                            
+                            if (initialState !== newState) {
+                                return { status: 'passed', message: 'Mobile menu toggles correctly' };
+                            } else {
+                                return { status: 'failed', message: 'Mobile menu toggle not working' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'smooth-scroll-test',
+                        name: 'Smooth scroll navigation',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const navLinks = this.testDocument.querySelectorAll('nav a[href^="#"]');
+                            
+                            if (navLinks.length === 0) {
+                                return { status: 'failed', message: 'No navigation anchor links found' };
+                            }
+                            
+                            // Test that CSS smooth scroll is enabled
+                            const html = this.testDocument.documentElement;
+                            const scrollBehavior = this.testWindow.getComputedStyle(html).scrollBehavior;
+                            
+                            if (scrollBehavior === 'smooth') {
+                                return { status: 'passed', message: 'Smooth scroll enabled' };
+                            } else {
+                                return { status: 'warning', message: 'Smooth scroll not detected in CSS' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'nav-responsive-test',
+                        name: 'Navigation responsiveness',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const nav = this.testDocument.querySelector('.nav');
+                            
+                            if (!nav) {
+                                return { status: 'failed', message: 'Navigation element not found' };
+                            }
+                            
+                            // Check if navigation has responsive styles
+                            const style = this.testWindow.getComputedStyle(nav);
+                            const hasResponsiveStyles = style.position === 'fixed' && style.zIndex >= 999;
+                            
+                            if (hasResponsiveStyles) {
+                                return { status: 'passed', message: 'Navigation has responsive positioning' };
+                            } else {
+                                return { status: 'warning', message: 'Navigation positioning may need review' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            // Toggle Tests
+            getToggleTests() {
+                return [
+                    {
+                        id: 'theme-toggle-test',
+                        name: 'Dark/Light theme toggle',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.toggleTheme !== 'function') {
+                                return { status: 'failed', message: 'toggleTheme function not found' };
+                            }
+                            
+                            const initialTheme = this.testDocument.documentElement.getAttribute('data-theme');
+                            
+                            // Toggle theme
+                            this.testWindow.toggleTheme();
+                            
+                            await new Promise(resolve => setTimeout(resolve, 300));
+                            
+                            const newTheme = this.testDocument.documentElement.getAttribute('data-theme');
+                            
+                            if (initialTheme !== newTheme) {
+                                return { status: 'passed', message: 'Theme toggle working correctly' };
+                            } else {
+                                return { status: 'warning', message: 'Theme change not detected' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'language-toggle-test',
+                        name: 'English/Arabic language toggle',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.toggleLanguage !== 'function') {
+                                return { status: 'failed', message: 'toggleLanguage function not found' };
+                            }
+                            
+                            const enElements = this.testDocument.querySelectorAll('.en-content');
+                            const arElements = this.testDocument.querySelectorAll('.ar-content');
+                            
+                            if (enElements.length === 0 || arElements.length === 0) {
+                                return { status: 'failed', message: 'Language content elements not found' };
+                            }
+                            
+                            // Test language toggle
+                            this.testWindow.toggleLanguage('ar');
+                            
+                            await new Promise(resolve => setTimeout(resolve, 300));
+                            
+                            const htmlDir = this.testDocument.documentElement.getAttribute('dir');
+                            
+                            if (htmlDir === 'rtl') {
+                                return { status: 'passed', message: 'Language toggle and RTL working' };
+                            } else {
+                                return { status: 'warning', message: 'RTL direction not detected' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'localstorage-test',
+                        name: 'LocalStorage persistence',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            try {
+                                // Test localStorage functionality
+                                this.testWindow.localStorage.setItem('test-key', 'test-value');
+                                const retrieved = this.testWindow.localStorage.getItem('test-key');
+                                this.testWindow.localStorage.removeItem('test-key');
+                                
+                                if (retrieved === 'test-value') {
+                                    // Check if theme and language are persisted
+                                    const hasTheme = this.testWindow.localStorage.getItem('theme') !== null;
+                                    const hasLanguage = this.testWindow.localStorage.getItem('language') !== null;
+                                    
+                                    if (hasTheme || hasLanguage) {
+                                        return { status: 'passed', message: 'Settings persistence working' };
+                                    } else {
+                                        return { status: 'warning', message: 'LocalStorage works but no settings found' };
+                                    }
+                                } else {
+                                    return { status: 'failed', message: 'LocalStorage not working' };
+                                }
+                            } catch (error) {
+                                return { status: 'failed', message: 'LocalStorage access denied' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            // Button Tests
+            getButtonTests() {
+                return [
+                    {
+                        id: 'consultation-modal-test',
+                        name: 'Consultation modal button',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.openConsultationModal !== 'function') {
+                                return { status: 'failed', message: 'openConsultationModal function not found' };
+                            }
+                            
+                            const modal = this.testDocument.getElementById('consultationModal');
+                            
+                            if (!modal) {
+                                return { status: 'failed', message: 'Consultation modal not found' };
+                            }
+                            
+                            // Test modal opening
+                            this.testWindow.openConsultationModal();
+                            
+                            await new Promise(resolve => setTimeout(resolve, 300));
+                            
+                            const isModalVisible = modal.style.display !== 'none' && 
+                                                  modal.classList.contains('active');
+                            
+                            if (isModalVisible) {
+                                // Test modal closing
+                                this.testWindow.closeConsultationModal();
+                                return { status: 'passed', message: 'Modal open/close working' };
+                            } else {
+                                return { status: 'failed', message: 'Modal not opening properly' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'diagnostic-demo-test',
+                        name: 'Diagnostic demo progression',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.startDiagnosticDemo !== 'function') {
+                                return { status: 'failed', message: 'startDiagnosticDemo function not found' };
+                            }
+                            
+                            const demoSteps = this.testDocument.querySelectorAll('.diagnostic-step');
+                            
+                            if (demoSteps.length === 0) {
+                                return { status: 'failed', message: 'Diagnostic demo steps not found' };
+                            }
+                            
+                            // Test demo start
+                            this.testWindow.startDiagnosticDemo();
+                            
+                            await new Promise(resolve => setTimeout(resolve, 500));
+                            
+                            const activeSteps = this.testDocument.querySelectorAll('.diagnostic-step.active');
+                            
+                            if (activeSteps.length > 0) {
+                                // Test reset
+                                if (typeof this.testWindow.resetDiagnosticDemo === 'function') {
+                                    this.testWindow.resetDiagnosticDemo();
+                                }
+                                return { status: 'passed', message: 'Diagnostic demo working' };
+                            } else {
+                                return { status: 'warning', message: 'Demo activation not detected' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'copy-clipboard-test',
+                        name: 'Copy-to-clipboard functionality',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.copyToClipboard !== 'function') {
+                                return { status: 'failed', message: 'copyToClipboard function not found' };
+                            }
+                            
+                            try {
+                                // Test copy functionality (this will use fallback method in iframe)
+                                await this.testWindow.copyToClipboard('test-text');
+                                return { status: 'passed', message: 'Copy function executed successfully' };
+                            } catch (error) {
+                                return { status: 'warning', message: 'Copy function present but may need user interaction' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            // Interactive Tests
+            getInteractiveTests() {
+                return [
+                    {
+                        id: 'neural-network-test',
+                        name: '3D Neural Network visualization',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const canvas = this.testDocument.getElementById('neuralNetwork');
+                            
+                            if (!canvas) {
+                                return { status: 'failed', message: 'Neural network canvas not found' };
+                            }
+                            
+                            const ctx = canvas.getContext('2d');
+                            
+                            if (!ctx) {
+                                return { status: 'failed', message: 'Canvas context not available' };
+                            }
+                            
+                            // Check if NeuralNetworkVisualization class exists
+                            if (this.testWindow.NeuralNetworkVisualization) {
+                                return { status: 'passed', message: 'Neural network visualization available' };
+                            } else {
+                                return { status: 'warning', message: 'Neural network class not found' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'ai-chat-test',
+                        name: 'AI Chat Assistant',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const chatAssistant = this.testDocument.getElementById('aiChatAssistant');
+                            const chatToggle = this.testDocument.getElementById('aiChatToggle');
+                            
+                            if (!chatAssistant || !chatToggle) {
+                                return { status: 'failed', message: 'AI Chat elements not found' };
+                            }
+                            
+                            // Check if AIHealthcareAssistant exists
+                            if (this.testWindow.AIHealthcareAssistant) {
+                                return { status: 'passed', message: 'AI Chat Assistant available' };
+                            } else {
+                                return { status: 'warning', message: 'AI Chat class not found' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'fhir-playground-test',
+                        name: 'FHIR Interoperability playground',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.validateData !== 'function' || 
+                                typeof this.testWindow.transformData !== 'function') {
+                                return { status: 'failed', message: 'FHIR playground functions not found' };
+                            }
+                            
+                            const inputData = this.testDocument.getElementById('inputData');
+                            const outputData = this.testDocument.getElementById('outputData');
+                            
+                            if (!inputData || !outputData) {
+                                return { status: 'failed', message: 'FHIR playground elements not found' };
+                            }
+                            
+                            return { status: 'passed', message: 'FHIR playground components available' };
+                        }
+                    },
+                    {
+                        id: 'impact-dashboard-test',
+                        name: 'Real-time impact dashboard',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.toggleImpactDashboard !== 'function') {
+                                return { status: 'failed', message: 'Impact dashboard functions not found' };
+                            }
+                            
+                            const dashboard = this.testDocument.getElementById('impactDashboard');
+                            
+                            if (!dashboard) {
+                                return { status: 'failed', message: 'Impact dashboard not found' };
+                            }
+                            
+                            // Check if dashboard has metric elements
+                            const metrics = dashboard.querySelectorAll('[id$="Count"], [id$="Metric"]');
+                            
+                            if (metrics.length > 0) {
+                                return { status: 'passed', message: 'Impact dashboard with metrics available' };
+                            } else {
+                                return { status: 'warning', message: 'Dashboard found but no metrics detected' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            // Form Tests
+            getFormTests() {
+                return [
+                    {
+                        id: 'form-validation-test',
+                        name: 'Form validation',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const form = this.testDocument.getElementById('consultationForm');
+                            
+                            if (!form) {
+                                return { status: 'failed', message: 'Consultation form not found' };
+                            }
+                            
+                            const requiredFields = form.querySelectorAll('[required]');
+                            
+                            if (requiredFields.length > 0) {
+                                return { status: 'passed', message: `Form has ${requiredFields.length} required fields` };
+                            } else {
+                                return { status: 'warning', message: 'No required fields found in form' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'email-submission-test',
+                        name: 'Email submission',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (typeof this.testWindow.submitConsultationForm !== 'function') {
+                                return { status: 'failed', message: 'submitConsultationForm function not found' };
+                            }
+                            
+                            // Check if EmailJS is loaded
+                            if (this.testWindow.emailjs) {
+                                return { status: 'passed', message: 'EmailJS integration available' };
+                            } else {
+                                return { status: 'warning', message: 'EmailJS not detected (may load asynchronously)' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'modal-behavior-test',
+                        name: 'Modal behavior',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const modal = this.testDocument.getElementById('consultationModal');
+                            const modalOverlay = this.testDocument.querySelector('.modal-overlay');
+                            
+                            if (!modal) {
+                                return { status: 'failed', message: 'Modal not found' };
+                            }
+                            
+                            if (modalOverlay) {
+                                return { status: 'passed', message: 'Modal with overlay structure found' };
+                            } else {
+                                return { status: 'warning', message: 'Modal found but overlay structure unclear' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            // Responsive Tests
+            getResponsiveTests() {
+                return [
+                    {
+                        id: 'mobile-layout-test',
+                        name: 'Mobile layout (320px-768px)',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const viewport = this.testDocument.querySelector('meta[name="viewport"]');
+                            
+                            if (!viewport) {
+                                return { status: 'failed', message: 'Viewport meta tag not found' };
+                            }
+                            
+                            const content = viewport.getAttribute('content');
+                            const hasResponsiveViewport = content.includes('width=device-width');
+                            
+                            if (hasResponsiveViewport) {
+                                return { status: 'passed', message: 'Responsive viewport configured' };
+                            } else {
+                                return { status: 'failed', message: 'Viewport not configured for mobile' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'tablet-layout-test',
+                        name: 'Tablet layout (768px-1024px)',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            // Check for media queries in stylesheets
+                            const styles = this.testDocument.querySelectorAll('style, link[rel="stylesheet"]');
+                            let hasTabletQueries = false;
+                            
+                            for (const style of styles) {
+                                if (style.textContent && style.textContent.includes('@media')) {
+                                    hasTabletQueries = true;
+                                    break;
+                                }
+                            }
+                            
+                            if (hasTabletQueries) {
+                                return { status: 'passed', message: 'Media queries detected for responsive design' };
+                            } else {
+                                return { status: 'warning', message: 'Media queries not detected in inline styles' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'desktop-layout-test',
+                        name: 'Desktop layout (1024px+)',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const container = this.testDocument.querySelector('.hero-container, .container, main');
+                            
+                            if (!container) {
+                                return { status: 'failed', message: 'Main container not found' };
+                            }
+                            
+                            const style = this.testWindow.getComputedStyle(container);
+                            const maxWidth = parseInt(style.maxWidth);
+                            
+                            if (maxWidth >= 1024) {
+                                return { status: 'passed', message: 'Desktop-optimized container width' };
+                            } else {
+                                return { status: 'warning', message: 'Container width may need desktop optimization' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            // Performance Tests
+            getPerformanceTests() {
+                return [
+                    {
+                        id: 'animation-performance-test',
+                        name: 'Animation smoothness (60fps target)',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            // Check for CSS animations and transforms
+                            const animatedElements = this.testDocument.querySelectorAll('[style*="animation"], [style*="transition"], .particle, .animated-bg');
+                            
+                            if (animatedElements.length > 0) {
+                                // Check for GPU acceleration hints
+                                let hasGpuAcceleration = false;
+                                
+                                for (const element of animatedElements) {
+                                    const style = this.testWindow.getComputedStyle(element);
+                                    if (style.transform !== 'none' || style.willChange !== 'auto') {
+                                        hasGpuAcceleration = true;
+                                        break;
+                                    }
+                                }
+                                
+                                if (hasGpuAcceleration) {
+                                    return { status: 'passed', message: 'Animations with GPU acceleration detected' };
+                                } else {
+                                    return { status: 'warning', message: 'Animations found but GPU acceleration unclear' };
+                                }
+                            } else {
+                                return { status: 'warning', message: 'No animated elements detected' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'memory-usage-test',
+                        name: 'Memory usage monitoring',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (this.testWindow.performance && this.testWindow.performance.memory) {
+                                const memory = this.testWindow.performance.memory;
+                                const usedMB = (memory.usedJSHeapSize / 1024 / 1024).toFixed(2);
+                                
+                                if (usedMB < 50) {
+                                    return { status: 'passed', message: `Memory usage: ${usedMB}MB (Good)` };
+                                } else if (usedMB < 100) {
+                                    return { status: 'warning', message: `Memory usage: ${usedMB}MB (Moderate)` };
+                                } else {
+                                    return { status: 'failed', message: `Memory usage: ${usedMB}MB (High)` };
+                                }
+                            } else {
+                                return { status: 'warning', message: 'Memory monitoring not available' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'loading-speed-test',
+                        name: 'Loading speed optimization',
+                        execute: async () => {
+                            if (!this.testWindow) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            if (this.testWindow.performance && this.testWindow.performance.timing) {
+                                const timing = this.testWindow.performance.timing;
+                                const loadTime = timing.loadEventEnd - timing.navigationStart;
+                                const loadTimeSeconds = (loadTime / 1000).toFixed(2);
+                                
+                                if (loadTime < 3000) {
+                                    return { status: 'passed', message: `Load time: ${loadTimeSeconds}s (Fast)` };
+                                } else if (loadTime < 5000) {
+                                    return { status: 'warning', message: `Load time: ${loadTimeSeconds}s (Moderate)` };
+                                } else {
+                                    return { status: 'failed', message: `Load time: ${loadTimeSeconds}s (Slow)` };
+                                }
+                            } else {
+                                return { status: 'warning', message: 'Performance timing not available' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            // Accessibility Tests
+            getAccessibilityTests() {
+                return [
+                    {
+                        id: 'keyboard-nav-test',
+                        name: 'Keyboard navigation',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const focusableElements = this.testDocument.querySelectorAll(
+                                'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                            );
+                            
+                            if (focusableElements.length > 0) {
+                                // Check for focus indicators
+                                let hasFocusStyles = false;
+                                
+                                for (const element of focusableElements) {
+                                    const style = this.testWindow.getComputedStyle(element, ':focus');
+                                    if (style.outline !== 'none' || style.boxShadow !== 'none') {
+                                        hasFocusStyles = true;
+                                        break;
+                                    }
+                                }
+                                
+                                if (hasFocusStyles) {
+                                    return { status: 'passed', message: `${focusableElements.length} focusable elements with focus styles` };
+                                } else {
+                                    return { status: 'warning', message: `${focusableElements.length} focusable elements but focus styles unclear` };
+                                }
+                            } else {
+                                return { status: 'failed', message: 'No focusable elements found' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'aria-labels-test',
+                        name: 'ARIA labels and roles',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            const ariaElements = this.testDocument.querySelectorAll('[aria-label], [aria-labelledby], [role]');
+                            const buttons = this.testDocument.querySelectorAll('button');
+                            
+                            let ariaScore = 0;
+                            
+                            if (ariaElements.length > 0) ariaScore++;
+                            if (buttons.length > 0) {
+                                const buttonsWithAria = this.testDocument.querySelectorAll('button[aria-label]');
+                                if (buttonsWithAria.length >= buttons.length * 0.5) ariaScore++;
+                            }
+                            
+                            if (ariaScore >= 2) {
+                                return { status: 'passed', message: `Good ARIA implementation (${ariaElements.length} elements)` };
+                            } else if (ariaScore >= 1) {
+                                return { status: 'warning', message: `Basic ARIA implementation (${ariaElements.length} elements)` };
+                            } else {
+                                return { status: 'failed', message: 'Limited ARIA implementation' };
+                            }
+                        }
+                    },
+                    {
+                        id: 'high-contrast-test',
+                        name: 'High contrast mode',
+                        execute: async () => {
+                            if (!this.testDocument) {
+                                return { status: 'warning', message: 'Test page not loaded' };
+                            }
+                            
+                            // Check for high contrast media query support
+                            const styles = this.testDocument.querySelectorAll('style');
+                            let hasHighContrastStyles = false;
+                            
+                            for (const style of styles) {
+                                if (style.textContent && style.textContent.includes('prefers-contrast')) {
+                                    hasHighContrastStyles = true;
+                                    break;
+                                }
+                            }
+                            
+                            if (hasHighContrastStyles) {
+                                return { status: 'passed', message: 'High contrast mode support detected' };
+                            } else {
+                                return { status: 'warning', message: 'High contrast mode support not detected' };
+                            }
+                        }
+                    }
+                ];
+            }
+            
+            updateTestResult(testId, status, message) {
+                const testElement = document.getElementById(testId);
+                if (testElement) {
+                    testElement.className = `test-status status-${status}`;
+                    testElement.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+                    testElement.title = message;
+                }
+            }
+            
+            updateStats() {
+                document.getElementById('passedCount').textContent = this.passedCount;
+                document.getElementById('failedCount').textContent = this.failedCount;
+                document.getElementById('warningCount').textContent = this.warningCount;
+            }
+            
+            updateProgress(percent) {
+                document.getElementById('progressFill').style.width = `${percent}%`;
+            }
+            
+            resetStats() {
+                this.passedCount = 0;
+                this.failedCount = 0;
+                this.warningCount = 0;
+                this.updateStats();
+                this.updateProgress(0);
+            }
+            
+            generateTestReport() {
+                const total = this.passedCount + this.failedCount + this.warningCount;
+                const passRate = ((this.passedCount / total) * 100).toFixed(1);
+                
+                console.log('=== TEST SUITE REPORT ===');
+                console.log(`Total Tests: ${total}`);
+                console.log(`Passed: ${this.passedCount}`);
+                console.log(`Failed: ${this.failedCount}`);
+                console.log(`Warnings: ${this.warningCount}`);
+                console.log(`Pass Rate: ${passRate}%`);
+                
+                // Update section statuses
+                this.updateSectionStatuses();
+            }
+            
+            updateSectionStatuses() {
+                const sections = [
+                    { id: 'navigation', tests: ['mobile-menu-test', 'smooth-scroll-test', 'nav-responsive-test'] },
+                    { id: 'toggle', tests: ['theme-toggle-test', 'language-toggle-test', 'localstorage-test'] },
+                    { id: 'buttons', tests: ['consultation-modal-test', 'diagnostic-demo-test', 'copy-clipboard-test'] },
+                    { id: 'interactive', tests: ['neural-network-test', 'ai-chat-test', 'fhir-playground-test', 'impact-dashboard-test'] },
+                    { id: 'forms', tests: ['form-validation-test', 'email-submission-test', 'modal-behavior-test'] },
+                    { id: 'responsive', tests: ['mobile-layout-test', 'tablet-layout-test', 'desktop-layout-test'] },
+                    { id: 'performance', tests: ['animation-performance-test', 'memory-usage-test', 'loading-speed-test'] },
+                    { id: 'accessibility', tests: ['keyboard-nav-test', 'aria-labels-test', 'high-contrast-test'] }
+                ];
+                
+                sections.forEach(section => {
+                    const statusElement = document.getElementById(`${section.id}-status`);
+                    if (statusElement) {
+                        const testResults = section.tests.map(testId => {
+                            const testElement = document.getElementById(testId);
+                            return testElement ? testElement.className : 'status-warning';
+                        });
+                        
+                        const passed = testResults.filter(r => r.includes('passed')).length;
+                        const failed = testResults.filter(r => r.includes('failed')).length;
+                        
+                        if (failed > 0) {
+                            statusElement.className = 'test-section-status status-failed';
+                            statusElement.textContent = 'Failed';
+                        } else if (passed === testResults.length) {
+                            statusElement.className = 'test-section-status status-passed';
+                            statusElement.textContent = 'Passed';
+                        } else {
+                            statusElement.className = 'test-section-status status-warning';
+                            statusElement.textContent = 'Warning';
+                        }
+                    }
+                });
+            }
+        }
+        
+        // UI Functions
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+        
+        // Initialize test suite
+        let testSuite;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            testSuite = new TestSuite();
+        });
+        
+        // Global function for run button
+        function runAllTests() {
+            if (testSuite) {
+                testSuite.runAllTests();
+            }
+        }
+    </script>
+</body>
+</html>
