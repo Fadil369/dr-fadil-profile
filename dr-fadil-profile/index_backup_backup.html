@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <link rel="stylesheet" href="src/assets/css/extracted-styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
     <meta name="theme-color" content="#0a0a0f">
@@ -2973,7 +2972,7 @@
     <div class="particles" id="particles"></div>
     
     <!-- Neural Network Visualization -->
-    <canvas id="neuralNetwork" class="extracted-style-72"></canvas>
+    <canvas id="neuralNetwork" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.6;"></canvas>
     
     <!-- Reaction Overlay -->
     <div class="reaction-overlay" id="reactionOverlay"></div>
@@ -2985,15 +2984,15 @@
             <span>HR: <span class="biometric-value" id="heartRate">72</span> BPM</span>
         </div>
         <div class="biometric-item">
-            <i class="fas fa-thermometer-half" class="extracted-style-43"></i>
+            <i class="fas fa-thermometer-half" style="color: var(--accent-orange);"></i>
             <span>Temp: <span class="biometric-value" id="temperature">98.6</span>°F</span>
         </div>
         <div class="biometric-item">
-            <i class="fas fa-lungs" class="extracted-style-254"></i>
+            <i class="fas fa-lungs" style="color: var(--accent-green);"></i>
             <span>SpO2: <span class="biometric-value" id="oxygenSat">98</span>%</span>
         </div>
         <div class="biometric-item">
-            <i class="fas fa-tint" class="extracted-style-91"></i>
+            <i class="fas fa-tint" style="color: var(--accent-purple);"></i>
             <span>BP: <span class="biometric-value" id="bloodPressure">120/80</span></span>
         </div>
     </div>
@@ -3127,23 +3126,23 @@
                 </div>
                 <div class="section-content" id="geoMap">
                     <div class="world-map">
-                        <div class="region active" data-region="north-america" class="extracted-style-46">
+                        <div class="region active" data-region="north-america" style="left: 20%; top: 25%;">
                             <div class="pulse"></div>
                             <div class="tooltip">North America: 2,845 users</div>
                         </div>
-                        <div class="region active" data-region="europe" class="extracted-style-98">
+                        <div class="region active" data-region="europe" style="left: 55%; top: 20%;">
                             <div class="pulse"></div>
                             <div class="tooltip">Europe: 1,923 users</div>
                         </div>
-                        <div class="region" data-region="asia" class="extracted-style-150">
+                        <div class="region" data-region="asia" style="left: 75%; top: 35%;">
                             <div class="pulse"></div>
                             <div class="tooltip">Asia Pacific: 1,247 users</div>
                         </div>
-                        <div class="region" data-region="south-america" class="extracted-style-62">
+                        <div class="region" data-region="south-america" style="left: 30%; top: 60%;">
                             <div class="pulse"></div>
                             <div class="tooltip">South America: 654 users</div>
                         </div>
-                        <div class="region" data-region="africa" class="extracted-style-171">
+                        <div class="region" data-region="africa" style="left: 58%; top: 55%;">
                             <div class="pulse"></div>
                             <div class="tooltip">Africa: 432 users</div>
                         </div>
@@ -3169,13 +3168,13 @@
                             <div class="sparkline-label">Usage</div>
                             <div class="sparkline" id="usageSparkline">
                                 <div class="spark-bars">
-                                    <div class="bar" class="extracted-style-209"></div>
-                                    <div class="bar" class="extracted-style-137"></div>
-                                    <div class="bar" class="extracted-style-42"></div>
-                                    <div class="bar" class="extracted-style-118"></div>
-                                    <div class="bar" class="extracted-style-195"></div>
-                                    <div class="bar" class="extracted-style-252"></div>
-                                    <div class="bar" class="extracted-style-162"></div>
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                    <div class="bar" style="height: 45%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                    <div class="bar" style="height: 75%"></div>
+                                    <div class="bar" style="height: 100%"></div>
+                                    <div class="bar" style="height: 85%"></div>
                                 </div>
                             </div>
                         </div>
@@ -3183,13 +3182,13 @@
                             <div class="sparkline-label">Performance</div>
                             <div class="sparkline" id="performanceSparkline">
                                 <div class="spark-bars">
-                                    <div class="bar" class="extracted-style-17"></div>
-                                    <div class="bar" class="extracted-style-162"></div>
-                                    <div class="bar" class="extracted-style-101"></div>
-                                    <div class="bar" class="extracted-style-234"></div>
-                                    <div class="bar" class="extracted-style-214"></div>
-                                    <div class="bar" class="extracted-style-252"></div>
-                                    <div class="bar" class="extracted-style-8"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                    <div class="bar" style="height: 85%"></div>
+                                    <div class="bar" style="height: 92%"></div>
+                                    <div class="bar" style="height: 88%"></div>
+                                    <div class="bar" style="height: 95%"></div>
+                                    <div class="bar" style="height: 100%"></div>
+                                    <div class="bar" style="height: 98%"></div>
                                 </div>
                             </div>
                         </div>
@@ -3309,24 +3308,24 @@
                 </p>
                 
                 <!-- Vision 2030 Achievement Badges -->
-                <div class="vision-badges" class="extracted-style-25">
-                    <div class="achievement-badge" class="extracted-style-2">
-                        <i class="fas fa-flag" class="extracted-style-22"></i>
-                        <span class="extracted-style-179">
+                <div class="vision-badges" style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+                    <div class="achievement-badge" style="background: linear-gradient(135deg, #00a651, #028c47); padding: 0.5rem 1rem; border-radius: 25px; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);">
+                        <i class="fas fa-flag" style="color: #fff;"></i>
+                        <span style="color: #fff; font-weight: 600; font-size: 0.9rem;">
                             <span class="en-content">Vision 2030 Partner</span>
                             <span class="ar-content hidden">شريك رؤية 2030</span>
                         </span>
                     </div>
-                    <div class="achievement-badge" class="extracted-style-202">
-                        <i class="fas fa-brain" class="extracted-style-22"></i>
-                        <span class="extracted-style-179">
+                    <div class="achievement-badge" style="background: linear-gradient(135deg, #0066cc, #004c99); padding: 0.5rem 1rem; border-radius: 25px; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);">
+                        <i class="fas fa-brain" style="color: #fff;"></i>
+                        <span style="color: #fff; font-weight: 600; font-size: 0.9rem;">
                             <span class="en-content">Healthcare AI Pioneer</span>
                             <span class="ar-content hidden">رائد الذكاء الاصطناعي الطبي</span>
                         </span>
                     </div>
-                    <div class="achievement-badge" class="extracted-style-52">
-                        <i class="fas fa-rocket" class="extracted-style-22"></i>
-                        <span class="extracted-style-179">
+                    <div class="achievement-badge" style="background: linear-gradient(135deg, #9333ea, #7c3aed); padding: 0.5rem 1rem; border-radius: 25px; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);">
+                        <i class="fas fa-rocket" style="color: #fff;"></i>
+                        <span style="color: #fff; font-weight: 600; font-size: 0.9rem;">
                             <span class="en-content">Digital Leader</span>
                             <span class="ar-content hidden">قائد رقمي</span>
                         </span>
@@ -3382,21 +3381,21 @@
                 </div>
                 <div class="card-stats">
                     <div>
-                        <div class="stat-number" class="extracted-style-70">15+</div>
+                        <div class="stat-number" style="color: var(--accent-cyan);">15+</div>
                         <div class="stat-label">
                             <span class="en-content">Years</span>
                             <span class="ar-content hidden">سنة</span>
                         </div>
                     </div>
                     <div>
-                        <div class="stat-number" class="extracted-style-254">50+</div>
+                        <div class="stat-number" style="color: var(--accent-green);">50+</div>
                         <div class="stat-label">
                             <span class="en-content">Projects</span>
                             <span class="ar-content hidden">مشروع</span>
                         </div>
                     </div>
                     <div>
-                        <div class="stat-number" class="extracted-style-91">2</div>
+                        <div class="stat-number" style="color: var(--accent-purple);">2</div>
                         <div class="stat-label">
                             <span class="en-content">PyPI Packages</span>
                             <span class="ar-content hidden">حزمة PyPI</span>
@@ -3411,22 +3410,22 @@
     <section class="section">
         <div class="container">
             <div class="diagnostic-simulator">
-                <h3 class="extracted-style-67">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--accent-cyan);">
                     <i class="fas fa-brain"></i>
                     <span class="en-content">AI Diagnostic Journey Simulator</span>
                     <span class="ar-content hidden">محاكي رحلة التشخيص بالذكاء الاصطناعي</span>
                 </h3>
                 
                 <div class="diagnostic-progress">
-                    <div class="diagnostic-progress-bar" id="diagnosticProgress" class="extracted-style-159"></div>
+                    <div class="diagnostic-progress-bar" id="diagnosticProgress" style="width: 0%;"></div>
                 </div>
                 
                 <div class="diagnostic-step active" id="step1">
-                    <h4 class="extracted-style-45">
+                    <h4 style="color: var(--accent-green); margin-bottom: 1rem;">
                         <span class="en-content">Step 1: Patient Data Ingestion</span>
                         <span class="ar-content hidden">الخطوة 1: استيعاب بيانات المريض</span>
                     </h4>
-                    <p class="extracted-style-96">
+                    <p style="margin-bottom: 1rem;">
                         <span class="en-content">BrainSAIT AI processes FHIR-compliant patient data including vital signs, medical history, and lab results...</span>
                         <span class="ar-content hidden">يعالج برينسايت الذكي بيانات المريض المتوافقة مع FHIR بما في ذلك العلامات الحيوية والتاريخ الطبي ونتائج المختبر...</span>
                     </p>
@@ -3436,45 +3435,45 @@
                 </div>
                 
                 <div class="diagnostic-step" id="step2">
-                    <h4 class="extracted-style-239">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 1rem;">
                         <span class="en-content">Step 2: Clinical NLP Analysis</span>
                         <span class="ar-content hidden">الخطوة 2: تحليل معالجة اللغة الطبيعية السريرية</span>
                     </h4>
-                    <p class="extracted-style-96">
+                    <p style="margin-bottom: 1rem;">
                         <span class="en-content">Advanced NLP engine extracts insights from clinical notes, identifies symptoms patterns, and correlates with medical literature...</span>
                         <span class="ar-content hidden">محرك معالجة اللغة الطبيعية المتقدم يستخرج الرؤى من الملاحظات السريرية ويحدد أنماط الأعراض ويربطها بالأدبيات الطبية...</span>
                     </p>
                 </div>
                 
                 <div class="diagnostic-step" id="step3">
-                    <h4 class="extracted-style-230">
+                    <h4 style="color: var(--accent-purple); margin-bottom: 1rem;">
                         <span class="en-content">Step 3: AI Decision Support</span>
                         <span class="ar-content hidden">الخطوة 3: دعم القرار بالذكاء الاصطناعي</span>
                     </h4>
-                    <p class="extracted-style-96">
+                    <p style="margin-bottom: 1rem;">
                         <span class="en-content">Machine learning models provide differential diagnosis suggestions, treatment recommendations, and risk assessments...</span>
                         <span class="ar-content hidden">نماذج التعلم الآلي تقدم اقتراحات التشخيص التفريقي وتوصيات العلاج وتقييمات المخاطر...</span>
                     </p>
                 </div>
                 
                 <div class="diagnostic-step" id="step4">
-                    <h4 class="extracted-style-45">
+                    <h4 style="color: var(--accent-green); margin-bottom: 1rem;">
                         <span class="en-content">Step 4: Physician Collaboration</span>
                         <span class="ar-content hidden">الخطوة 4: تعاون الطبيب</span>
                     </h4>
-                    <p class="extracted-style-96">
+                    <p style="margin-bottom: 1rem;">
                         <span class="en-content">AI recommendations are presented to physicians for review, modification, and final decision-making, ensuring human oversight...</span>
                         <span class="ar-content hidden">يتم عرض توصيات الذكاء الاصطناعي على الأطباء للمراجعة والتعديل واتخاذ القرار النهائي، مما يضمن الإشراف البشري...</span>
                     </p>
                 </div>
                 
-                <div class="extracted-style-107">
+                <div style="text-align: center; margin-top: 2rem;">
                     <button class="btn btn-primary" onclick="startDiagnosticDemo()">
                         <i class="fas fa-play"></i>
                         <span class="en-content">Start Demo</span>
                         <span class="ar-content hidden">بدء العرض التوضيحي</span>
                     </button>
-                    <button class="btn btn-secondary" onclick="resetDiagnosticDemo()" class="extracted-style-201">
+                    <button class="btn btn-secondary" onclick="resetDiagnosticDemo()" style="margin-left: 1rem;">
                         <i class="fas fa-redo"></i>
                         <span class="en-content">Reset</span>
                         <span class="ar-content hidden">إعادة تعيين</span>
@@ -3485,7 +3484,7 @@
     </section>
     
     <!-- Innovation Hub Section -->
-    <section id="innovation-hub" class="section" class="extracted-style-61">
+    <section id="innovation-hub" class="section" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
         <div class="container">
             <h2 class="section-title">
                 <span class="en-content">BrainSAIT Innovation Hub</span>
@@ -3497,23 +3496,23 @@
             </p>
             
             <!-- Innovation Categories -->
-            <div class="innovation-categories" class="extracted-style-110">
+            <div class="innovation-categories" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
                 <!-- VR/AR Healthcare Demonstrations -->
-                <div class="innovation-category" class="extracted-style-208">
-                    <div class="extracted-style-39">
-                        <div class="extracted-style-123">
-                            <i class="fas fa-vr-cardboard" class="extracted-style-169"></i>
+                <div class="innovation-category" style="background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="background: linear-gradient(135deg, #00d4ff, #0099cc); padding: 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-vr-cardboard" style="color: #fff; font-size: 1.5rem;"></i>
                         </div>
-                        <h3 class="extracted-style-84">
+                        <h3 style="color: #00d4ff; font-size: 1.2rem; font-weight: 600;">
                             <span class="en-content">VR/AR Healthcare</span>
                             <span class="ar-content hidden">الواقع الافتراضي/المعزز الطبي</span>
                         </h3>
                     </div>
-                    <p class="extracted-style-158">
+                    <p style="color: #ccc; margin-bottom: 1rem;">
                         <span class="en-content">Immersive training simulations for medical procedures and patient interaction scenarios</span>
                         <span class="ar-content hidden">محاكاة تدريبية غامرة للإجراءات الطبية وسيناريوهات التفاعل مع المرضى</span>
                     </p>
-                    <button class="btn btn-secondary" onclick="launchVRDemo()" class="extracted-style-69">
+                    <button class="btn btn-secondary" onclick="launchVRDemo()" style="width: 100%;">
                         <i class="fas fa-play"></i>
                         <span class="en-content">Launch VR Demo</span>
                         <span class="ar-content hidden">تشغيل عرض الواقع الافتراضي</span>
@@ -3521,21 +3520,21 @@
                 </div>
                 
                 <!-- Smart City Digital Twin -->
-                <div class="innovation-category" class="extracted-style-248">
-                    <div class="extracted-style-39">
-                        <div class="extracted-style-26">
-                            <i class="fas fa-city" class="extracted-style-169"></i>
+                <div class="innovation-category" style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.3); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="background: linear-gradient(135deg, #9333ea, #7c3aed); padding: 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-city" style="color: #fff; font-size: 1.5rem;"></i>
                         </div>
-                        <h3 class="extracted-style-221">
+                        <h3 style="color: #9333ea; font-size: 1.2rem; font-weight: 600;">
                             <span class="en-content">Smart City Health</span>
                             <span class="ar-content hidden">صحة المدينة الذكية</span>
                         </h3>
                     </div>
-                    <p class="extracted-style-158">
+                    <p style="color: #ccc; margin-bottom: 1rem;">
                         <span class="en-content">Digital twin simulations for healthcare infrastructure in Saudi smart cities</span>
                         <span class="ar-content hidden">محاكاة التوأم الرقمي للبنية التحتية الصحية في المدن السعودية الذكية</span>
                     </p>
-                    <button class="btn btn-secondary" onclick="openDigitalTwin()" class="extracted-style-69">
+                    <button class="btn btn-secondary" onclick="openDigitalTwin()" style="width: 100%;">
                         <i class="fas fa-cube"></i>
                         <span class="en-content">View Digital Twin</span>
                         <span class="ar-content hidden">عرض التوأم الرقمي</span>
@@ -3543,21 +3542,21 @@
                 </div>
                 
                 <!-- Government RFP Generator -->
-                <div class="innovation-category" class="extracted-style-144">
-                    <div class="extracted-style-39">
-                        <div class="extracted-style-33">
-                            <i class="fas fa-file-contract" class="extracted-style-169"></i>
+                <div class="innovation-category" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="background: linear-gradient(135deg, #10b981, #059669); padding: 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-file-contract" style="color: #fff; font-size: 1.5rem;"></i>
                         </div>
-                        <h3 class="extracted-style-79">
+                        <h3 style="color: #10b981; font-size: 1.2rem; font-weight: 600;">
                             <span class="en-content">RFP Intelligence</span>
                             <span class="ar-content hidden">ذكاء طلبات العروض</span>
                         </h3>
                     </div>
-                    <p class="extracted-style-158">
+                    <p style="color: #ccc; margin-bottom: 1rem;">
                         <span class="en-content">AI-powered government RFP response generator for healthcare technology projects</span>
                         <span class="ar-content hidden">مولد الاستجابة لطلبات عروض الحكومة بالذكاء الاصطناعي لمشاريع التكنولوجيا الصحية</span>
                     </p>
-                    <button class="btn btn-secondary" onclick="openRFPGenerator()" class="extracted-style-69">
+                    <button class="btn btn-secondary" onclick="openRFPGenerator()" style="width: 100%;">
                         <i class="fas fa-robot"></i>
                         <span class="en-content">Generate RFP</span>
                         <span class="ar-content hidden">إنشاء طلب عرض</span>
@@ -3566,12 +3565,12 @@
             </div>
             
             <!-- Featured Innovation Projects -->
-            <div class="extracted-style-176">
-                <h3 class="extracted-style-129">
+            <div style="margin: 3rem 0 2rem;">
+                <h3 style="color: #00d4ff; font-size: 1.5rem; font-weight: 600; text-align: center;">
                     <span class="en-content">Featured Innovation Projects</span>
                     <span class="ar-content hidden">مشاريع الابتكار المميزة</span>
                 </h3>
-                <p class="extracted-style-82">
+                <p style="color: #ccc; text-align: center; margin-top: 0.5rem;">
                     <span class="en-content">Transforming healthcare through technology partnerships and AI-driven solutions</span>
                     <span class="ar-content hidden">تحويل الرعاية الصحية من خلال الشراكات التقنية والحلول المدعومة بالذكاء الاصطناعي</span>
                 </p>
@@ -3666,7 +3665,7 @@
     </section>
     
     <!-- Partner Network Section -->
-    <section id="partner-network" class="section" class="extracted-style-63">
+    <section id="partner-network" class="section" style="background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);">
         <div class="container">
             <h2 class="section-title">
                 <span class="en-content">BrainSAIT Partner Network</span>
@@ -3678,56 +3677,56 @@
             </p>
             
             <!-- Partnership Ecosystem Visualization -->
-            <div class="partnership-hub" class="extracted-style-74">
+            <div class="partnership-hub" style="position: relative; margin: 3rem 0; min-height: 500px; display: flex; align-items: center; justify-content: center;">
                 <!-- Central BrainSAIT Hub -->
-                <div class="central-hub" class="extracted-style-138">
-                    <div class="extracted-style-223">
-                        <i class="fas fa-brain" class="extracted-style-226"></i>
-                        <div class="extracted-style-231">BrainSAIT</div>
+                <div class="central-hub" style="position: absolute; z-index: 10; background: linear-gradient(135deg, #00d4ff, #9333ea); border-radius: 50%; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5); animation: pulse 2s infinite;">
+                    <div style="text-align: center; color: #fff;">
+                        <i class="fas fa-brain" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <div style="font-size: 0.8rem; font-weight: 600;">BrainSAIT</div>
                     </div>
                 </div>
                 
                 <!-- Partner Categories -->
-                <div class="partner-ring government-partners" class="extracted-style-27">
+                <div class="partner-ring government-partners" style="position: absolute; border-radius: 50%; border: 2px dashed rgba(0, 166, 81, 0.3); width: 300px; height: 300px;">
                     <!-- Government Partners -->
-                    <div class="partner-node gov-node" class="extracted-style-80" onclick="showPartnerDetails('government')">
-                        <div class="extracted-style-223">
-                            <i class="fas fa-landmark" class="extracted-style-108"></i>
-                            <div class="extracted-style-178">Government</div>
+                    <div class="partner-node gov-node" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #00a651, #028c47); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="showPartnerDetails('government')">
+                        <div style="text-align: center; color: #fff;">
+                            <i class="fas fa-landmark" style="font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.6rem; margin-top: 0.2rem;">Government</div>
                         </div>
                     </div>
                     
                     <!-- Healthcare Partners -->
-                    <div class="partner-node health-node" class="extracted-style-132" onclick="showPartnerDetails('healthcare')">
-                        <div class="extracted-style-223">
-                            <i class="fas fa-hospital" class="extracted-style-108"></i>
-                            <div class="extracted-style-178">Healthcare</div>
+                    <div class="partner-node health-node" style="position: absolute; top: 50%; right: -25px; transform: translateY(-50%); background: linear-gradient(135deg, #0066cc, #004c99); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="showPartnerDetails('healthcare')">
+                        <div style="text-align: center; color: #fff;">
+                            <i class="fas fa-hospital" style="font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.6rem; margin-top: 0.2rem;">Healthcare</div>
                         </div>
                     </div>
                     
                     <!-- Enterprise Partners -->
-                    <div class="partner-node enterprise-node" class="extracted-style-32" onclick="showPartnerDetails('enterprise')">
-                        <div class="extracted-style-223">
-                            <i class="fas fa-building" class="extracted-style-108"></i>
-                            <div class="extracted-style-178">Enterprise</div>
+                    <div class="partner-node enterprise-node" style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #9333ea, #7c3aed); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="showPartnerDetails('enterprise')">
+                        <div style="text-align: center; color: #fff;">
+                            <i class="fas fa-building" style="font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.6rem; margin-top: 0.2rem;">Enterprise</div>
                         </div>
                     </div>
                     
                     <!-- Academic Partners -->
-                    <div class="partner-node academic-node" class="extracted-style-1" onclick="showPartnerDetails('academic')">
-                        <div class="extracted-style-223">
-                            <i class="fas fa-university" class="extracted-style-108"></i>
-                            <div class="extracted-style-178">Academic</div>
+                    <div class="partner-node academic-node" style="position: absolute; top: 50%; left: -25px; transform: translateY(-50%); background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="showPartnerDetails('academic')">
+                        <div style="text-align: center; color: #fff;">
+                            <i class="fas fa-university" style="font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.6rem; margin-top: 0.2rem;">Academic</div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Connection Lines (SVG) -->
-                <svg class="extracted-style-241" viewBox="0 0 400 400">
+                <svg style="position: absolute; width: 100%; height: 100%; z-index: 5;" viewBox="0 0 400 400">
                     <defs>
                         <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" class="extracted-style-3" />
-                            <stop offset="100%" class="extracted-style-111" />
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.6" />
+                            <stop offset="100%" style="stop-color:#9333ea;stop-opacity:0.6" />
                         </linearGradient>
                     </defs>
                     <line x1="200" y1="200" x2="200" y2="100" stroke="url(#connectionGradient)" stroke-width="2" opacity="0.7"/>
@@ -3738,21 +3737,21 @@
             </div>
             
             <!-- Partner Details Section -->
-            <div id="partner-details" class="partner-details" class="extracted-style-133">
+            <div id="partner-details" class="partner-details" style="margin: 3rem 0; min-height: 200px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px); display: none;">
                 <div id="partner-content"></div>
             </div>
             
             <!-- Partnership Application -->
-            <div class="partnership-application" class="extracted-style-218">
-                <h3 class="extracted-style-78">
+            <div class="partnership-application" style="background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 15px; padding: 2rem; margin: 3rem 0; text-align: center;">
+                <h3 style="color: #00d4ff; margin-bottom: 1rem;">
                     <span class="en-content">Join Our Partnership Network</span>
                     <span class="ar-content hidden">انضم إلى شبكة الشراكات</span>
                 </h3>
-                <p class="extracted-style-203">
+                <p style="color: #ccc; margin-bottom: 2rem;">
                     <span class="en-content">Collaborate with BrainSAIT to advance Vision 2030 healthcare goals and drive digital transformation</span>
                     <span class="ar-content hidden">تعاون مع برينسايت لتطوير أهداف الرعاية الصحية لرؤية 2030 ودفع التحول الرقمي</span>
                 </p>
-                <button class="btn btn-primary" onclick="openPartnershipForm()" class="extracted-style-114">
+                <button class="btn btn-primary" onclick="openPartnershipForm()" style="font-size: 1.1rem; padding: 15px 30px;">
                     <i class="fas fa-handshake"></i>
                     <span class="en-content">Apply for Partnership</span>
                     <span class="ar-content hidden">تقديم طلب الشراكة</span>
@@ -3760,31 +3759,31 @@
             </div>
             
             <!-- Success Metrics -->
-            <div class="partnership-metrics" class="extracted-style-15">
-                <div class="metric-card" class="extracted-style-30">
-                    <div class="extracted-style-116">25+</div>
-                    <div class="extracted-style-243">
+            <div class="partnership-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0;">
+                <div class="metric-card" style="background: rgba(0, 166, 81, 0.1); border: 1px solid rgba(0, 166, 81, 0.3); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 900; color: #00a651; margin-bottom: 0.5rem;">25+</div>
+                    <div style="color: #ccc;">
                         <span class="en-content">Active Partners</span>
                         <span class="ar-content hidden">شريك نشط</span>
                     </div>
                 </div>
-                <div class="metric-card" class="extracted-style-99">
-                    <div class="extracted-style-204">15</div>
-                    <div class="extracted-style-243">
+                <div class="metric-card" style="background: rgba(0, 102, 204, 0.1); border: 1px solid rgba(0, 102, 204, 0.3); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 900; color: #0066cc; margin-bottom: 0.5rem;">15</div>
+                    <div style="color: #ccc;">
                         <span class="en-content">Healthcare Facilities</span>
                         <span class="ar-content hidden">منشأة صحية</span>
                     </div>
                 </div>
-                <div class="metric-card" class="extracted-style-155">
-                    <div class="extracted-style-18">8</div>
-                    <div class="extracted-style-243">
+                <div class="metric-card" style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.3); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 900; color: #9333ea; margin-bottom: 0.5rem;">8</div>
+                    <div style="color: #ccc;">
                         <span class="en-content">Government Agencies</span>
                         <span class="ar-content hidden">جهة حكومية</span>
                     </div>
                 </div>
-                <div class="metric-card" class="extracted-style-196">
-                    <div class="extracted-style-90">12</div>
-                    <div class="extracted-style-243">
+                <div class="metric-card" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 15px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 900; color: #f59e0b; margin-bottom: 0.5rem;">12</div>
+                    <div style="color: #ccc;">
                         <span class="en-content">Tech Companies</span>
                         <span class="ar-content hidden">شركة تقنية</span>
                     </div>
@@ -3806,40 +3805,40 @@
             </p>
             
             <!-- Solution Categories -->
-            <div class="solution-categories" class="extracted-style-134">
+            <div class="solution-categories" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0;">
                 <!-- PyPI Development Platform -->
-                <div class="solution-category" class="extracted-style-122">
-                    <div class="extracted-style-73">
-                        <div class="extracted-style-33">
-                            <i class="fab fa-python" class="extracted-style-169"></i>
+                <div class="solution-category" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 15px; padding: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #10b981, #059669); padding: 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-python" style="color: #fff; font-size: 1.5rem;"></i>
                         </div>
                         <div>
-                            <h3 class="extracted-style-71">
+                            <h3 style="color: #10b981; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">
                                 <span class="en-content">PyPI Development</span>
                                 <span class="ar-content hidden">تطوير PyPI</span>
                             </h3>
-                            <p class="extracted-style-224">Open-source healthcare packages</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Open-source healthcare packages</p>
                         </div>
                     </div>
                     
                     <!-- brainsait-pyheart -->
-                    <div class="extracted-style-7">
-                        <div class="extracted-style-232">
-                            <i class="fas fa-heartbeat" class="extracted-style-216"></i>
-                            <h4 class="extracted-style-245">brainsait-pyheart</h4>
-                            <span class="extracted-style-29">v0.1.0</span>
+                    <div style="background: rgba(0, 0, 0, 0.3); border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-heartbeat" style="color: #ef4444; font-size: 1.2rem;"></i>
+                            <h4 style="color: #fff; font-size: 1.1rem; font-weight: 600;">brainsait-pyheart</h4>
+                            <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem;">v0.1.0</span>
                         </div>
-                        <p class="extracted-style-253">
+                        <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 1rem;">
                             <span class="en-content">Healthcare interoperability and workflow management with FHIR/HL7 compliance</span>
                             <span class="ar-content hidden">قابلية التشغيل البيني للرعاية الصحية وإدارة سير العمل مع امتثال FHIR/HL7</span>
                         </p>
                         <div style="background: rgba(0, 0, 0, 0.5); padding: 0.8rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #10b981; margin-bottom: 1rem;">
                             pip install brainsait-pyheart
-                            <button class="extracted-style-206" onclick="copyToClipboard('pip install brainsait-pyheart')">
+                            <button style="background: none; border: none; color: #10b981; float: right; cursor: pointer;" onclick="copyToClipboard('pip install brainsait-pyheart')">
                                 <i class="fas fa-copy"></i>
                             </button>
                         </div>
-                        <a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" class="extracted-style-160">
+                        <a href="https://pypi.org/project/brainsait-pyheart/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #10b981, #059669); color: #fff; padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">
                             <i class="fas fa-external-link-alt"></i>
                             <span class="en-content">View on PyPI</span>
                             <span class="ar-content hidden">عرض على PyPI</span>
@@ -3847,23 +3846,23 @@
                     </div>
                     
                     <!-- brainsait-pybrain -->
-                    <div class="extracted-style-189">
-                        <div class="extracted-style-232">
-                            <i class="fas fa-brain" class="extracted-style-205"></i>
-                            <h4 class="extracted-style-245">brainsait-pybrain</h4>
-                            <span class="extracted-style-29">v0.1.0</span>
+                    <div style="background: rgba(0, 0, 0, 0.3); border-radius: 10px; padding: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-brain" style="color: #9333ea; font-size: 1.2rem;"></i>
+                            <h4 style="color: #fff; font-size: 1.1rem; font-weight: 600;">brainsait-pybrain</h4>
+                            <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem;">v0.1.0</span>
                         </div>
-                        <p class="extracted-style-253">
+                        <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 1rem;">
                             <span class="en-content">AI-powered clinical NLP and healthcare data harmonization platform</span>
                             <span class="ar-content hidden">منصة معالجة اللغة الطبيعية السريرية ومواءمة بيانات الرعاية الصحية المدعومة بالذكاء الاصطناعي</span>
                         </p>
                         <div style="background: rgba(0, 0, 0, 0.5); padding: 0.8rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #10b981; margin-bottom: 1rem;">
                             pip install brainsait-pybrain
-                            <button class="extracted-style-206" onclick="copyToClipboard('pip install brainsait-pybrain')">
+                            <button style="background: none; border: none; color: #10b981; float: right; cursor: pointer;" onclick="copyToClipboard('pip install brainsait-pybrain')">
                                 <i class="fas fa-copy"></i>
                             </button>
                         </div>
-                        <a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" class="extracted-style-142">
+                        <a href="https://pypi.org/project/brainsait-pybrain/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #9333ea, #7c3aed); color: #fff; padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">
                             <i class="fas fa-external-link-alt"></i>
                             <span class="en-content">View on PyPI</span>
                             <span class="ar-content hidden">عرض على PyPI</span>
@@ -3872,81 +3871,81 @@
                 </div>
                 
                 <!-- Enterprise Solutions -->
-                <div class="solution-category" class="extracted-style-10">
-                    <div class="extracted-style-73">
-                        <div class="extracted-style-102">
-                            <i class="fas fa-building" class="extracted-style-169"></i>
+                <div class="solution-category" style="background: rgba(0, 102, 204, 0.1); border: 1px solid rgba(0, 102, 204, 0.3); border-radius: 15px; padding: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #0066cc, #004c99); padding: 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-building" style="color: #fff; font-size: 1.5rem;"></i>
                         </div>
                         <div>
-                            <h3 class="extracted-style-244">
+                            <h3 style="color: #0066cc; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">
                                 <span class="en-content">Enterprise Platforms</span>
                                 <span class="ar-content hidden">المنصات المؤسسية</span>
                             </h3>
-                            <p class="extracted-style-224">Scalable healthcare systems</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Scalable healthcare systems</p>
                         </div>
                     </div>
                     
-                    <div class="enterprise-solutions" class="extracted-style-161">
-                        <div class="extracted-style-191">
-                            <h4 class="extracted-style-60">
+                    <div class="enterprise-solutions" style="display: grid; gap: 1rem;">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.2rem; border-radius: 8px;">
+                            <h4 style="color: #00d4ff; margin-bottom: 0.5rem;">
                                 <span class="en-content">BrainSAIT Core Platform</span>
                                 <span class="ar-content hidden">منصة برينسايت الأساسية</span>
                             </h4>
-                            <p class="extracted-style-224">Comprehensive healthcare AI platform for hospitals and clinics</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Comprehensive healthcare AI platform for hospitals and clinics</p>
                         </div>
-                        <div class="extracted-style-191">
-                            <h4 class="extracted-style-60">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.2rem; border-radius: 8px;">
+                            <h4 style="color: #00d4ff; margin-bottom: 0.5rem;">
                                 <span class="en-content">GIVC Telemedicine</span>
                                 <span class="ar-content hidden">طب بُعد GIVC</span>
                             </h4>
-                            <p class="extracted-style-224">Next-generation virtual care with AI diagnostics</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Next-generation virtual care with AI diagnostics</p>
                         </div>
-                        <div class="extracted-style-191">
-                            <h4 class="extracted-style-60">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.2rem; border-radius: 8px;">
+                            <h4 style="color: #00d4ff; margin-bottom: 0.5rem;">
                                 <span class="en-content">GP Portal System</span>
                                 <span class="ar-content hidden">نظام بوابة الطب العام</span>
                             </h4>
-                            <p class="extracted-style-224">Advanced general practice management platform</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Advanced general practice management platform</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Government Solutions -->
-                <div class="solution-category" class="extracted-style-213">
-                    <div class="extracted-style-73">
-                        <div class="extracted-style-35">
-                            <i class="fas fa-landmark" class="extracted-style-169"></i>
+                <div class="solution-category" style="background: rgba(0, 166, 81, 0.1); border: 1px solid rgba(0, 166, 81, 0.3); border-radius: 15px; padding: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #00a651, #028c47); padding: 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-landmark" style="color: #fff; font-size: 1.5rem;"></i>
                         </div>
                         <div>
-                            <h3 class="extracted-style-130">
+                            <h3 style="color: #00a651; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">
                                 <span class="en-content">Government Solutions</span>
                                 <span class="ar-content hidden">الحلول الحكومية</span>
                             </h3>
-                            <p class="extracted-style-224">Vision 2030 aligned systems</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Vision 2030 aligned systems</p>
                         </div>
                     </div>
                     
-                    <div class="government-solutions" class="extracted-style-161">
-                        <div class="extracted-style-191">
-                            <h4 class="extracted-style-135">
+                    <div class="government-solutions" style="display: grid; gap: 1rem;">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.2rem; border-radius: 8px;">
+                            <h4 style="color: #00a651; margin-bottom: 0.5rem;">
                                 <span class="en-content">Ministry Integration</span>
                                 <span class="ar-content hidden">تكامل الوزارات</span>
                             </h4>
-                            <p class="extracted-style-224">Seamless integration with Saudi government health systems</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Seamless integration with Saudi government health systems</p>
                         </div>
-                        <div class="extracted-style-191">
-                            <h4 class="extracted-style-135">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.2rem; border-radius: 8px;">
+                            <h4 style="color: #00a651; margin-bottom: 0.5rem;">
                                 <span class="en-content">CITC Compliance</span>
                                 <span class="ar-content hidden">امتثال هيئة الاتصالات</span>
                             </h4>
-                            <p class="extracted-style-224">Full compliance with Saudi digital regulations</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Full compliance with Saudi digital regulations</p>
                         </div>
-                        <div class="extracted-style-191">
-                            <h4 class="extracted-style-135">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.2rem; border-radius: 8px;">
+                            <h4 style="color: #00a651; margin-bottom: 0.5rem;">
                                 <span class="en-content">Etimad Integration</span>
                                 <span class="ar-content hidden">تكامل اعتماد</span>
                             </h4>
-                            <p class="extracted-style-224">Direct integration with government procurement systems</p>
+                            <p style="color: #ccc; font-size: 0.9rem;">Direct integration with government procurement systems</p>
                         </div>
                     </div>
                 </div>
@@ -3955,7 +3954,7 @@
     </section>
     
     <!-- AI Intelligence Center Section -->
-    <section id="ai-intelligence" class="section" class="extracted-style-63">
+    <section id="ai-intelligence" class="section" style="background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);">
         <div class="container">
             <h2 class="section-title">
                 <span class="en-content">BrainSAIT AI Intelligence Center</span>
@@ -3967,58 +3966,58 @@
             </p>
             
             <!-- Saudi Market Intelligence Dashboard -->
-            <div class="intelligence-dashboard" class="extracted-style-145">
-                <h3 class="extracted-style-220">
+            <div class="intelligence-dashboard" style="background: rgba(0, 0, 0, 0.3); border-radius: 15px; padding: 2rem; margin: 3rem 0; backdrop-filter: blur(10px);">
+                <h3 style="color: #00d4ff; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
                     <i class="fas fa-chart-line"></i>
                     <span class="en-content">Saudi Healthcare Market Intelligence</span>
                     <span class="ar-content hidden">ذكاء السوق الصحي السعودي</span>
                 </h3>
                 
                 <!-- Live Market Metrics -->
-                <div class="market-metrics" class="extracted-style-68">
-                    <div class="metric-widget" class="extracted-style-197">
-                        <div class="extracted-style-151">
-                            <i class="fas fa-heart" class="extracted-style-156"></i>
-                            <span class="extracted-style-48">+12.5%</span>
+                <div class="market-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div class="metric-widget" style="background: linear-gradient(135deg, rgba(0, 166, 81, 0.2), rgba(0, 166, 81, 0.1)); border: 1px solid rgba(0, 166, 81, 0.3); border-radius: 10px; padding: 1.5rem;">
+                        <div style="display: flex; align-items: center; justify-content: between; margin-bottom: 1rem;">
+                            <i class="fas fa-heart" style="color: #00a651; font-size: 1.5rem;"></i>
+                            <span style="color: #00a651; font-size: 0.8rem; background: rgba(0, 166, 81, 0.2); padding: 0.2rem 0.5rem; border-radius: 12px;">+12.5%</span>
                         </div>
-                        <div class="extracted-style-120">SAR 45.2B</div>
-                        <div class="extracted-style-224">
+                        <div style="color: #fff; font-size: 1.8rem; font-weight: 700;">SAR 45.2B</div>
+                        <div style="color: #ccc; font-size: 0.9rem;">
                             <span class="en-content">Healthcare Market Size</span>
                             <span class="ar-content hidden">حجم السوق الصحي</span>
                         </div>
                     </div>
                     
-                    <div class="metric-widget" class="extracted-style-207">
-                        <div class="extracted-style-151">
-                            <i class="fas fa-hospital" class="extracted-style-163"></i>
-                            <span class="extracted-style-229">+8.3%</span>
+                    <div class="metric-widget" style="background: linear-gradient(135deg, rgba(0, 102, 204, 0.2), rgba(0, 102, 204, 0.1)); border: 1px solid rgba(0, 102, 204, 0.3); border-radius: 10px; padding: 1.5rem;">
+                        <div style="display: flex; align-items: center; justify-content: between; margin-bottom: 1rem;">
+                            <i class="fas fa-hospital" style="color: #0066cc; font-size: 1.5rem;"></i>
+                            <span style="color: #0066cc; font-size: 0.8rem; background: rgba(0, 102, 204, 0.2); padding: 0.2rem 0.5rem; border-radius: 12px;">+8.3%</span>
                         </div>
-                        <div class="extracted-style-120">487</div>
-                        <div class="extracted-style-224">
+                        <div style="color: #fff; font-size: 1.8rem; font-weight: 700;">487</div>
+                        <div style="color: #ccc; font-size: 0.9rem;">
                             <span class="en-content">Active Healthcare Facilities</span>
                             <span class="ar-content hidden">المنشآت الصحية النشطة</span>
                         </div>
                     </div>
                     
-                    <div class="metric-widget" class="extracted-style-83">
-                        <div class="extracted-style-151">
-                            <i class="fas fa-brain" class="extracted-style-219"></i>
-                            <span class="extracted-style-11">+23.1%</span>
+                    <div class="metric-widget" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(147, 51, 234, 0.1)); border: 1px solid rgba(147, 51, 234, 0.3); border-radius: 10px; padding: 1.5rem;">
+                        <div style="display: flex; align-items: center; justify-content: between; margin-bottom: 1rem;">
+                            <i class="fas fa-brain" style="color: #9333ea; font-size: 1.5rem;"></i>
+                            <span style="color: #9333ea; font-size: 0.8rem; background: rgba(147, 51, 234, 0.2); padding: 0.2rem 0.5rem; border-radius: 12px;">+23.1%</span>
                         </div>
-                        <div class="extracted-style-120">156</div>
-                        <div class="extracted-style-224">
+                        <div style="color: #fff; font-size: 1.8rem; font-weight: 700;">156</div>
+                        <div style="color: #ccc; font-size: 0.9rem;">
                             <span class="en-content">AI Healthcare Projects</span>
                             <span class="ar-content hidden">مشاريع الذكاء الاصطناعي الطبي</span>
                         </div>
                     </div>
                     
-                    <div class="metric-widget" class="extracted-style-55">
-                        <div class="extracted-style-151">
-                            <i class="fas fa-handshake" class="extracted-style-49"></i>
-                            <span class="extracted-style-75">+18.7%</span>
+                    <div class="metric-widget" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1)); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 1.5rem;">
+                        <div style="display: flex; align-items: center; justify-content: between; margin-bottom: 1rem;">
+                            <i class="fas fa-handshake" style="color: #f59e0b; font-size: 1.5rem;"></i>
+                            <span style="color: #f59e0b; font-size: 0.8rem; background: rgba(245, 158, 11, 0.2); padding: 0.2rem 0.5rem; border-radius: 12px;">+18.7%</span>
                         </div>
-                        <div class="extracted-style-120">89</div>
-                        <div class="extracted-style-224">
+                        <div style="color: #fff; font-size: 1.8rem; font-weight: 700;">89</div>
+                        <div style="color: #ccc; font-size: 0.9rem;">
                             <span class="en-content">Partnership Opportunities</span>
                             <span class="ar-content hidden">فرص الشراكة</span>
                         </div>
@@ -4026,20 +4025,20 @@
                 </div>
                 
                 <!-- Market Intelligence Analytics Dashboard -->
-                <div class="market-intelligence-dashboard" class="extracted-style-168">
-                    <div class="extracted-style-146">
-                        <h4 class="extracted-style-140">
+                <div class="market-intelligence-dashboard" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 2rem; margin: 2rem 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h4 style="color: #f59e0b; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
                             <i class="fas fa-chart-bar"></i>
                             <span class="en-content">Market Intelligence Analytics</span>
                             <span class="ar-content hidden">تحليلات ذكاء السوق</span>
                         </h4>
-                        <div class="extracted-style-94">
-                            <button onclick="updateMarketIntelligence()" class="extracted-style-109">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button onclick="updateMarketIntelligence()" style="background: #f59e0b; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                                 <i class="fas fa-refresh" id="market-refresh-icon"></i>
                                 <span class="en-content">Update Live</span>
                                 <span class="ar-content hidden">تحديث مباشر</span>
                             </button>
-                            <button onclick="exportMarketReport()" class="extracted-style-36">
+                            <button onclick="exportMarketReport()" style="background: #0066cc; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                                 <i class="fas fa-chart-line"></i>
                                 <span class="en-content">Export Report</span>  
                                 <span class="ar-content hidden">تصدير التقرير</span>
@@ -4048,102 +4047,102 @@
                     </div>
                     
                     <!-- Market Analysis Status -->
-                    <div id="market-analysis-status" class="extracted-style-172">
-                        <div class="extracted-style-165">
-                            <div class="spinner" class="extracted-style-148"></div>
+                    <div id="market-analysis-status" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; display: none;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: #f59e0b;">
+                            <div class="spinner" style="width: 16px; height: 16px; border: 2px solid rgba(245, 158, 11, 0.3); border-top: 2px solid #f59e0b; border-radius: 50%; animation: spin 1s linear infinite;"></div>
                             <span class="en-content">AI processing market trends and predictive analytics...</span>
                             <span class="ar-content hidden">يعالج الذكاء الاصطناعي اتجاهات السوق والتحليل التنبؤي...</span>
                         </div>
                     </div>
                     
                     <!-- Predictive Analytics Charts -->
-                    <div class="extracted-style-173">
-                        <div class="extracted-style-152">
-                            <h5 class="extracted-style-136">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 8px;">
+                            <h5 style="color: #f59e0b; margin-bottom: 1rem; font-size: 1rem;">
                                 <span class="en-content">Growth Prediction 2024-2026</span>
                                 <span class="ar-content hidden">توقعات النمو 2024-2026</span>
                             </h5>
-                            <div class="extracted-style-12">
-                                <div class="extracted-style-92"></div>
-                                <div class="extracted-style-28"></div>
-                                <div class="extracted-style-170"></div>
-                                <div class="extracted-style-188"></div>
+                            <div style="display: flex; align-items: end; gap: 0.5rem; height: 100px; margin-bottom: 1rem;">
+                                <div style="background: linear-gradient(180deg, #f59e0b, rgba(245, 158, 11, 0.3)); width: 20px; height: 60%; border-radius: 2px;"></div>
+                                <div style="background: linear-gradient(180deg, #f59e0b, rgba(245, 158, 11, 0.3)); width: 20px; height: 75%; border-radius: 2px;"></div>
+                                <div style="background: linear-gradient(180deg, #f59e0b, rgba(245, 158, 11, 0.3)); width: 20px; height: 90%; border-radius: 2px;"></div>
+                                <div style="background: linear-gradient(180deg, #00d4ff, rgba(0, 212, 255, 0.3)); width: 20px; height: 100%; border-radius: 2px;"></div>
                             </div>
-                            <div class="extracted-style-193">
+                            <div style="display: flex; justify-content: space-between; color: #ccc; font-size: 0.8rem;">
                                 <span>2024</span>
                                 <span>2025</span>
                                 <span>2026</span>
-                                <span class="extracted-style-211">Projected</span>
+                                <span style="color: #00d4ff;">Projected</span>
                             </div>
                         </div>
                         
-                        <div class="extracted-style-152">
-                            <h5 class="extracted-style-136">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 8px;">
+                            <h5 style="color: #f59e0b; margin-bottom: 1rem; font-size: 1rem;">
                                 <span class="en-content">Market Opportunity Score</span>
                                 <span class="ar-content hidden">درجة فرصة السوق</span>
                             </h5>
-                            <div class="extracted-style-124">
-                                <svg width="120" height="120" class="extracted-style-126">
+                            <div style="position: relative; width: 120px; height: 120px; margin: 0 auto;">
+                                <svg width="120" height="120" style="transform: rotate(-90deg);">
                                     <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(245, 158, 11, 0.2)" stroke-width="8"/>
-                                    <circle cx="60" cy="60" r="50" fill="none" stroke="#f59e0b" stroke-width="8" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="62.8" class="extracted-style-127"/>
+                                    <circle cx="60" cy="60" r="50" fill="none" stroke="#f59e0b" stroke-width="8" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="62.8" style="transition: stroke-dashoffset 1s ease;"/>
                                 </svg>
-                                <div class="extracted-style-185">
-                                    <div class="extracted-style-249">87%</div>
-                                    <div class="extracted-style-217">Optimal</div>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                    <div style="color: #f59e0b; font-size: 1.5rem; font-weight: 700;">87%</div>
+                                    <div style="color: #ccc; font-size: 0.8rem;">Optimal</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Key Market Insights -->
-                    <div class="extracted-style-54">
-                        <h5 class="extracted-style-136">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="color: #f59e0b; margin-bottom: 1rem; font-size: 1rem;">
                             <span class="en-content">Key Market Insights</span>
                             <span class="ar-content hidden">رؤى السوق الرئيسية</span>
                         </h5>
-                        <div class="extracted-style-247">
-                            <div class="extracted-style-222">
-                                <div class="extracted-style-177">
+                        <div style="display: grid; gap: 0.8rem;">
+                            <div style="background: rgba(0, 0, 0, 0.2); padding: 1rem; border-radius: 6px; display: flex; align-items: center; gap: 1rem;">
+                                <div style="background: rgba(0, 166, 81, 0.3); padding: 0.5rem; border-radius: 50%; color: #00a651;">
                                     <i class="fas fa-trending-up"></i>
                                 </div>
                                 <div>
-                                    <div class="extracted-style-125">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.2rem;">
                                         <span class="en-content">AI Healthcare Market Growth</span>
                                         <span class="ar-content hidden">نمو سوق الذكاء الاصطناعي الصحي</span>
                                     </div>
-                                    <div class="extracted-style-95">
+                                    <div style="color: #ccc; font-size: 0.85rem;">
                                         <span class="en-content">23.1% YoY increase driven by Vision 2030 initiatives and digital transformation</span>
                                         <span class="ar-content hidden">زيادة سنوية 23.1% مدفوعة بمبادرات رؤية 2030 والتحول الرقمي</span>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="extracted-style-222">
-                                <div class="extracted-style-77">
+                            <div style="background: rgba(0, 0, 0, 0.2); padding: 1rem; border-radius: 6px; display: flex; align-items: center; gap: 1rem;">
+                                <div style="background: rgba(147, 51, 234, 0.3); padding: 0.5rem; border-radius: 50%; color: #9333ea;">
                                     <i class="fas fa-lightbulb"></i>
                                 </div>
                                 <div>
-                                    <div class="extracted-style-125">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.2rem;">
                                         <span class="en-content">Emerging Opportunities</span>
                                         <span class="ar-content hidden">الفرص الناشئة</span>
                                     </div>
-                                    <div class="extracted-style-95">
+                                    <div style="color: #ccc; font-size: 0.85rem;">
                                         <span class="en-content">Telemedicine platforms and remote patient monitoring showing 340% growth potential</span>
                                         <span class="ar-content hidden">منصات الطب عن بُعد ومراقبة المرضى عن بُعد تظهر إمكانات نمو 340%</span>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="extracted-style-222">
-                                <div class="extracted-style-56">
+                            <div style="background: rgba(0, 0, 0, 0.2); padding: 1rem; border-radius: 6px; display: flex; align-items: center; gap: 1rem;">
+                                <div style="background: rgba(0, 102, 204, 0.3); padding: 0.5rem; border-radius: 50%; color: #0066cc;">
                                     <i class="fas fa-shield-alt"></i>
                                 </div>
                                 <div>
-                                    <div class="extracted-style-125">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.2rem;">
                                         <span class="en-content">Regulatory Compliance</span>
                                         <span class="ar-content hidden">الامتثال التنظيمي</span>
                                     </div>
-                                    <div class="extracted-style-95">
+                                    <div style="color: #ccc; font-size: 0.85rem;">
                                         <span class="en-content">New SDAIA regulations creating barriers to entry, advantaging compliant early movers</span>
                                         <span class="ar-content hidden">اللوائح الجديدة للهيئة السعودية للبيانات والذكاء الاصطناعي تخلق حواجز دخول تفيد المتوافقين الأوائل</span>
                                     </div>
@@ -4153,57 +4152,57 @@
                     </div>
                     
                     <!-- Market Performance Indicators -->
-                    <div class="extracted-style-240">
-                        <div class="extracted-style-180">
-                            <div class="extracted-style-184">45.2B SAR</div>
-                            <div class="extracted-style-97">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #00a651; font-weight: 700; font-size: 1.2rem;">45.2B SAR</div>
+                            <div style="color: #ccc; font-size: 0.8rem; margin-bottom: 0.3rem;">
                                 <span class="en-content">Market Size</span>
                                 <span class="ar-content hidden">حجم السوق</span>
                             </div>
-                            <div class="extracted-style-64">+12.5% YoY</div>
+                            <div style="color: #00a651; font-size: 0.7rem;">+12.5% YoY</div>
                         </div>
-                        <div class="extracted-style-180">
-                            <div class="extracted-style-164">1,247</div>
-                            <div class="extracted-style-97">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #9333ea; font-weight: 700; font-size: 1.2rem;">1,247</div>
+                            <div style="color: #ccc; font-size: 0.8rem; margin-bottom: 0.3rem;">
                                 <span class="en-content">Active Tenders</span>
                                 <span class="ar-content hidden">العطاءات النشطة</span>
                             </div>
-                            <div class="extracted-style-183">+28% Monthly</div>
+                            <div style="color: #9333ea; font-size: 0.7rem;">+28% Monthly</div>
                         </div>
-                        <div class="extracted-style-180">
-                            <div class="extracted-style-186">156</div>
-                            <div class="extracted-style-97">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #00d4ff; font-weight: 700; font-size: 1.2rem;">156</div>
+                            <div style="color: #ccc; font-size: 0.8rem; margin-bottom: 0.3rem;">
                                 <span class="en-content">AI Projects</span>
                                 <span class="ar-content hidden">مشاريع الذكاء الاصطناعي</span>
                             </div>
-                            <div class="extracted-style-166">BrainSAIT Leading</div>
+                            <div style="color: #00d4ff; font-size: 0.7rem;">BrainSAIT Leading</div>
                         </div>
-                        <div class="extracted-style-180">
-                            <div class="extracted-style-250">94%</div>
-                            <div class="extracted-style-97">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #f59e0b; font-weight: 700; font-size: 1.2rem;">94%</div>
+                            <div style="color: #ccc; font-size: 0.8rem; margin-bottom: 0.3rem;">
                                 <span class="en-content">Win Rate</span>
                                 <span class="ar-content hidden">معدل النجاح</span>
                             </div>
-                            <div class="extracted-style-76">Industry Best</div>
+                            <div style="color: #f59e0b; font-size: 0.7rem;">Industry Best</div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Enhanced Etimad Intelligence Engine -->
-                <div class="etimad-tracker" class="extracted-style-121">
-                    <div class="extracted-style-146">
-                        <h4 class="extracted-style-117">
+                <div class="etimad-tracker" style="background: rgba(0, 166, 81, 0.1); border: 1px solid rgba(0, 166, 81, 0.3); border-radius: 10px; padding: 2rem; margin: 2rem 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h4 style="color: #00a651; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
                             <i class="fas fa-bullseye"></i>
                             <span class="en-content">Etimad Intelligence Engine</span>
                             <span class="ar-content hidden">محرك ذكاء اعتماد</span>
                         </h4>
-                        <div class="extracted-style-94">
-                            <button onclick="analyzeOpportunities()" class="extracted-style-31">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button onclick="analyzeOpportunities()" style="background: #00a651; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                                 <i class="fas fa-sync-alt" id="analyze-icon"></i>
                                 <span class="en-content">Analyze Live</span>
                                 <span class="ar-content hidden">تحليل مباشر</span>
                             </button>
-                            <button onclick="generateProposal()" class="extracted-style-50">
+                            <button onclick="generateProposal()" style="background: #9333ea; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                                 <i class="fas fa-file-alt"></i>
                                 <span class="en-content">Auto Proposal</span>
                                 <span class="ar-content hidden">اقتراح تلقائي</span>
@@ -4212,44 +4211,44 @@
                     </div>
                     
                     <!-- AI Analysis Status -->
-                    <div id="ai-analysis-status" class="extracted-style-172">
-                        <div class="extracted-style-47">
-                            <div class="spinner" class="extracted-style-13"></div>
+                    <div id="ai-analysis-status" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; display: none;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: #00d4ff;">
+                            <div class="spinner" style="width: 16px; height: 16px; border: 2px solid rgba(0, 212, 255, 0.3); border-top: 2px solid #00d4ff; border-radius: 50%; animation: spin 1s linear infinite;"></div>
                             <span class="en-content">AI analyzing government tenders and market opportunities...</span>
                             <span class="ar-content hidden">يقوم الذكاء الاصطناعي بتحليل العطاءات الحكومية وفرص السوق...</span>
                         </div>
                     </div>
                     
-                    <div class="opportunity-list" class="extracted-style-161">
-                        <div class="opportunity-item" class="extracted-style-5">
-                            <div class="extracted-style-93">
+                    <div class="opportunity-list" style="display: grid; gap: 1rem;">
+                        <div class="opportunity-item" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
                                 <div>
-                                    <div class="extracted-style-85">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.3rem;">
                                         <span class="en-content">Healthcare AI Platform Development</span>
                                         <span class="ar-content hidden">تطوير منصة الذكاء الاصطناعي الطبي</span>
                                     </div>
-                                    <div class="extracted-style-224">Ministry of Health • SAR 12.5M • Deadline: 2024-09-15</div>
+                                    <div style="color: #ccc; font-size: 0.9rem;">Ministry of Health • SAR 12.5M • Deadline: 2024-09-15</div>
                                 </div>
-                                <span class="extracted-style-153">Active</span>
+                                <span style="background: #00a651; color: #fff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Active</span>
                             </div>
-                            <div class="extracted-style-143">
-                                <div class="extracted-style-175">
-                                    <div class="extracted-style-167">94%</div>
-                                    <div class="extracted-style-103">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
+                                <div style="background: rgba(0, 166, 81, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #00a651; font-weight: 600; font-size: 0.9rem;">94%</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Match</span>
                                         <span class="ar-content hidden">تطابق</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-20">
-                                    <div class="extracted-style-4">87%</div>
-                                    <div class="extracted-style-103">
+                                <div style="background: rgba(147, 51, 234, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #9333ea; font-weight: 600; font-size: 0.9rem;">87%</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Success</span>
                                         <span class="ar-content hidden">نجاح</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-59">
-                                    <div class="extracted-style-251">2030</div>
-                                    <div class="extracted-style-103">
+                                <div style="background: rgba(245, 158, 11, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #f59e0b; font-weight: 600; font-size: 0.9rem;">2030</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Vision</span>
                                         <span class="ar-content hidden">رؤية</span>
                                     </div>
@@ -4257,35 +4256,35 @@
                             </div>
                         </div>
                         
-                        <div class="opportunity-item" class="extracted-style-5">
-                            <div class="extracted-style-93">
+                        <div class="opportunity-item" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
                                 <div>
-                                    <div class="extracted-style-85">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.3rem;">
                                         <span class="en-content">Smart City Health Infrastructure</span>
                                         <span class="ar-content hidden">البنية التحتية الصحية للمدينة الذكية</span>
                                     </div>
-                                    <div class="extracted-style-224">CITC • SAR 8.3M • Deadline: 2024-10-20</div>
+                                    <div style="color: #ccc; font-size: 0.9rem;">CITC • SAR 8.3M • Deadline: 2024-10-20</div>
                                 </div>
-                                <span class="extracted-style-187">Upcoming</span>
+                                <span style="background: #9333ea; color: #fff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Upcoming</span>
                             </div>
-                            <div class="extracted-style-143">
-                                <div class="extracted-style-175">
-                                    <div class="extracted-style-167">91%</div>
-                                    <div class="extracted-style-103">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
+                                <div style="background: rgba(0, 166, 81, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #00a651; font-weight: 600; font-size: 0.9rem;">91%</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Match</span>
                                         <span class="ar-content hidden">تطابق</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-20">
-                                    <div class="extracted-style-4">83%</div>
-                                    <div class="extracted-style-103">
+                                <div style="background: rgba(147, 51, 234, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #9333ea; font-weight: 600; font-size: 0.9rem;">83%</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Success</span>
                                         <span class="ar-content hidden">نجاح</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-59">
-                                    <div class="extracted-style-251">2030</div>
-                                    <div class="extracted-style-103">
+                                <div style="background: rgba(245, 158, 11, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #f59e0b; font-weight: 600; font-size: 0.9rem;">2030</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Vision</span>
                                         <span class="ar-content hidden">رؤية</span>
                                     </div>
@@ -4293,35 +4292,35 @@
                             </div>
                         </div>
                         
-                        <div class="opportunity-item" class="extracted-style-5">
-                            <div class="extracted-style-93">
+                        <div class="opportunity-item" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
                                 <div>
-                                    <div class="extracted-style-85">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.3rem;">
                                         <span class="en-content">Telemedicine Platform Enhancement</span>
                                         <span class="ar-content hidden">تعزيز منصة الطب عن بُعد</span>
                                     </div>
-                                    <div class="extracted-style-224">Saudi Health Council • SAR 6.7M • Deadline: 2024-08-30</div>
+                                    <div style="color: #ccc; font-size: 0.9rem;">Saudi Health Council • SAR 6.7M • Deadline: 2024-08-30</div>
                                 </div>
-                                <span class="extracted-style-225">Evaluating</span>
+                                <span style="background: #0066cc; color: #fff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Evaluating</span>
                             </div>
-                            <div class="extracted-style-143">
-                                <div class="extracted-style-175">
-                                    <div class="extracted-style-167">96%</div>
-                                    <div class="extracted-style-103">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
+                                <div style="background: rgba(0, 166, 81, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #00a651; font-weight: 600; font-size: 0.9rem;">96%</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Match</span>
                                         <span class="ar-content hidden">تطابق</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-20">
-                                    <div class="extracted-style-4">92%</div>
-                                    <div class="extracted-style-103">
+                                <div style="background: rgba(147, 51, 234, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #9333ea; font-weight: 600; font-size: 0.9rem;">92%</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Success</span>
                                         <span class="ar-content hidden">نجاح</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-59">
-                                    <div class="extracted-style-251">2030</div>
-                                    <div class="extracted-style-103">
+                                <div style="background: rgba(245, 158, 11, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px; text-align: center;">
+                                    <div style="color: #f59e0b; font-weight: 600; font-size: 0.9rem;">2030</div>
+                                    <div style="color: #ccc; font-size: 0.7rem;">
                                         <span class="en-content">Vision</span>
                                         <span class="ar-content hidden">رؤية</span>
                                     </div>
@@ -4332,20 +4331,20 @@
                 </div>
                 
                 <!-- Enhanced Partner Discovery Engine -->
-                <div class="compatibility-scoring" class="extracted-style-149">
-                    <div class="extracted-style-146">
-                        <h4 class="extracted-style-141">
+                <div class="compatibility-scoring" style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.3); border-radius: 10px; padding: 2rem; margin: 2rem 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h4 style="color: #9333ea; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
                             <i class="fas fa-users"></i>
                             <span class="en-content">Partner Discovery Engine</span>
                             <span class="ar-content hidden">محرك اكتشاف الشركاء</span>
                         </h4>
-                        <div class="extracted-style-94">
-                            <button onclick="discoverPartners()" class="extracted-style-50">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button onclick="discoverPartners()" style="background: #9333ea; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                                 <i class="fas fa-search" id="partner-search-icon"></i>
                                 <span class="en-content">Discover</span>
                                 <span class="ar-content hidden">اكتشف</span>
                             </button>
-                            <button onclick="generateOutreach()" class="extracted-style-34">
+                            <button onclick="generateOutreach()" style="background: #00d4ff; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                                 <i class="fas fa-envelope"></i>
                                 <span class="en-content">Auto Outreach</span>
                                 <span class="ar-content hidden">تواصل تلقائي</span>
@@ -4354,40 +4353,40 @@
                     </div>
                     
                     <!-- Partner Discovery Status -->
-                    <div id="partner-discovery-status" class="extracted-style-172">
-                        <div class="extracted-style-233">
-                            <div class="spinner" class="extracted-style-194"></div>
+                    <div id="partner-discovery-status" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; display: none;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: #9333ea;">
+                            <div class="spinner" style="width: 16px; height: 16px; border: 2px solid rgba(147, 51, 234, 0.3); border-top: 2px solid #9333ea; border-radius: 50%; animation: spin 1s linear infinite;"></div>
                             <span class="en-content">AI analyzing potential partners and compatibility scores...</span>
                             <span class="ar-content hidden">يقوم الذكاء الاصطناعي بتحليل الشركاء المحتملين ونقاط التوافق...</span>
                         </div>
                     </div>
                     
                     <!-- Current Partnership Compatibility Scores -->
-                    <div class="compatibility-results" class="extracted-style-246">
-                        <div class="compatibility-card" class="extracted-style-181">
-                            <div class="extracted-style-113">92%</div>
-                            <div class="extracted-style-224">
+                    <div class="compatibility-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                        <div class="compatibility-card" style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #00a651; margin-bottom: 0.5rem;">92%</div>
+                            <div style="color: #ccc; font-size: 0.9rem;">
                                 <span class="en-content">Government Alignment</span>
                                 <span class="ar-content hidden">التوافق الحكومي</span>
                             </div>
                         </div>
-                        <div class="compatibility-card" class="extracted-style-181">
-                            <div class="extracted-style-190">87%</div>
-                            <div class="extracted-style-224">
+                        <div class="compatibility-card" style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #0066cc; margin-bottom: 0.5rem;">87%</div>
+                            <div style="color: #ccc; font-size: 0.9rem;">
                                 <span class="en-content">Healthcare Fit</span>
                                 <span class="ar-content hidden">التناسب الصحي</span>
                             </div>
                         </div>
-                        <div class="compatibility-card" class="extracted-style-181">
-                            <div class="extracted-style-24">95%</div>
-                            <div class="extracted-style-224">
+                        <div class="compatibility-card" style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #9333ea; margin-bottom: 0.5rem;">95%</div>
+                            <div style="color: #ccc; font-size: 0.9rem;">
                                 <span class="en-content">Technology Match</span>
                                 <span class="ar-content hidden">التطابق التقني</span>
                             </div>
                         </div>
-                        <div class="compatibility-card" class="extracted-style-181">
-                            <div class="extracted-style-154">89%</div>
-                            <div class="extracted-style-224">
+                        <div class="compatibility-card" style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.5rem;">89%</div>
+                            <div style="color: #ccc; font-size: 0.9rem;">
                                 <span class="en-content">Vision 2030 Impact</span>
                                 <span class="ar-content hidden">تأثير رؤية 2030</span>
                             </div>
@@ -4395,63 +4394,63 @@
                     </div>
                     
                     <!-- Top Partner Recommendations -->
-                    <div id="partner-recommendations" class="extracted-style-236">
-                        <h5 class="extracted-style-235">
+                    <div id="partner-recommendations" style="margin-top: 1.5rem;">
+                        <h5 style="color: #9333ea; margin-bottom: 1rem; font-size: 1.1rem;">
                             <span class="en-content">Top Partner Recommendations</span>
                             <span class="ar-content hidden">أفضل توصيات الشركاء</span>
                         </h5>
-                        <div class="extracted-style-161">
-                            <div class="partner-recommendation" class="extracted-style-198">
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="partner-recommendation" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
                                 <div>
-                                    <div class="extracted-style-85">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.3rem;">
                                         <span class="en-content">Saudi German Hospital</span>
                                         <span class="ar-content hidden">مستشفى السعودي الألماني</span>
                                     </div>
-                                    <div class="extracted-style-224">Healthcare Provider • Strategic Partnership</div>
-                                    <div class="extracted-style-44">
-                                        <span class="extracted-style-115">AI Ready</span>
-                                        <span class="extracted-style-40">Vision 2030</span>
+                                    <div style="color: #ccc; font-size: 0.9rem;">Healthcare Provider • Strategic Partnership</div>
+                                    <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                        <span style="background: rgba(0, 166, 81, 0.2); color: #00a651; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">AI Ready</span>
+                                        <span style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Vision 2030</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-147">
-                                    <div class="extracted-style-86">94%</div>
-                                    <div class="extracted-style-217">Match</div>
+                                <div style="text-align: center;">
+                                    <div style="color: #9333ea; font-weight: 700; font-size: 1.5rem;">94%</div>
+                                    <div style="color: #ccc; font-size: 0.8rem;">Match</div>
                                 </div>
                             </div>
                             
-                            <div class="partner-recommendation" class="extracted-style-198">
+                            <div class="partner-recommendation" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
                                 <div>
-                                    <div class="extracted-style-85">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.3rem;">
                                         <span class="en-content">King Abdulaziz City for Science and Technology</span>
                                         <span class="ar-content hidden">مدينة الملك عبدالعزيز للعلوم والتقنية</span>
                                     </div>
-                                    <div class="extracted-style-224">Research Institution • Technology Partnership</div>
-                                    <div class="extracted-style-44">
-                                        <span class="extracted-style-41">Tech Innovation</span>
-                                        <span class="extracted-style-242">Government</span>
+                                    <div style="color: #ccc; font-size: 0.9rem;">Research Institution • Technology Partnership</div>
+                                    <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                        <span style="background: rgba(147, 51, 234, 0.2); color: #9333ea; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Tech Innovation</span>
+                                        <span style="background: rgba(0, 102, 204, 0.2); color: #0066cc; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Government</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-147">
-                                    <div class="extracted-style-86">91%</div>
-                                    <div class="extracted-style-217">Match</div>
+                                <div style="text-align: center;">
+                                    <div style="color: #9333ea; font-weight: 700; font-size: 1.5rem;">91%</div>
+                                    <div style="color: #ccc; font-size: 0.8rem;">Match</div>
                                 </div>
                             </div>
                             
-                            <div class="partner-recommendation" class="extracted-style-198">
+                            <div class="partner-recommendation" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
                                 <div>
-                                    <div class="extracted-style-85">
+                                    <div style="color: #fff; font-weight: 600; margin-bottom: 0.3rem;">
                                         <span class="en-content">Almarai Healthcare Division</span>
                                         <span class="ar-content hidden">قسم الرعاية الصحية - المراعي</span>
                                     </div>
-                                    <div class="extracted-style-224">Corporate Healthcare • Commercial Partnership</div>
-                                    <div class="extracted-style-44">
-                                        <span class="extracted-style-14">Scale Ready</span>
-                                        <span class="extracted-style-115">Market Leader</span>
+                                    <div style="color: #ccc; font-size: 0.9rem;">Corporate Healthcare • Commercial Partnership</div>
+                                    <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                        <span style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Scale Ready</span>
+                                        <span style="background: rgba(0, 166, 81, 0.2); color: #00a651; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Market Leader</span>
                                     </div>
                                 </div>
-                                <div class="extracted-style-147">
-                                    <div class="extracted-style-86">88%</div>
-                                    <div class="extracted-style-217">Match</div>
+                                <div style="text-align: center;">
+                                    <div style="color: #9333ea; font-weight: 700; font-size: 1.5rem;">88%</div>
+                                    <div style="color: #ccc; font-size: 0.8rem;">Match</div>
                                 </div>
                             </div>
                         </div>
@@ -4460,20 +4459,20 @@
             </div>
             
             <!-- AI Proposal Generator -->
-            <div class="proposal-generator" class="extracted-style-139">
-                <div class="extracted-style-146">
-                    <h4 class="extracted-style-192">
+            <div class="proposal-generator" style="background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 10px; padding: 2rem; margin: 2rem 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h4 style="color: #00d4ff; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
                         <i class="fas fa-file-contract"></i>
                         <span class="en-content">AI Proposal Generator</span>
                         <span class="ar-content hidden">مولد المقترحات بالذكاء الاصطناعي</span>
                     </h4>
-                    <div class="extracted-style-94">
-                        <button onclick="generateRFPResponse()" class="extracted-style-34">
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button onclick="generateRFPResponse()" style="background: #00d4ff; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                             <i class="fas fa-magic" id="proposal-gen-icon"></i>
                             <span class="en-content">Generate RFP</span>
                             <span class="ar-content hidden">إنشاء مقترح</span>
                         </button>
-                        <button onclick="downloadProposal()" class="extracted-style-50">
+                        <button onclick="downloadProposal()" style="background: #9333ea; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
                             <i class="fas fa-download"></i>
                             <span class="en-content">Download</span>
                             <span class="ar-content hidden">تحميل</span>
@@ -4482,41 +4481,41 @@
                 </div>
                 
                 <!-- Proposal Generation Status -->
-                <div id="proposal-generation-status" class="extracted-style-172">
-                    <div class="extracted-style-47">
-                        <div class="spinner" class="extracted-style-13"></div>
+                <div id="proposal-generation-status" style="background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; display: none;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: #00d4ff;">
+                        <div class="spinner" style="width: 16px; height: 16px; border: 2px solid rgba(0, 212, 255, 0.3); border-top: 2px solid #00d4ff; border-radius: 50%; animation: spin 1s linear infinite;"></div>
                         <span class="en-content">AI generating comprehensive RFP response with technical specifications...</span>
                         <span class="ar-content hidden">يقوم الذكاء الاصطناعي بإنشاء رد شامل لطلب تقديم المقترحات مع المواصفات التقنية...</span>
                     </div>
                 </div>
                 
                 <!-- Current Proposal Preview -->
-                <div class="proposal-preview" class="extracted-style-9">
-                    <div class="extracted-style-128">
-                        <h5 class="extracted-style-210">
+                <div class="proposal-preview" style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h5 style="color: #00d4ff; margin: 0; font-size: 1.1rem;">
                             <span class="en-content">Healthcare AI Platform Development - RFP Response</span>
                             <span class="ar-content hidden">تطوير منصة الذكاء الاصطناعي الطبي - رد على طلب المقترحات</span>
                         </h5>
-                        <span class="extracted-style-153">Draft Ready</span>
+                        <span style="background: #00a651; color: #fff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Draft Ready</span>
                     </div>
                     
-                    <div class="extracted-style-16">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
                         <div>
-                            <h6 class="extracted-style-237">
+                            <h6 style="color: #00d4ff; margin-bottom: 0.5rem; font-size: 0.9rem;">
                                 <span class="en-content">Technical Approach</span>
                                 <span class="ar-content hidden">النهج التقني</span>
                             </h6>
-                            <p class="extracted-style-212">
+                            <p style="color: #ccc; font-size: 0.85rem; line-height: 1.4;">
                                 <span class="en-content">BrainSAIT proposes a comprehensive AI-powered healthcare platform utilizing advanced NLP for Arabic medical records, FHIR compliance for interoperability, and real-time analytics with 99.9% uptime guarantee...</span>
                                 <span class="ar-content hidden">تقترح برين سايت منصة رعاية صحية شاملة مدعومة بالذكاء الاصطناعي تستخدم معالجة اللغة الطبيعية المتقدمة للسجلات الطبية العربية...</span>
                             </p>
                         </div>
                         <div>
-                            <h6 class="extracted-style-237">
+                            <h6 style="color: #00d4ff; margin-bottom: 0.5rem; font-size: 0.9rem;">
                                 <span class="en-content">Vision 2030 Alignment</span>  
                                 <span class="ar-content hidden">مواءمة رؤية 2030</span>
                             </h6>
-                            <p class="extracted-style-212">
+                            <p style="color: #ccc; font-size: 0.85rem; line-height: 1.4;">
                                 <span class="en-content">Direct contribution to Saudi Vision 2030 healthcare transformation goals with 40% efficiency improvement, localization of AI technology, and training for 500+ Saudi healthcare professionals...</span>
                                 <span class="ar-content hidden">مساهمة مباشرة في أهداف تحول الرعاية الصحية لرؤية السعودية 2030 مع تحسن بنسبة 40% في الكفاءة...</span>
                             </p>
@@ -4524,31 +4523,31 @@
                     </div>
                     
                     <!-- Proposal Metrics -->
-                    <div class="extracted-style-6">
-                        <div class="extracted-style-57">
-                            <div class="extracted-style-131">SAR 12.5M</div>
-                            <div class="extracted-style-217">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div style="background: rgba(0, 166, 81, 0.2); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #00a651; font-weight: 700; font-size: 1.3rem;">SAR 12.5M</div>
+                            <div style="color: #ccc; font-size: 0.8rem;">
                                 <span class="en-content">Total Budget</span>
                                 <span class="ar-content hidden">إجمالي الميزانية</span>
                             </div>
                         </div>
-                        <div class="extracted-style-21">
-                            <div class="extracted-style-238">18 Months</div>
-                            <div class="extracted-style-217">
+                        <div style="background: rgba(147, 51, 234, 0.2); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #9333ea; font-weight: 700; font-size: 1.3rem;">18 Months</div>
+                            <div style="color: #ccc; font-size: 0.8rem;">
                                 <span class="en-content">Timeline</span>
                                 <span class="ar-content hidden">الجدول الزمني</span>
                             </div>
                         </div>
-                        <div class="extracted-style-19">
-                            <div class="extracted-style-65">94%</div>
-                            <div class="extracted-style-217">
+                        <div style="background: rgba(245, 158, 11, 0.2); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #f59e0b; font-weight: 700; font-size: 1.3rem;">94%</div>
+                            <div style="color: #ccc; font-size: 0.8rem;">
                                 <span class="en-content">Success Rate</span>
                                 <span class="ar-content hidden">معدل النجاح</span>
                             </div>
                         </div>
-                        <div class="extracted-style-119">
-                            <div class="extracted-style-81">500+</div>
-                            <div class="extracted-style-217">
+                        <div style="background: rgba(0, 102, 204, 0.2); padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="color: #0066cc; font-weight: 700; font-size: 1.3rem;">500+</div>
+                            <div style="color: #ccc; font-size: 0.8rem;">
                                 <span class="en-content">Users Trained</span>
                                 <span class="ar-content hidden">المستخدمون المدربون</span>
                             </div>
@@ -4557,49 +4556,49 @@
                 </div>
                 
                 <!-- Generated Proposals History -->
-                <div class="extracted-style-236">
-                    <h5 class="extracted-style-23">
+                <div style="margin-top: 1.5rem;">
+                    <h5 style="color: #00d4ff; margin-bottom: 1rem; font-size: 1rem;">
                         <span class="en-content">Recent Generated Proposals</span>
                         <span class="ar-content hidden">المقترحات المُنشأة مؤخراً</span>
                     </h5>
-                    <div class="extracted-style-247">
-                        <div class="extracted-style-157">
-                            <div class="extracted-style-89">
-                                <i class="fas fa-file-alt" class="extracted-style-211"></i>
+                    <div style="display: grid; gap: 0.8rem;">
+                        <div style="background: rgba(0, 0, 0, 0.2); padding: 0.8rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <i class="fas fa-file-alt" style="color: #00d4ff;"></i>
                                 <div>
-                                    <div class="extracted-style-66">
+                                    <div style="color: #fff; font-size: 0.9rem; font-weight: 500;">
                                         <span class="en-content">Telemedicine Platform Enhancement</span>
                                         <span class="ar-content hidden">تعزيز منصة الطب عن بُعد</span>
                                     </div>
-                                    <div class="extracted-style-217">Generated 2 hours ago • SAR 6.7M</div>
+                                    <div style="color: #ccc; font-size: 0.8rem;">Generated 2 hours ago • SAR 6.7M</div>
                                 </div>
                             </div>
-                            <span class="extracted-style-37">Submitted</span>
+                            <span style="background: rgba(0, 166, 81, 0.3); color: #00a651; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem;">Submitted</span>
                         </div>
-                        <div class="extracted-style-157">
-                            <div class="extracted-style-89">
-                                <i class="fas fa-file-alt" class="extracted-style-211"></i>
+                        <div style="background: rgba(0, 0, 0, 0.2); padding: 0.8rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <i class="fas fa-file-alt" style="color: #00d4ff;"></i>
                                 <div>
-                                    <div class="extracted-style-66">
+                                    <div style="color: #fff; font-size: 0.9rem; font-weight: 500;">
                                         <span class="en-content">Smart City Health Infrastructure</span>
                                         <span class="ar-content hidden">البنية التحتية الصحية للمدينة الذكية</span>
                                     </div>
-                                    <div class="extracted-style-217">Generated 1 day ago • SAR 8.3M</div>
+                                    <div style="color: #ccc; font-size: 0.8rem;">Generated 1 day ago • SAR 8.3M</div>
                                 </div>
                             </div>
-                            <span class="extracted-style-38">In Review</span>
+                            <span style="background: rgba(147, 51, 234, 0.3); color: #9333ea; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem;">In Review</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- AI-Powered Tools Grid -->
-            <div class="extracted-style-176">
-                <h3 class="extracted-style-129">
+            <div style="margin: 3rem 0 2rem;">
+                <h3 style="color: #00d4ff; font-size: 1.5rem; font-weight: 600; text-align: center;">
                     <span class="en-content">AI-Powered Healthcare Tools</span>
                     <span class="ar-content hidden">أدوات الرعاية الصحية المدعومة بالذكاء الاصطناعي</span>
                 </h3>
-                <p class="extracted-style-82">
+                <p style="color: #ccc; text-align: center; margin-top: 0.5rem;">
                     <span class="en-content">Advanced AI tools designed for Saudi healthcare workflows and Vision 2030 compliance</span>
                     <span class="ar-content hidden">أدوات ذكاء اصطناعي متقدمة مصممة لسير عمل الرعاية الصحية السعودية وامتثال رؤية 2030</span>
                 </p>
@@ -4712,14 +4711,14 @@
     </section>
 
     <!-- FHIR/HL7 Interactive Playground -->
-    <section class="section" class="extracted-style-87">
+    <section class="section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);">
         <div class="container">
-            <h2 class="section-title" class="extracted-style-53">
-                <i class="fas fa-exchange-alt" class="extracted-style-174"></i>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">
+                <i class="fas fa-exchange-alt" style="color: var(--accent-cyan); margin-right: 15px;"></i>
                 <span class="en-content">FHIR/HL7 Interoperability Playground</span>
                 <span class="ar-content hidden">ملعب التشغيل البيني FHIR/HL7</span>
             </h2>
-            <p class="section-subtitle" class="extracted-style-53">
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">
                 <span class="en-content">Experience real-time healthcare data transformation and interoperability standards</span>
                 <span class="ar-content hidden">تجربة تحويل البيانات الصحية في الوقت الفعلي ومعايير التشغيل البيني</span>
             </p>
@@ -4903,8 +4902,8 @@
                 <span class="ar-content hidden">جدولة استشارة لمناقشة احتياجاتك التقنية في مجال الرعاية الصحية</span>
             </p>
             
-            <div class="extracted-style-104">
-                <button class="btn btn-primary" onclick="openConsultationModal()" class="extracted-style-182">
+            <div style="text-align: center; margin: 2rem 0;">
+                <button class="btn btn-primary" onclick="openConsultationModal()" style="font-size: 1.2rem; padding: 18px 40px;">
                     <i class="fas fa-calendar-check"></i>
                     <span class="en-content">Request Consultation</span>
                     <span class="ar-content hidden">طلب استشارة</span>
@@ -4914,7 +4913,7 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" class="section" class="extracted-style-61">
+    <section id="contact" class="section" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
         <div class="container">
             <h2 class="section-title">
                 <span class="en-content">Get in Touch</span>
@@ -4955,7 +4954,7 @@
                 <i class="fas fa-times"></i>
             </button>
             
-            <h3 class="extracted-style-228">
+            <h3 style="margin-bottom: 1.5rem; text-align: center; color: var(--accent-cyan);">
                 <i class="fas fa-stethoscope"></i>
                 <span class="en-content">Healthcare Consultation Request</span>
                 <span class="ar-content hidden">طلب استشارة طبية</span>
@@ -5032,8 +5031,8 @@
                               placeholder="Please describe your healthcare technology needs, current challenges, and desired outcomes..."></textarea>
                 </div>
                 
-                <div class="extracted-style-107">
-                    <button type="submit" class="btn btn-primary" class="extracted-style-200">
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="min-width: 200px;">
                         <i class="fas fa-paper-plane"></i>
                         <span class="en-content">Request Consultation</span>
                         <span class="ar-content hidden">طلب استشارة</span>
@@ -5294,15 +5293,15 @@
             if (!data) return;
 
             partnerContent.innerHTML = `
-                <h3 class="extracted-style-227">${data.title}</h3>
-                <div class="extracted-style-161">
+                <h3 style="color: #00d4ff; margin-bottom: 2rem;">${data.title}</h3>
+                <div style="display: grid; gap: 1rem;">
                     ${data.partners.map(partner => `
-                        <div class="extracted-style-215">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
                             <div>
-                                <div class="extracted-style-88">${partner.name}</div>
-                                <div class="extracted-style-224">${partner.status}</div>
+                                <div style="color: #fff; font-weight: 600; margin-bottom: 0.5rem;">${partner.name}</div>
+                                <div style="color: #ccc; font-size: 0.9rem;">${partner.status}</div>
                             </div>
-                            <div class="extracted-style-105">
+                            <div style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">
                                 ${isArabic ? 'نشط' : 'Active'}
                             </div>
                         </div>
@@ -8448,9 +8447,9 @@ OBX|1|TX|11506-3^Transformation Report^LN||${content.replace(/\n/g, ' ').substr(
                 const alert = document.createElement('div');
                 alert.className = `alert-item ${type}`;
                 alert.innerHTML = `
-                    <div class="extracted-style-51">${title}</div>
-                    <div class="extracted-style-199">${message}</div>
-                    <button onclick="this.parentElement.remove(); this.updateAlertCount()" class="extracted-style-58">×</button>
+                    <div style="font-weight: bold;">${title}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">${message}</div>
+                    <button onclick="this.parentElement.remove(); this.updateAlertCount()" style="position: absolute; top: 0.5rem; right: 0.5rem; background: none; border: none; color: var(--text-secondary); cursor: pointer;">×</button>
                 `;
                 alert.style.position = 'relative';
                 
@@ -8773,7 +8772,7 @@ OBX|1|TX|11506-3^Transformation Report^LN||${content.replace(/\n/g, ' ').substr(
                 outputArea.innerHTML = `<pre><code>${JSON.stringify(transformedData, null, 2)}</code></pre>`;
                 showNotification('Data transformed successfully!', 'success');
             } catch (error) {
-                outputArea.innerHTML = `<div class="extracted-style-112">Error: ${error.message}</div>`;
+                outputArea.innerHTML = `<div style="color: var(--accent-red);">Error: ${error.message}</div>`;
                 showNotification('Invalid JSON format', 'error');
             }
         }

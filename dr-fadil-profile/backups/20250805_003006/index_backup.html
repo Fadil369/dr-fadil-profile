@@ -1,0 +1,3255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="msapplication-TileColor" content="#0a0a0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Dr. Mohamed El Fadil | BrainSAIT | Ultimate Healthcare AI Platform</title>
+    <meta name="description" content="Dr. Mohamed El Fadil - Physician entrepreneur, founder of BrainSAIT, and healthcare technology innovator. Experience the future of healthcare AI with our glass morphism interface.">
+    <meta name="keywords" content="Dr. Mohamed El Fadil, BrainSAIT, Healthcare AI, Glass Morphism, Digital Health, Physician Entrepreneur">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dr. Mohamed El Fadil | BrainSAIT | Ultimate Healthcare AI Platform">
+    <meta property="og:description" content="Experience the future of healthcare AI with cutting-edge glass morphism design">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://fadil369.dev">
+    <meta property="og:image" content="https://gravatar.com/avatar/fadil369">
+    <meta property="og:site_name" content="Dr. Mohamed El Fadil">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_SA">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Mohamed El Fadil | BrainSAIT | Healthcare AI Innovator">
+    <meta name="twitter:description" content="Physician entrepreneur, founder of BrainSAIT, and healthcare technology innovator">
+    <meta name="twitter:image" content="https://gravatar.com/avatar/fadil369">
+    <meta name="twitter:creator" content="@brainsait369">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.emailjs.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    
+    <style>
+        :root {
+            /* Deep Space Dark Theme */
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #141420;
+            --bg-tertiary: #1a1a2e;
+            --bg-glass: rgba(20, 20, 32, 0.85);
+            --bg-glass-light: rgba(20, 20, 32, 0.6);
+            
+            /* Neon Accent Colors */
+            --accent-cyan: #00d4ff;
+            --accent-purple: #9333ea;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            
+            /* Healthcare Theme */
+            --healthcare-blue: #0ea5e9;
+            --healthcare-green: #10b981;
+            
+            /* Text Colors */
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #cbd5e1;
+            
+            /* Glass Effects */
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --glass-shadow-hover: 0 16px 64px rgba(0, 212, 255, 0.3);
+            
+            /* Animations */
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        :root[data-theme="light"] {
+            /* Light Theme Variables */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f1f5f9;
+            --bg-tertiary: #e2e8f0;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --bg-glass-light: rgba(255, 255, 255, 0.6);
+            
+            /* Text Colors for Light Theme */
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            
+            /* Glass Effects for Light Theme */
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            --glass-shadow-hover: 0 16px 64px rgba(0, 212, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: 'kern' 1;
+            font-variant-ligatures: common-ligatures;
+        }
+
+        body[dir="rtl"] {
+            font-family: 'Tajawal', 'Inter', 'Arial Unicode MS', Tahoma, sans-serif;
+        }
+
+        body.arabic {
+            font-family: 'Tajawal', 'Arial Unicode MS', Tahoma, Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Enhanced Arabic typography */
+        .arabic .section-title,
+        .arabic .project-title,
+        .arabic .hero-content h1 {
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+        
+        .arabic .project-description,
+        .arabic .hero-description {
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: backgroundPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Glass Morphism Components */
+        .glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition-smooth);
+        }
+
+        .glass-light {
+            background: var(--bg-glass-light);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .glass:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glass-shadow-hover);
+            border-color: var(--accent-cyan);
+        }
+
+        /* Language & Theme Toggles */
+        .control-panel {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .lang-toggle {
+            padding: 3px;
+            width: 60px;
+            height: 35px;
+            border-radius: 17px;
+            background: var(--bg-glass);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .lang-option {
+            flex: 1;
+            height: 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--text-muted);
+        }
+
+        .lang-option.active {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-glass);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        /* Hero Section with Floating Business Card */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 20px 50px;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* Floating Business Card */
+        .business-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: var(--glass-shadow);
+            animation: float-card 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes float-card {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .card-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            border: 3px solid var(--glass-border);
+        }
+
+        .card-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            color: var(--accent-cyan);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 480px) {
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Magnetic Effect */
+        .magnetic {
+            transition: transform 0.2s ease-out;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Enhanced visibility for project cards */
+        .project-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text-primary);
+            box-shadow: var(--glass-shadow);
+        }
+
+        @media (max-width: 400px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            color: var(--text-primary);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Tools Section */
+        .tools {
+            padding: 100px 20px;
+            background: var(--bg-primary);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tool-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            color: var(--text-primary);
+            box-shadow: var(--glass-shadow);
+        }
+        
+        .tool-card .project-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tool-card .project-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-green);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Consultation Form Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            background: var(--bg-glass-light);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .social-link i {
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .control-panel {
+                right: 10px;
+                gap: 10px;
+            }
+            
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .lang-toggle {
+                width: 50px;
+                height: 30px;
+            }
+            
+            .lang-option {
+                font-size: 0.6rem;
+            }
+        }
+
+        /* Hidden class for language switching */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-cyan);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-purple);
+        }
+        
+        /* Enhanced accessibility and focus states */
+        .control-btn:focus,
+        .btn:focus,
+        .social-link:focus,
+        .nav-links a:focus {
+            outline: 2px solid var(--accent-cyan);
+            outline-offset: 2px;
+        }
+        
+        /* Skip to main content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent-cyan);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-width: 2px;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+        
+        /* Improved text contrast for better readability */
+        .project-description,
+        .hero-description {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Loading states */
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        /* Better mobile typography */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+            
+            .project-title {
+                font-size: 1.2rem;
+            }
+            
+            .project-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            /* Optimize animations for mobile */
+            .particle {
+                animation-duration: 20s !important;
+            }
+            
+            .business-card {
+                animation-duration: 8s !important;
+            }
+        }
+        
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .particle {
+                display: none !important;
+            }
+        }
+        
+        /* Interactive Timeline Styles */
+        .timeline-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 4rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: calc(50% + 40px);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: calc(50% + 40px);
+            text-align: right;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+            border: 4px solid var(--bg-primary);
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-marker:hover {
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+        }
+
+        .timeline-content {
+            padding: 2rem;
+            border-radius: 20px;
+            position: relative;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+            border-right-color: var(--glass-border);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+            border-left-color: var(--glass-border);
+        }
+
+        .timeline-date {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Mobile Timeline Adjustments */
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-marker {
+                left: 30px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: 80px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-content::before {
+                display: none;
+            }
+
+            .timeline-date {
+                font-size: 1.5rem;
+            }
+
+            .timeline-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* AI Chat Assistant Styles */
+        .chat-assistant {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1500;
+        }
+
+        .chat-bubble {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+            animation: pulse-chat 2s infinite;
+        }
+
+        .chat-bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.5);
+        }
+
+        .chat-bubble i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        @keyframes pulse-chat {
+            0% { box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); }
+            50% { box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6), 0 0 0 10px rgba(0, 212, 255, 0.1); }
+            100% { box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); }
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            width: 400px;
+            max-width: 90vw;
+            height: 500px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            transform: scale(0) translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-window.active {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .chat-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .chat-info h4 {
+            color: var(--text-primary);
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .chat-info p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.8rem;
+        }
+
+        .chat-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .chat-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            animation: slideInMessage 0.3s ease;
+        }
+
+        .chat-message.bot {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            color: var(--text-primary);
+            align-self: flex-start;
+        }
+
+        .chat-message.user {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+            align-self: flex-end;
+        }
+
+        @keyframes slideInMessage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-input-container {
+            padding: 1rem;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex: 1;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 0.8rem 1rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+
+        .chat-send {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .chat-send:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Impact Visualization Styles */
+        .impact-section {
+            padding: 100px 20px;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .impact-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .impact-card:hover::before {
+            left: 100%;
+        }
+
+        .impact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            animation: pulse-icon 3s infinite;
+        }
+
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+
+        .impact-suffix {
+            font-size: 2rem;
+            color: var(--accent-purple);
+            display: inline-block;
+            margin-left: 0.2rem;
+        }
+
+        .impact-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .impact-trend {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .impact-trend i {
+            animation: bounce-arrow 2s infinite;
+        }
+
+        @keyframes bounce-arrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        /* Chart Styles */
+        .impact-chart-container {
+            margin-top: 4rem;
+        }
+
+        .chart-wrapper {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .chart-visual {
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: end;
+            gap: 1rem;
+            height: 100%;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .bar-fill {
+            width: 100%;
+            max-width: 60px;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            height: 0;
+            transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .bar-fill.animate {
+            height: var(--target-height);
+        }
+
+        .bar-fill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-cyan);
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        .bar-label {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Enhanced Micro-interactions */
+        .project-card,
+        .tool-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::after,
+        .tool-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .project-card:hover::after,
+        .tool-card:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Floating Action Buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1400;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5);
+        }
+
+        .floating-btn.github {
+            background: linear-gradient(135deg, #333, #555);
+        }
+
+        .floating-btn.pypi {
+            background: linear-gradient(135deg, #3775a9, #ffde57);
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .floating-actions {
+                left: 20px;
+                bottom: 120px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.1rem;
+            }
+
+            .impact-dashboard {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .impact-number {
+                font-size: 2.5rem;
+            }
+
+            .chart-visual {
+                height: 200px;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --text-primary: #ffffff;
+                --text-secondary: #ffffff;
+                --text-muted: #cccccc;
+                --glass-border: rgba(255, 255, 255, 0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#home" class="skip-link">
+        <span class="en-content">Skip to main content</span>
+        <span class="ar-content hidden">تخطي إلى المحتوى الرئيسي</span>
+    </a>
+    
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="control-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+        <div class="lang-toggle">
+            <div class="lang-option active" onclick="setLanguage('en')">EN</div>
+            <div class="lang-option" onclick="setLanguage('ar')">AR</div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="en-content">BRAINSAIT</span>
+                <span class="ar-content hidden">برينسايت</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">
+                    <span class="en-content">Home</span>
+                    <span class="ar-content hidden">الرئيسية</span>
+                </a></li>
+                <li><a href="#timeline">
+                    <span class="en-content">Journey</span>
+                    <span class="ar-content hidden">الرحلة</span>
+                </a></li>
+                <li><a href="#projects">
+                    <span class="en-content">Projects</span>
+                    <span class="ar-content hidden">المشاريع</span>
+                </a></li>
+                <li><a href="#impact">
+                    <span class="en-content">Impact</span>
+                    <span class="ar-content hidden">التأثير</span>
+                </a></li>
+                <li><a href="#tools">
+                    <span class="en-content">Tools</span>
+                    <span class="ar-content hidden">الأدوات</span>
+                </a></li>
+                <li><a href="#contact">
+                    <span class="en-content">Contact</span>
+                    <span class="ar-content hidden">اتصل</span>
+                </a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>
+                    <span class="en-content">Dr. Mohamed El Fadil</span>
+                    <span class="ar-content hidden">د. محمد الفاضل</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span class="en-content">Healthcare AI Innovator & BrainSAIT Founder</span>
+                    <span class="ar-content hidden">مبتكر الذكاء الاصطناعي الطبي ومؤسس برينسايت</span>
+                </p>
+                <p class="hero-description">
+                    <span class="en-content">
+                        Transforming healthcare through cutting-edge AI solutions, with over 10 years of clinical experience 
+                        and a passion for digital innovation. Leading the future of medical technology with BrainSAIT.
+                    </span>
+                    <span class="ar-content hidden">
+                        تحويل الرعاية الصحية من خلال حلول الذكاء الاصطناعي المتطورة، مع أكثر من 10 سنوات من الخبرة السريرية 
+                        وشغف بالابتكار الرقمي. قيادة مستقبل التكنولوجيا الطبية مع برينسايت.
+                    </span>
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary magnetic" onclick="openConsultationModal()">
+                        <i class="fas fa-stethoscope"></i>
+                        <span class="en-content">Request Consultation</span>
+                        <span class="ar-content hidden">طلب استشارة</span>
+                    </button>
+                    <a href="#projects" class="btn btn-secondary magnetic">
+                        <i class="fas fa-rocket"></i>
+                        <span class="en-content">Explore Projects</span>
+                        <span class="ar-content hidden">استكشف المشاريع</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Floating Business Card -->
+            <div class="business-card">
+                <div class="card-avatar">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="card-name">
+                    <span class="en-content">Dr. Mohamed El Fadil</span>
+                    <span class="ar-content hidden">د. محمد الفاضل</span>
+                </div>
+                <div class="card-title">
+                    <span class="en-content">Critical Care Physician | BrainSAIT Founder</span>
+                    <span class="ar-content hidden">طبيب عناية مركزة | مؤسس برينسايت</span>
+                </div>
+                <div class="card-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="en-content">Riyadh, Saudi Arabia</span>
+                    <span class="ar-content hidden">الرياض، المملكة العربية السعودية</span>
+                </div>
+                <div class="card-stats">
+                    <div style="display: flex; justify-content: space-between; text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent-cyan);">10+</div>
+                            <div style="color: var(--text-muted);">
+                                <span class="en-content">Years</span>
+                                <span class="ar-content hidden">سنوات</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent-green);">50+</div>
+                            <div style="color: var(--text-muted);">
+                                <span class="en-content">Projects</span>
+                                <span class="ar-content hidden">مشروع</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent-purple);">1000+</div>
+                            <div style="color: var(--text-muted);">
+                                <span class="en-content">Patients</span>
+                                <span class="ar-content hidden">مريض</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">Journey of Innovation</span>
+                <span class="ar-content hidden">رحلة الابتكار</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Explore Dr. Fadil's remarkable journey in healthcare AI innovation</span>
+                <span class="ar-content hidden">استكشف رحلة د. الفاضل الرائعة في ابتكار الذكاء الاصطناعي للرعاية الصحية</span>
+            </p>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" data-year="2008">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-date">2008</div>
+                        <h3 class="timeline-title">
+                            <span class="en-content">Medical Journey Begins</span>
+                            <span class="ar-content hidden">بداية الرحلة الطبية</span>
+                        </h3>
+                        <p class="timeline-description">
+                            <span class="en-content">Started medical education with a vision to revolutionize healthcare through technology</span>
+                            <span class="ar-content hidden">بدأ التعليم الطبي برؤية لثورة في الرعاية الصحية من خلال التكنولوجيا</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2015">
+                    <div class="timeline-marker">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-date">2015</div>
+                        <h3 class="timeline-title">
+                            <span class="en-content">Clinical Practice Excellence</span>
+                            <span class="ar-content hidden">تميز في الممارسة السريرية</span>
+                        </h3>
+                        <p class="timeline-description">
+                            <span class="en-content">Established reputation as a skilled physician with focus on critical care and patient-centered medicine</span>
+                            <span class="ar-content hidden">بناء سمعة كطبيب ماهر مع التركيز على الرعاية المركزة والطب المتمحور حول المريض</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2019">
+                    <div class="timeline-marker">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-date">2019</div>
+                        <h3 class="timeline-title">
+                            <span class="en-content">BrainSAIT Foundation</span>
+                            <span class="ar-content hidden">تأسيس برينسايت</span>
+                        </h3>
+                        <p class="timeline-description">
+                            <span class="en-content">Founded BrainSAIT to bridge the gap between artificial intelligence and healthcare delivery</span>
+                            <span class="ar-content hidden">أسس برينسايت لسد الفجوة بين الذكاء الاصطناعي وتقديم الرعاية الصحية</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2022">
+                    <div class="timeline-marker">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">
+                            <span class="en-content">Platform Launch</span>
+                            <span class="ar-content hidden">إطلاق المنصة</span>
+                        </h3>
+                        <p class="timeline-description">
+                            <span class="en-content">Launched multiple healthcare platforms including GP Portal and GIVC, serving thousands of users</span>
+                            <span class="ar-content hidden">أطلق منصات رعاية صحية متعددة بما في ذلك بوابة الطب العام و GIVC، تخدم آلاف المستخدمين</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-marker">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title">
+                            <span class="en-content">PyPI Packages Release</span>
+                            <span class="ar-content hidden">إطلاق حزم PyPI</span>
+                        </h3>
+                        <p class="timeline-description">
+                            <span class="en-content">Released brainsait-pyheart and brainsait-pybrain packages, contributing to open-source healthcare</span>
+                            <span class="ar-content hidden">أطلق حزم brainsait-pyheart و brainsait-pybrain، مساهمة في الرعاية الصحية مفتوحة المصدر</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content glass">
+                        <div class="timeline-date">2025</div>
+                        <h3 class="timeline-title">
+                            <span class="en-content">Global Recognition</span>
+                            <span class="ar-content hidden">اعتراف عالمي</span>
+                        </h3>
+                        <p class="timeline-description">
+                            <span class="en-content">Leading healthcare AI innovation with global partnerships and expanding ecosystem</span>
+                            <span class="ar-content hidden">قيادة ابتكار الذكاء الاصطناعي للرعاية الصحية مع شراكات عالمية ونظام بيئي متوسع</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">Featured Projects</span>
+                <span class="ar-content hidden">المشاريع المميزة</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Innovative healthcare AI solutions transforming medical practice</span>
+                <span class="ar-content hidden">حلول الذكاء الاصطناعي الطبية المبتكرة التي تحول الممارسة الطبية</span>
+            </p>
+            
+            <div class="projects-grid">
+                <a href="https://gp.thefadil.site" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">GP Portal</span>
+                        <span class="ar-content hidden">بوابة الطب العام</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Advanced general practice management platform with AI-driven patient care workflows and intelligent decision support systems.</span>
+                        <span class="ar-content hidden">منصة إدارة متقدمة للطب العام مع سير عمل رعاية المرضى المدعوم بالذكاء الاصطناعي وأنظمة دعم القرار الذكية.</span>
+                    </p>
+                </a>
+                
+                <a href="https://givc.brainsait.io" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">GIVC Platform</span>
+                        <span class="ar-content hidden">منصة GIVC</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Global Intelligent Virtual Care - Next-generation telemedicine with AI-powered diagnostics and remote patient monitoring.</span>
+                        <span class="ar-content hidden">الرعاية الافتراضية الذكية العالمية - طب بُعد من الجيل التالي مع التشخيص المدعوم بالذكاء الاصطناعي ومراقبة المرضى عن بُعد.</span>
+                    </p>
+                </a>
+                
+                <a href="https://brainsait.io" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">BrainSAIT Core</span>
+                        <span class="ar-content hidden">برينسايت الأساسي</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Comprehensive healthcare technology platform offering AI-driven medical solutions and business intelligence for modern healthcare.</span>
+                        <span class="ar-content hidden">منصة تكنولوجيا رعاية صحية شاملة تقدم حلول طبية مدعومة بالذكاء الاصطناعي وذكاء الأعمال للرعاية الصحية الحديثة.</span>
+                    </p>
+                </a>
+                
+                <a href="https://care.brainsait.io" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">BrainSAIT Care</span>
+                        <span class="ar-content hidden">رعاية برينسايت</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Specialized patient care management system with AI-powered clinical decision support and personalized treatment planning.</span>
+                        <span class="ar-content hidden">نظام إدارة رعاية المرضى المتخصص مع دعم القرار السريري المدعوم بالذكاء الاصطناعي وتخطيط العلاج الشخصي.</span>
+                    </p>
+                </a>
+                
+                <a href="https://read.thefadil.site/" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">OI vs AI Book</span>
+                        <span class="ar-content hidden">كتاب الذكاء الأصلي مقابل الاصطناعي</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Published book exploring the relationship between Original Intelligence (human brain) and Artificial Intelligence in healthcare.</span>
+                        <span class="ar-content hidden">كتاب منشور يستكشف العلاقة بين الذكاء الأصلي (الدماغ البشري) والذكاء الاصطناعي في الرعاية الصحية.</span>
+                    </p>
+                </a>
+                
+                <a href="https://givc-academy.brainsait.io" target="_blank" class="project-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">GIVC Academy</span>
+                        <span class="ar-content hidden">أكاديمية GIVC</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Educational platform for healthcare professionals with bilingual content and interactive AI-powered learning modules.</span>
+                        <span class="ar-content hidden">منصة تعليمية للمهنيين الصحيين مع محتوى ثنائي اللغة ووحدات تعلم تفاعلية مدعومة بالذكاء الاصطناعي.</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Impact Visualization Section -->
+    <section id="impact" class="impact-section">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">BrainSAIT Impact</span>
+                <span class="ar-content hidden">تأثير برينسايت</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Real-time metrics showing the transformative power of healthcare AI</span>
+                <span class="ar-content hidden">مقاييس في الوقت الفعلي تُظهر القوة التحويلية للذكاء الاصطناعي في الرعاية الصحية</span>
+            </p>
+            
+            <div class="impact-dashboard">
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="impact-number" data-target="10000">0</div>
+                    <div class="impact-label">
+                        <span class="en-content">Users Served</span>
+                        <span class="ar-content hidden">المستخدمون المخدومون</span>
+                    </div>
+                    <div class="impact-trend">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+25% this month</span>
+                    </div>
+                </div>
+
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="impact-number" data-target="50000">0</div>
+                    <div class="impact-label">
+                        <span class="en-content">Patients Helped</span>
+                        <span class="ar-content hidden">المرضى المساعدون</span>
+                    </div>
+                    <div class="impact-trend">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+15% this month</span>
+                    </div>
+                </div>
+
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="impact-number" data-target="1000000">0</div>
+                    <div class="impact-label">
+                        <span class="en-content">AI Predictions</span>
+                        <span class="ar-content hidden">توقعات الذكاء الاصطناعي</span>
+                    </div>
+                    <div class="impact-trend">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+40% this month</span>
+                    </div>
+                </div>
+
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="impact-number" data-target="75">0</div>
+                    <div class="impact-suffix">%</div>
+                    <div class="impact-label">
+                        <span class="en-content">Time Saved</span>
+                        <span class="ar-content hidden">الوقت المُوفر</span>
+                    </div>
+                    <div class="impact-trend">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+5% efficiency</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-chart-container">
+                <div class="chart-wrapper glass">
+                    <h3 class="chart-title">
+                        <span class="en-content">Healthcare AI Adoption Growth</span>
+                        <span class="ar-content hidden">نمو اعتماد الذكاء الاصطناعي في الرعاية الصحية</span>
+                    </h3>
+                    <div class="chart-visual">
+                        <div class="chart-bars">
+                            <div class="chart-bar" data-height="20%">
+                                <div class="bar-fill" style="--target-height: 20%"></div>
+                                <span class="bar-label">2020</span>
+                            </div>
+                            <div class="chart-bar" data-height="35%">
+                                <div class="bar-fill" style="--target-height: 35%"></div>
+                                <span class="bar-label">2021</span>
+                            </div>
+                            <div class="chart-bar" data-height="55%">
+                                <div class="bar-fill" style="--target-height: 55%"></div>
+                                <span class="bar-label">2022</span>
+                            </div>
+                            <div class="chart-bar" data-height="75%">
+                                <div class="bar-fill" style="--target-height: 75%"></div>
+                                <span class="bar-label">2023</span>
+                            </div>
+                            <div class="chart-bar" data-height="90%">
+                                <div class="bar-fill" style="--target-height: 90%"></div>
+                                <span class="bar-label">2024</span>
+                            </div>
+                            <div class="chart-bar" data-height="100%">
+                                <div class="bar-fill" style="--target-height: 100%"></div>
+                                <span class="bar-label">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">AI Tools & Utilities</span>
+                <span class="ar-content hidden">أدوات ومرافق الذكاء الاصطناعي</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Powerful tools designed to streamline healthcare workflows</span>
+                <span class="ar-content hidden">أدوات قوية مصممة لتبسيط سير عمل الرعاية الصحية</span>
+            </p>
+            
+            <div class="tools-grid">
+                <a href="https://context.thefadil.site/" target="_blank" class="tool-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">AI Context Generator</span>
+                        <span class="ar-content hidden">مولد السياق بالذكاء الاصطناعي</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Intelligent prompt engineering platform for creating contextually-aware AI instructions.</span>
+                        <span class="ar-content hidden">منصة هندسة التوجيهات الذكية لإنشاء تعليمات الذكاء الاصطناعي المدركة للسياق.</span>
+                    </p>
+                </a>
+                
+                <a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" class="tool-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">Excel Consolidator</span>
+                        <span class="ar-content hidden">موحد إكسل</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">Advanced data consolidation tool for merging complex Excel datasets with AI assistance.</span>
+                        <span class="ar-content hidden">أداة توحيد البيانات المتقدمة لدمج مجموعات بيانات إكسل المعقدة بمساعدة الذكاء الاصطناعي.</span>
+                    </p>
+                </a>
+                
+                <a href="https://healthcare-insurance-analysis.fadil.workers.dev/" target="_blank" class="tool-card fade-in-up">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="project-title">
+                        <span class="en-content">Insurance Analyzer</span>
+                        <span class="ar-content hidden">محلل التأمين</span>
+                    </h3>
+                    <p class="project-description">
+                        <span class="en-content">AI-driven insurance claims analysis with predictive modeling and fraud detection.</span>
+                        <span class="ar-content hidden">تحليل مطالبات التأمين المدعوم بالذكاء الاصطناعي مع النمذجة التنبؤية وكشف الاحتيال.</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="projects-container">
+            <h2 class="section-title">
+                <span class="en-content">Connect With Me</span>
+                <span class="ar-content hidden">تواصل معي</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="en-content">Let's collaborate on the future of healthcare technology</span>
+                <span class="ar-content hidden">دعنا نتعاون في مستقبل تكنولوجيا الرعاية الصحية</span>
+            </p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <button class="btn btn-primary magnetic" onclick="openConsultationModal()">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="en-content">Schedule Free Consultation</span>
+                    <span class="ar-content hidden">جدولة استشارة مجانية</span>
+                </button>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://x.com/brainsait369" target="_blank" class="social-link">
+                    <i class="fab fa-x-twitter"></i>
+                    <div>
+                        <div style="font-weight: 600;">X (Twitter)</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">@brainsait369</div>
+                    </div>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/fadil369" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <div style="font-weight: 600;">LinkedIn</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">Professional Network</div>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/fadil369" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <div style="font-weight: 600;">GitHub</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">Open Source Projects</div>
+                    </div>
+                </a>
+                
+                <a href="mailto:brainsait@hotmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <div style="font-weight: 600;">Email</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">brainsait@hotmail.com</div>
+                    </div>
+                </a>
+                
+                <a href="tel:+966510010991" class="social-link">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div style="font-weight: 600;">Phone</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">+966-5100-10-991</div>
+                    </div>
+                </a>
+                
+                <a href="https://calendly.com/fadil369" target="_blank" class="social-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <div style="font-weight: 600;">Schedule Meeting</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">Calendly</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultationModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeConsultationModal()">&times;</button>
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent-cyan);">
+                    <i class="fas fa-stethoscope" style="margin-right: 0.5rem;"></i>
+                    <span class="en-content">Healthcare Consultation</span>
+                    <span class="ar-content hidden">استشارة طبية</span>
+                </h2>
+                <p style="color: var(--text-secondary);">
+                    <span class="en-content">Let's discuss how BrainSAIT can transform your healthcare needs</span>
+                    <span class="ar-content hidden">دعنا نناقش كيف يمكن لبرينسايت تحويل احتياجاتك الصحية</span>
+                </p>
+            </div>
+
+            <form id="consultationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-user"></i>
+                            <span class="en-content">Full Name *</span>
+                            <span class="ar-content hidden">الاسم الكامل *</span>
+                        </label>
+                        <input type="text" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-envelope"></i>
+                            <span class="en-content">Email Address *</span>
+                            <span class="ar-content hidden">البريد الإلكتروني *</span>
+                        </label>
+                        <input type="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-phone"></i>
+                            <span class="en-content">Phone Number</span>
+                            <span class="ar-content hidden">رقم الهاتف</span>
+                        </label>
+                        <input type="tel" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-hospital"></i>
+                            <span class="en-content">Organization</span>
+                            <span class="ar-content hidden">المؤسسة</span>
+                        </label>
+                        <input type="text" name="organization">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-cogs"></i>
+                        <span class="en-content">Service Type *</span>
+                        <span class="ar-content hidden">نوع الخدمة *</span>
+                    </label>
+                    <select name="serviceType" required>
+                        <option value="" class="en-content">Select a service...</option>
+                        <option value="" class="ar-content hidden">اختر خدمة...</option>
+                        <option value="telemedicine" class="en-content">Telemedicine Platform</option>
+                        <option value="telemedicine" class="ar-content hidden">منصة الطب عن بُعد</option>
+                        <option value="ai-healthcare" class="en-content">AI Healthcare Solutions</option>
+                        <option value="ai-healthcare" class="ar-content hidden">حلول الذكاء الاصطناعي الطبية</option>
+                        <option value="consultation" class="en-content">Healthcare Consulting</option>
+                        <option value="consultation" class="ar-content hidden">استشارات الرعاية الصحية</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-file-alt"></i>
+                        <span class="en-content">Project Description *</span>
+                        <span class="ar-content hidden">وصف المشروع *</span>
+                    </label>
+                    <textarea name="projectDescription" rows="4" required>
+                        <span class="en-content" style="display: none;">Please describe your healthcare technology needs...</span>
+                        <span class="ar-content hidden" style="display: none;">يرجى وصف احتياجاتك التقنية في مجال الرعاية الصحية...</span>
+                    </textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="en-content">Request Consultation</span>
+                    <span class="ar-content hidden">طلب استشارة</span>
+                </button>
+
+                <div id="successMessage" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--accent-green); color: var(--accent-green); padding: 1rem; border-radius: 10px; text-align: center; margin-top: 1rem;">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="en-content">Thank you! Your consultation request has been submitted successfully.</span>
+                    <span class="ar-content hidden">شكراً لك! تم إرسال طلب الاستشارة بنجاح.</span>
+                </div>
+
+                <div id="errorMessage" style="display: none; background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; padding: 1rem; border-radius: 10px; text-align: center; margin-top: 1rem;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span class="en-content">There was an error submitting your request. Please try again.</span>
+                    <span class="ar-content hidden">حدث خطأ أثناء إرسال طلبك. يرجى المحاولة مرة أخرى.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- AI Chat Assistant -->
+    <div class="chat-assistant" id="chatAssistant">
+        <div class="chat-bubble" onclick="toggleChat()">
+            <i class="fas fa-robot"></i>
+        </div>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="chat-info">
+                    <h4>
+                        <span class="en-content">BrainSAIT Assistant</span>
+                        <span class="ar-content hidden">مساعد برينسايت</span>
+                    </h4>
+                    <p>
+                        <span class="en-content">Healthcare AI Helper</span>
+                        <span class="ar-content hidden">مساعد الذكاء الاصطناعي الطبي</span>
+                    </p>
+                </div>
+                <button class="chat-close" onclick="toggleChat()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot">
+                    <span class="en-content">
+                        Hello! I'm the BrainSAIT AI Assistant. I can help you learn about Dr. Fadil's work, 
+                        BrainSAIT projects, and healthcare AI solutions. How can I assist you today?
+                    </span>
+                    <span class="ar-content hidden">
+                        مرحباً! أنا مساعد برينسايت للذكاء الاصطناعي. يمكنني مساعدتك في التعرف على عمل د. الفاضل،
+                        ومشاريع برينسايت، وحلول الذكاء الاصطناعي للرعاية الصحية. كيف يمكنني مساعدتك اليوم؟
+                    </span>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about BrainSAIT...">
+                <button class="chat-send" onclick="sendMessage()" id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="https://github.com/fadil369" target="_blank" class="floating-btn github" title="GitHub Profile">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://pypi.org/user/Fadil369/" target="_blank" class="floating-btn pypi" title="PyPI Profile">
+            <i class="fab fa-python"></i>
+        </a>
+        <a href="https://calendly.com/fadil369" target="_blank" class="floating-btn" title="Schedule Meeting">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+    </div>
+
+    <script>
+        // Initialize EmailJS with proper configuration
+        (function() {
+            // EmailJS configuration for brainsait@hotmail.com
+            emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // Replace with actual EmailJS public key
+        })();
+
+        let isArabic = false;
+        let currentTheme = 'dark';
+
+        // Initialize particles with performance optimization
+        function initParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (!particlesContainer) return;
+            
+            const particleCount = window.innerWidth < 768 ? 15 : 30; // Reduce particles on mobile
+
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                
+                // Set particle color based on current theme
+                const color = currentTheme === 'light' ? '#0ea5e9' : '#00d4ff';
+                particle.style.background = color;
+                
+                particlesContainer.appendChild(particle);
+
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 20000);
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                setTimeout(createParticle, i * 200);
+            }
+
+            setInterval(createParticle, 500);
+        }
+
+        // Enhanced Language switching with proper RTL/LTR support
+        function setLanguage(lang) {
+            console.log('Setting language to:', lang);
+            isArabic = lang === 'ar';
+            const enElements = document.querySelectorAll('.en-content');
+            const arElements = document.querySelectorAll('.ar-content');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const html = document.documentElement;
+            const body = document.body;
+            
+            if (isArabic) {
+                // Switch to Arabic
+                enElements.forEach(el => el.classList.add('hidden'));
+                arElements.forEach(el => el.classList.remove('hidden'));
+                body.classList.add('arabic');
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+                
+                // Update select options for Arabic
+                const selectOptions = document.querySelectorAll('select option');
+                selectOptions.forEach(option => {
+                    if (option.classList.contains('en-content')) {
+                        option.style.display = 'none';
+                    } else if (option.classList.contains('ar-content')) {
+                        option.style.display = 'block';
+                    }
+                });
+            } else {
+                // Switch to English
+                enElements.forEach(el => el.classList.remove('hidden'));
+                arElements.forEach(el => el.classList.add('hidden'));
+                body.classList.remove('arabic');
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                
+                // Update select options for English
+                const selectOptions = document.querySelectorAll('select option');
+                selectOptions.forEach(option => {
+                    if (option.classList.contains('ar-content')) {
+                        option.style.display = 'none';
+                    } else if (option.classList.contains('en-content')) {
+                        option.style.display = 'block';
+                    }
+                });
+            }
+            
+            // Update active language button
+            langOptions.forEach((option, index) => {
+                if ((index === 0 && !isArabic) || (index === 1 && isArabic)) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
+            
+            // Store language preference
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Add toggleLanguage function for backward compatibility
+        function toggleLanguage() {
+            console.log('Toggle language clicked');
+            const currentLang = document.documentElement.lang || 'en';
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            setLanguage(newLang);
+        }
+
+        // Enhanced Theme toggle with full light/dark mode switching
+        function toggleTheme() {
+            console.log('Toggle theme clicked');
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            const body = document.body;
+            
+            const currentThemeAttr = html.getAttribute('data-theme') || 'dark';
+            
+            if (currentThemeAttr === 'dark') {
+                // Switch to light theme
+                html.setAttribute('data-theme', 'light');
+                if (icon) icon.className = 'fas fa-moon';
+                currentTheme = 'light';
+                body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)';
+            } else {
+                // Switch to dark theme
+                html.setAttribute('data-theme', 'dark');
+                if (icon) icon.className = 'fas fa-sun';
+                currentTheme = 'dark';
+                body.style.background = '';
+            }
+            
+            // Store theme preference
+            localStorage.setItem('preferred-theme', currentTheme);
+            
+            // Update particles color based on theme
+            updateParticlesTheme();
+        }
+        
+        // Update particles color based on current theme
+        function updateParticlesTheme() {
+            const particles = document.querySelectorAll('.particle');
+            const color = currentTheme === 'light' ? '#0ea5e9' : '#00d4ff';
+            particles.forEach(particle => {
+                particle.style.background = color;
+            });
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Magnetic effect for buttons
+        function initMagneticEffect() {
+            const magneticElements = document.querySelectorAll('.magnetic');
+            
+            magneticElements.forEach(el => {
+                el.addEventListener('mouseenter', function(e) {
+                    this.addEventListener('mousemove', magneticMove);
+                    this.addEventListener('mouseleave', magneticLeave);
+                });
+            });
+
+            function magneticMove(e) {
+                const rect = this.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const deltaX = (e.clientX - centerX) * 0.1;
+                const deltaY = (e.clientY - centerY) * 0.1;
+                
+                this.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+            }
+
+            function magneticLeave() {
+                this.style.transform = 'translate(0, 0)';
+                this.removeEventListener('mousemove', magneticMove);
+                this.removeEventListener('mouseleave', magneticLeave);
+            }
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Modal functions
+        function openConsultationModal() {
+            document.getElementById('consultationModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConsultationModal() {
+            document.getElementById('consultationModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Reset form
+            document.getElementById('consultationForm').reset();
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Show loading state with language support
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="loading-spinner"></div><span>' + (isArabic ? 'جاري الإرسال...' : 'Sending...') + '</span>';
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Collect form data
+            const formData = {
+                fullName: this.fullName.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                organization: this.organization.value,
+                serviceType: this.serviceType.value,
+                projectDescription: this.projectDescription.value,
+                timestamp: new Date().toLocaleString(),
+                language: isArabic ? 'Arabic' : 'English'
+            };
+
+            // Enhanced form validation with security measures
+            const sanitizedData = {
+                fullName: formData.fullName.trim().replace(/[<>]/g, ''),
+                email: formData.email.trim().toLowerCase(),
+                phone: formData.phone.trim().replace(/[^0-9+\-\s]/g, ''),
+                organization: formData.organization.trim().replace(/[<>]/g, ''),
+                serviceType: formData.serviceType,
+                projectDescription: formData.projectDescription.trim().replace(/[<>]/g, '')
+            };
+            
+            // Validate required fields
+            if (!sanitizedData.fullName || !sanitizedData.email || !sanitizedData.projectDescription || !sanitizedData.serviceType) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + (isArabic ? 'يرجى ملء جميع الحقول المطلوبة' : 'Please fill in all required fields');
+                errorMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                return;
+            }
+            
+            // Enhanced email validation
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(sanitizedData.email)) {
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + (isArabic ? 'يرجى إدخال بريد إلكتروني صحيح' : 'Please enter a valid email address');
+                errorMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                return;
+            }
+            
+            // Send email using EmailJS to brainsait@hotmail.com
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                to_email: 'brainsait@hotmail.com',
+                from_name: sanitizedData.fullName,
+                from_email: sanitizedData.email,
+                phone: sanitizedData.phone || 'Not provided',
+                organization: sanitizedData.organization || 'Not provided',
+                service_type: sanitizedData.serviceType,
+                message: sanitizedData.projectDescription,
+                timestamp: formData.timestamp,
+                language: formData.language,
+                subject: `Healthcare Consultation Request from ${sanitizedData.fullName}`
+            }).then(
+                function(response) {
+                    console.log('Email sent successfully:', response);
+                    successMessage.style.display = 'block';
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                    
+                    // Auto-close modal after 4 seconds
+                    setTimeout(() => {
+                        closeConsultationModal();
+                    }, 4000);
+                },
+                function(error) {
+                    console.error('Email sending failed:', error);
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + (isArabic ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً أو التواصل مباشرة على brainsait@hotmail.com' : 'Failed to send message. Please try again later or contact us directly at brainsait@hotmail.com');
+                    errorMessage.style.display = 'block';
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                }
+            );
+        });
+
+        // Close modal on outside click
+        document.getElementById('consultationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeConsultationModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeConsultationModal();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Timeline Animation
+        function initTimelineAnimation() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animate');
+                        }, index * 200);
+                    }
+                });
+            }, observerOptions);
+
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+        }
+
+        // AI Chat Assistant Functionality
+        let chatOpen = false;
+        const chatResponses = {
+            en: {
+                default: "I'd be happy to help you learn more about Dr. Fadil's work and BrainSAIT! Could you be more specific about what you'd like to know?",
+                projects: "Dr. Fadil has created several innovative projects including GP Portal, GIVC Platform, BrainSAIT Core, and BrainSAIT Care. Each focuses on different aspects of healthcare AI and interoperability.",
+                brainsait: "BrainSAIT is a comprehensive healthcare AI platform founded by Dr. Fadil. It focuses on improving healthcare delivery through artificial intelligence, interoperability, and innovative digital solutions.",
+                packages: "Dr. Fadil has created two main PyPI packages: brainsait-pyheart for healthcare interoperability and brainsait-pybrain for healthcare intelligence. Both are available on PyPI.",
+                experience: "Dr. Fadil has over 15 years of experience in medicine and technology, combining clinical expertise with cutting-edge AI development.",
+                contact: "You can schedule a consultation using the form on this website, or connect through LinkedIn, GitHub, or email at brainsait@hotmail.com.",
+                consultation: "Dr. Fadil offers healthcare consultation services focusing on AI implementation, digital transformation, and healthcare technology strategy."
+            },
+            ar: {
+                default: "سأكون سعيداً لمساعدتك في التعرف أكثر على عمل د. الفاضل وبرينسايت! هل يمكنك أن تكون أكثر تحديداً حول ما تريد معرفته؟",
+                projects: "لقد أنشأ د. الفاضل عدة مشاريع مبتكرة بما في ذلك بوابة الطب العام ومنصة GIVC وبرينسايت الأساسي ورعاية برينسايت. كل منها يركز على جوانب مختلفة من الذكاء الاصطناعي للرعاية الصحية وقابلية التشغيل البيني.",
+                brainsait: "برينسايت هي منصة شاملة للذكاء الاصطناعي للرعاية الصحية أسسها د. الفاضل. تركز على تحسين تقديم الرعاية الصحية من خلال الذكاء الاصطناعي وقابلية التشغيل البيني والحلول الرقمية المبتكرة.",
+                packages: "لقد أنشأ د. الفاضل حزمتين رئيسيتين على PyPI: brainsait-pyheart لقابلية التشغيل البيني للرعاية الصحية و brainsait-pybrain لذكاء الرعاية الصحية. كلاهما متاح على PyPI.",
+                experience: "يتمتع د. الفاضل بأكثر من 15 عاماً من الخبرة في الطب والتكنولوجيا، حيث يجمع بين الخبرة السريرية وتطوير الذكاء الاصطناعي المتطور.",
+                contact: "يمكنك جدولة استشارة باستخدام النموذج على هذا الموقع، أو التواصل عبر LinkedIn أو GitHub أو البريد الإلكتروني brainsait@hotmail.com.",
+                consultation: "يقدم د. الفاضل خدمات الاستشارة الطبية التي تركز على تنفيذ الذكاء الاصطناعي والتحول الرقمي واستراتيجية تكنولوجيا الرعاية الصحية."
+            }
+        };
+
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatOpen = !chatOpen;
+            
+            if (chatOpen) {
+                chatWindow.classList.add('active');
+                document.getElementById('chatInput').focus();
+            } else {
+                chatWindow.classList.remove('active');
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messagesContainer = document.getElementById('chatMessages');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user';
+            userMessage.textContent = message;
+            messagesContainer.appendChild(userMessage);
+            
+            // Clear input
+            input.value = '';
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Generate AI response
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-message bot';
+                botMessage.innerHTML = generateChatResponse(message);
+                messagesContainer.appendChild(botMessage);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+        }
+
+        function generateChatResponse(message) {
+            const lang = isArabic ? 'ar' : 'en';
+            const responses = chatResponses[lang];
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('project') || lowerMessage.includes('مشروع')) {
+                return responses.projects;
+            } else if (lowerMessage.includes('brainsait') || lowerMessage.includes('برينسايت')) {
+                return responses.brainsait;
+            } else if (lowerMessage.includes('package') || lowerMessage.includes('pypi') || lowerMessage.includes('حزمة')) {
+                return responses.packages;
+            } else if (lowerMessage.includes('experience') || lowerMessage.includes('خبرة')) {
+                return responses.experience;
+            } else if (lowerMessage.includes('contact') || lowerMessage.includes('تواصل')) {
+                return responses.contact;
+            } else if (lowerMessage.includes('consultation') || lowerMessage.includes('استشارة')) {
+                return responses.consultation;
+            } else {
+                return responses.default;
+            }
+        }
+
+        // Handle Enter key in chat input
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatInput = document.getElementById('chatInput');
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+
+        // Impact Visualization Functions
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+
+        function initImpactAnimations() {
+            const impactCards = document.querySelectorAll('.impact-card');
+            const chartBars = document.querySelectorAll('.bar-fill');
+            
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const impactObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate counters
+                        const numberElement = entry.target.querySelector('.impact-number');
+                        if (numberElement && !numberElement.classList.contains('animated')) {
+                            const target = parseInt(numberElement.getAttribute('data-target'));
+                            animateCounter(numberElement, target);
+                            numberElement.classList.add('animated');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            const chartObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bars = entry.target.querySelectorAll('.bar-fill');
+                        bars.forEach((bar, index) => {
+                            setTimeout(() => {
+                                bar.classList.add('animate');
+                            }, index * 200);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe impact cards
+            impactCards.forEach(card => {
+                impactObserver.observe(card);
+            });
+
+            // Observe chart container
+            const chartContainer = document.querySelector('.chart-visual');
+            if (chartContainer) {
+                chartObserver.observe(chartContainer);
+            }
+        }
+
+        // Enhanced particle interactions
+        function createInteractiveParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (!particlesContainer) return;
+            
+            // Add mouse follow effect for particles
+            let mouseX = 0, mouseY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                // Create temporary particle at mouse position
+                if (Math.random() < 0.1) { // 10% chance
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = mouseX + 'px';
+                    particle.style.top = mouseY + 'px';
+                    particle.style.animationDuration = '2s';
+                    particle.style.opacity = '0.6';
+                    
+                    particlesContainer.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                    }, 2000);
+                }
+            });
+        }
+
+        // Enhanced scroll reveal animations
+        function initEnhancedScrollAnimations() {
+            const elements = document.querySelectorAll('.project-card, .tool-card, .impact-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            entry.target.classList.add('revealed');
+                        }, index * 100);
+                    }
+                });
+            }, observerOptions);
+
+            elements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(50px)';
+                element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                revealObserver.observe(element);
+            });
+        }
+
+        // Fun Easter Egg: Konami Code
+        function initKonamiCode() {
+            const konamiCode = [
+                'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+                'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+                'KeyB', 'KeyA'
+            ];
+            let userInput = [];
+            
+            document.addEventListener('keydown', (e) => {
+                userInput.push(e.code);
+                userInput = userInput.slice(-konamiCode.length);
+                
+                if (userInput.join(',') === konamiCode.join(',')) {
+                    // Easter egg: Rain of BrainSAIT logos!
+                    createLogoRain();
+                    showEasterEggMessage();
+                }
+            });
+        }
+
+        function createLogoRain() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const logo = document.createElement('div');
+                    logo.innerHTML = '🧠';
+                    logo.style.position = 'fixed';
+                    logo.style.top = '-50px';
+                    logo.style.left = Math.random() * window.innerWidth + 'px';
+                    logo.style.fontSize = '2rem';
+                    logo.style.zIndex = '9999';
+                    logo.style.pointerEvents = 'none';
+                    logo.style.animation = 'fall 3s linear forwards';
+                    
+                    document.body.appendChild(logo);
+                    
+                    setTimeout(() => {
+                        document.body.removeChild(logo);
+                    }, 3000);
+                }, i * 100);
+            }
+            
+            // Add fall animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(calc(100vh + 50px)) rotate(360deg);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function showEasterEggMessage() {
+            const message = document.createElement('div');
+            message.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+                    color: white;
+                    padding: 2rem;
+                    border-radius: 20px;
+                    z-index: 10000;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+                ">
+                    🎉 Konami Code Activated! 🎉<br>
+                    <span style="font-size: 0.9rem; opacity: 0.8;">
+                        BrainSAIT Easter Egg Unlocked!
+                    </span>
+                </div>
+            `;
+            
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                document.body.removeChild(message);
+            }, 4000);
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing...');
+            
+            // Error handling for missing elements
+            try {
+                // Load saved preferences
+                const savedTheme = localStorage.getItem('preferred-theme') || 'dark';
+                const savedLang = localStorage.getItem('preferred-language') || 'en';
+            
+            // Apply saved theme
+            currentTheme = savedTheme;
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                const themeIcon = document.getElementById('theme-icon');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+                document.body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)';
+            }
+            
+            // Apply saved language
+            setLanguage(savedLang);
+            
+                // Initialize components
+                initParticles();
+                initMagneticEffect();
+                initScrollAnimations();
+                initTimelineAnimation();
+                initImpactAnimations();
+                initEnhancedScrollAnimations();
+                createInteractiveParticles();
+                initKonamiCode();
+                
+                // Update particles theme
+                updateParticlesTheme();
+            } catch (error) {
+                console.error('Error during initialization:', error);
+            }
+        });
+
+        // Performance optimization and loading states
+        window.addEventListener('load', function() {
+            // Remove loading states, add any final optimizations
+            document.body.style.opacity = '1';
+            
+            // Preload critical resources
+            const criticalImages = [
+                'https://gravatar.com/avatar/fadil369'
+            ];
+            
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+        
+        // Handle offline/online status
+        window.addEventListener('online', function() {
+            console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', function() {
+            console.log('Connection lost');
+        });
+    </script>
+</body>
+</html>

@@ -1,27 +1,39 @@
 {
-  "name": "dr-fadil-profile-tests",
-  "version": "1.0.0",
-  "description": "Comprehensive testing suite for Dr. Fadil's professional profile page",
-  "main": "automated-test.js",
+  "name": "brainsait-dr-fadil-profile",
+  "version": "2.0.0",
+  "description": "Dr. Mohamed El Fadil's professional profile - BrainSAIT Healthcare AI Innovation Platform",
+  "main": "src/assets/js/main.js",
   "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "node tools/build.js",
     "test": "node automated-test.js",
-    "test:browser": "open test-suite.html",
-    "test:headless": "node automated-test.js",
-    "install-deps": "npm install puppeteer --save-dev"
+    "test:performance": "lighthouse http://localhost:8000 --output=html --output-path=./reports/lighthouse-report.html",
+    "optimize": "node tools/optimize.js",
+    "lint": "eslint src/assets/js/**/*.js",
+    "lint:fix": "eslint src/assets/js/**/*.js --fix",
+    "validate-html": "html-validate *.html",
+    "compress": "gzip -k dist/**/*.{css,js,html}",
+    "deploy": "npm run build && npm run optimize",
+    "clean": "rm -rf dist/ reports/ *.log",
+    "audit": "npm audit && lighthouse http://localhost:8000 --output=json | jq '.categories.performance.score'"
   },
   "keywords": [
-    "testing",
-    "puppeteer",
-    "browser-automation",
     "healthcare",
-    "medical-profile",
-    "responsive-design",
-    "accessibility"
+    "ai",
+    "brainsait",
+    "medical",
+    "profile",
+    "physician",
+    "technology",
+    "innovation"
   ],
-  "author": "Dr. Mohamed El Fadil",
+  "author": "Dr. Mohamed El Fadil <contact@brainsait.io>",
   "license": "MIT",
   "devDependencies": {
-    "puppeteer": "^21.0.0"
+    "puppeteer": "^21.0.0",
+    "eslint": "^8.50.0",
+    "html-validate": "^8.5.0",
+    "lighthouse": "^11.0.0"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -30,8 +42,8 @@
     "type": "git",
     "url": "https://github.com/brainsait/dr-fadil-profile"
   },
+  "homepage": "https://fadil369.dev",
   "bugs": {
     "url": "https://github.com/brainsait/dr-fadil-profile/issues"
-  },
-  "homepage": "https://fadil369.dev"
+  }
 }

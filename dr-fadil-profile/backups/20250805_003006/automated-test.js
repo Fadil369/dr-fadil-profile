@@ -21,7 +21,7 @@ class DrFadilProfileTester {
     }
 
     async initialize() {
-
+        console.log('🚀 Starting Dr. Fadil Profile Test Suite...\n');
         
         this.browser = await puppeteer.launch({
             headless: 'new',
@@ -34,17 +34,17 @@ class DrFadilProfileTester {
         // Enable console logging from the page
         this.page.on('console', msg => {
             if (msg.type() === 'error') {
-
+                console.log('❌ Browser Error:', msg.text());
             }
         });
         
         // Enable error handling
         this.page.on('pageerror', error => {
-
+            console.log('❌ Page Error:', error.message);
         });
         
         await this.page.goto(this.testUrl, { waitUntil: 'networkidle0' });
-
+        console.log('✅ Page loaded successfully');
     }
 
     async runAllTests() {
@@ -60,7 +60,7 @@ class DrFadilProfileTester {
         ];
 
         for (const suite of testSuites) {
-
+            console.log(`\n🧪 Running ${suite.name}...`);
             await this[suite.method]();
         }
 
@@ -654,7 +654,7 @@ class DrFadilProfileTester {
     async runTest(testName, testFunction) {
         try {
             const result = await testFunction();
-
+            console.log(`  ✅ ${testName}: ${result}`);
             this.testResults.passed++;
             this.testResults.details.push({
                 name: testName,
@@ -662,7 +662,7 @@ class DrFadilProfileTester {
                 message: result
             });
         } catch (error) {
-
+            console.log(`  ❌ ${testName}: ${error.message}`);
             this.testResults.failed++;
             this.testResults.details.push({
                 name: testName,
@@ -698,16 +698,16 @@ class DrFadilProfileTester {
         const htmlReportPath = path.join(__dirname, 'test-report.html');
         fs.writeFileSync(htmlReportPath, htmlReport);
         
-
-
-
-
-
-
-
-
-
-
+        console.log(`\n📊 TEST SUITE COMPLETE`);
+        console.log(`======================`);
+        console.log(`Total Tests: ${total}`);
+        console.log(`✅ Passed: ${this.testResults.passed}`);
+        console.log(`❌ Failed: ${this.testResults.failed}`);
+        console.log(`⚠️  Warnings: ${this.testResults.warnings}`);
+        console.log(`📈 Pass Rate: ${passRate}%`);
+        console.log(`\n📄 Reports generated:`);
+        console.log(`   JSON: ${reportPath}`);
+        console.log(`   HTML: ${htmlReportPath}`);
     }
 
     generateRecommendations() {

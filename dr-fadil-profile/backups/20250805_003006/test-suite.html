@@ -533,7 +533,7 @@
                 this.testIframe.onload = () => {
                     this.testDocument = this.testIframe.contentDocument;
                     this.testWindow = this.testIframe.contentWindow;
-
+                    console.log('Test iframe loaded successfully');
                 };
             }
             
@@ -1360,12 +1360,12 @@
                 const total = this.passedCount + this.failedCount + this.warningCount;
                 const passRate = ((this.passedCount / total) * 100).toFixed(1);
                 
-
-
-
-
-
-
+                console.log('=== TEST SUITE REPORT ===');
+                console.log(`Total Tests: ${total}`);
+                console.log(`Passed: ${this.passedCount}`);
+                console.log(`Failed: ${this.failedCount}`);
+                console.log(`Warnings: ${this.warningCount}`);
+                console.log(`Pass Rate: ${passRate}%`);
                 
                 // Update section statuses
                 this.updateSectionStatuses();
