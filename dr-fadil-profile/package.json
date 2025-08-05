@@ -30,10 +30,10 @@
   "author": "Dr. Mohamed El Fadil <contact@brainsait.io>",
   "license": "MIT",
   "devDependencies": {
-    "puppeteer": "^21.0.0",
+    "puppeteer": "^24.15.0",
     "eslint": "^8.50.0",
     "html-validate": "^8.5.0",
-    "lighthouse": "^11.0.0"
+    "lighthouse": "^12.8.1"
   },
   "engines": {
     "node": ">=16.0.0"
