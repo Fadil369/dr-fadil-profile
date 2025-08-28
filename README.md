@@ -7,11 +7,20 @@
 
 ## 🚀 Recent Updates (August 2025)
 
-### Major Website Redesign & PyPI Integration
+### Major Website Redesign & PyPI Integration + GraphQL API
 
-We've completely redesigned Dr. Mohamed Elfadil's professional profile website with cutting-edge features and comprehensive integration of his latest open-source contributions.
+We've completely redesigned Dr. Mohamed Elfadil's professional profile website with cutting-edge features, comprehensive integration of his latest open-source contributions, and a new GraphQL API powered by GraphQL Yoga.
 
 ## ✨ What's New
+
+### 🔗 GraphQL API Integration (NEW!)
+
+- **GraphQL Yoga Server**: Modern GraphQL API for healthcare services and professional information
+- **Healthcare-Specific Schema**: Custom GraphQL schema designed for medical professionals
+- **Interactive API Demo**: Live GraphQL playground and demo interface
+- **Real-time Data**: Dynamic content loading for services, appointments, and health tips
+- **Contact Form API**: GraphQL mutations for contact forms and appointment requests
+- **Developer-Friendly**: Complete API documentation and client integration examples
 
 ### 🔬 PyPI Open Source Projects Showcase
 
@@ -112,6 +121,74 @@ pip install brainsait-pybrain
 ```bash
 # Install both packages for complete healthcare system unification
 pip install brainsait-pyheart brainsait-pybrain
+```
+
+## 🔗 GraphQL API Integration
+
+### Healthcare API with GraphQL Yoga
+
+This website now includes a powerful GraphQL API that provides programmatic access to Dr. Fadil's healthcare services and professional information.
+
+#### 🚀 Quick Start
+
+```bash
+# Start the GraphQL server
+npm install
+npm run dev
+
+# API available at: http://localhost:4000/graphql
+# GraphiQL playground: http://localhost:4000/graphql
+```
+
+#### 📋 Available Endpoints
+
+**Queries:**
+- `profile` - Complete doctor profile and credentials
+- `services` - Available medical services and consultations  
+- `specializations` - Areas of medical expertise
+- `contactInfo` - Contact details and clinic hours
+- `innovations` - Healthcare technology innovations
+- `publications` - Medical research publications
+- `healthTip` - Daily health tips and advice
+
+**Mutations:**
+- `submitContactForm` - Submit patient inquiries
+- `requestAppointment` - Schedule medical appointments
+- `subscribeNewsletter` - Healthcare newsletter subscription
+
+#### 🔍 Example Query
+
+```graphql
+query GetDoctorServices {
+  profile {
+    name
+    title
+    specializations
+  }
+  services {
+    name
+    description
+    category
+    isAvailable
+  }
+}
+```
+
+#### 📚 Documentation
+
+- **[GraphQL API README](GraphQL_API_README.md)** - Complete API documentation
+- **[Deployment Guide](DEPLOYMENT_GRAPHQL.md)** - Production deployment instructions
+- **[Demo Page](graphql-demo.html)** - Interactive API demonstration
+
+#### 🏥 Healthcare-Specific Features
+
+- HIPAA compliance considerations
+- Medical appointment scheduling
+- Patient contact form processing
+- Healthcare innovation showcase
+- Research publication database
+- Real-time health tips and advice
+
 ```
 
 ## 🎯 Key Sections

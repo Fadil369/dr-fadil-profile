@@ -96,3 +96,13 @@ jspm_packages/
 
 # DynamoDB Local files
 .dynamodb/
+
+# GraphQL
+schema.json
+introspection.json
+
+# Docker
+docker-compose.override.yml
+
+# Temporary files
+/tmp/
