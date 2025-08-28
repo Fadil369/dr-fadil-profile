@@ -118,6 +118,13 @@
             --accent-green: #10b981;
             --accent-orange: #f59e0b;
             
+            /* BrainSAIT Copilot Color Palette */
+            --brainsait-midnight-blue: #1a365d;
+            --brainsait-medical-blue: #2b6cb8;
+            --brainsait-signal-teal: #0ea5e9;
+            --brainsait-deep-orange: #ea580c;
+            --brainsait-professional-gray: #64748b;
+            
             /* Medical Typography Scale */
             --font-medical-primary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-medical-arabic: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', serif;
@@ -2527,6 +2534,120 @@
             outline: 2px solid var(--accent-cyan);
             outline-offset: 2px;
         }
+
+        /* Partnership Section Specific Styles */
+        .mesh-gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, var(--brainsait-signal-teal) 0%, transparent 30%),
+                radial-gradient(circle at 80% 40%, var(--brainsait-medical-blue) 0%, transparent 30%),
+                radial-gradient(circle at 40% 80%, var(--brainsait-midnight-blue) 0%, transparent 30%),
+                radial-gradient(circle at 90% 90%, var(--brainsait-deep-orange) 0%, transparent 30%);
+            opacity: 0.1;
+            animation: meshGradientShift 15s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes meshGradientShift {
+            0%, 100% {
+                background: 
+                    radial-gradient(circle at 20% 20%, var(--brainsait-signal-teal) 0%, transparent 30%),
+                    radial-gradient(circle at 80% 40%, var(--brainsait-medical-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 40% 80%, var(--brainsait-midnight-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 90% 90%, var(--brainsait-deep-orange) 0%, transparent 30%);
+            }
+            25% {
+                background: 
+                    radial-gradient(circle at 60% 10%, var(--brainsait-signal-teal) 0%, transparent 30%),
+                    radial-gradient(circle at 30% 70%, var(--brainsait-medical-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 80% 30%, var(--brainsait-midnight-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 10% 90%, var(--brainsait-deep-orange) 0%, transparent 30%);
+            }
+            50% {
+                background: 
+                    radial-gradient(circle at 90% 30%, var(--brainsait-signal-teal) 0%, transparent 30%),
+                    radial-gradient(circle at 20% 80%, var(--brainsait-medical-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 70% 20%, var(--brainsait-midnight-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 40% 60%, var(--brainsait-deep-orange) 0%, transparent 30%);
+            }
+            75% {
+                background: 
+                    radial-gradient(circle at 30% 60%, var(--brainsait-signal-teal) 0%, transparent 30%),
+                    radial-gradient(circle at 70% 20%, var(--brainsait-medical-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 20% 90%, var(--brainsait-midnight-blue) 0%, transparent 30%),
+                    radial-gradient(circle at 80% 50%, var(--brainsait-deep-orange) 0%, transparent 30%);
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .model-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Partnership responsive adjustments */
+        @media (max-width: 768px) {
+            .partnership-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .features-grid,
+            .models-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .vision-pillars {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .partnership-cta {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* RTL Support for Partnership Section */
+        body.arabic .feature-card,
+        body.arabic .stat-card,
+        body.arabic .model-card {
+            text-align: right;
+        }
+
+        body.arabic .feature-icon,
+        body.arabic .model-icon,
+        body.arabic .pillar-icon {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+
+        body.arabic .model-header {
+            flex-direction: row-reverse;
+        }
+
+        body.arabic .model-header .model-icon {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
@@ -2728,6 +2849,10 @@
                 <li><a href="#tools">
                     <span class="en-content">Tools</span>
                     <span class="ar-content hidden">الأدوات</span>
+                </a></li>
+                <li><a href="#partnerships">
+                    <span class="en-content">Partnerships</span>
+                    <span class="ar-content hidden">الشراكات</span>
                 </a></li>
                 <li><a href="#consultation">
                     <span class="en-content">Consultation</span>
@@ -3373,6 +3498,371 @@
                         <h5>Global Standards</h5>
                         <p>Supports FHIR R4, HL7 v2.x, and custom formats</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partnerships Section -->
+    <section id="partnerships" class="section" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); position: relative; overflow: hidden;">
+        <!-- Mesh Gradient Background -->
+        <div class="mesh-gradient-bg"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <!-- Partnership Hero -->
+            <div class="partnership-hero" style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title" style="background: linear-gradient(135deg, var(--brainsait-signal-teal), var(--brainsait-medical-blue), var(--brainsait-midnight-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.5rem;">
+                    <i class="fas fa-handshake" style="color: var(--brainsait-signal-teal); margin-right: 15px;"></i>
+                    <span class="en-content">Strategic Partnerships</span>
+                    <span class="ar-content hidden">الشراكات الاستراتيجية</span>
+                </h2>
+                <p class="section-subtitle" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 2rem;">
+                    <span class="en-content">
+                        Join BrainSAIT's Vision 2030-aligned ecosystem and transform healthcare through AI innovation. 
+                        Build the future of Saudi digital health together.
+                    </span>
+                    <span class="ar-content hidden">
+                        انضم إلى نظام برينسايت المتوافق مع رؤية 2030 وحوّل الرعاية الصحية من خلال الابتكار في الذكاء الاصطناعي.
+                        ابنِ مستقبل الصحة الرقمية السعودية معاً.
+                    </span>
+                </p>
+                
+                <!-- Partnership Stats -->
+                <div class="partnership-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="stat-card glass" style="padding: 2rem; text-align: center; border: 1px solid var(--brainsait-signal-teal);">
+                        <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--brainsait-signal-teal); margin-bottom: 0.5rem;">50+</div>
+                        <div class="stat-label" style="color: var(--text-secondary);">
+                            <span class="en-content">Healthcare Partners</span>
+                            <span class="ar-content hidden">شريك رعاية صحية</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass" style="padding: 2rem; text-align: center; border: 1px solid var(--brainsait-medical-blue);">
+                        <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--brainsait-medical-blue); margin-bottom: 0.5rem;">15+</div>
+                        <div class="stat-label" style="color: var(--text-secondary);">
+                            <span class="en-content">AI Implementations</span>
+                            <span class="ar-content hidden">تطبيق ذكاء اصطناعي</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass" style="padding: 2rem; text-align: center; border: 1px solid var(--brainsait-deep-orange);">
+                        <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--brainsait-deep-orange); margin-bottom: 0.5rem;">95%</div>
+                        <div class="stat-label" style="color: var(--text-secondary);">
+                            <span class="en-content">Success Rate</span>
+                            <span class="ar-content hidden">معدل النجاح</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partnership Features -->
+            <div class="partnership-features" style="margin: 4rem 0;">
+                <h3 style="text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--brainsait-midnight-blue);">
+                    <span class="en-content">Partnership Benefits</span>
+                    <span class="ar-content hidden">فوائد الشراكة</span>
+                </h3>
+                
+                <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                    <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-signal-teal); transition: all 0.3s ease;">
+                        <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-signal-teal), var(--brainsait-medical-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-brain" style="font-size: 2rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--brainsait-signal-teal); margin-bottom: 1rem; font-size: 1.5rem;">
+                            <span class="en-content">AI Innovation Hub</span>
+                            <span class="ar-content hidden">مركز الابتكار بالذكاء الاصطناعي</span>
+                        </h4>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">
+                            <span class="en-content">
+                                Access cutting-edge AI models, healthcare NLP, and predictive analytics. 
+                                Leverage our PyPI packages and custom solutions for rapid deployment.
+                            </span>
+                            <span class="ar-content hidden">
+                                احصل على نماذج الذكاء الاصطناعي المتطورة ومعالجة اللغة الطبيعية الطبية والتحليلات التنبؤية.
+                                استفد من حزم PyPI والحلول المخصصة للنشر السريع.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-medical-blue); transition: all 0.3s ease;">
+                        <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-medical-blue), var(--brainsait-midnight-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-hospital" style="font-size: 2rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--brainsait-medical-blue); margin-bottom: 1rem; font-size: 1.5rem;">
+                            <span class="en-content">Healthcare Integration</span>
+                            <span class="ar-content hidden">التكامل الصحي</span>
+                        </h4>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">
+                            <span class="en-content">
+                                FHIR R4 and HL7 v2.x compliance, EMR integration, and interoperability solutions. 
+                                Saudi CBAHI and GASTAT standards adherence.
+                            </span>
+                            <span class="ar-content hidden">
+                                امتثال FHIR R4 و HL7 v2.x، تكامل السجلات الطبية الإلكترونية، وحلول قابلية التشغيل البيني.
+                                الالتزام بمعايير CBAHI و GASTAT السعودية.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-deep-orange); transition: all 0.3s ease;">
+                        <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-deep-orange), var(--brainsait-signal-teal)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-rocket" style="font-size: 2rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--brainsait-deep-orange); margin-bottom: 1rem; font-size: 1.5rem;">
+                            <span class="en-content">Rapid Deployment</span>
+                            <span class="ar-content hidden">النشر السريع</span>
+                        </h4>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">
+                            <span class="en-content">
+                                30-day implementation cycles, cloud-native architecture, and automated testing. 
+                                Dockerized solutions with Cloudflare integration.
+                            </span>
+                            <span class="ar-content hidden">
+                                دورات تنفيذ 30 يوماً، هندسة السحابة الأصلية، والاختبار الآلي.
+                                حلول Docker مع تكامل Cloudflare.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-professional-gray); transition: all 0.3s ease;">
+                        <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-professional-gray), var(--brainsait-midnight-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i class="fas fa-shield-alt" style="font-size: 2rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--brainsait-professional-gray); margin-bottom: 1rem; font-size: 1.5rem;">
+                            <span class="en-content">Saudi Compliance</span>
+                            <span class="ar-content hidden">الامتثال السعودي</span>
+                        </h4>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">
+                            <span class="en-content">
+                                SDAIA privacy standards, NCA cybersecurity compliance, and ZATCA integration. 
+                                Vision 2030 alignment and Etimad procurement ready.
+                            </span>
+                            <span class="ar-content hidden">
+                                معايير خصوصية SDAIA، امتثال الأمن السيبراني NCA، وتكامل ZATCA.
+                                توافق رؤية 2030 وجاهزية شراء اعتماد.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision Alignment -->
+            <div class="vision-alignment glass" style="padding: 3rem; margin: 4rem 0; border: 1px solid var(--brainsait-midnight-blue); background: linear-gradient(135deg, rgba(26, 54, 93, 0.1), rgba(43, 108, 184, 0.1));">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-size: 2rem; color: var(--brainsait-midnight-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-flag" style="margin-right: 15px;"></i>
+                        <span class="en-content">Vision 2030 Alignment</span>
+                        <span class="ar-content hidden">توافق رؤية 2030</span>
+                    </h3>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                        <span class="en-content">
+                            BrainSAIT partnerships directly support Saudi Arabia's transformation into a digital healthcare leader, 
+                            enhancing citizen wellbeing and economic diversification.
+                        </span>
+                        <span class="ar-content hidden">
+                            شراكات برينسايت تدعم بشكل مباشر تحول المملكة العربية السعودية إلى رائدة في الرعاية الصحية الرقمية،
+                            وتعزز رفاهية المواطنين والتنويع الاقتصادي.
+                        </span>
+                    </p>
+                </div>
+
+                <div class="vision-pillars" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="pillar" style="text-align: center; padding: 1.5rem;">
+                        <div class="pillar-icon" style="width: 60px; height: 60px; background: var(--brainsait-signal-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-heartbeat" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="color: var(--brainsait-signal-teal); margin-bottom: 0.5rem;">
+                            <span class="en-content">Health & Wellbeing</span>
+                            <span class="ar-content hidden">الصحة والرفاهية</span>
+                        </h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                            <span class="en-content">AI-powered preventive care and precision medicine</span>
+                            <span class="ar-content hidden">الرعاية الوقائية والطب الدقيق بالذكاء الاصطناعي</span>
+                        </p>
+                    </div>
+
+                    <div class="pillar" style="text-align: center; padding: 1.5rem;">
+                        <div class="pillar-icon" style="width: 60px; height: 60px; background: var(--brainsait-medical-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-industry" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="color: var(--brainsait-medical-blue); margin-bottom: 0.5rem;">
+                            <span class="en-content">Economic Diversification</span>
+                            <span class="ar-content hidden">التنويع الاقتصادي</span>
+                        </h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                            <span class="en-content">Healthcare technology sector development</span>
+                            <span class="ar-content hidden">تطوير قطاع تقنيات الرعاية الصحية</span>
+                        </p>
+                    </div>
+
+                    <div class="pillar" style="text-align: center; padding: 1.5rem;">
+                        <div class="pillar-icon" style="width: 60px; height: 60px; background: var(--brainsait-deep-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-graduation-cap" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="color: var(--brainsait-deep-orange); margin-bottom: 0.5rem;">
+                            <span class="en-content">Digital Excellence</span>
+                            <span class="ar-content hidden">التميز الرقمي</span>
+                        </h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                            <span class="en-content">AI education and workforce development</span>
+                            <span class="ar-content hidden">تعليم الذكاء الاصطناعي وتطوير القوى العاملة</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partnership Models -->
+            <div class="partnership-models" style="margin: 4rem 0;">
+                <h3 style="text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--brainsait-midnight-blue);">
+                    <span class="en-content">Partnership Models</span>
+                    <span class="ar-content hidden">نماذج الشراكة</span>
+                </h3>
+
+                <div class="models-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="model-card glass" style="padding: 2rem; border: 1px solid var(--brainsait-signal-teal); position: relative; overflow: hidden;">
+                        <div class="model-header" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div class="model-icon" style="width: 50px; height: 50px; background: var(--brainsait-signal-teal); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-code" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--brainsait-signal-teal); margin-bottom: 0.25rem;">
+                                    <span class="en-content">Technology Partnership</span>
+                                    <span class="ar-content hidden">شراكة تقنية</span>
+                                </h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                    <span class="en-content">From 62,000 SAR</span>
+                                    <span class="ar-content hidden">من 62,000 ريال سعودي</span>
+                                </p>
+                            </div>
+                        </div>
+                        <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;"></i>
+                                <span class="en-content">Custom AI Development</span>
+                                <span class="ar-content hidden">تطوير ذكاء اصطناعي مخصص</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;"></i>
+                                <span class="en-content">PyPI Integration</span>
+                                <span class="ar-content hidden">تكامل PyPI</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;"></i>
+                                <span class="en-content">12 Months Support</span>
+                                <span class="ar-content hidden">دعم 12 شهر</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="model-card glass" style="padding: 2rem; border: 1px solid var(--brainsait-medical-blue); position: relative; overflow: hidden;">
+                        <div class="model-header" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div class="model-icon" style="width: 50px; height: 50px; background: var(--brainsait-medical-blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-handshake" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--brainsait-medical-blue); margin-bottom: 0.25rem;">
+                                    <span class="en-content">Strategic Alliance</span>
+                                    <span class="ar-content hidden">تحالف استراتيجي</span>
+                                </h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                    <span class="en-content">Revenue Sharing</span>
+                                    <span class="ar-content hidden">مشاركة الإيرادات</span>
+                                </p>
+                            </div>
+                        </div>
+                        <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;"></i>
+                                <span class="en-content">Joint Innovation Programs</span>
+                                <span class="ar-content hidden">برامج الابتكار المشتركة</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;"></i>
+                                <span class="en-content">Market Co-Development</span>
+                                <span class="ar-content hidden">التطوير المشترك للسوق</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;"></i>
+                                <span class="en-content">Shared Expertise</span>
+                                <span class="ar-content hidden">الخبرة المشتركة</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="model-card glass" style="padding: 2rem; border: 1px solid var(--brainsait-deep-orange); position: relative; overflow: hidden;">
+                        <div class="model-header" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div class="model-icon" style="width: 50px; height: 50px; background: var(--brainsait-deep-orange); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-building" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--brainsait-deep-orange); margin-bottom: 0.25rem;">
+                                    <span class="en-content">Enterprise Solution</span>
+                                    <span class="ar-content hidden">حل المؤسسات</span>
+                                </h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                    <span class="en-content">Custom Pricing</span>
+                                    <span class="ar-content hidden">تسعير مخصص</span>
+                                </p>
+                            </div>
+                        </div>
+                        <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;"></i>
+                                <span class="en-content">Full Platform Access</span>
+                                <span class="ar-content hidden">وصول كامل للمنصة</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;"></i>
+                                <span class="en-content">Dedicated Support Team</span>
+                                <span class="ar-content hidden">فريق دعم مخصص</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;"></i>
+                                <span class="en-content">SLA Guarantee</span>
+                                <span class="ar-content hidden">ضمان SLA</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partnership CTA -->
+            <div class="partnership-cta" style="background: linear-gradient(135deg, var(--brainsait-midnight-blue), var(--brainsait-medical-blue), var(--brainsait-signal-teal)); padding: 3rem; border-radius: 20px; text-align: center; margin: 4rem 0;">
+                <h3 style="color: white; font-size: 2.25rem; margin-bottom: 1rem;">
+                    <span class="en-content">Ready to Transform Healthcare?</span>
+                    <span class="ar-content hidden">جاهز لتحويل الرعاية الصحية؟</span>
+                </h3>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <span class="en-content">
+                        Join leading healthcare organizations in Saudi Arabia who trust BrainSAIT 
+                        for their AI transformation journey.
+                    </span>
+                    <span class="ar-content hidden">
+                        انضم إلى منظمات الرعاية الصحية الرائدة في المملكة العربية السعودية التي تثق ببرينسايت
+                        في رحلة التحول بالذكاء الاصطناعي.
+                    </span>
+                </p>
+                <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="openConsultationModal()" style="background: white; color: var(--brainsait-midnight-blue); border: none; padding: 1rem 2rem; font-weight: 600;">
+                        <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                        <span class="en-content">Schedule Partnership Call</span>
+                        <span class="ar-content hidden">جدولة مكالمة شراكة</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.open('mailto:partnerships@brainsait.com?subject=Partnership Inquiry', '_blank')" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; font-weight: 600;">
+                        <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                        <span class="en-content">Contact Partnerships</span>
+                        <span class="ar-content hidden">تواصل مع قسم الشراكات</span>
+                    </button>
+                </div>
+                
+                <!-- Partnership Contact Info -->
+                <div class="partnership-contact" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem;">
+                        <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                        partnerships@brainsait.com
+                    </p>
+                    <p style="color: rgba(255, 255, 255, 0.8);">
+                        <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                        <span class="en-content">+966 (11) 123-4567</span>
+                        <span class="ar-content hidden">٤٥٦٧-١٢٣-١١ ٩٦٦+</span>
+                    </p>
                 </div>
             </div>
         </div>
