@@ -1,13 +1,18 @@
 {
   "name": "dr-fadil-profile",
   "version": "1.0.0",
-  "description": "Professional portfolio for Dr. Mohamed Al Fadil - Healthcare Technology Innovator",
+  "description": "Professional portfolio for Dr. Mohamed Al Fadil - Healthcare Technology Innovator with GraphQL API",
   "main": "index.html",
   "scripts": {
     "validate": "htmlhint index.html",
     "deploy": "echo 'Static site - no build required'",
     "serve": "npx serve .",
-    "test": "htmlhint index.html --config .htmlhintrc"
+    "test": "htmlhint index.html --config .htmlhintrc",
+    "dev": "node server/index.js",
+    "start": "node server/index.js",
+    "graphql": "node server/index.js",
+    "build": "echo 'Building static assets...' && npm run validate",
+    "check": "node --check server/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +26,11 @@
     "cloudflare-pages",
     "pwa",
     "mobile-first",
-    "brainsait"
+    "brainsait",
+    "graphql",
+    "api",
+    "medical",
+    "graphql-yoga"
   ],
   "author": "Dr. Mohamed Al Fadil <Fadil369@hotmail.com>",
   "license": "MIT",
@@ -29,6 +38,10 @@
     "url": "https://github.com/Fadil369/dr-fadil-profile/issues"
   },
   "homepage": "https://thefadil.site",
+  "dependencies": {
+    "graphql": "^16.11.0",
+    "graphql-yoga": "^5.0.0"
+  },
   "devDependencies": {
     "htmlhint": "^1.1.4",
     "serve": "^14.2.1"
