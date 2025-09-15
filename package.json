@@ -43,7 +43,7 @@
     "graphql-yoga": "^5.0.0"
   },
   "devDependencies": {
-    "htmlhint": "^1.1.4",
+    "htmlhint": "^1.7.0",
     "serve": "^14.2.1"
   },
   "engines": {
