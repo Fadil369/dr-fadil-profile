@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "htmlhint": "^1.1.4",
-    "serve": "^14.2.1"
+    "serve": "^14.2.5"
   },
   "engines": {
     "node": ">=18.0.0",
