@@ -6476,6 +6476,17 @@
                 }, 1000 + Math.random() * 1000);
             }
 
+            // Escape HTML special characters in user input
+            escapeHTML(str) {
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;')
+                    .replace(/\//g, '&#x2F;');
+            }
+
             addMessage(content, type) {
                 const messagesContainer = document.getElementById('chatMessages');
                 const messageHTML = `
@@ -6484,7 +6495,7 @@
                             <i class="fas fa-${type === 'user' ? 'user' : 'stethoscope'}"></i>
                         </div>
                         <div class="message-content">
-                            <p>${content}</p>
+                            <p>${this.escapeHTML(content)}</p>
                         </div>
                     </div>
                 `;
