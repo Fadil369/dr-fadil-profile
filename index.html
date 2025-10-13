@@ -50,6 +50,61 @@
     <!-- Load EmailJS asynchronously after critical path -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" as="script">
     
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr. Mohamed El Fadil",
+      "jobTitle": "Physician Entrepreneur & AI Healthcare Innovator",
+      "description": "Physician entrepreneur, founder of BrainSAIT, PyPI developer. Transforming healthcare through AI with brainsait-pyheart and brainsait-pybrain packages.",
+      "url": "https://thefadil.site",
+      "sameAs": [
+        "https://www.linkedin.com/in/fadil369",
+        "https://github.com/Fadil369",
+        "https://pypi.org/user/Fadil369/",
+        "https://twitter.com/brainsait369"
+      ],
+      "email": "brainsait@hotmail.com",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Medical School"
+      },
+      "knowsAbout": [
+        "Healthcare AI",
+        "Medical Technology",
+        "FHIR",
+        "HL7",
+        "Clinical NLP",
+        "Digital Health",
+        "Healthcare Interoperability"
+      ],
+      "founder": {
+        "@type": "Organization",
+        "@id": "https://brainsait.io/#organization"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://brainsait.io/#organization",
+      "name": "BrainSAIT",
+      "url": "https://brainsait.io",
+      "logo": "https://brainsait.io/logo.png",
+      "description": "Healthcare AI innovation platform transforming medical practice through intelligent solutions",
+      "founder": {
+        "@type": "Person",
+        "name": "Dr. Mohamed El Fadil"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/brainsait",
+        "https://github.com/BrainSAIT"
+      ]
+    }
+    </script>
+    
     <!-- Critical CSS inlined for immediate rendering with performance optimizations -->
     <style>
         /* Critical above-the-fold styles with GPU acceleration */
@@ -2673,15 +2728,15 @@
             <span>HR: <span class="biometric-value" id="heartRate">72</span> BPM</span>
         </div>
         <div class="biometric-item">
-            <i class="fas fa-thermometer-half" style="color: var(--accent-orange);"></i>
+            <i class="fas fa-thermometer-half" style="color: var(--accent-orange);" aria-hidden="true"></i>
             <span>Temp: <span class="biometric-value" id="temperature">98.6</span>°F</span>
         </div>
         <div class="biometric-item">
-            <i class="fas fa-lungs" style="color: var(--accent-green);"></i>
+            <i class="fas fa-lungs" style="color: var(--accent-green);" aria-hidden="true"></i>
             <span>SpO2: <span class="biometric-value" id="oxygenSat">98</span>%</span>
         </div>
         <div class="biometric-item">
-            <i class="fas fa-tint" style="color: var(--accent-purple);"></i>
+            <i class="fas fa-tint" style="color: var(--accent-purple);" aria-hidden="true"></i>
             <span>BP: <span class="biometric-value" id="bloodPressure">120/80</span></span>
         </div>
     </div>
@@ -2690,18 +2745,18 @@
     <div class="impact-dashboard" id="impactDashboard">
         <div class="dashboard-header">
             <h4>
-                <i class="fas fa-chart-line"></i>
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
                 <span class="en-content">Real-time Impact</span>
                 <span class="ar-content hidden">التأثير في الوقت الفعلي</span>
             </h4>
             <button class="dashboard-toggle" onclick="toggleImpactDashboard()" aria-label="Toggle dashboard">
-                <i class="fas fa-minus"></i>
+                <i class="fas fa-minus" aria-hidden="true"></i>
             </button>
         </div>
         <div class="dashboard-content" id="dashboardContent">
             <div class="impact-metric">
                 <div class="metric-icon">
-                    <i class="fas fa-heart-pulse"></i>
+                    <i class="fas fa-heart-pulse" aria-hidden="true"></i>
                 </div>
                 <div class="metric-info">
                     <div class="metric-value" id="livesImpacted">0</div>
@@ -2711,14 +2766,14 @@
                     </div>
                 </div>
                 <div class="metric-trend up">
-                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>
                     <span>+12</span>
                 </div>
             </div>
             
             <div class="impact-metric">
                 <div class="metric-icon">
-                    <i class="fas fa-hospital"></i>
+                    <i class="fas fa-hospital" aria-hidden="true"></i>
                 </div>
                 <div class="metric-info">
                     <div class="metric-value" id="systemsDeployed">0</div>
@@ -2728,14 +2783,14 @@
                     </div>
                 </div>
                 <div class="metric-trend up">
-                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>
                     <span>+3</span>
                 </div>
             </div>
             
             <div class="impact-metric">
                 <div class="metric-icon">
-                    <i class="fas fa-download"></i>
+                    <i class="fas fa-download" aria-hidden="true"></i>
                 </div>
                 <div class="metric-info">
                     <div class="metric-value" id="packageDownloads">0</div>
@@ -2745,14 +2800,14 @@
                     </div>
                 </div>
                 <div class="metric-trend up">
-                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>
                     <span>+47</span>
                 </div>
             </div>
             
             <div class="impact-metric">
                 <div class="metric-icon">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
                 </div>
                 <div class="metric-info">
                     <div class="metric-value" id="timeSaved">0</div>
@@ -2762,14 +2817,14 @@
                     </div>
                 </div>
                 <div class="metric-trend up">
-                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>
                     <span>+156</span>
                 </div>
             </div>
             
             <div class="impact-metric">
                 <div class="metric-icon">
-                    <i class="fas fa-shield-virus"></i>
+                    <i class="fas fa-shield-virus" aria-hidden="true"></i>
                 </div>
                 <div class="metric-info">
                     <div class="metric-value" id="errorsPrevent">0</div>
@@ -2779,14 +2834,14 @@
                     </div>
                 </div>
                 <div class="metric-trend up">
-                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>
                     <span>+23</span>
                 </div>
             </div>
             
             <div class="impact-metric">
                 <div class="metric-icon">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                 </div>
                 <div class="metric-info">
                     <div class="metric-value" id="aiInsights">0</div>
@@ -2796,14 +2851,14 @@
                     </div>
                 </div>
                 <div class="metric-trend up">
-                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>
                     <span>+89</span>
                 </div>
             </div>
         </div>
         <div class="dashboard-footer">
             <div class="last-update">
-                <i class="fas fa-sync-alt"></i>
+                <i class="fas fa-sync-alt" aria-hidden="true"></i>
                 <span>Last updated: <span id="lastUpdate">--:--</span></span>
             </div>
         </div>
@@ -2812,10 +2867,10 @@
     <!-- Control Panel -->
     <div class="control-panel">
         <button class="control-btn" id="themeToggle" aria-label="Toggle theme">
-            <i class="fas fa-moon"></i>
+            <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
         <button class="control-btn" id="biometricToggle" aria-label="Toggle biometrics">
-            <i class="fas fa-heartbeat"></i>
+            <i class="fas fa-heartbeat" aria-hidden="true"></i>
         </button>
         <div class="lang-toggle">
             <div class="lang-option active" data-lang="en">EN</div>
@@ -2831,7 +2886,7 @@
                 <span class="ar-content hidden">برينسايت</span>
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">
@@ -2893,12 +2948,12 @@
                 </p>
                 <div class="cta-buttons">
                     <button class="btn btn-primary" onclick="openConsultationModal()">
-                        <i class="fas fa-stethoscope"></i>
+                        <i class="fas fa-stethoscope" aria-hidden="true"></i>
                         <span class="en-content">Request Consultation</span>
                         <span class="ar-content hidden">طلب استشارة</span>
                     </button>
                     <a href="#projects" class="btn btn-secondary">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
                         <span class="en-content">Explore Projects</span>
                         <span class="ar-content hidden">استكشف المشاريع</span>
                     </a>
@@ -2908,7 +2963,7 @@
             <!-- Business Card -->
             <div class="business-card heartbeat-zone medical-cursor">
                 <div class="card-avatar">
-                    <i class="fas fa-user-md"></i>
+                    <i class="fas fa-user-md" aria-hidden="true"></i>
                 </div>
                 <h3 class="card-name">
                     <span class="en-content">Dr. Mohamed El Fadil</span>
@@ -2919,7 +2974,7 @@
                     <span class="ar-content hidden">طبيب ومؤسس برينسايت</span>
                 </p>
                 <div class="card-location">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Riyadh, Saudi Arabia</span>
                 </div>
                 <div class="badges">
@@ -2959,7 +3014,7 @@
         <div class="container">
             <div class="diagnostic-simulator">
                 <h3 style="text-align: center; margin-bottom: 2rem; color: var(--accent-cyan);">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <span class="en-content">AI Diagnostic Journey Simulator</span>
                     <span class="ar-content hidden">محاكي رحلة التشخيص بالذكاء الاصطناعي</span>
                 </h3>
@@ -3017,12 +3072,12 @@
                 
                 <div style="text-align: center; margin-top: 2rem;">
                     <button class="btn btn-primary" onclick="startDiagnosticDemo()">
-                        <i class="fas fa-play"></i>
+                        <i class="fas fa-play" aria-hidden="true"></i>
                         <span class="en-content">Start Demo</span>
                         <span class="ar-content hidden">بدء العرض التوضيحي</span>
                     </button>
                     <button class="btn btn-secondary" onclick="resetDiagnosticDemo()" style="margin-left: 1rem;">
-                        <i class="fas fa-redo"></i>
+                        <i class="fas fa-redo" aria-hidden="true"></i>
                         <span class="en-content">Reset</span>
                         <span class="ar-content hidden">إعادة تعيين</span>
                     </button>
@@ -3046,7 +3101,7 @@
             <div class="grid">
                 <a href="https://gp.thefadil.site" target="_blank" class="card heartbeat-zone medical-cursor" ondblclick="addMedicalReaction(event, '🩺')">
                     <div class="card-icon">
-                        <i class="fas fa-user-md"></i>
+                        <i class="fas fa-user-md" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">GP Portal</span>
@@ -3060,7 +3115,7 @@
                 
                 <a href="https://givc.brainsait.io" target="_blank" class="card heartbeat-zone medical-cursor" ondblclick="addMedicalReaction(event, '🧠')">
                     <div class="card-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">GIVC Platform</span>
@@ -3074,7 +3129,7 @@
                 
                 <a href="https://brainsait.io" target="_blank" class="card heartbeat-zone medical-cursor" ondblclick="addMedicalReaction(event, '🏥')">
                     <div class="card-icon">
-                        <i class="fas fa-hospital"></i>
+                        <i class="fas fa-hospital" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">BrainSAIT Core</span>
@@ -3088,7 +3143,7 @@
                 
                 <a href="https://care.brainsait.io" target="_blank" class="card heartbeat-zone medical-cursor" ondblclick="addMedicalReaction(event, '❤️')">
                     <div class="card-icon">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">BrainSAIT Care</span>
@@ -3102,7 +3157,7 @@
                 
                 <a href="https://read.thefadil.site/" target="_blank" class="card heartbeat-zone medical-cursor" ondblclick="addMedicalReaction(event, '📚')">
                     <div class="card-icon">
-                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">OI vs AI Book</span>
@@ -3116,7 +3171,7 @@
                 
                 <a href="https://givc-academy.brainsait.io" target="_blank" class="card heartbeat-zone medical-cursor" ondblclick="addMedicalReaction(event, '🎓')">
                     <div class="card-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">GIVC Academy</span>
@@ -3146,7 +3201,7 @@
             <div class="grid">
                 <div class="card">
                     <div class="card-icon">
-                        <i class="fas fa-heartbeat"></i>
+                        <i class="fas fa-heartbeat" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">brainsait-pyheart</h3>
                     <div class="badges">
@@ -3166,11 +3221,11 @@
                     <div class="package-install">
                         <code>pip install brainsait-pyheart</code>
                         <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pyheart')" aria-label="Copy to clipboard">
-                            <i class="fas fa-copy"></i>
+                            <i class="fas fa-copy" aria-hidden="true"></i>
                         </button>
                     </div>
                     <a href="https://pypi.org/project/brainsait-pyheart/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-external-link-alt"></i>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                         <span class="en-content">View on PyPI</span>
                         <span class="ar-content hidden">عرض على PyPI</span>
                     </a>
@@ -3178,7 +3233,7 @@
                 
                 <div class="card">
                     <div class="card-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">brainsait-pybrain</h3>
                     <div class="badges">
@@ -3198,11 +3253,11 @@
                     <div class="package-install">
                         <code>pip install brainsait-pybrain</code>
                         <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pybrain')" aria-label="Copy to clipboard">
-                            <i class="fas fa-copy"></i>
+                            <i class="fas fa-copy" aria-hidden="true"></i>
                         </button>
                     </div>
                     <a href="https://pypi.org/project/brainsait-pybrain/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-external-link-alt"></i>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                         <span class="en-content">View on PyPI</span>
                         <span class="ar-content hidden">عرض على PyPI</span>
                     </a>
@@ -3210,7 +3265,7 @@
                 
                 <div class="card">
                     <div class="card-icon">
-                        <i class="fas fa-laptop-medical"></i>
+                        <i class="fas fa-laptop-medical" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">Complete Integration</span>
@@ -3232,7 +3287,7 @@
                     <div class="package-install">
                         <code>pip install brainsait-pyheart brainsait-pybrain</code>
                         <button class="copy-btn" onclick="copyToClipboard('pip install brainsait-pyheart brainsait-pybrain')" aria-label="Copy to clipboard">
-                            <i class="fas fa-copy"></i>
+                            <i class="fas fa-copy" aria-hidden="true"></i>
                         </button>
                     </div>
                     <a href="https://pypi.org/user/Fadil369/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
@@ -3260,7 +3315,7 @@
             <div class="grid">
                 <a href="https://context.thefadil.site/" target="_blank" class="card">
                     <div class="card-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">AI Context Generator</span>
@@ -3274,7 +3329,7 @@
                 
                 <a href="https://excel-advanced-consolidator.fadil.workers.dev/" target="_blank" class="card">
                     <div class="card-icon">
-                        <i class="fas fa-table"></i>
+                        <i class="fas fa-table" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">Excel Consolidator</span>
@@ -3288,7 +3343,7 @@
                 
                 <a href="https://healthcare-insurance-analysis.fadil.workers.dev/" target="_blank" class="card">
                     <div class="card-icon">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-chart-bar" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">Insurance Analyzer</span>
@@ -3302,7 +3357,7 @@
                 
                 <div class="card">
                     <div class="card-icon">
-                        <i class="fas fa-exchange-alt"></i>
+                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">Healthcare Interoperability</span>
@@ -3322,7 +3377,7 @@
                 
                 <div class="card">
                     <div class="card-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">HIPAA & GDPR Compliance</span>
@@ -3342,7 +3397,7 @@
                 
                 <div class="card">
                     <div class="card-icon">
-                        <i class="fas fa-language"></i>
+                        <i class="fas fa-language" aria-hidden="true"></i>
                     </div>
                     <h3 class="card-title">
                         <span class="en-content">Clinical NLP Engine</span>
@@ -3367,7 +3422,7 @@
     <section class="section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">
-                <i class="fas fa-exchange-alt" style="color: var(--accent-cyan); margin-right: 15px;"></i>
+                <i class="fas fa-exchange-alt" style="color: var(--accent-cyan); margin-right: 15px;" aria-hidden="true"></i>
                 <span class="en-content">FHIR/HL7 Interoperability Playground</span>
                 <span class="ar-content hidden">ملعب التشغيل البيني FHIR/HL7</span>
             </h2>
@@ -3381,15 +3436,15 @@
                 <div class="playground-controls">
                     <div class="format-toggle">
                         <button class="format-btn active" data-format="fhir" onclick="switchFormat('fhir')">
-                            <i class="fas fa-code"></i>
+                            <i class="fas fa-code" aria-hidden="true"></i>
                             <span>FHIR R4</span>
                         </button>
                         <button class="format-btn" data-format="hl7" onclick="switchFormat('hl7')">
-                            <i class="fas fa-file-medical"></i>
+                            <i class="fas fa-file-medical" aria-hidden="true"></i>
                             <span>HL7 v2.x</span>
                         </button>
                         <button class="format-btn" data-format="json" onclick="switchFormat('json')">
-                            <i class="fas fa-brackets-curly"></i>
+                            <i class="fas fa-brackets-curly" aria-hidden="true"></i>
                             <span>JSON</span>
                         </button>
                     </div>
@@ -3410,31 +3465,31 @@
                     <div class="data-input-section">
                         <div class="input-header">
                             <h4>
-                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-edit" aria-hidden="true"></i>
                                 <span class="en-content">Input Data</span>
                                 <span class="ar-content hidden">بيانات الإدخال</span>
                             </h4>
                             <div class="input-controls">
                                 <button class="btn-small" onclick="validateData()">
-                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
                                     Validate
                                 </button>
                                 <button class="btn-small" onclick="transformData()">
-                                    <i class="fas fa-magic"></i>
+                                    <i class="fas fa-magic" aria-hidden="true"></i>
                                     Transform
                                 </button>
                             </div>
                         </div>
                         <textarea id="inputData" placeholder="Paste your FHIR/HL7 data here or select a sample from above..." rows="12"></textarea>
                         <div class="data-status" id="inputStatus">
-                            <i class="fas fa-info-circle"></i>
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
                             Ready for input
                         </div>
                     </div>
 
                     <div class="transformation-arrow">
                         <div class="arrow-icon">
-                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </div>
                         <div class="transformation-stats" id="transformStats">
                             <div class="stat-item">
@@ -3447,29 +3502,29 @@
                     <div class="data-output-section">
                         <div class="output-header">
                             <h4>
-                                <i class="fas fa-code"></i>
+                                <i class="fas fa-code" aria-hidden="true"></i>
                                 <span class="en-content">Transformed Output</span>
                                 <span class="ar-content hidden">المخرجات المحولة</span>
                             </h4>
                             <div class="output-controls">
                                 <button class="btn-small" onclick="copyOutput()">
-                                    <i class="fas fa-copy"></i>
+                                    <i class="fas fa-copy" aria-hidden="true"></i>
                                     Copy
                                 </button>
                                 <button class="btn-small" onclick="downloadOutput()">
-                                    <i class="fas fa-download"></i>
+                                    <i class="fas fa-download" aria-hidden="true"></i>
                                     Download
                                 </button>
                             </div>
                         </div>
                         <div id="outputData" class="output-display">
                             <div class="placeholder-message">
-                                <i class="fas fa-magic"></i>
+                                <i class="fas fa-magic" aria-hidden="true"></i>
                                 <p>Transformed data will appear here...</p>
                             </div>
                         </div>
                         <div class="data-status" id="outputStatus">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                             Waiting for input
                         </div>
                     </div>
@@ -3479,21 +3534,21 @@
                 <div class="feature-showcase">
                     <div class="showcase-item">
                         <div class="showcase-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                         </div>
                         <h5>HIPAA Compliant</h5>
                         <p>All data processing maintains strict privacy standards</p>
                     </div>
                     <div class="showcase-item">
                         <div class="showcase-icon">
-                            <i class="fas fa-lightning-bolt"></i>
+                            <i class="fas fa-lightning-bolt" aria-hidden="true"></i>
                         </div>
                         <h5>Real-time Processing</h5>
                         <p>Instant transformation and validation results</p>
                     </div>
                     <div class="showcase-item">
                         <div class="showcase-icon">
-                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-globe" aria-hidden="true"></i>
                         </div>
                         <h5>Global Standards</h5>
                         <p>Supports FHIR R4, HL7 v2.x, and custom formats</p>
@@ -3512,7 +3567,7 @@
             <!-- Partnership Hero -->
             <div class="partnership-hero" style="text-align: center; margin-bottom: 4rem;">
                 <h2 class="section-title" style="background: linear-gradient(135deg, var(--brainsait-signal-teal), var(--brainsait-medical-blue), var(--brainsait-midnight-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.5rem;">
-                    <i class="fas fa-handshake" style="color: var(--brainsait-signal-teal); margin-right: 15px;"></i>
+                    <i class="fas fa-handshake" style="color: var(--brainsait-signal-teal); margin-right: 15px;" aria-hidden="true"></i>
                     <span class="en-content">Strategic Partnerships</span>
                     <span class="ar-content hidden">الشراكات الاستراتيجية</span>
                 </h2>
@@ -3563,7 +3618,7 @@
                 <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
                     <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-signal-teal); transition: all 0.3s ease;">
                         <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-signal-teal), var(--brainsait-medical-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                            <i class="fas fa-brain" style="font-size: 2rem; color: white;"></i>
+                            <i class="fas fa-brain" style="font-size: 2rem; color: white;" aria-hidden="true"></i>
                         </div>
                         <h4 style="color: var(--brainsait-signal-teal); margin-bottom: 1rem; font-size: 1.5rem;">
                             <span class="en-content">AI Innovation Hub</span>
@@ -3583,7 +3638,7 @@
 
                     <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-medical-blue); transition: all 0.3s ease;">
                         <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-medical-blue), var(--brainsait-midnight-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                            <i class="fas fa-hospital" style="font-size: 2rem; color: white;"></i>
+                            <i class="fas fa-hospital" style="font-size: 2rem; color: white;" aria-hidden="true"></i>
                         </div>
                         <h4 style="color: var(--brainsait-medical-blue); margin-bottom: 1rem; font-size: 1.5rem;">
                             <span class="en-content">Healthcare Integration</span>
@@ -3603,7 +3658,7 @@
 
                     <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-deep-orange); transition: all 0.3s ease;">
                         <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-deep-orange), var(--brainsait-signal-teal)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                            <i class="fas fa-rocket" style="font-size: 2rem; color: white;"></i>
+                            <i class="fas fa-rocket" style="font-size: 2rem; color: white;" aria-hidden="true"></i>
                         </div>
                         <h4 style="color: var(--brainsait-deep-orange); margin-bottom: 1rem; font-size: 1.5rem;">
                             <span class="en-content">Rapid Deployment</span>
@@ -3623,7 +3678,7 @@
 
                     <div class="feature-card glass" style="padding: 2.5rem; border: 1px solid var(--brainsait-professional-gray); transition: all 0.3s ease;">
                         <div class="feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--brainsait-professional-gray), var(--brainsait-midnight-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                            <i class="fas fa-shield-alt" style="font-size: 2rem; color: white;"></i>
+                            <i class="fas fa-shield-alt" style="font-size: 2rem; color: white;" aria-hidden="true"></i>
                         </div>
                         <h4 style="color: var(--brainsait-professional-gray); margin-bottom: 1rem; font-size: 1.5rem;">
                             <span class="en-content">Saudi Compliance</span>
@@ -3647,7 +3702,7 @@
             <div class="vision-alignment glass" style="padding: 3rem; margin: 4rem 0; border: 1px solid var(--brainsait-midnight-blue); background: linear-gradient(135deg, rgba(26, 54, 93, 0.1), rgba(43, 108, 184, 0.1));">
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h3 style="font-size: 2rem; color: var(--brainsait-midnight-blue); margin-bottom: 1rem;">
-                        <i class="fas fa-flag" style="margin-right: 15px;"></i>
+                        <i class="fas fa-flag" style="margin-right: 15px;" aria-hidden="true"></i>
                         <span class="en-content">Vision 2030 Alignment</span>
                         <span class="ar-content hidden">توافق رؤية 2030</span>
                     </h3>
@@ -3666,7 +3721,7 @@
                 <div class="vision-pillars" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     <div class="pillar" style="text-align: center; padding: 1.5rem;">
                         <div class="pillar-icon" style="width: 60px; height: 60px; background: var(--brainsait-signal-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <i class="fas fa-heartbeat" style="color: white; font-size: 1.5rem;"></i>
+                            <i class="fas fa-heartbeat" style="color: white; font-size: 1.5rem;" aria-hidden="true"></i>
                         </div>
                         <h4 style="color: var(--brainsait-signal-teal); margin-bottom: 0.5rem;">
                             <span class="en-content">Health & Wellbeing</span>
@@ -3680,7 +3735,7 @@
 
                     <div class="pillar" style="text-align: center; padding: 1.5rem;">
                         <div class="pillar-icon" style="width: 60px; height: 60px; background: var(--brainsait-medical-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <i class="fas fa-industry" style="color: white; font-size: 1.5rem;"></i>
+                            <i class="fas fa-industry" style="color: white; font-size: 1.5rem;" aria-hidden="true"></i>
                         </div>
                         <h4 style="color: var(--brainsait-medical-blue); margin-bottom: 0.5rem;">
                             <span class="en-content">Economic Diversification</span>
@@ -3694,7 +3749,7 @@
 
                     <div class="pillar" style="text-align: center; padding: 1.5rem;">
                         <div class="pillar-icon" style="width: 60px; height: 60px; background: var(--brainsait-deep-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <i class="fas fa-graduation-cap" style="color: white; font-size: 1.5rem;"></i>
+                            <i class="fas fa-graduation-cap" style="color: white; font-size: 1.5rem;" aria-hidden="true"></i>
                         </div>
                         <h4 style="color: var(--brainsait-deep-orange); margin-bottom: 0.5rem;">
                             <span class="en-content">Digital Excellence</span>
@@ -3719,7 +3774,7 @@
                     <div class="model-card glass" style="padding: 2rem; border: 1px solid var(--brainsait-signal-teal); position: relative; overflow: hidden;">
                         <div class="model-header" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
                             <div class="model-icon" style="width: 50px; height: 50px; background: var(--brainsait-signal-teal); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <i class="fas fa-code" style="color: white; font-size: 1.2rem;"></i>
+                                <i class="fas fa-code" style="color: white; font-size: 1.2rem;" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 style="color: var(--brainsait-signal-teal); margin-bottom: 0.25rem;">
@@ -3734,17 +3789,17 @@
                         </div>
                         <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">Custom AI Development</span>
                                 <span class="ar-content hidden">تطوير ذكاء اصطناعي مخصص</span>
                             </li>
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">PyPI Integration</span>
                                 <span class="ar-content hidden">تكامل PyPI</span>
                             </li>
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-signal-teal); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">12 Months Support</span>
                                 <span class="ar-content hidden">دعم 12 شهر</span>
                             </li>
@@ -3754,7 +3809,7 @@
                     <div class="model-card glass" style="padding: 2rem; border: 1px solid var(--brainsait-medical-blue); position: relative; overflow: hidden;">
                         <div class="model-header" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
                             <div class="model-icon" style="width: 50px; height: 50px; background: var(--brainsait-medical-blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <i class="fas fa-handshake" style="color: white; font-size: 1.2rem;"></i>
+                                <i class="fas fa-handshake" style="color: white; font-size: 1.2rem;" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 style="color: var(--brainsait-medical-blue); margin-bottom: 0.25rem;">
@@ -3769,17 +3824,17 @@
                         </div>
                         <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">Joint Innovation Programs</span>
                                 <span class="ar-content hidden">برامج الابتكار المشتركة</span>
                             </li>
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">Market Co-Development</span>
                                 <span class="ar-content hidden">التطوير المشترك للسوق</span>
                             </li>
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-medical-blue); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">Shared Expertise</span>
                                 <span class="ar-content hidden">الخبرة المشتركة</span>
                             </li>
@@ -3789,7 +3844,7 @@
                     <div class="model-card glass" style="padding: 2rem; border: 1px solid var(--brainsait-deep-orange); position: relative; overflow: hidden;">
                         <div class="model-header" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
                             <div class="model-icon" style="width: 50px; height: 50px; background: var(--brainsait-deep-orange); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <i class="fas fa-building" style="color: white; font-size: 1.2rem;"></i>
+                                <i class="fas fa-building" style="color: white; font-size: 1.2rem;" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 style="color: var(--brainsait-deep-orange); margin-bottom: 0.25rem;">
@@ -3804,17 +3859,17 @@
                         </div>
                         <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">Full Platform Access</span>
                                 <span class="ar-content hidden">وصول كامل للمنصة</span>
                             </li>
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">Dedicated Support Team</span>
                                 <span class="ar-content hidden">فريق دعم مخصص</span>
                             </li>
                             <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
-                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;"></i>
+                                <i class="fas fa-check" style="color: var(--brainsait-deep-orange); margin-right: 0.5rem;" aria-hidden="true"></i>
                                 <span class="en-content">SLA Guarantee</span>
                                 <span class="ar-content hidden">ضمان SLA</span>
                             </li>
@@ -3841,12 +3896,12 @@
                 </p>
                 <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <button class="btn btn-primary" onclick="openConsultationModal()" style="background: white; color: var(--brainsait-midnight-blue); border: none; padding: 1rem 2rem; font-weight: 600;">
-                        <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                        <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;" aria-hidden="true"></i>
                         <span class="en-content">Schedule Partnership Call</span>
                         <span class="ar-content hidden">جدولة مكالمة شراكة</span>
                     </button>
                     <button class="btn btn-secondary" onclick="window.open('mailto:partnerships@brainsait.com?subject=Partnership Inquiry', '_blank')" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; font-weight: 600;">
-                        <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                        <i class="fas fa-envelope" style="margin-right: 0.5rem;" aria-hidden="true"></i>
                         <span class="en-content">Contact Partnerships</span>
                         <span class="ar-content hidden">تواصل مع قسم الشراكات</span>
                     </button>
@@ -3855,11 +3910,11 @@
                 <!-- Partnership Contact Info -->
                 <div class="partnership-contact" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
                     <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem;">
-                        <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                        <i class="fas fa-envelope" style="margin-right: 0.5rem;" aria-hidden="true"></i>
                         partnerships@brainsait.com
                     </p>
                     <p style="color: rgba(255, 255, 255, 0.8);">
-                        <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                        <i class="fas fa-phone" style="margin-right: 0.5rem;" aria-hidden="true"></i>
                         <span class="en-content">+966 (11) 123-4567</span>
                         <span class="ar-content hidden">٤٥٦٧-١٢٣-١١ ٩٦٦+</span>
                     </p>
@@ -3882,7 +3937,7 @@
             
             <div style="text-align: center; margin: 2rem 0;">
                 <button class="btn btn-primary" onclick="openConsultationModal()" style="font-size: 1.2rem; padding: 18px 40px;">
-                    <i class="fas fa-calendar-check"></i>
+                    <i class="fas fa-calendar-check" aria-hidden="true"></i>
                     <span class="en-content">Request Consultation</span>
                     <span class="ar-content hidden">طلب استشارة</span>
                 </button>
@@ -3913,13 +3968,13 @@
                     <i class="fab fa-python"></i>
                 </a>
                 <a href="mailto:brainsait@hotmail.com" class="social-link" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                 </a>
                 <a href="https://brainsait.io" target="_blank" class="social-link" aria-label="Website">
-                    <i class="fas fa-globe"></i>
+                    <i class="fas fa-globe" aria-hidden="true"></i>
                 </a>
                 <a href="https://calendly.com/brainsait/consultation" target="_blank" class="social-link" aria-label="Schedule">
-                    <i class="fas fa-calendar-alt"></i>
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -3929,11 +3984,11 @@
     <div id="consultationModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeConsultationModal()" aria-label="Close modal">
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             
             <h3 style="margin-bottom: 1.5rem; text-align: center; color: var(--accent-cyan);">
-                <i class="fas fa-stethoscope"></i>
+                <i class="fas fa-stethoscope" aria-hidden="true"></i>
                 <span class="en-content">Healthcare Consultation Request</span>
                 <span class="ar-content hidden">طلب استشارة طبية</span>
             </h3>
@@ -4011,7 +4066,7 @@
                 
                 <div style="text-align: center; margin-top: 2rem;">
                     <button type="submit" class="btn btn-primary" style="min-width: 200px;">
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         <span class="en-content">Request Consultation</span>
                         <span class="ar-content hidden">طلب استشارة</span>
                     </button>
@@ -4064,11 +4119,11 @@
             
             if (currentTheme === 'dark') {
                 root.setAttribute('data-theme', 'light');
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
                 currentTheme = 'light';
             } else {
                 root.removeAttribute('data-theme');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                themeToggle.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i>';
                 currentTheme = 'dark';
             }
             
@@ -4110,7 +4165,7 @@
             navLinks.classList.toggle('active');
             
             const isActive = navLinks.classList.contains('active');
-            menuBtn.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            menuBtn.innerHTML = isActive ? '<i class="fas fa-times" aria-hidden="true"></i>' : '<i class="fas fa-bars" aria-hidden="true"></i>';
         }
 
         // Smooth scrolling for navigation links
@@ -4130,7 +4185,7 @@
                         const menuBtn = document.getElementById('mobileMenuBtn');
                         if (navLinks.classList.contains('active')) {
                             navLinks.classList.remove('active');
-                            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                            menuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
                         }
                     }
                 });
@@ -4220,7 +4275,7 @@
             if (!consultationData.fullName || !consultationData.email || !consultationData.serviceType || !consultationData.projectDescription) {
                 showNotification(isArabic ? 'يرجى ملء جميع الحقول المطلوبة' : 'Please fill in all required fields', 'error');
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'حدث خطأ، حاول مرة أخرى' : 'Request Consultation') + '</span>';
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i><span>' + (isArabic ? 'حدث خطأ، حاول مرة أخرى' : 'Request Consultation') + '</span>';
                 return;
             }
             
@@ -4252,7 +4307,7 @@
                 );
             }).finally(() => {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i><span>' + (isArabic ? 'طلب استشارة' : 'Request Consultation') + '</span>';
             });
         }
 
@@ -5268,20 +5323,20 @@
                     <div id="aiChatAssistant" class="ai-chat-assistant">
                         <div class="chat-header">
                             <div class="chat-avatar">
-                                <i class="fas fa-robot"></i>
+                                <i class="fas fa-robot" aria-hidden="true"></i>
                             </div>
                             <div class="chat-title">
                                 <h4>Medical AI Assistant</h4>
                                 <p>Ask about BrainSAIT, FHIR, HL7, or healthcare AI</p>
                             </div>
                             <button class="chat-close" onclick="medicalAI.closeChat()">
-                                <i class="fas fa-times"></i>
+                                <i class="fas fa-times" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="chat-messages" id="chatMessages">
                             <div class="chat-message ai-message">
                                 <div class="message-avatar">
-                                    <i class="fas fa-stethoscope"></i>
+                                    <i class="fas fa-stethoscope" aria-hidden="true"></i>
                                 </div>
                                 <div class="message-content">
                                     <p>Hello! I'm Dr. Fadil's AI assistant. I can help you learn about BrainSAIT, healthcare interoperability, FHIR/HL7 standards, and our PyPI packages. What would you like to know?</p>
@@ -5291,12 +5346,12 @@
                         <div class="chat-input-container">
                             <input type="text" id="chatInput" placeholder="Ask about healthcare AI, FHIR, HL7..." onkeypress="if(event.key==='Enter') medicalAI.sendMessage()">
                             <button onclick="medicalAI.sendMessage()">
-                                <i class="fas fa-paper-plane"></i>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
                     <button id="aiChatToggle" class="ai-chat-toggle" onclick="medicalAI.toggleChat()">
-                        <i class="fas fa-comment-medical"></i>
+                        <i class="fas fa-comment-medical" aria-hidden="true"></i>
                         <span class="chat-badge">AI</span>
                     </button>
                 `;
@@ -5349,7 +5404,7 @@
                 const messageHTML = `
                     <div class="chat-message ${type}-message">
                         <div class="message-avatar">
-                            <i class="fas fa-${type === 'user' ? 'user' : 'stethoscope'}"></i>
+                            <i class="fas fa-${type === 'user' ? 'user' : 'stethoscope'}" aria-hidden="true"></i>
                         </div>
                         <div class="message-content">
                             <p>${content}</p>
@@ -5365,7 +5420,7 @@
                 const typingHTML = `
                     <div class="chat-message ai-message typing-indicator" id="typingIndicator">
                         <div class="message-avatar">
-                            <i class="fas fa-stethoscope"></i>
+                            <i class="fas fa-stethoscope" aria-hidden="true"></i>
                         </div>
                         <div class="message-content">
                             <div class="typing-dots">
@@ -5891,19 +5946,19 @@ ${JSON.stringify(data, null, 2)}`;
             updateInputStatus(type, message) {
                 const statusDiv = document.getElementById('inputStatus');
                 statusDiv.className = `data-status ${type}`;
-                statusDiv.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'}"></i> ${message}`;
+                statusDiv.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'}" aria-hidden="true"></i> ${message}`;
             }
 
             updateOutputStatus(type, message) {
                 const statusDiv = document.getElementById('outputStatus');
                 statusDiv.className = `data-status ${type}`;
-                statusDiv.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'clock'}"></i> ${message}`;
+                statusDiv.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'clock'}" aria-hidden="true"></i> ${message}`;
             }
 
             clearOutput() {
                 document.getElementById('outputData').innerHTML = `
                     <div class="placeholder-message">
-                        <i class="fas fa-magic"></i>
+                        <i class="fas fa-magic" aria-hidden="true"></i>
                         <p>Transformed data will appear here...</p>
                     </div>
                 `;
