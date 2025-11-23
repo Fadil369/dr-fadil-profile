@@ -179,7 +179,13 @@
             --brainsait-signal-teal: #0ea5e9;
             --brainsait-deep-orange: #ea580c;
             --brainsait-professional-gray: #64748b;
-            
+
+            /* Legacy/Alias Variables (for backwards compatibility) */
+            --success-green: #10b981;
+            --error-red: #dc2626;
+            --healthcare-blue: #0f4c75;
+            --healthcare-green: #059669;
+
             /* Medical Typography Scale */
             --font-medical-primary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-medical-arabic: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', serif;
@@ -1016,7 +1022,7 @@
             letter-spacing: -0.01em;
         }
 
-        .card-title {
+        .business-card-role {
             font-size: 1.1rem;
             color: var(--medical-secondary);
             text-align: center;
@@ -2828,6 +2834,173 @@
             outline-offset: 2px;
         }
 
+        /* Partnership Section Card Styles */
+        .stat-card {
+            padding: var(--space-2xl);
+            text-align: center;
+            transition: var(--transition-medical);
+        }
+
+        .stat-card .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: var(--space-sm);
+        }
+
+        .stat-card .stat-label {
+            color: var(--text-secondary);
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            transition: var(--transition-medical);
+        }
+
+        .feature-card .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .feature-card .feature-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card h4 {
+            margin-bottom: var(--space-md);
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .model-card {
+            padding: var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .model-card .model-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .model-card .model-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--space-md);
+        }
+
+        .model-card .model-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .model-card h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .model-card ul {
+            list-style: none;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+
+        .model-card ul li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .model-card ul li i {
+            margin-right: var(--space-sm);
+        }
+
+        .vision-alignment {
+            padding: var(--space-3xl);
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.1), rgba(43, 108, 184, 0.1));
+        }
+
+        .vision-alignment h3 {
+            font-size: 2rem;
+            color: var(--brainsait-midnight-blue);
+            margin-bottom: var(--space-md);
+        }
+
+        .pillar {
+            text-align: center;
+            padding: var(--space-lg);
+        }
+
+        .pillar .pillar-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+        }
+
+        .pillar .pillar-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .pillar h4 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .pillar p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .partnership-cta {
+            background: linear-gradient(135deg, var(--brainsait-midnight-blue), var(--brainsait-medical-blue), var(--brainsait-signal-teal));
+            padding: var(--space-3xl);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .partnership-cta h3 {
+            color: white;
+            font-size: 2.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .partnership-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .partnership-contact {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .partnership-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-sm);
+        }
+
         /* Partnership Section Specific Styles */
         .mesh-gradient-bg {
             position: absolute;
@@ -3207,7 +3380,7 @@
                     <span class="en-content">Dr. Mohamed El Fadil</span>
                     <span class="ar-content hidden">د. محمد الفاضل</span>
                 </h3>
-                <p class="card-title">
+                <p class="business-card-role">
                     <span class="en-content">Physician & BrainSAIT Founder</span>
                     <span class="ar-content hidden">طبيب ومؤسس برينسايت</span>
                 </p>
